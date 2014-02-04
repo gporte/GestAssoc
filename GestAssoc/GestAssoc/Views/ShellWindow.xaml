@@ -24,7 +24,8 @@
 				<RibbonGroup Header="Villes">
 					<RibbonButton Label="Liste" Command="{Binding Path=ShowViewCmd}" 
 								  CommandParameter="{x:Static const:ViewNames.ConsultationVillesView}" />
-					<RibbonButton Label="Ajout" />
+					<RibbonButton Label="Ajout" Command="{Binding Path=ShowViewCmd}"
+								  CommandParameter="{x:Static const:ViewNames.FormulaireVilleView}"/>
 				</RibbonGroup>
 			</RibbonTab>
 		</Ribbon>
