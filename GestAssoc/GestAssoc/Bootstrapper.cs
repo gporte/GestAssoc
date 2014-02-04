@@ -1,4 +1,6 @@
 ﻿using GestAssoc.Utility;
+using GestAssoc.ViewModels;
+using GestAssoc.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
@@ -10,7 +12,8 @@ namespace GestAssoc
 	public class Bootstrapper : UnityBootstrapper
 	{
 		protected override System.Windows.DependencyObject CreateShell() {
-			return new ShellWindow();
+			var vm = new ShellWindowViewModel();
+			return new ShellWindow(vm);
 		}
 
 		protected override void InitializeShell() {

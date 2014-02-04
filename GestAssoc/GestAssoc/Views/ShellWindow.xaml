@@ -1,4 +1,4 @@
-﻿<RibbonWindow x:Class="GestAssoc.ShellWindow"
+﻿<RibbonWindow x:Class="GestAssoc.Views.ShellWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:prism="http://www.codeplex.com/prism"
@@ -13,12 +13,20 @@
 		<Ribbon Name="ApplicationRibbon" Grid.Row="0"
 				prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonRegion}">
 			<Ribbon.ApplicationMenu>
-				<RibbonApplicationMenu>
+				<RibbonApplicationMenu SmallImageSource="Images\ribbon.png">
 					<RibbonApplicationMenuItem Header="Infos Club" />
 					<RibbonSeparator />
 					<RibbonApplicationMenuItem Header="Quitter" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
+			
+			<RibbonTab Header="Référentiel">
+				<RibbonGroup Header="Villes">
+					<RibbonButton Label="Liste" Command="{Binding Path=ShowViewCmd}" 
+								  CommandParameter="{x:Static const:ViewNames.ConsultationVillesView}" />
+					<RibbonButton Label="Ajout" />
+				</RibbonGroup>
+			</RibbonTab>
 		</Ribbon>
 
 		<ContentControl Name="ContentRegion" Grid.Row="1"
