@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{513B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionVilles", "GestAssoc.Modules.GestionVilles\GestAssoc.Modules.GestionVilles.csproj", "{AB2E082F-608F-438F-A3FA-298B23169A31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionInfosClub", "GestAssoc.Modules.GestionInfosClub\GestAssoc.Modules.GestionInfosClub.csproj", "{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,12 +38,17 @@ Global
 		{AB2E082F-608F-438F-A3FA-298B23169A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB2E082F-608F-438F-A3FA-298B23169A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB2E082F-608F-438F-A3FA-298B23169A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB2E082F-608F-438F-A3FA-298B23169A31} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
+		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35

@@ -125,15 +125,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Views\Images\ribbon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\GestAssoc.Common\GestAssoc.Common.csproj">
       <Project>{cc7f8a9e-0b32-4a76-8f2b-a56a0de454de}</Project>
       <Name>GestAssoc.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Images\ribbon.png" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
