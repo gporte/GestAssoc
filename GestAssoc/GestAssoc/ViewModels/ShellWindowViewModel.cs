@@ -9,7 +9,9 @@ namespace GestAssoc.ViewModels
 		public ICommand ShowViewCmd { get; set; }
 
 		public ShellWindowViewModel() {
-			this.ShowViewCmd = new ShowViewCommand();
+			// TODO bouchon
+			//this.ShowViewCmd = new ShowViewCommand();
+			this.ShowViewCmd = new ShowViewCommandWithParameter("toto");
 		}
 	}
 }

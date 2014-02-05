@@ -17,5 +17,9 @@ namespace GestAssoc.Model.Services
 			var villes = this._context.Villes.OrderBy(x => x.CodePostal).ThenBy(x => x.Libelle);
 			return new ObservableCollection<Ville>(villes);
 		}
+
+		public Ville GetVille(System.Guid idVille) {
+			return this._context.Villes.Find(idVille);
+		}
 	}
 }
