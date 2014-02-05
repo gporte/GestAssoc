@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionVi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionInfosClub", "GestAssoc.Modules.GestionInfosClub\GestAssoc.Modules.GestionInfosClub.csproj", "{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Repository", "GestAssoc.Repository\GestAssoc.Repository.csproj", "{0E03CF43-C5AD-4F21-835F-222BE783EF62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Model", "GestAssoc.Model\GestAssoc.Model.csproj", "{66A5449A-EC07-455C-9B78-DC89DE5F299D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +44,10 @@ Global
 		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E03CF43-C5AD-4F21-835F-222BE783EF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E03CF43-C5AD-4F21-835F-222BE783EF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E03CF43-C5AD-4F21-835F-222BE783EF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E03CF43-C5AD-4F21-835F-222BE783EF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66A5449A-EC07-455C-9B78-DC89DE5F299D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A5449A-EC07-455C-9B78-DC89DE5F299D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A5449A-EC07-455C-9B78-DC89DE5F299D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A5449A-EC07-455C-9B78-DC89DE5F299D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
