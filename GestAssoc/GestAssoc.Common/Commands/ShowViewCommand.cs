@@ -8,7 +8,13 @@ namespace GestAssoc.Common.Commands
 {
 	public class ShowViewCommand : ICommand
 	{
-		public bool CanExecute(object viewName) {
+		public string ViewName { get; set; }
+		
+		public ShowViewCommand(string viewName) {
+			this.ViewName = viewName;
+		}
+
+		public bool CanExecute(object cmdParameter) {
 			return true;
 		}
 
@@ -17,13 +23,13 @@ namespace GestAssoc.Common.Commands
 			remove { CommandManager.RequerySuggested -= value; }
 		}
 
-		public void Execute(object viewName) {
-			if (viewName != null && !string.IsNullOrWhiteSpace(viewName.ToString())) {
+		public void Execute(object cmdParameter) {
+			if (this.ViewName != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
 				var regionManager = (RegionManager)ServiceLocator.Current.GetInstance<IRegionManager>();
 
 				regionManager.RequestNavigate(
 					RegionNames.ContentRegion,
-					new Uri(viewName.ToString(), UriKind.Relative)
+					new Uri(this.ViewName, UriKind.Relative)
 				);
 			}
 		}

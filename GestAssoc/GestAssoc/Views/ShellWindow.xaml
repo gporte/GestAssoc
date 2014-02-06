@@ -20,15 +20,6 @@
 					<RibbonApplicationMenuItem Header="Quitter" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
-			
-			<RibbonTab Header="Référentiel">
-				<RibbonGroup Header="Villes">
-					<RibbonButton Label="Liste" Command="{Binding Path=ShowViewCmd}" 
-								  CommandParameter="{x:Static const:ViewNames.ConsultationVillesView}" />
-					<RibbonButton Label="Ajout" Command="{Binding Path=ShowViewCmd}"
-								  CommandParameter="{x:Static const:ViewNames.FormulaireModificationVilleView}"/>
-				</RibbonGroup>
-			</RibbonTab>
 		</Ribbon>
 
 		<ContentControl Name="ContentRegion" Grid.Row="1"

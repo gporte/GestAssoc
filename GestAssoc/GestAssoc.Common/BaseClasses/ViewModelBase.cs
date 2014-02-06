@@ -1,9 +1,8 @@
-﻿using Microsoft.Practices.Prism.Regions;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace GestAssoc.Common.BaseClasses
 {
-	public abstract class ViewModelBase : INotifyPropertyChanged, INotifyPropertyChanging, IRegionMemberLifetime 
+	public abstract class ViewModelBase : INotifyPropertyChanged, INotifyPropertyChanging 
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -53,9 +52,5 @@ namespace GestAssoc.Common.BaseClasses
 		}
 
 		#endregion
-
-		public bool KeepAlive {
-			get { return false; }
-		}
 	}
 }
