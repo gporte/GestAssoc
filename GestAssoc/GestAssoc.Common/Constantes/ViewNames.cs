@@ -3,10 +3,8 @@ namespace GestAssoc.Common.Constantes
 {
 	public static class ViewNames
 	{
-		public const string ConsultationVillesView = "ConsultationVillesView";
-		public const string FormulaireVilleView = "FormulaireVilleView";
-		public const string FormulaireCreationVilleView = "FormulaireCreationVilleView";
-		public const string FormulaireModificationVilleView = "FormulaireModificationVilleView";
-		public const string InfosClubView = "InfosClubView";
+		public const string ConsultationVilles = "ConsultationVilles";
+		public const string FormulaireVille = "FormulaireVille";
+		public const string ConsultationInfosClub = "ConsultationInfosClub";
 	}
 }

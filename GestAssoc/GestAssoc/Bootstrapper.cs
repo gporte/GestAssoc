@@ -23,7 +23,7 @@ namespace GestAssoc
 		}
 
 		protected override Microsoft.Practices.Prism.Modularity.IModuleCatalog CreateModuleCatalog() {
-			var moduleCatalog = new DirectoryModuleCatalog();
+			var moduleCatalog = new PrioritizedDirectoryModuleCatalog();
 			moduleCatalog.ModulePath = @".\Modules";
 
 			return moduleCatalog;

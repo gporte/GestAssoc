@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utility\PrioritizedDirectoryModuleCatalog.cs" />
     <Compile Include="Utility\RibbonRegionAdapter.cs" />
     <Page Include="Views\ShellWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

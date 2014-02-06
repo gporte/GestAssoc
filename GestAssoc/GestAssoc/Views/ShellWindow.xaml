@@ -14,9 +14,6 @@
 				prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonRegion}">
 			<Ribbon.ApplicationMenu>
 				<RibbonApplicationMenu SmallImageSource="Images\ribbon.png">
-					<RibbonApplicationMenuItem Header="Infos Club" Command="{Binding Path=ShowViewCmd}"
-											   CommandParameter="{x:Static const:ViewNames.InfosClubView}"/>
-					<RibbonSeparator />
 					<RibbonApplicationMenuItem Header="Quitter" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
