@@ -9,13 +9,13 @@ namespace GestAssoc.Common.Commands
 {
 	public class ShowViewCommandWithParameter : ICommand
 	{
-		private string _cmdParameter;
+		public string ViewName { get; set; }
 
-		public ShowViewCommandWithParameter(string cmdParameter) {
-			this._cmdParameter = cmdParameter;
+		public ShowViewCommandWithParameter(string viewName) {
+			this.ViewName = viewName;
 		}
 
-		public bool CanExecute(object viewName) {
+		public bool CanExecute(object itemId) {
 			return true;
 		}
 
@@ -24,16 +24,16 @@ namespace GestAssoc.Common.Commands
 			remove { CommandManager.RequerySuggested -= value; }
 		}
 
-		public void Execute(object viewName) {
-			if (viewName != null && !string.IsNullOrWhiteSpace(viewName.ToString())) {
+		public void Execute(object itemId) {
+			if (this.ViewName != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
 				var regionManager = (RegionManager)ServiceLocator.Current.GetInstance<IRegionManager>();
 
 				var q = new UriQuery();
-				q.Add("ItemId", this._cmdParameter);
+				q.Add("ItemId", itemId.ToString());
 
 				regionManager.RequestNavigate(
 					RegionNames.ContentRegion,
-					new Uri(viewName.ToString() + q.ToString(), UriKind.Relative)
+					new Uri(this.ViewName + q.ToString(), UriKind.Relative)
 				);
 			}
 		}
