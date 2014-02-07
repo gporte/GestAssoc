@@ -3,12 +3,36 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="300">
 	<Grid>
-		<StackPanel Orientation="Horizontal">
-			<TextBlock Text="Nom :" />
-			<TextBox Text="{Binding Path=Item.Nom}" />
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="40" />
+		</Grid.RowDefinitions>
+		
+		<wpf:PropertyGrid SelectedObject="{Binding Path=Item}" Grid.Row="0"
+						  AutoGenerateProperties="False" IsCategorized="True"
+						  SelectedObjectTypeName="Infos du club">
+			<wpf:PropertyGrid.PropertyDefinitions>
+				<wpf:PropertyDefinition Name="Nom" />
+				<wpf:PropertyDefinition Name="Adresse" />
+				<wpf:PropertyDefinition Name="Ville" />
+				<wpf:PropertyDefinition Name="Telephone" />
+				<wpf:PropertyDefinition Name="Mail" />
+				<wpf:PropertyDefinition Name="SiteWeb" />
+				<wpf:PropertyDefinition Name="Numero" />
+				<wpf:PropertyDefinition Name="NumAPS" />
+				<wpf:PropertyDefinition Name="NumFederation" />
+				<wpf:PropertyDefinition Name="Siret" />
+			</wpf:PropertyGrid.PropertyDefinitions>
+		</wpf:PropertyGrid>
+		
+		<StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+			<Button Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}" Width="35" Height="35">
+				<TextBlock Text="Save" />
+			</Button>
 		</StackPanel>
 	</Grid>
 </UserControl>

@@ -10,7 +10,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Views
 	{
 		public FormulaireInfosClubView() {
 			InitializeComponent();
-			this.DataContext = new InfosClubViewModel();
+			this.DataContext = new FormulaireInfosClubViewModel();
 		}
 	}
 }
