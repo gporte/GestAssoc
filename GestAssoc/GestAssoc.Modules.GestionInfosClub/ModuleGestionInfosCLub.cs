@@ -1,5 +1,6 @@
 ﻿using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
+using GestAssoc.Modules.GestionInfosClub.Services;
 using GestAssoc.Modules.GestionInfosClub.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -12,14 +13,18 @@ namespace GestAssoc.Modules.GestionInfosClub
 	public class ModuleGestionInfosCLub : IModule
 	{
 		public void Initialize() {
-			// Enregistrement du RibbonTab
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
+			
+			// Enregistrement du RibbonTab
 			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(InfosClubRibbonTabView));
 
 			// Enregistrement des vues
-			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 			container.RegisterType<object, InfosClubView>(
 				ViewNames.ConsultationInfosClub);
+
+			// enregistrement des services
+			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();
 		}
 	}
 }

@@ -1,13 +1,14 @@
 ﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Model.Interfaces;
 using GestAssoc.Model.Models;
-using GestAssoc.Model.Services;
+using GestAssoc.Modules.GestionInfosClub.Services;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 {
 	public class InfosClubViewModel : ViewModelBase
 	{
-		private IGestionInfosClubServices _services = new GestionInfosClubServices();
+		private IGestionInfosClubServices _services;
 		
 		#region Item property
 		private InfosClub _item;
@@ -23,6 +24,10 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 		#endregion
 
 		public InfosClubViewModel() {
+			this._services = ServiceLocator
+				.Current.GetInstance<IUnityContainer>()
+				.Resolve<IGestionInfosClubServices>();
+
 			this.Item = this._services.GetInfosClub();
 		}
 	}

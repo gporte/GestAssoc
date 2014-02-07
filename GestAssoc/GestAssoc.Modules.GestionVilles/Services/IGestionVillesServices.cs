@@ -2,7 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace GestAssoc.Model.Interfaces
+namespace GestAssoc.Modules.GestionVilles.Services
 {
 	public interface IGestionVillesServices
 	{
