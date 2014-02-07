@@ -20,8 +20,8 @@ namespace GestAssoc.Modules.GestionInfosClub
 			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(InfosClubRibbonTabView));
 
 			// Enregistrement des vues
-			container.RegisterType<object, InfosClubView>(
-				ViewNames.ConsultationInfosClub);
+			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub);
+			container.RegisterType<object, FormulaireInfosClubView>(ViewNames.FormulaireInfosClub);
 
 			// enregistrement des services
 			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();

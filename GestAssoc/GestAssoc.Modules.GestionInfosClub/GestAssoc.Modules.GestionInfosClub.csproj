@@ -98,8 +98,12 @@
     </Compile>
     <Compile Include="Services\GestionInfosClubServices.cs" />
     <Compile Include="Services\IGestionInfosClubServices.cs" />
+    <Compile Include="ViewModels\FormulaireInfosClubViewModel.cs" />
     <Compile Include="ViewModels\InfosClubRibbonTabViewModel.cs" />
     <Compile Include="ViewModels\InfosClubViewModel.cs" />
+    <Compile Include="Views\FormulaireInfosClubView.xaml.cs">
+      <DependentUpon>FormulaireInfosClubView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InfosClubRibbonTabView.xaml.cs">
       <DependentUpon>InfosClubRibbonTabView.xaml</DependentUpon>
     </Compile>
@@ -119,6 +123,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\FormulaireInfosClubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InfosClubRibbonTabView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
