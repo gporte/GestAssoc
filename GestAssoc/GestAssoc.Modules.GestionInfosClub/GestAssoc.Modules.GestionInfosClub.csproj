@@ -88,6 +88,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\InfosClubRibbonTabViewModel.cs" />
     <Compile Include="ViewModels\InfosClubViewModel.cs" />
     <Compile Include="Views\InfosClubRibbonTabView.xaml.cs">
       <DependentUpon>InfosClubRibbonTabView.xaml</DependentUpon>
@@ -120,6 +121,10 @@
     <ProjectReference Include="..\GestAssoc.Common\GestAssoc.Common.csproj">
       <Project>{cc7f8a9e-0b32-4a76-8f2b-a56a0de454de}</Project>
       <Name>GestAssoc.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestAssoc.Model\GestAssoc.Model.csproj">
+      <Project>{66a5449a-ec07-455c-9b78-dc89de5f299d}</Project>
+      <Name>GestAssoc.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

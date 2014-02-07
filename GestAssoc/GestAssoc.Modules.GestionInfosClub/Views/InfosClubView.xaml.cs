@@ -8,9 +8,9 @@ namespace GestAssoc.Modules.GestionInfosClub.Views
 	/// </summary>
 	public partial class InfosClubView : UserControl
 	{
-		public InfosClubView(InfosClubViewModel vm) {
+		public InfosClubView() {
 			InitializeComponent();
-			this.DataContext = vm;
+			this.DataContext = new InfosClubViewModel();
 		}
 	}
 }
