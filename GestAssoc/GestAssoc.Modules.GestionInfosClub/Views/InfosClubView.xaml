@@ -3,25 +3,55 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="300">
-	<Grid>
-		<wpf:PropertyGrid SelectedObject="{Binding Path=Item}"
-						  AutoGenerateProperties="False" IsCategorized="True"
-						  SelectedObjectTypeName="Infos du club">
-			<wpf:PropertyGrid.PropertyDefinitions>
-				<wpf:PropertyDefinition Name="Nom" />
-				<wpf:PropertyDefinition Name="Adresse" />
-				<wpf:PropertyDefinition Name="Ville" />
-				<wpf:PropertyDefinition Name="Telephone" />
-				<wpf:PropertyDefinition Name="Mail" />
-				<wpf:PropertyDefinition Name="SiteWeb" />
-				<wpf:PropertyDefinition Name="Numero" />
-				<wpf:PropertyDefinition Name="NumAPS" />
-				<wpf:PropertyDefinition Name="NumFederation" />
-				<wpf:PropertyDefinition Name="Siret" />
-			</wpf:PropertyGrid.PropertyDefinitions>
-		</wpf:PropertyGrid>
-	</Grid>
+	<DockPanel LastChildFill="True" Margin="5,5,5,5">
+		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Association" />
+		
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="Nom : " />
+			<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Item.Nom}" />
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="Adresse : " />
+			<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Item.Adresse}" />
+
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="" />
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Item.Ville}" />
+
+			<TextBlock Grid.Row="3" Grid.Column="0" Text="Téléphone : " />
+			<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Item.Telephone}" />
+
+			<TextBlock Grid.Row="4" Grid.Column="0" Text="Email : " />
+			<TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=Item.Mail}" />
+
+			<TextBlock Grid.Row="5" Grid.Column="0" Text="Numéro : " />
+			<TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=Item.Numero}" />
+
+			<TextBlock Grid.Row="6" Grid.Column="0" Text="Numéro APS : " />
+			<TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=Item.NumAPS}" />
+
+			<TextBlock Grid.Row="7" Grid.Column="0" Text="Numéro fédération : " />
+			<TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Path=Item.NumFederation}" />
+
+			<TextBlock Grid.Row="8" Grid.Column="0" Text="SIRET : " />
+			<TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Path=Item.Siret}" />
+		</Grid>
+	</DockPanel>
 </UserControl>

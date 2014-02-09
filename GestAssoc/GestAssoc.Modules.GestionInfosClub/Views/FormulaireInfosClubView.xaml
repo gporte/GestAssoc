@@ -6,33 +6,64 @@
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="300">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*" />
-			<RowDefinition Height="40" />
-		</Grid.RowDefinitions>
-		
-		<wpf:PropertyGrid SelectedObject="{Binding Path=Item}" Grid.Row="0"
-						  AutoGenerateProperties="False" IsCategorized="True"
-						  SelectedObjectTypeName="Infos du club">
-			<wpf:PropertyGrid.PropertyDefinitions>
-				<wpf:PropertyDefinition Name="Nom" />
-				<wpf:PropertyDefinition Name="Adresse" />
-				<wpf:PropertyDefinition Name="Ville" />
-				<wpf:PropertyDefinition Name="Telephone" />
-				<wpf:PropertyDefinition Name="Mail" />
-				<wpf:PropertyDefinition Name="SiteWeb" />
-				<wpf:PropertyDefinition Name="Numero" />
-				<wpf:PropertyDefinition Name="NumAPS" />
-				<wpf:PropertyDefinition Name="NumFederation" />
-				<wpf:PropertyDefinition Name="Siret" />
-			</wpf:PropertyGrid.PropertyDefinitions>
-		</wpf:PropertyGrid>
-		
-		<StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-			<Button Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}" Width="35" Height="35">
-				<TextBlock Text="Save" />
-			</Button>
-		</StackPanel>
-	</Grid>
+	<DockPanel LastChildFill="True" Margin="5,5,5,5">
+		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Association" />
+
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="Nom : " />
+			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Item.Nom}" />
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="Adresse : " />
+			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Item.Adresse}" />
+
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="Ville" />
+			<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Item.Ville}" />
+
+			<TextBlock Grid.Row="3" Grid.Column="0" Text="Téléphone : " />
+			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Item.Telephone}" />
+
+			<TextBlock Grid.Row="4" Grid.Column="0" Text="Email : " />
+			<TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Item.Mail}" />
+
+			<TextBlock Grid.Row="5" Grid.Column="0" Text="Numéro : " />
+			<TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=Item.Numero}" />
+
+			<TextBlock Grid.Row="6" Grid.Column="0" Text="Numéro APS : " />
+			<TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=Item.NumAPS}" />
+
+			<TextBlock Grid.Row="7" Grid.Column="0" Text="Numéro fédération : " />
+			<TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=Item.NumFederation}" />
+
+			<TextBlock Grid.Row="8" Grid.Column="0" Text="SIRET : " />
+			<StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+				<TextBox Text="{Binding Path=Item.Siren}" />
+				<TextBlock Text=" - " />
+				<TextBox Text="{Binding Path=Item.NIC}" />
+			</StackPanel>			
+
+			<StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+				<Button Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}" Width="35" Height="35">
+					<TextBlock Text="Save" />
+				</Button>
+			</StackPanel>
+		</Grid>
+	</DockPanel>
 </UserControl>
