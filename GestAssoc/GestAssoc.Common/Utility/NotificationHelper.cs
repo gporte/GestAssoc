@@ -7,12 +7,12 @@ namespace GestAssoc.Common.Utility
 {
 	public static class NotificationHelper
 	{
-		public static void WriteNotification(string message) {
+		public static void WriteNotification(string message, bool clearBefore = false) {
 			ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IEventAggregator>()
 				.GetEvent<NotificationEvent>()
-				.Publish(message);				
+				.Publish(new UserNotification(message, clearBefore));				
 		}
 	}
 }
