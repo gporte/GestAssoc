@@ -4,6 +4,7 @@ using GestAssoc.Modules.GestionInfosClub.Commands;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
@@ -26,12 +27,26 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 		}
 		#endregion
 
+		#region Villes property
+		private ObservableCollection<Ville> _villes;
+		public ObservableCollection<Ville> Villes {
+			get { return this._villes; }
+			set {
+				if (this._villes != value) {
+					this._villes = value;
+					this.RaisePropertyChangedEvent("Villes");
+				}
+			}
+		}
+		#endregion
+
 		public FormulaireInfosClubViewModel() {
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
 
 			this.Item = this._services.GetInfosClub();
+			this.Villes = this._services.GetAllVilles();
 
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
 		}

@@ -1,4 +1,6 @@
-﻿using GestAssoc.Model.Models;
+﻿using GestAssoc.Common.Commands;
+using GestAssoc.Common.Constantes;
+using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -23,7 +25,17 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
 
-			service.SaveInfosClub(parameter as InfosClub);
+			var itemToSave = parameter as InfosClub;
+			itemToSave.Ville_ID = itemToSave.Ville.ID;
+
+			try {
+				service.SaveInfosClub(itemToSave);
+				new ShowViewCommand(ViewNames.ConsultationInfosClub).Execute(null);
+			}
+			catch (Exception) {				
+				throw;
+			}
+			
 		}
 	}
 }

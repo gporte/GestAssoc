@@ -24,6 +24,7 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
 			<TextBlock Grid.Row="0" Grid.Column="0" Text="Nom : " />
@@ -52,6 +53,14 @@
 
 			<TextBlock Grid.Row="8" Grid.Column="0" Text="SIRET : " />
 			<TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Path=Item.Siret}" />
+
+			<StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+				<Button Command="{Binding Path=ShowEditViewCmd}" 
+						CommandParameter="{Binding Path=Item.ID}"
+						Width="35" Height="35">
+					<TextBlock Text="Edit" />
+				</Button>
+			</StackPanel>
 		</Grid>
 	</DockPanel>
 </UserControl>

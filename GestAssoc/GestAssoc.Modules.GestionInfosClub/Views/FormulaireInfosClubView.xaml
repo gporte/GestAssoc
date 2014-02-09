@@ -35,7 +35,9 @@
 			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Item.Adresse}" />
 
 			<TextBlock Grid.Row="2" Grid.Column="0" Text="Ville" />
-			<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Item.Ville}" />
+			<ComboBox Grid.Row="2" Grid.Column="1" 
+					  ItemsSource="{Binding Path=Villes}" 
+					  SelectedItem="{Binding Path=Item.Ville}" />
 
 			<TextBlock Grid.Row="3" Grid.Column="0" Text="Téléphone : " />
 			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Item.Telephone}" />
