@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Commands;
 using GestAssoc.Common.Event;
 using GestAssoc.Common.Utility;
 using Microsoft.Practices.Prism.Events;
@@ -10,6 +11,10 @@ namespace GestAssoc.ViewModels
 {
 	public class ShellWindowViewModel : ViewModelBase
 	{
+		#region Commands
+		public ExitCommand ExitCmd { get; set; }
+		#endregion
+
 		#region NotificationsProperty
 		private string _notifications;
 		public string Notifications {
@@ -31,6 +36,8 @@ namespace GestAssoc.ViewModels
 				.Resolve<IEventAggregator>();
 
 			this._aggregator.GetEvent<NotificationEvent>().Subscribe(this.WriteNotification);
+
+			this.ExitCmd = new ExitCommand();
 		}
 
 		private void WriteNotification(UserNotification notification) {

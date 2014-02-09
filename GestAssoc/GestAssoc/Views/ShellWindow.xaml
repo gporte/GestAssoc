@@ -3,7 +3,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:prism="http://www.codeplex.com/prism"
 		xmlns:const="clr-namespace:GestAssoc.Common.Constantes;assembly=GestAssoc.Common"
-		Title="GestAssoc" Height="350" Width="525">
+		Title="GestAssoc" Height="350" Width="525" WindowState="Maximized">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition x:Name="RibbonRow" Height="Auto"/>
@@ -15,7 +15,7 @@
 				prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonRegion}">
 			<Ribbon.ApplicationMenu>
 				<RibbonApplicationMenu SmallImageSource="Images\ribbon.png">
-					<RibbonApplicationMenuItem Header="Quitter" />
+					<RibbonApplicationMenuItem Header="Quitter" Command="{Binding Path=ExitCmd}" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
 		</Ribbon>

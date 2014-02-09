@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\ViewModelBase.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\ShowViewCommand.cs" />
     <Compile Include="Commands\ShowViewCommandWithParameter.cs" />
     <Compile Include="Constantes\RegionNames.cs" />
