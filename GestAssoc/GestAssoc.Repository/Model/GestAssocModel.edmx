@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestAssocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="InfosClubs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Siren" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NIC" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Adresse" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="4000" />
+          <Property Name="SiteWeb" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NumAPS" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NumFederation" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Ville_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Villes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Libelle" Type="nvarchar" MaxLength="4000" />
+          <Property Name="CodePostal" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <Association Name="FK_dbo_InfosClubs_dbo_Villes_Ville_ID">
+          <End Role="Villes" Type="Self.Villes" Multiplicity="0..1" />
+          <End Role="InfosClubs" Type="Self.InfosClubs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Villes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="InfosClubs">
+              <PropertyRef Name="Ville_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestAssocModelStoreContainer">
+          <EntitySet Name="InfosClubs" EntityType="Self.InfosClubs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Villes" EntityType="Self.Villes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_InfosClubs_dbo_Villes_Ville_ID" Association="Self.FK_dbo_InfosClubs_dbo_Villes_Ville_ID">
+            <End Role="Villes" EntitySet="Villes" />
+            <End Role="InfosClubs" EntitySet="InfosClubs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestAssocModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="InfosClub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Nom" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Numero" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Siren" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NIC" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Adresse" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="SiteWeb" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NumAPS" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NumFederation" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Ville_ID" Type="Guid" />
+          <NavigationProperty Name="Ville" Relationship="Self.FK_dbo_InfosClubs_dbo_Villes_Ville_ID" FromRole="InfosClubs" ToRole="Villes" />
+        </EntityType>
+        <EntityType Name="Ville">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Libelle" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="CodePostal" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InfosClubs" Relationship="Self.FK_dbo_InfosClubs_dbo_Villes_Ville_ID" FromRole="Villes" ToRole="InfosClubs" />
+        </EntityType>
+        <Association Name="FK_dbo_InfosClubs_dbo_Villes_Ville_ID">
+          <End Role="Villes" Type="Self.Ville" Multiplicity="0..1" />
+          <End Role="InfosClubs" Type="Self.InfosClub" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Villes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="InfosClubs">
+              <PropertyRef Name="Ville_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestAssocEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="InfosClubs" EntityType="Self.InfosClub" />
+          <EntitySet Name="Villes" EntityType="Self.Ville" />
+          <AssociationSet Name="FK_dbo_InfosClubs_dbo_Villes_Ville_ID" Association="Self.FK_dbo_InfosClubs_dbo_Villes_Ville_ID">
+            <End Role="Villes" EntitySet="Villes" />
+            <End Role="InfosClubs" EntitySet="InfosClubs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestAssocModelStoreContainer" CdmEntityContainer="GestAssocEntities">
+          <EntitySetMapping Name="InfosClubs">
+            <EntityTypeMapping TypeName="GestAssocModel.InfosClub">
+              <MappingFragment StoreEntitySet="InfosClubs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Siren" ColumnName="Siren" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
+                <ScalarProperty Name="NumAPS" ColumnName="NumAPS" />
+                <ScalarProperty Name="NumFederation" ColumnName="NumFederation" />
+                <ScalarProperty Name="Ville_ID" ColumnName="Ville_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Villes">
+            <EntityTypeMapping TypeName="GestAssocModel.Ville">
+              <MappingFragment StoreEntitySet="Villes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

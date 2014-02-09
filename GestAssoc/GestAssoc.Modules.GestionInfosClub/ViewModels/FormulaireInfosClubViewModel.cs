@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Commands;
 using GestAssoc.Modules.GestionInfosClub.Services;
@@ -49,6 +50,9 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.Villes = this._services.GetAllVilles();
 
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
+
+			// trace
+			NotificationHelper.WriteNotification("Initialisation de l'écran FormulaireInfos.");
 		}
 	}
 }

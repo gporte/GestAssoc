@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Constantes;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
@@ -35,6 +36,9 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.ShowEditViewCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireInfosClub);
 
 			this.Item = this._services.GetInfosClub();
+
+			// trace
+			NotificationHelper.WriteNotification("Initialisation de l'écran InfosClub.");
 		}
 	}
 }

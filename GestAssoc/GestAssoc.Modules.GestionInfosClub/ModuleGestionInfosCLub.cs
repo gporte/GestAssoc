@@ -25,6 +25,9 @@ namespace GestAssoc.Modules.GestionInfosClub
 
 			// enregistrement des services
 			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();
+
+			// trace
+			NotificationHelper.WriteNotification("Initialisation du Module GestionInfosClub.");
 		}
 	}
 }

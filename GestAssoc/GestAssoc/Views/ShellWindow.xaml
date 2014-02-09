@@ -8,6 +8,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition x:Name="RibbonRow" Height="Auto"/>
 			<RowDefinition x:Name="ContentRow" Height="*"/>
+			<RowDefinition x:Name="NotificationRow" Height="Auto"/>
 		</Grid.RowDefinitions>
 		
 		<Ribbon Name="ApplicationRibbon" Grid.Row="0"
@@ -21,5 +22,9 @@
 
 		<ContentControl Name="ContentRegion" Grid.Row="1"
 						prism:RegionManager.RegionName="{x:Static const:RegionNames.ContentRegion}" />
+		
+		<TextBox Name="NotificationRegion" Grid.Row="2"
+				 MinLines="5" MaxLines="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto"
+				 Text="{Binding Path=Notifications}"/>
 	</Grid>
 </RibbonWindow>

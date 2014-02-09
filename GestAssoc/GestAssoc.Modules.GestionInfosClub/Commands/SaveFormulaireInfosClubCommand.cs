@@ -1,7 +1,10 @@
 ﻿using GestAssoc.Common.Commands;
 using GestAssoc.Common.Constantes;
+using GestAssoc.Common.Event;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Services;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
@@ -30,6 +33,9 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 
 			try {
 				service.SaveInfosClub(itemToSave);
+
+				NotificationHelper.WriteNotification("Enregistrement effectué.");
+
 				new ShowViewCommand(ViewNames.ConsultationInfosClub).Execute(null);
 			}
 			catch (Exception) {				
