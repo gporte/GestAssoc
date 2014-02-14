@@ -4,15 +4,36 @@
 		xmlns:prism="http://www.codeplex.com/prism"
 		xmlns:const="clr-namespace:GestAssoc.Common.Constantes;assembly=GestAssoc.Common"
 		Title="GestAssoc" Height="350" Width="525" WindowState="Maximized">
+	<RibbonWindow.Resources>
+		<LinearGradientBrush x:Key="WindowBackgroundBrush">
+			<GradientStop Color="#FFE7E9EB" Offset="0" />
+			<GradientStop Color="#FFC6CACF" Offset="1" />
+		</LinearGradientBrush>
+	</RibbonWindow.Resources>
+	
+	<RibbonWindow.Background>
+		<StaticResource ResourceKey="WindowBackgroundBrush" />
+	</RibbonWindow.Background>
+	
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition x:Name="RibbonRow" Height="Auto"/>
 			<RowDefinition x:Name="ContentRow" Height="*"/>
 			<RowDefinition x:Name="NotificationRow" Height="Auto"/>
 		</Grid.RowDefinitions>
-		
+
 		<Ribbon Name="ApplicationRibbon" Grid.Row="0"
 				prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonRegion}">
+			<!-- Ribbon QuickAccessToolbar  (defined here) -->
+			<Ribbon.QuickAccessToolBar>
+				<RibbonQuickAccessToolBar>
+					<RibbonButton ToolTip="Nouvelle base" SmallImageSource="Images\new.png" />
+					<RibbonButton ToolTip="Ouvrir une base existante" SmallImageSource="Images\open.png" />
+					<RibbonButton ToolTip="Rafraîchir l'affichage" />
+				</RibbonQuickAccessToolBar>
+			</Ribbon.QuickAccessToolBar>
+
+			<!-- ApplicationMenu -->
 			<Ribbon.ApplicationMenu>
 				<RibbonApplicationMenu SmallImageSource="Images\ribbon.png">
 					<RibbonApplicationMenuItem Header="Quitter" Command="{Binding Path=ExitCmd}" />
