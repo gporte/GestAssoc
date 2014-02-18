@@ -4,7 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="300">
+			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
 		<Style x:Key="titreUC" TargetType="{x:Type Label}">
 			<Setter Property="FontSize" Value="18" />
@@ -20,13 +20,30 @@
 			<Setter Property="Width" Value="15" />
 			<Setter Property="Margin" Value="5,0,10,0" />
 		</Style>
+
+		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
+			<Setter Property="Height" Value="25" />
+			<Setter Property="Width" Value="25" />
+			<Setter Property="Margin" Value="5,0,10,0" />
+		</Style>
+
+		<Style x:Key="lblName" TargetType="{x:Type Label}">
+			<Setter Property="Width" Value="100" />
+			<Setter Property="Height" Value="25" />
+		</Style>
+
+		<Style x:Key="lblValue" TargetType="{x:Type Label}">
+			<Setter Property="Width" Value="200" />
+			<Setter Property="Height" Value="25" />
+		</Style>
 	</UserControl.Resources>
 	
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="Villes" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
-		
-		<ListBox DockPanel.Dock="Left" ItemsSource="{Binding Path=Items}">
+
+		<ListBox Name="lbxVilles" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300"
+				 ItemsSource="{Binding Path=Items}" >
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<StackPanel Orientation="Horizontal">
@@ -40,5 +57,40 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
+
+		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter">
+					<Image Source="Images\btn_plus.png" />
+				</Button>
+				
+				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+						Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}">
+					<Image Source="Images\btn_edit.png" />
+				</Button>
+				
+				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer">
+					<Image Source="Images\btn_moins.png" />
+				</Button>
+			</WrapPanel>
+		</GroupBox>
+
+		<StackPanel Orientation="Vertical">
+			<GroupBox Header="Détails" Margin="10,0,10,0">
+				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Nom : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxVilles, Path=SelectedItem.Libelle}"/>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Code postal : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxVilles, Path=SelectedItem.CodePostal}"/>
+					</StackPanel>
+				</WrapPanel>
+			</GroupBox>			
+		</StackPanel>
 	</DockPanel>
 </UserControl>
