@@ -69,7 +69,8 @@
 					<Image Source="Images\btn_edit.png" />
 				</Button>
 				
-				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer">
+				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+						Command="{Binding Path=DeleteVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem}">
 					<Image Source="Images\btn_moins.png" />
 				</Button>
 			</WrapPanel>

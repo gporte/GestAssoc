@@ -39,5 +39,19 @@ namespace GestAssoc.Modules.GestionVilles.Services
 			
 			this._context.SaveChanges();
 		}
+
+		public void DeleteVille(Ville itemToDelete) {
+			Ville originalItem = null;
+
+			if (itemToDelete.ID != Guid.Empty) {
+				originalItem = this._context.Villes.Find(itemToDelete.ID);
+			}
+
+			if (originalItem != null) { // item trouvé => delete
+				this._context.Villes.Remove(originalItem);
+			}
+
+			this._context.SaveChanges();
+		}
 	}
 }

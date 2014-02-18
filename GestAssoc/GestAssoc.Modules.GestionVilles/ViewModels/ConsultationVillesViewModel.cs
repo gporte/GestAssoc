@@ -2,6 +2,7 @@
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Constantes;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionVilles.Commands;
 using GestAssoc.Modules.GestionVilles.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -28,6 +29,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		#endregion
 
 		public ICommand EditVilleCmd { get; set; }
+		public ICommand DeleteVilleCmd { get; set; }
 
 		public ConsultationVillesViewModel() {
 			this._services = ServiceLocator
@@ -36,6 +38,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 
 			this.Items = this._services.GetAllVilles();
 			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille);
+			this.DeleteVilleCmd = new DeleteVilleCommand();
 		}
 	}
 }
