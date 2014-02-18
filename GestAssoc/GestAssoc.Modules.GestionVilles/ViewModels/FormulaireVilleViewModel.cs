@@ -1,16 +1,21 @@
 ﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Commands;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionVilles.Commands;
 using GestAssoc.Modules.GestionVilles.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionVilles.ViewModels
 {
 	public class FormulaireVilleViewModel : ViewModelBase
 	{
-		private bool _isCreation = false;
 		private IGestionVillesServices _services;
+		public ICommand SaveCmd { get; set; }
+		public ICommand CancelCmd { get; set; }
 
 		#region Item property
 		private Ville _item;
@@ -32,13 +37,14 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 				.Resolve<IGestionVillesServices>();
 
 			if (itemId == Guid.Empty) {
-				this._isCreation = true;
 				this.Item = new Ville();
 			}
 			else {
-				this._isCreation = false;
 				this.Item = this._services.GetVille(itemId);
 			}
+
+			this.SaveCmd = new SaveVilleCommand();
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationVilles);
 		}
 		#endregion
 	}

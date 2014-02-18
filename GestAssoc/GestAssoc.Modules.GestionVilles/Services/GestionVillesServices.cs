@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Model.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -19,6 +20,24 @@ namespace GestAssoc.Modules.GestionVilles.Services
 
 		public Ville GetVille(System.Guid idVille) {
 			return this._context.Villes.Find(idVille);
+		}
+
+		public void SaveVille(Ville itemToSave) {
+			Ville originalItem = null;
+
+			if (itemToSave.ID != Guid.Empty) {
+				originalItem = this._context.Villes.Find(itemToSave.ID);
+			}
+
+			if (originalItem != null) { // item trouvé => update
+				this._context.Entry<Ville>(originalItem).CurrentValues.SetValues(itemToSave);				
+			}
+			else { // item non trouvé => insert
+				itemToSave.ID = Guid.NewGuid();
+				this._context.Villes.Add(itemToSave);
+			}
+			
+			this._context.SaveChanges();
 		}
 	}
 }

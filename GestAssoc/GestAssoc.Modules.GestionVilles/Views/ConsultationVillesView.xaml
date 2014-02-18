@@ -5,18 +5,40 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="300">
-	<Grid>
-		<ListBox ItemsSource="{Binding Path=Items}">
+	<UserControl.Resources>
+		<Style x:Key="titreUC" TargetType="{x:Type Label}">
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+
+		<Style x:Key="lblItem" TargetType="{x:Type Label}">
+			<Setter Property="Height" Value="25" />
+		</Style>
+
+		<Style x:Key="btnItem" TargetType="{x:Type Button}">
+			<Setter Property="Height" Value="15" />
+			<Setter Property="Width" Value="15" />
+			<Setter Property="Margin" Value="5,0,10,0" />
+		</Style>
+	</UserControl.Resources>
+	
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Villes" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+		
+		<ListBox DockPanel.Dock="Left" ItemsSource="{Binding Path=Items}">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Path=.}" />
-						<Button Height="25" Width="25" 
+						<Button Style="{StaticResource btnItem}"
 								Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.EditVilleCmd}"
-								CommandParameter="{Binding Path=ID}"/>
+								CommandParameter="{Binding Path=ID}">
+							<Image Source="Images\btn_edit.png" />
+						</Button>
+						<Label Style="{StaticResource lblItem}" Content="{Binding Path=.}" />
 					</StackPanel>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-	</Grid>
+	</DockPanel>
 </UserControl>

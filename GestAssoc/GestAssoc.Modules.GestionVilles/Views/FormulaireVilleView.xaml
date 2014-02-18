@@ -4,31 +4,56 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="300">
-	<Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		
-		<Label Content="Ville" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<Style x:Key="titreUC" TargetType="{x:Type Label}">
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
 
-		<Label Content="Nom : " Height="25" Grid.Row="1"/>
-		<TextBox TextWrapping="Wrap" Text="{Binding Item.Nom}" Height="25" Grid.Row="1" Grid.Column="1"/>
-		
-		<Label Content="Code postal : " Height="25" Grid.Row="2"/>
-		<TextBox TextWrapping="Wrap" Text="{Binding Item.CodePostal}" Height="25" Grid.Row="2" Grid.Column="1"/>
+		<Style x:Key="lblForm" TargetType="{x:Type Label}">
+			<Setter Property="Width" Value="100" />
+			<Setter Property="Height" Value="25" />
+		</Style>
 
-		<WrapPanel HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2" >
-			<Button Height="35" Width="35">
-				<Image Source="Images/btn_save.png" />
-			</Button>			
+		<Style x:Key="tbxForm" TargetType="{x:Type TextBox}">
+			<Setter Property="Width" Value="200" />
+			<Setter Property="Height" Value="25" />
+		</Style>
+		
+		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
+			<Setter Property="Height" Value="35" />
+			<Setter Property="Width" Value="35" />
+			<Setter Property="Margin" Value="10,0,10,0" />
+		</Style>
+	</UserControl.Resources>
+	
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Ville" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+					Command="{Binding Path=CancelCmd}">
+				<Image Source="Images\btn_back.png" />
+			</Button>
+			
+			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
+				<Image Source="Images\btn_save.png" />
+			</Button>
 		</WrapPanel>
-	</Grid>
+
+		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Nom : " Style="{StaticResource lblForm}" />
+				<TextBox Text="{Binding Item.Libelle}" Style="{StaticResource tbxForm}"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Code postal : " Style="{StaticResource lblForm}" />
+				<TextBox Text="{Binding Item.CodePostal}" Style="{StaticResource tbxForm}"/>
+			</StackPanel>
+		</WrapPanel>
+	</DockPanel>
 </UserControl>

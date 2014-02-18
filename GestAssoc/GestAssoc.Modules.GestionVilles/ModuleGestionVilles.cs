@@ -29,6 +29,9 @@ namespace GestAssoc.Modules.GestionVilles
 
 			// enregistrement des services
 			container.RegisterType<IGestionVillesServices, GestionVillesServices>();
+
+			// trace
+			NotificationHelper.WriteNotification("Initialisation du Module GestionVilles.");
 		}
 	}
 }

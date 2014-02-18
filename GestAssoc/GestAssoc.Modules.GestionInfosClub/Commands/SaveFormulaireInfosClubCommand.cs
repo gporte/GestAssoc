@@ -15,6 +15,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 	public class SaveFormulaireInfosClubCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
+			// TODO bouchon
 			return true;
 		}
 

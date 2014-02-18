@@ -41,7 +41,7 @@
 			</Ribbon.ApplicationMenu>
 		</Ribbon>
 
-		<ContentControl Name="ContentRegion" Grid.Row="1"
+		<ContentControl Name="ContentRegion" Grid.Row="1" Margin="5,5,5,5"
 						prism:RegionManager.RegionName="{x:Static const:RegionNames.ContentRegion}" />
 		
 		<TextBox Name="NotificationRegion" Grid.Row="2"

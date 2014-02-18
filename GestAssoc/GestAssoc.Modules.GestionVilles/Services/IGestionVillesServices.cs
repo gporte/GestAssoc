@@ -8,5 +8,6 @@ namespace GestAssoc.Modules.GestionVilles.Services
 	{
 		ObservableCollection<Ville> GetAllVilles();
 		Ville GetVille(Guid idVille);
+		void SaveVille(Ville itemToSave);
 	}
 }
