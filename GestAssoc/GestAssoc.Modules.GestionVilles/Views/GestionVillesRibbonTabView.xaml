@@ -7,7 +7,11 @@
 		     Header="Villes"
 			 d:DesignHeight="300" d:DesignWidth="300">
 	<RibbonGroup Header="Gestion des villes">
-		<RibbonButton Label="Liste" Command="{Binding Path=ShowConsultationVillesView}" />
-		<RibbonButton Label="Ajout" Command="{Binding Path=ShowFormulaireVilleCreation}" />
+		<RibbonButton Label="Liste"
+					  SmallImageSource="Images\btn_list.png"
+					  Command="{Binding Path=ShowConsultationVillesCmd}" />
+		<RibbonButton Label="Ajout" 
+					  SmallImageSource="Images\btn_listAdd.png"
+					  Command="{Binding Path=ShowFormulaireCreationVilleCmd}" />
 	</RibbonGroup>
 </RibbonTab>
