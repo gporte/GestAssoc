@@ -43,30 +43,25 @@
 		<Label DockPanel.Dock="Top" Content="Villes" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
-		<ListBox Name="lbxVilles" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300"
-				 ItemsSource="{Binding Path=Items}" >
-			<i:Interaction.Triggers>
-				<i:EventTrigger EventName="MouseDoubleClick">
-					<i:InvokeCommandAction Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}" />
-				</i:EventTrigger>
-			</i:Interaction.Triggers>
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Orientation="Horizontal">
-						<Button Style="{StaticResource btnItem}"
-								Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.EditVilleCmd}"
-								CommandParameter="{Binding Path=ID}">
-							<Image Source="Images\btn_edit.png" />
-						</Button>
-						<Label Style="{StaticResource lblItem}" Content="{Binding Path=.}" />
-					</StackPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
+		<GroupBox Header="Villes" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+			<DockPanel LastChildFill="True">
+				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
+						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
+				
+				<ListBox Name="lbxVilles" ItemsSource="{Binding Path=Items}">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="MouseDoubleClick">
+							<i:InvokeCommandAction Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}" />
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</ListBox>
+			</DockPanel>
+		</GroupBox>		
 
 		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter">
+				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+						Command="{Binding Path=AddVilleCmd}">
 					<Image Source="Images\btn_plus.png" />
 				</Button>
 				
