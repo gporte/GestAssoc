@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Constantes;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Commands;
 using GestAssoc.Modules.GestionVilles.Services;
@@ -45,6 +46,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionVillesServices>();
 
+			UIServices.SetBusyState();
 			this.Items = new ObservableCollection<Ville>(this._services.GetAllVilles());
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
 			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());

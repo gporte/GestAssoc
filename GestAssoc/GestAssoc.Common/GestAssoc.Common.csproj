@@ -79,6 +79,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\NotificationHelper.cs" />
     <Compile Include="Utility\PriorityAttribute.cs" />
+    <Compile Include="Utility\UIServices.cs" />
     <Compile Include="Utility\UserNotification.cs" />
   </ItemGroup>
   <ItemGroup>
