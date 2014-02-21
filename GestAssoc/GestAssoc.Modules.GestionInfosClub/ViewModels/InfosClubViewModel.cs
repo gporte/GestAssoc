@@ -35,10 +35,11 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 
 			this.ShowEditViewCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireInfosClub);
 
+			UIServices.SetBusyState();
 			this.Item = this._services.GetInfosClub();
 
 			// trace
-			NotificationHelper.WriteNotification("Initialisation de l'écran InfosClub.");
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationInfosClub);
 		}
 	}
 }

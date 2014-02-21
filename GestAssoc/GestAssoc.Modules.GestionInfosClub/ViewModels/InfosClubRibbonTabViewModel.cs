@@ -16,7 +16,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.ShowFormulaireInfosClub = new ShowViewCommand(ViewNames.FormulaireInfosClub);
 
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du RibbonTab InfosClub.");
+			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionClub");
 		}
 	}
 }

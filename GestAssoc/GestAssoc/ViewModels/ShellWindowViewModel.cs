@@ -45,7 +45,7 @@ namespace GestAssoc.ViewModels
 				this.Notifications = string.Empty;
 			}
 
-			this.Notifications = notification.Message + Environment.NewLine + this.Notifications;
+			this.Notifications = notification.FormattedMessage + Environment.NewLine + this.Notifications;
 		}
 	}
 }

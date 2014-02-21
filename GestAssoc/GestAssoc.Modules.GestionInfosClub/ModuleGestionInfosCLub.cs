@@ -13,6 +13,9 @@ namespace GestAssoc.Modules.GestionInfosClub
 	public class ModuleGestionInfosCLub : IModule
 	{
 		public void Initialize() {
+			// trace
+			NotificationHelper.WriteNotification("Initialisation du Module GestionInfosClub.");
+			
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 			
@@ -25,9 +28,6 @@ namespace GestAssoc.Modules.GestionInfosClub
 
 			// enregistrement des services
 			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();
-
-			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionInfosClub.");
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Constantes;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Commands;
 using GestAssoc.Modules.GestionVilles.Services;
@@ -40,11 +41,15 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 				this.Item = new Ville();
 			}
 			else {
+				UIServices.SetBusyState();
 				this.Item = this._services.GetVille(itemId);
 			}
 
 			this.SaveCmd = new SaveVilleCommand();
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationVilles);
+
+			// trace
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireVille);
 		}
 		#endregion
 	}

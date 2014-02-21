@@ -13,6 +13,9 @@ namespace GestAssoc.Modules.GestionVilles
 	public class ModuleGestionVilles : IModule
 	{
 		public void Initialize() {
+			// trace
+			NotificationHelper.WriteNotification("Initialisation du Module GestionVilles.");
+			
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();		
 
@@ -29,9 +32,6 @@ namespace GestAssoc.Modules.GestionVilles
 
 			// enregistrement des services
 			container.RegisterType<IGestionVillesServices, GestionVillesServices>();
-
-			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionVilles.");
 		}
 	}
 }

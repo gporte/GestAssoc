@@ -54,6 +54,9 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille);
 			this.DeleteVilleCmd = new DeleteVilleCommand();
 			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille);
+
+			// trace
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationVilles);
 		}
 	}
 }

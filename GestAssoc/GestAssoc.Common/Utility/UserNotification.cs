@@ -1,4 +1,5 @@
 ﻿
+using System;
 namespace GestAssoc.Common.Utility
 {
 	public class UserNotification
@@ -10,6 +11,29 @@ namespace GestAssoc.Common.Utility
 		/// The message.
 		/// </value>
 		public string Message { get; set; }
+		/// <summary>
+		/// Get or set the timestamp of the message.
+		/// </summary>
+		/// <value>
+		/// Timestamp of the message.
+		/// </value>
+		public DateTime TimestampMessage { get; set; }
+
+		/// <summary>
+		/// Get the message formatted.
+		/// </summary>
+		/// <value>
+		/// The message formatted.
+		/// </value>
+		public string FormattedMessage {
+			get {
+				return string.Format(
+					"{0} - {1}", 
+					this.TimestampMessage.ToString("yyyy-MM-ddTHH:mm:ss.fff"), 
+					this.Message
+				);
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets a value indicating whether [clear before].
@@ -25,6 +49,7 @@ namespace GestAssoc.Common.Utility
 		/// <param name="message">The message.</param>
 		/// <param name="clearBefore">if set to <c>true</c> [clear before].</param>
 		public UserNotification(string message, bool clearBefore) {
+			this.TimestampMessage = DateTime.Now;
 			this.Message = message;
 			this.ClearBefore = clearBefore;
 		}

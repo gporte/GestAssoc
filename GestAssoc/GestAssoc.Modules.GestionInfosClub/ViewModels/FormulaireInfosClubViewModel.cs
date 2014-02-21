@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Commands;
@@ -46,13 +47,14 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
 
+			UIServices.SetBusyState();
 			this.Item = this._services.GetInfosClub();
 			this.Villes = this._services.GetAllVilles();
 
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
 
 			// trace
-			NotificationHelper.WriteNotification("Initialisation de l'écran FormulaireInfos.");
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireInfosClub);
 		}
 	}
 }
