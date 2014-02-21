@@ -25,5 +25,9 @@ namespace GestAssoc.Model.Models
 			);
 			;
 		}
+
+		public bool IsValid() {
+			return !string.IsNullOrWhiteSpace(this.CodePostal) && !string.IsNullOrWhiteSpace(this.Libelle);
+		}
 	}
 }

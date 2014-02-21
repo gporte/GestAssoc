@@ -13,8 +13,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 	public class SaveVilleCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
-			// TODO bouchon
-			return true;
+			return parameter != null;
 		}
 
 		public event EventHandler CanExecuteChanged {
@@ -23,6 +22,8 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 		}
 
 		public void Execute(object parameter) {
+			// TODO contrôler la validité
+			
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionVillesServices>();

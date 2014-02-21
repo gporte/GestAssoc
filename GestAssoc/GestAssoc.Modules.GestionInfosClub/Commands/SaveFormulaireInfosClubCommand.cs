@@ -15,8 +15,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 	public class SaveFormulaireInfosClubCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
-			// TODO bouchon
-			return true;
+			return parameter != null;
 		}
 
 		public event EventHandler CanExecuteChanged {
@@ -25,6 +24,8 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 		}
 
 		public void Execute(object parameter) {
+			// TODO contrôler la validité
+			
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
