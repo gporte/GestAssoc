@@ -43,9 +43,10 @@
 
 		<ContentControl Name="ContentRegion" Grid.Row="1" Margin="5,5,5,5"
 						prism:RegionManager.RegionName="{x:Static const:RegionNames.ContentRegion}" />
-		
-		<TextBox Name="NotificationRegion" Grid.Row="2"
-				 MinLines="5" MaxLines="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto"
-				 Text="{Binding Path=Notifications}"/>
+				
+		<Expander Header="Traces" Grid.Row="2" Name="NotificationRegion" IsExpanded="False" Margin="5,5,5,5">
+			<TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" MaxHeight="200"
+					 Text="{Binding Path=Notifications}"/>
+		</Expander>
 	</Grid>
 </RibbonWindow>
