@@ -9,6 +9,9 @@ namespace GestAssoc.Modules.GestionVilles.Services
 	{
 		private GestAssocContext _context;
 
+		/// <summary>
+		/// Constructeur.
+		/// </summary>
 		public GestionVillesServices() {
 			this._context = new GestAssocContext();
 		}

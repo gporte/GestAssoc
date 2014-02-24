@@ -2,22 +2,22 @@
 using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
-using GestAssoc.Modules.GestionVilles.Services;
+using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
 using System.Windows.Input;
 
-namespace GestAssoc.Modules.GestionVilles.Commands
+namespace GestAssoc.Modules.GestionSaisons.Commands
 {
-	public class DeleteVilleCommand : ICommand
+	public class DeleteSaisonCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
-			var itemToDelete = parameter as Ville;
+			var itemToDelete = parameter as Saison;
 
-			return itemToDelete != null 
-				&& itemToDelete.Adherents.Count == 0 
-				&& itemToDelete.InfosClubs.Count == 0;
+			return itemToDelete != null
+				&& itemToDelete.Groupes.Count == 0;
+
 		}
 
 		public event EventHandler CanExecuteChanged {
@@ -28,16 +28,16 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 		public void Execute(object parameter) {
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
-				.Resolve<IGestionVillesServices>();
+				.Resolve<IGestionSaisonsServices>();
 
-			var itemToDelete = parameter as Ville;
+			var itemToDelete = parameter as Saison;
 
 			try {
-				service.DeleteVille(itemToDelete);
+				service.DeleteSaison(itemToDelete);
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
 
-				new ShowViewCommand(ViewNames.ConsultationVilles).Execute(null);
+				new ShowViewCommand(ViewNames.ConsultationSaisons).Execute(null);
 			}
 			catch (Exception) {
 				throw;

@@ -17,9 +17,5 @@ namespace GestAssoc.Modules.GestionVilles.Views
 		public bool KeepAlive {
 			get { return false; }
 		}
-
-		private void lbxVilles_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e) {
-
-		}
 	}
 }

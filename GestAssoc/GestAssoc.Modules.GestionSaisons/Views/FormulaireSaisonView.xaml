@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="GestAssoc.Modules.GestionSaisons.Views.FormulaireSaisonView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<Style x:Key="titreUC" TargetType="{x:Type Label}">
+			<Setter Property="FontSize" Value="18" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+
+		<Style x:Key="lblForm" TargetType="{x:Type Label}">
+			<Setter Property="Width" Value="100" />
+			<Setter Property="Height" Value="25" />
+		</Style>
+
+		<Style x:Key="tbxForm" TargetType="{x:Type TextBox}">
+			<Setter Property="Width" Value="200" />
+			<Setter Property="Height" Value="25" />
+		</Style>
+
+		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
+			<Setter Property="Height" Value="35" />
+			<Setter Property="Width" Value="35" />
+			<Setter Property="Margin" Value="10,0,10,0" />
+		</Style>
+	</UserControl.Resources>
+
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Saison" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+					Command="{Binding Path=CancelCmd}">
+				<Image Source="Images\btn_back.png" />
+			</Button>
+
+			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
+				<Image Source="Images\btn_save.png" />
+			</Button>
+		</WrapPanel>
+
+		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Début : " Style="{StaticResource lblForm}" />
+				<TextBox Text="{Binding Item.AnneeDebut}" Style="{StaticResource tbxForm}"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Fin : " Style="{StaticResource lblForm}" />
+				<TextBox Text="{Binding Item.AnneeFin}" Style="{StaticResource tbxForm}"/>
+			</StackPanel>
+		</WrapPanel>
+	</DockPanel>
+</UserControl>

@@ -10,7 +10,7 @@ using Microsoft.Practices.Unity;
 namespace GestAssoc.Modules.GestionInfosClub
 {
 	[Priority(100)]
-	public class ModuleGestionInfosCLub : IModule
+	public class ModuleGestionInfosClub : IModule
 	{
 		public void Initialize() {
 			// trace
