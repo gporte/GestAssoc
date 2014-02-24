@@ -25,6 +25,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			set {
 				if (this._item != value) {
 					this._item = value;
+
 					this.RaisePropertyChangedEvent("Item");
 				}
 			}
@@ -38,7 +39,13 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				.Resolve<IGestionSaisonsServices>();
 
 			if (itemId == Guid.Empty) {
-				this.Item = new Saison();
+				var now = DateTime.Now;
+
+				this.Item = new Saison()
+				{
+					AnneeDebut = now.Year,
+					AnneeFin = now.AddYears(1).Year
+				};
 			}
 			else {
 				UIServices.SetBusyState();

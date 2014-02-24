@@ -1,4 +1,6 @@
-﻿using GestAssoc.Common.Utility;
+﻿using GestAssoc.Common.Commands;
+using GestAssoc.Common.Constantes;
+using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
@@ -11,7 +13,8 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 	public class ChangeSaisonCouranteCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
-			return parameter != null;
+			return parameter != null 
+				&& !(parameter as Saison).EstSaisonCourante;
 		}
 
 		public event EventHandler CanExecuteChanged {
@@ -32,6 +35,8 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				service.SetSaisonCourante(itemToSave);
 
 				NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
+
+				new ShowViewCommand(ViewNames.ConsultationSaisons).Execute(null);
 			}
 			catch (Exception) {
 				throw;

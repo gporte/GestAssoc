@@ -20,7 +20,7 @@ namespace GestAssoc.Model.Models
 		public override string ToString() {
 			return String.Format(
 				"{0} - {1}", 
-				this.CodePostal.PadLeft(5, ' '), 
+				this.CodePostal, 
 				this.Libelle
 			);
 			;

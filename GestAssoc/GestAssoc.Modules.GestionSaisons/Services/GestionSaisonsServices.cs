@@ -26,7 +26,7 @@ namespace GestAssoc.Modules.GestionSaisons.Services
 		}
 
 		public Model.Models.Saison GetSaisonCourante() {
-			return this._context.Saisons.First(x => x.EstSaisonCourante);
+			return this._context.Saisons.FirstOrDefault(x => x.EstSaisonCourante);
 		}
 
 		public void SaveSaison(Saison itemToSave) {
@@ -66,9 +66,12 @@ namespace GestAssoc.Modules.GestionSaisons.Services
 
 			if (oldSaisonCourante != null) { // ancienne saison courante trouvée => modification
 				oldSaisonCourante.EstSaisonCourante = false;
+				this._context.Entry<Saison>(oldSaisonCourante).CurrentValues.SetValues(oldSaisonCourante);
 			}
 
+			var originalNewSaisonCourante = this._context.Saisons.Find(newSaisonCourante.ID);
 			newSaisonCourante.EstSaisonCourante = true;
+			this._context.Entry<Saison>(originalNewSaisonCourante).CurrentValues.SetValues(newSaisonCourante);
 
 			this._context.SaveChanges();
 		}

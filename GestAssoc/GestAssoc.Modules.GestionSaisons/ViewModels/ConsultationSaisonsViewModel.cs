@@ -41,6 +41,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 		public ICommand EditSaisonCmd { get; set; }
 		public ICommand DeleteSaisonCmd { get; set; }
 		public ICommand AddSaisonCmd { get; set; }
+		public ICommand ChangeSaisonCouranteCmd { get; set; }
 		#endregion
 
 		public ConsultationSaisonsViewModel() {
@@ -56,6 +57,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.EditSaisonCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireSaison);
 			this.DeleteSaisonCmd = new DeleteSaisonCommand();
 			this.AddSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison);
+			this.ChangeSaisonCouranteCmd = new ChangeSaisonCouranteCommand();
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationSaisons);
