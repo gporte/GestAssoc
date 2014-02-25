@@ -58,7 +58,7 @@
 				<Button Command="{Binding Path=ShowEditViewCmd}" 
 						CommandParameter="{Binding Path=Item.ID}"
 						Width="35" Height="35">
-					<TextBlock Text="Edit" />
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
 			</StackPanel>
 		</Grid>

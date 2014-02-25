@@ -63,7 +63,7 @@
 
 			<StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center">
 				<Button Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}" Width="35" Height="35">
-					<TextBlock Text="Save" />
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 				</Button>
 			</StackPanel>
 		</Grid>

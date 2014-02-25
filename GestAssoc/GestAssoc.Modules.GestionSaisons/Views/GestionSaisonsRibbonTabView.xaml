@@ -8,10 +8,10 @@
 			 d:DesignHeight="300" d:DesignWidth="300">
 	<RibbonGroup Header="Gestion des saisons">
 		<RibbonButton Label="Liste"
-					  SmallImageSource="Images\btn_list.png"
+					  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"
 					  Command="{Binding Path=ShowConsultationSaisonsCmd}" />
 		<RibbonButton Label="Ajout" 
-					  SmallImageSource="Images\btn_listAdd.png"
+					  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"
 					  Command="{Binding Path=ShowFormulaireCreationSaisonCmd}" />
 	</RibbonGroup>
 </RibbonTab>

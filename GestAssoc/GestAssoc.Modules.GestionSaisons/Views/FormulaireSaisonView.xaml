@@ -37,12 +37,12 @@
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
 			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
 					Command="{Binding Path=CancelCmd}">
-				<Image Source="Images\btn_back.png" />
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
 
 			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
-				<Image Source="Images\btn_save.png" />
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
 		</WrapPanel>
 

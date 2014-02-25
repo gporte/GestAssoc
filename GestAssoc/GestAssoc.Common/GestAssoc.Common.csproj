@@ -93,6 +93,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Images\btn_back.png" />
+    <Resource Include="Images\btn_check.png" />
+    <Resource Include="Images\btn_edit.png" />
+    <Resource Include="Images\btn_list.png" />
+    <Resource Include="Images\btn_listAdd.png" />
+    <Resource Include="Images\btn_moins.png" />
+    <Resource Include="Images\btn_plus.png" />
+    <Resource Include="Images\btn_save.png" />
     <Content Include="Images\floppy2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,11 @@
 		     Header="Infos Club"
 			 d:DesignHeight="300" d:DesignWidth="300">
 	<RibbonGroup Header="Infos club">
-		<RibbonButton Label="Détail" Command="{Binding Path=ShowDetailsInfosClub}" />
-		<RibbonButton Label="Edition" Command="{Binding Path=ShowFormulaireInfosClub}" />
+		<RibbonButton Label="Détail" 
+					  Command="{Binding Path=ShowDetailsInfosClub}"
+					  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"/>
+		<RibbonButton Label="Edition" 
+					  Command="{Binding Path=ShowFormulaireInfosClub}"
+					  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"/>
 	</RibbonGroup>
 </RibbonTab>
