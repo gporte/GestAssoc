@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="GestAssoc.Modules.GestionGroupes.Views.ConsultationGroupesView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+	</UserControl.Resources>
+	
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Groupes" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<GroupBox Header="Groupes" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+			<DockPanel LastChildFill="True">
+				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
+						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
+
+				<ListBox Name="lbxGroupes" ItemsSource="{Binding Path=Items}">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="MouseDoubleClick">
+							<i:InvokeCommandAction Command="{Binding Path=EditGroupeCmd}" CommandParameter="{Binding ElementName=lbxGroupes, Path=SelectedItem.ID}" />
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</ListBox>
+			</DockPanel>
+		</GroupBox>
+
+		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+						Command="{Binding Path=AddGroupeCmd}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
+				</Button>
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+						Command="{Binding Path=EditGroupeCmd}" CommandParameter="{Binding ElementName=lbxGroupes, Path=SelectedItem.ID}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
+				</Button>
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+						Command="{Binding Path=DeleteGroupeCmd}" CommandParameter="{Binding ElementName=lbxGroupes, Path=SelectedItem}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
+				</Button>
+			</WrapPanel>
+		</GroupBox>
+
+		<StackPanel Orientation="Vertical">
+			<GroupBox Header="Détails" Margin="10,0,10,0">
+				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
+
+				</WrapPanel>
+			</GroupBox>
+		</StackPanel>
+	</DockPanel>
+</UserControl>

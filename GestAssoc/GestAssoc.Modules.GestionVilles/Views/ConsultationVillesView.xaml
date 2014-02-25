@@ -27,7 +27,7 @@
 					</i:Interaction.Triggers>
 				</ListBox>
 			</DockPanel>
-		</GroupBox>		
+		</GroupBox>
 
 		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
