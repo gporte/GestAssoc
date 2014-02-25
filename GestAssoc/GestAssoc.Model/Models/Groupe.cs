@@ -1,3 +1,4 @@
+using GestAssoc.Model.Libelles;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,12 +25,15 @@ namespace GestAssoc.Model.Models
 
 		public override string ToString() {
 			return string.Format(
-				CultureInfo.CurrentCulture,
 				"{0} ({1} - {2})",
-				this.JourSemaine.ToString(),
+				this.Libelle,
 				this.HeureDebut.ToString("t", CultureInfo.CurrentCulture),
 				this.HeureFin.ToString("t", CultureInfo.CurrentCulture)
 			);
+		}
+
+		public string LibelleJourSemaine {
+			get { return LibellesHelper.GetJourSemaineLibelle(this.JourSemaine); }
 		}
 	}
 }
