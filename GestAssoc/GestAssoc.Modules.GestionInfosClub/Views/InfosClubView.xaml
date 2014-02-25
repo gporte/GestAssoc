@@ -4,63 +4,70 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="300">
+			 d:DesignHeight="500" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+	</UserControl.Resources>
+	
 	<DockPanel LastChildFill="True" Margin="5,5,5,5">
-		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Association" />
-		
-		<Grid HorizontalAlignment="Center">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
+		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
+			   Style="{StaticResource titreUC}"
+			   Content="Association" />
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
-
-			<TextBlock Grid.Row="0" Grid.Column="0" Text="Nom : " />
-			<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Item.Nom}" />
-
-			<TextBlock Grid.Row="1" Grid.Column="0" Text="Adresse : " />
-			<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Item.Adresse}" />
-
-			<TextBlock Grid.Row="2" Grid.Column="0" Text="" />
-			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Item.Ville}" />
-
-			<TextBlock Grid.Row="3" Grid.Column="0" Text="Téléphone : " />
-			<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Item.Telephone}" />
-
-			<TextBlock Grid.Row="4" Grid.Column="0" Text="Email : " />
-			<TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=Item.Mail}" />
-
-			<TextBlock Grid.Row="5" Grid.Column="0" Text="Numéro : " />
-			<TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=Item.Numero}" />
-
-			<TextBlock Grid.Row="6" Grid.Column="0" Text="Numéro APS : " />
-			<TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=Item.NumAPS}" />
-
-			<TextBlock Grid.Row="7" Grid.Column="0" Text="Numéro fédération : " />
-			<TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Path=Item.NumFederation}" />
-
-			<TextBlock Grid.Row="8" Grid.Column="0" Text="SIRET : " />
-			<TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Path=Item.Siret}" />
-
-			<StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-				<Button Command="{Binding Path=ShowEditViewCmd}" 
-						CommandParameter="{Binding Path=Item.ID}"
-						Width="35" Height="35">
+		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
+			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+						Command="{Binding Path=ShowEditViewCmd}" CommandParameter="{Binding Path=Item.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
+			</WrapPanel>
+		</GroupBox>
+
+		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Nom : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Nom}" Style="{StaticResource lblValue}" />
 			</StackPanel>
-		</Grid>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Adresse : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Adresse}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="" Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Téléphone : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Telephone}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Email : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Mail}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Numéro : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Numéro APS : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Numéro fédération : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="SIRET : " Style="{StaticResource lblName}" />
+				<Label Content="{Binding Path=Item.Siret}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+		</WrapPanel>
 	</DockPanel>
 </UserControl>

@@ -7,45 +7,11 @@
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
-		<Style x:Key="titreUC" TargetType="{x:Type Label}">
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="FontWeight" Value="Bold" />
-		</Style>
-
-		<Style x:Key="lblItem" TargetType="{x:Type Label}">
-			<Setter Property="Height" Value="25" />
-		</Style>
-
-		<Style x:Key="btnItem" TargetType="{x:Type Button}">
-			<Setter Property="Height" Value="15" />
-			<Setter Property="Width" Value="15" />
-			<Setter Property="Margin" Value="5,0,10,0" />
-		</Style>
-
-		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Width" Value="25" />
-			<Setter Property="Margin" Value="5,0,10,0" />
-		</Style>
-
-		<Style x:Key="lblName" TargetType="{x:Type Label}">
-			<Setter Property="Width" Value="100" />
-			<Setter Property="Height" Value="25" />
-		</Style>
-
-		<Style x:Key="lblValue" TargetType="{x:Type Label}">
-			<Setter Property="Width" Value="200" />
-			<Setter Property="Height" Value="25" />
-		</Style>
-
-		<Style x:Key="btnLittle" TargetType="{x:Type Button}">
-			<Setter Property="Width" Value="16" />
-			<Setter Property="Height" Value="16" />
-		</Style>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
 
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Saisons" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="Saisons" HorizontalContentAlignment="Center"
 			   Style="{StaticResource titreUC}"/>
 
 		<GroupBox Header="Saisons" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">

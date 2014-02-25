@@ -7,27 +7,20 @@
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
-		<Style x:Key="titreUC" TargetType="{x:Type Label}">
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="FontWeight" Value="Bold" />
-		</Style>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 
-		<Style x:Key="lblForm" TargetType="{x:Type Label}">
-			<Setter Property="Width" Value="100" />
-			<Setter Property="Height" Value="25" />
-		</Style>
+				<ResourceDictionary>
+					<Style x:Key="iupForm" TargetType="{x:Type wpf:IntegerUpDown}">
+						<Setter Property="Width" Value="100" />
+						<Setter Property="Height" Value="25" />
+						<Setter Property="Margin" Value="0,5,0,5" />
+					</Style>
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>		
 
-		<Style x:Key="iupForm" TargetType="{x:Type wpf:IntegerUpDown}">
-			<Setter Property="Width" Value="100" />
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Margin" Value="0,5,0,5" />
-		</Style>
-
-		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
-			<Setter Property="Height" Value="35" />
-			<Setter Property="Width" Value="35" />
-			<Setter Property="Margin" Value="10,0,10,0" />
-		</Style>
 	</UserControl.Resources>
 
 	<DockPanel>
@@ -48,7 +41,7 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Début : " Style="{StaticResource lblForm}" />
+				<Label Content="Début : " Style="{StaticResource lblName}" />
 				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
 								   Value="{Binding Item.AnneeDebut}"
 								   Increment="1"
@@ -57,7 +50,7 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Fin : " Style="{StaticResource lblForm}" />
+				<Label Content="Fin : " Style="{StaticResource lblName}" />
 				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
 								   Value="{Binding Item.AnneeFin}"
 								   Increment="1"
