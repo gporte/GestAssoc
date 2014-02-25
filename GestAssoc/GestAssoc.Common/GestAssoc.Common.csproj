@@ -91,7 +91,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ribbon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\btn_back.png" />
     <Resource Include="Images\btn_check.png" />

@@ -7,19 +7,7 @@
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
-		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
-
-				<ResourceDictionary>
-					<Style x:Key="mktbxCP" TargetType="{x:Type wpf:MaskedTextBox}">
-						<Setter Property="Width" Value="50" />
-						<Setter Property="Height" Value="25" />
-						<Setter Property="Margin" Value="0,5,0,5" />
-					</Style>
-				</ResourceDictionary>
-			</ResourceDictionary.MergedDictionaries>
-		</ResourceDictionary>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
 
 	<DockPanel>
@@ -51,7 +39,7 @@
 				<wpf:MaskedTextBox Mask="00000" 
 								   Text="{Binding Item.CodePostal}" 
 								   HorizontalContentAlignment="Right"
-								   Style="{StaticResource mktbxCP}"/>
+								   Style="{StaticResource tbxValueLittle}"/>
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>

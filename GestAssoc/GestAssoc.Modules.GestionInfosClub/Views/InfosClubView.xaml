@@ -55,12 +55,12 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Numéro APS : " Style="{StaticResource lblName}" />
+				<Label Content="Num. APS : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Numéro fédération : " Style="{StaticResource lblName}" />
+				<Label Content="Num. fédération : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 

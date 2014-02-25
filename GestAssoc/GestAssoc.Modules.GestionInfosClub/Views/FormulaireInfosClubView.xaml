@@ -68,9 +68,13 @@
 
 			<StackPanel Orientation="Horizontal">
 				<Label Content="SIRET : " Style="{StaticResource lblName}" />
-				<TextBox Text="{Binding Path=Item.Siren}" Style="{StaticResource tbxValue}" />
-				<TextBlock Text=" - " Margin="0,5,0,0" />
-				<TextBox Text="{Binding Path=Item.NIC}" Style="{StaticResource tbxValueLittle}" />
+				<wpf:MaskedTextBox Mask="000000000" HorizontalContentAlignment="Right"
+								   Text="{Binding Path=Item.Siren}" 
+								   Style="{StaticResource tbxValueMedium}" />
+				<TextBlock Text=" - " Margin="20,5,20,0" Width="10" />
+				<wpf:MaskedTextBox Mask="00000" 
+								   Text="{Binding Path=Item.NIC}" 
+								   Style="{StaticResource tbxValueLittle}" />
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>

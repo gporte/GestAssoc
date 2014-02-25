@@ -24,18 +24,9 @@
 
 		<Ribbon Name="ApplicationRibbon" Grid.Row="0"
 				prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonRegion}">
-			<!-- Ribbon QuickAccessToolbar  (defined here) -->
-			<Ribbon.QuickAccessToolBar>
-				<RibbonQuickAccessToolBar>
-					<RibbonButton ToolTip="Nouvelle base" SmallImageSource="Images\new.png" />
-					<RibbonButton ToolTip="Ouvrir une base existante" SmallImageSource="Images\open.png" />
-					<RibbonButton ToolTip="Rafraîchir l'affichage" />
-				</RibbonQuickAccessToolBar>
-			</Ribbon.QuickAccessToolBar>
-
 			<!-- ApplicationMenu -->
 			<Ribbon.ApplicationMenu>
-				<RibbonApplicationMenu SmallImageSource="Images\ribbon.png">
+				<RibbonApplicationMenu SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/Ribbon.png">
 					<RibbonApplicationMenuItem Header="Quitter" Command="{Binding Path=ExitCmd}" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
