@@ -7,35 +7,21 @@
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
-		<Style x:Key="titreUC" TargetType="{x:Type Label}">
-			<Setter Property="FontSize" Value="18" />
-			<Setter Property="FontWeight" Value="Bold" />
-		</Style>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 
-		<Style x:Key="lblForm" TargetType="{x:Type Label}">
-			<Setter Property="Width" Value="100" />
-			<Setter Property="Height" Value="25" />
-		</Style>
-
-		<Style x:Key="tbxFormBig" TargetType="{x:Type TextBox}">
-			<Setter Property="Width" Value="200" />
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Margin" Value="0,5,0,5" />
-		</Style>
-
-		<Style x:Key="tbxFormLittle" TargetType="{x:Type TextBox}">
-			<Setter Property="Width" Value="100" />
-			<Setter Property="Height" Value="25" />
-			<Setter Property="Margin" Value="0,5,0,5" />
-		</Style>
-
-		<Style x:Key="btnCmd" TargetType="{x:Type Button}">
-			<Setter Property="Height" Value="35" />
-			<Setter Property="Width" Value="35" />
-			<Setter Property="Margin" Value="10,0,10,0" />
-		</Style>
+				<ResourceDictionary>
+					<Style x:Key="mktbxCP" TargetType="{x:Type wpf:MaskedTextBox}">
+						<Setter Property="Width" Value="50" />
+						<Setter Property="Height" Value="25" />
+						<Setter Property="Margin" Value="0,5,0,5" />
+					</Style>
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</UserControl.Resources>
-	
+
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="Ville" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
@@ -54,14 +40,18 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Nom : " Style="{StaticResource lblForm}" />
-				<TextBox Text="{Binding Item.Libelle}" Style="{StaticResource tbxFormBig}" CharacterCasing="Upper"/>
+				<Label Content="Nom : " Style="{StaticResource lblValue}" />
+				<TextBox Text="{Binding Item.Libelle}" 
+						 Style="{StaticResource tbxValue}" 
+						 CharacterCasing="Upper"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Code postal : " Style="{StaticResource lblForm}" />
-				<wpf:MaskedTextBox Mask="00000" Text="{Binding Item.CodePostal}" 
-								   Style="{StaticResource tbxFormLittle}"/>
+				<Label Content="Code postal : " Style="{StaticResource lblValue}" />
+				<wpf:MaskedTextBox Mask="00000" 
+								   Text="{Binding Item.CodePostal}" 
+								   HorizontalContentAlignment="Right"
+								   Style="{StaticResource mktbxCP}"/>
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>

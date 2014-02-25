@@ -19,8 +19,7 @@
 					</Style>
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
-		</ResourceDictionary>		
-
+		</ResourceDictionary>
 	</UserControl.Resources>
 
 	<DockPanel>
