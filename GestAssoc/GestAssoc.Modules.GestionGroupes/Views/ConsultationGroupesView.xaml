@@ -51,7 +51,40 @@
 		<StackPanel Orientation="Vertical">
 			<GroupBox Header="Détails" Margin="10,0,10,0">
 				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Nom : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Libelle}"/>
+					</StackPanel>
 
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Saison : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Saison}"/>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Jour : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleJourSemaine}"/>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Créneau : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleCreneau}"/>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal">
+						<Label Style="{StaticResource lblName}" Content="Nb. places : " />
+						<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.NbPlaces}"/>
+					</StackPanel>
+					
+					<TextBox IsEnabled="False" HorizontalAlignment="Left"
+							 Style="{StaticResource tbxCommentaire}"
+							 TextWrapping="Wrap" 
+							 Text="{Binding ElementName=lbxGroupes, Path=SelectedItem.Commentaire}" />
 				</WrapPanel>
 			</GroupBox>
 		</StackPanel>

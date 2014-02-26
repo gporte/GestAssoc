@@ -25,15 +25,24 @@ namespace GestAssoc.Model.Models
 
 		public override string ToString() {
 			return string.Format(
-				"{0} ({1} - {2})",
+				"{0} ({1})",
 				this.Libelle,
-				this.HeureDebut.ToString("t", CultureInfo.CurrentCulture),
-				this.HeureFin.ToString("t", CultureInfo.CurrentCulture)
+				this.LibelleCreneau
 			);
 		}
 
 		public string LibelleJourSemaine {
 			get { return LibellesHelper.GetJourSemaineLibelle(this.JourSemaine); }
+		}
+
+		public string LibelleCreneau {
+			get {
+				return string.Format(
+					"{0} - {1}",
+					this.HeureDebut.ToString("t", CultureInfo.CurrentCulture),
+					this.HeureFin.ToString("t", CultureInfo.CurrentCulture)
+				);
+			}
 		}
 	}
 }
