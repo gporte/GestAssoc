@@ -26,7 +26,27 @@
 		</WrapPanel>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Nom : " Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Libelle}" 
+						 Style="{StaticResource tbxValue}" 
+						 CharacterCasing="Upper"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Style="{StaticResource lblName}" Content="Saison : " />
+				<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding Path=Item.Saison}"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Jour : " Style="{StaticResource lblName}" />
+				<ComboBox Style="{StaticResource cmbValue}" 
+						  ItemsSource="{Binding Path=JoursSemaine}" 
+						  DisplayMemberPath="Value"
+						  SelectedValuePath="Key"
+						  SelectedValue="{Binding Path=Item.JourSemaine}" />
+			</StackPanel>
 		</WrapPanel>
 	</DockPanel>
 </UserControl>

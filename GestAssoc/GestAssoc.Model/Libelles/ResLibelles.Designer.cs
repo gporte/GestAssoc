@@ -63,6 +63,15 @@ namespace GestAssoc.Model.Libelles {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Lundi.
         /// </summary>
+        public static string JS0 {
+            get {
+                return ResourceManager.GetString("JS0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mardi.
+        /// </summary>
         public static string JS1 {
             get {
                 return ResourceManager.GetString("JS1", resourceCulture);
@@ -70,7 +79,7 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Mardi.
+        ///   Recherche une chaîne localisée semblable à Mercredi.
         /// </summary>
         public static string JS2 {
             get {
@@ -79,7 +88,7 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Mercredi.
+        ///   Recherche une chaîne localisée semblable à Jeudi.
         /// </summary>
         public static string JS3 {
             get {
@@ -88,7 +97,7 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Jeudi.
+        ///   Recherche une chaîne localisée semblable à Vendredi.
         /// </summary>
         public static string JS4 {
             get {
@@ -97,7 +106,7 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vendredi.
+        ///   Recherche une chaîne localisée semblable à Samedi.
         /// </summary>
         public static string JS5 {
             get {
@@ -106,20 +115,11 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Samedi.
+        ///   Recherche une chaîne localisée semblable à Dimanche.
         /// </summary>
         public static string JS6 {
             get {
                 return ResourceManager.GetString("JS6", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dimanche.
-        /// </summary>
-        public static string JS7 {
-            get {
-                return ResourceManager.GetString("JS7", resourceCulture);
             }
         }
         

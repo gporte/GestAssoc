@@ -117,25 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="JS1" xml:space="preserve">
+  <data name="JS0" xml:space="preserve">
     <value>Lundi</value>
   </data>
-  <data name="JS2" xml:space="preserve">
+  <data name="JS1" xml:space="preserve">
     <value>Mardi</value>
   </data>
-  <data name="JS3" xml:space="preserve">
+  <data name="JS2" xml:space="preserve">
     <value>Mercredi</value>
   </data>
-  <data name="JS4" xml:space="preserve">
+  <data name="JS3" xml:space="preserve">
     <value>Jeudi</value>
   </data>
-  <data name="JS5" xml:space="preserve">
+  <data name="JS4" xml:space="preserve">
     <value>Vendredi</value>
   </data>
-  <data name="JS6" xml:space="preserve">
+  <data name="JS5" xml:space="preserve">
     <value>Samedi</value>
   </data>
-  <data name="JS7" xml:space="preserve">
+  <data name="JS6" xml:space="preserve">
     <value>Dimanche</value>
   </data>
   <data name="LIBELLE_ABSENT" xml:space="preserve">

@@ -1,5 +1,6 @@
 ﻿using GestAssoc.Model.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace GestAssoc.Modules.GestionGroupes.Services
@@ -30,5 +31,17 @@ namespace GestAssoc.Modules.GestionGroupes.Services
 		/// </summary>
 		/// <param name="itemToDelete">Groupe à supprimer.</param>
 		void DeleteGroupe(Groupe itemToDelete);
+
+		/// <summary>
+		/// Obtient la saison courante.
+		/// </summary>
+		/// <returns>Saison courante.</returns>
+		Saison GetSaisonCourante();
+
+		/// <summary>
+		/// Obtient un dictionnaire contenant la liste des jours de la semaine ainsi que leur numéro.
+		/// </summary>
+		/// <returns>Dictionnaire des jours de la semaine.</returns>
+		IDictionary<int, string> GetJoursSemaine();
 	}
 }

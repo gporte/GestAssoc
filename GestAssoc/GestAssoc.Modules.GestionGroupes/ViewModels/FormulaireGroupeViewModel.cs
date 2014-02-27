@@ -8,6 +8,7 @@ using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionGroupes.ViewModels
@@ -31,6 +32,19 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 		}
 		#endregion
 
+		#region JoursSemaine property
+		private IDictionary<int, string> _joursSemaine;
+		public IDictionary<int, string> JoursSemaine {
+			get { return this._joursSemaine; }
+			set {
+				if (this._joursSemaine != value) {
+					this._joursSemaine = value;
+					this.RaisePropertyChangedEvent("JoursSemaine");
+				}
+			}
+		}
+		#endregion
+
 		#region Constructors
 		public FormulaireGroupeViewModel(Guid itemId) {
 			this._services = ServiceLocator
@@ -38,7 +52,12 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 				.Resolve<IGestionGroupesServices>();
 
 			if (itemId == Guid.Empty) {
-				this.Item = new Groupe();
+				this.Item = new Groupe()
+				{
+					Saison = this._services.GetSaisonCourante(),
+					HeureDebut = DefaultValueHelper.DateTimeSQLMinValue,
+					HeureFin = DefaultValueHelper.DateTimeSQLMinValue
+				};
 			}
 			else {
 				UIServices.SetBusyState();
@@ -47,6 +66,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 
 			this.SaveCmd = new SaveGroupeCommand();
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationGroupes);
+			this.JoursSemaine = this._services.GetJoursSemaine();
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes);
