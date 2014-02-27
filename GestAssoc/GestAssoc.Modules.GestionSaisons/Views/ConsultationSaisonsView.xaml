@@ -51,19 +51,19 @@
 		<StackPanel Orientation="Vertical">
 			<GroupBox Header="Détails" Margin="10,0,10,0">
 				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Début : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxSaisons, Path=SelectedItem.AnneeDebut}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Fin : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxSaisons, Path=SelectedItem.AnneeFin}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Saison courante : " />
 						<Button Style="{StaticResource btnLittle}" ToolTip="Définir comme saison courante"
 								Command="{Binding Path=ChangeSaisonCouranteCmd}" 

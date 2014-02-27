@@ -51,31 +51,31 @@
 		<StackPanel Orientation="Vertical">
 			<GroupBox Header="Détails" Margin="10,0,10,0">
 				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Nom : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Libelle}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Saison : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Saison}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Jour : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleJourSemaine}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Créneau : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleCreneau}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Nb. places : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.NbPlaces}"/>

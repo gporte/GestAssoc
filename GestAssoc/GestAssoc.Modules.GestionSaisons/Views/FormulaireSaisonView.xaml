@@ -15,7 +15,6 @@
 					<Style x:Key="iupForm" TargetType="{x:Type wpf:IntegerUpDown}">
 						<Setter Property="Width" Value="100" />
 						<Setter Property="Height" Value="25" />
-						<Setter Property="Margin" Value="0,5,0,5" />
 					</Style>
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
@@ -39,7 +38,7 @@
 		</WrapPanel>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Début : " Style="{StaticResource lblName}" />
 				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
 								   Value="{Binding Item.AnneeDebut}"
@@ -48,7 +47,7 @@
 								   AllowSpin="True"/>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Fin : " Style="{StaticResource lblName}" />
 				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
 								   Value="{Binding Item.AnneeFin}"

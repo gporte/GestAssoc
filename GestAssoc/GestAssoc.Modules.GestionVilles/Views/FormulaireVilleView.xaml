@@ -27,14 +27,14 @@
 		</WrapPanel>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Nom : " Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Libelle}" 
 						 Style="{StaticResource tbxValue}" 
 						 CharacterCasing="Upper"/>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Code postal : " Style="{StaticResource lblName}" />
 				<wpf:MaskedTextBox Mask="00000" 
 								   Text="{Binding Item.CodePostal}" 

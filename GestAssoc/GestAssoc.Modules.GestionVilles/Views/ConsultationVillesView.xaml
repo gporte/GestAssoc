@@ -51,13 +51,13 @@
 		<StackPanel Orientation="Vertical">
 			<GroupBox Header="Détails" Margin="10,0,10,0">
 				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Nom : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxVilles, Path=SelectedItem.Libelle}"/>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Code postal : " />
 						<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxVilles, Path=SelectedItem.CodePostal}"/>

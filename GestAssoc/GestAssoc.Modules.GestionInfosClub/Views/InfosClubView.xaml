@@ -24,47 +24,47 @@
 		</GroupBox>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Nom : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Nom}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Adresse : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Adresse}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="" Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Téléphone : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Telephone}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Email : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Mail}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Numéro : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Num. APS : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Num. fédération : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="SIRET : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Siret}" Style="{StaticResource lblValue}" />
 			</StackPanel>

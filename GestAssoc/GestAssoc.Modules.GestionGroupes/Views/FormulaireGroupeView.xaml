@@ -3,10 +3,23 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
-		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+
+				<ResourceDictionary>
+					<Style x:Key="tpkValue" TargetType="{x:Type wpf:TimePicker}">
+						<Setter Property="Width" Value="100" />
+						<Setter Property="Height" Value="25" />
+					</Style>
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+		
 	</UserControl.Resources>
 	
 	<DockPanel>
@@ -26,26 +39,40 @@
 		</WrapPanel>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Nom : " Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Libelle}" 
 						 Style="{StaticResource tbxValue}" 
 						 CharacterCasing="Upper"/>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Style="{StaticResource lblName}" Content="Saison : " />
 				<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Item.Saison}"/>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Jour : " Style="{StaticResource lblName}" />
 				<ComboBox Style="{StaticResource cmbValue}" 
 						  ItemsSource="{Binding Path=JoursSemaine}" 
 						  DisplayMemberPath="Value"
 						  SelectedValuePath="Key"
 						  SelectedValue="{Binding Path=Item.JourSemaine}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Style="{StaticResource lblName}" Content="Début : " />
+				<wpf:TimePicker Style="{StaticResource tpkValue}" Format="ShortTime" Value="{Binding Path=Item.HeureDebut}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Style="{StaticResource lblName}" Content="Fin : " />
+				<wpf:TimePicker Style="{StaticResource tpkValue}" Format="ShortTime" Value="{Binding Path=Item.HeureFin}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Style="{StaticResource lblName}" Content="NbPlaces : " />
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>
