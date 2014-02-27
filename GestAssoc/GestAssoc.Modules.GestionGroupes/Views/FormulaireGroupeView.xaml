@@ -16,6 +16,11 @@
 						<Setter Property="Width" Value="100" />
 						<Setter Property="Height" Value="25" />
 					</Style>
+
+					<Style x:Key="iupForm" TargetType="{x:Type wpf:IntegerUpDown}">
+						<Setter Property="Width" Value="100" />
+						<Setter Property="Height" Value="25" />
+					</Style>
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
@@ -73,6 +78,18 @@
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Style="{StaticResource lblName}" Content="NbPlaces : " />
+				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
+								   Value="{Binding Item.NbPlaces}"
+								   Increment="1"
+								   AllowSpin="True"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Commentaire : " Style="{StaticResource lblName}" VerticalAlignment="Top" />
+				<TextBox Text="{Binding Item.Commentaire}" 
+						 Style="{StaticResource tbxCommentaire}" 
+						 AcceptsReturn="True"
+						 TextWrapping="Wrap"/>
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>
