@@ -23,23 +23,21 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 		}
 
 		public void Execute(object parameter) {
-			// TODO contrôler la validité
-
-			var service = ServiceLocator
-				.Current.GetInstance<IUnityContainer>()
-				.Resolve<IGestionSaisonsServices>();
-
 			var itemToSave = parameter as Saison;
 
-			try {
-				service.SetSaisonCourante(itemToSave);
+			if (itemToSave != null && !itemToSave.EstSaisonCourante) {
+				var service = ServiceLocator
+					.Current.GetInstance<IUnityContainer>()
+					.Resolve<IGestionSaisonsServices>();
 
-				NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
-
-				new ShowViewCommand(ViewNames.ConsultationSaisons).Execute(null);
-			}
-			catch (Exception) {
-				throw;
+				try {
+					service.SetSaisonCourante(itemToSave);
+					NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
+					new ShowViewCommand(ViewNames.ConsultationSaisons).Execute(null);
+				}
+				catch (Exception) {
+					throw;
+				}
 			}
 		}
 	}
