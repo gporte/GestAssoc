@@ -13,6 +13,15 @@ namespace GestAssoc.Model.Libelles
 
 			return rm.GetString("JS" + jourSemaine.ToString()) ?? ResLibelles.LIBELLE_ABSENT;
 		}
+
+		public static string GetSexeLibelle(int sexe) {
+			var rm = new ResourceManager(
+				"GestAssoc.Model.Libelles.ResLibelles",
+				Assembly.GetExecutingAssembly()
+			);
+
+			return rm.GetString("SX" + sexe.ToString()) ?? ResLibelles.LIBELLE_ABSENT;
+		}
 	}
 
 }

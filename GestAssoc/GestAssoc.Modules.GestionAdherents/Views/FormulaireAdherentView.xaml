@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="GestAssoc.Modules.GestionAdherents.Views.FormulaireAdherentView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
+	</UserControl.Resources>
+	
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Adhérent" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+					Command="{Binding Path=CancelCmd}">
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
+			</Button>
+
+			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
+			</Button>
+		</WrapPanel>
+
+		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+		</WrapPanel>
+	</DockPanel>
+</UserControl>

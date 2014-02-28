@@ -1,5 +1,7 @@
-﻿using GestAssoc.Model.Models;
+﻿using GestAssoc.Model.Libelles;
+using GestAssoc.Model.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -58,6 +60,15 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 			}
 
 			this._context.SaveChanges();
+		}
+		
+		public IDictionary<int, string> GetSexes() {
+			var sexes = new Dictionary<int, string>();
+
+			sexes.Add(0, LibellesHelper.GetSexeLibelle(0));
+			sexes.Add(1, LibellesHelper.GetSexeLibelle(1));
+
+			return sexes;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using GestAssoc.Model.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace GestAssoc.Modules.GestionAdherents.Services
@@ -30,5 +31,11 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 		/// </summary>
 		/// <param name="itemToDelete">Adhérent à supprimer.</param>
 		void DeleteAdherent(Adherent itemToDelete);
+
+		/// <summary>
+		/// Obtient un dictionnaire contenant la liste des sexes ainsi que leur numéro.
+		/// </summary>
+		/// <returns>Dictionnaire des sexes.</returns>
+		IDictionary<int, string> GetSexes();
 	}
 }

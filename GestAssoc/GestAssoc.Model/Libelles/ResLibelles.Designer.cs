@@ -131,5 +131,23 @@ namespace GestAssoc.Model.Libelles {
                 return ResourceManager.GetString("LIBELLE_ABSENT", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M.
+        /// </summary>
+        public static string SX0 {
+            get {
+                return ResourceManager.GetString("SX0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à F.
+        /// </summary>
+        public static string SX1 {
+            get {
+                return ResourceManager.GetString("SX1", resourceCulture);
+            }
+        }
     }
 }

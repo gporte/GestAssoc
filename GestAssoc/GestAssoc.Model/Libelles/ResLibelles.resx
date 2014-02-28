@@ -141,4 +141,10 @@
   <data name="LIBELLE_ABSENT" xml:space="preserve">
     <value>&lt;LIBELLE ABSENT&gt;</value>
   </data>
+  <data name="SX0" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="SX1" xml:space="preserve">
+    <value>F</value>
+  </data>
 </root>

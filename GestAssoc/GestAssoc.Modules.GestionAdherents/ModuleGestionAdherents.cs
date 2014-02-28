@@ -23,13 +23,12 @@ namespace GestAssoc.Modules.GestionAdherents
 			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(GestionAdherentsRibbonTabView));
 
 			// Enregistrement des vues 
-			// TODO décommenter quand les Views+viewModels seront prêtes
-			//container.RegisterType<object, ConsultationGroupesView>(
-			//	ViewNames.ConsultationGroupes
-			//);
-			//container.RegisterType<object, FormulaireGroupeView>(
-			//	ViewNames.FormulaireGroupe
-			//);
+			container.RegisterType<object, ConsultationAdherentsView>(
+				ViewNames.ConsultationAdherents
+			);
+			container.RegisterType<object, FormulaireAdherentView>(
+				ViewNames.FormulaireAdherent
+			);
 
 			// enregistrement des services
 			container.RegisterType<IGestionAdherentsServices, GestionAdherentsServices>();

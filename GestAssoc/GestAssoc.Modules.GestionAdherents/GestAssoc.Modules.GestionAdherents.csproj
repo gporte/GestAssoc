@@ -99,7 +99,15 @@
     </Compile>
     <Compile Include="Services\GestionAdherentsServices.cs" />
     <Compile Include="Services\IGestionAdherentsServices.cs" />
+    <Compile Include="ViewModels\ConsultationAdherentsViewModel.cs" />
+    <Compile Include="ViewModels\FormulaireAdherentViewModel.cs" />
     <Compile Include="ViewModels\GestionAdherentsRibbonTabViewModel.cs" />
+    <Compile Include="Views\ConsultationAdherentsView.xaml.cs">
+      <DependentUpon>ConsultationAdherentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormulaireAdherentView.xaml.cs">
+      <DependentUpon>FormulaireAdherentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GestionAdherentsRibbonTabView.xaml.cs">
       <DependentUpon>GestionAdherentsRibbonTabView.xaml</DependentUpon>
     </Compile>
@@ -127,6 +135,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ConsultationAdherentsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FormulaireAdherentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\GestionAdherentsRibbonTabView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
