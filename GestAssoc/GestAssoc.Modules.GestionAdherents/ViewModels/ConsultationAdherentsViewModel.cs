@@ -49,7 +49,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			UIServices.SetBusyState();
 			this.Items = new ObservableCollection<Adherent>(this._services.GetAllAdherents());
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
-			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Groupe)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Adherent)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
 			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent);
 			this.DeleteAdherentCmd = new DeleteAdherentCommand();
