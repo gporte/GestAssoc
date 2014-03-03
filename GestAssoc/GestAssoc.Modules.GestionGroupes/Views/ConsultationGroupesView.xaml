@@ -29,6 +29,20 @@
 			</DockPanel>
 		</GroupBox>
 
+		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<WrapPanel Orientation="Vertical">
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
+					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
+					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxGroupes, Path=Items.Count}"/>
+				</StackPanel>
+			</WrapPanel>
+		</GroupBox>
+		
 		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
@@ -48,45 +62,43 @@
 			</WrapPanel>
 		</GroupBox>
 
-		<StackPanel Orientation="Vertical">
-			<GroupBox Header="Détails" Margin="10,0,10,0">
-				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Nom : " />
-						<Label Style="{StaticResource lblValue}" 
+		<GroupBox Header="Détails" Margin="10,0,10,0">
+			<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nom : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Libelle}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Saison : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Saison : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.Saison}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Jour : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Jour : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleJourSemaine}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Créneau : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Créneau : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.LibelleCreneau}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Nb. places : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nb. places : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxGroupes, Path=SelectedItem.NbPlaces}"/>
-					</StackPanel>
-					
-					<TextBox IsEnabled="False" HorizontalAlignment="Left"
+				</StackPanel>
+
+				<TextBox IsEnabled="False" HorizontalAlignment="Left"
 							 Style="{StaticResource tbxCommentaire}"
 							 TextWrapping="Wrap" 
 							 Text="{Binding ElementName=lbxGroupes, Path=SelectedItem.Commentaire}" />
-				</WrapPanel>
-			</GroupBox>
-		</StackPanel>
+			</WrapPanel>
+		</GroupBox>
 	</DockPanel>
 </UserControl>

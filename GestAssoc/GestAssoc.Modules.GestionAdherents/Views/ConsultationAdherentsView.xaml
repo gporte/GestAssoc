@@ -29,6 +29,20 @@
 			</DockPanel>
 		</GroupBox>
 
+		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<WrapPanel Orientation="Vertical">
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
+					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
+					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxAdherents, Path=Items.Count}"/>
+				</StackPanel>
+			</WrapPanel>
+		</GroupBox>
+
 		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
@@ -46,98 +60,96 @@
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
 				</Button>
 			</WrapPanel>
-		</GroupBox>
+		</GroupBox>		
+		
+		<GroupBox Header="Détails" Margin="10,0,10,0">
+			<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblBigValue}">
+						<Label.Content>
+							<TextBlock>
+								<TextBlock.Text>
+									<MultiBinding StringFormat="{}{0} {1}">
+										<Binding ElementName="lbxAdherents" Path="SelectedItem.Prenom" />
+										<Binding ElementName="lbxAdherents" Path="SelectedItem.Nom" />
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</Label.Content>
+					</Label>
+				</StackPanel>
 
-		<StackPanel Orientation="Vertical">
-			<GroupBox Header="Détails" Margin="10,0,10,0">
-				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblBigValue}">
-							<Label.Content>
-								<TextBlock>
-									<TextBlock.Text>
-										<MultiBinding StringFormat="{}{0} {1}">
-											<Binding ElementName="lbxAdherents" Path="SelectedItem.Prenom" />
-											<Binding ElementName="lbxAdherents" Path="SelectedItem.Nom" />
-										</MultiBinding>
-									</TextBlock.Text>
-								</TextBlock>
-							</Label.Content>
-						</Label>
-					</StackPanel>
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Né le : " />
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Né le : " />
+					<Label Style="{StaticResource lblValue}">
+						<Label.Content>
+							<TextBlock>
+								<TextBlock.Text>
+									<MultiBinding StringFormat="{}{0:d} ({1} ans)">
+										<Binding ElementName="lbxAdherents" Path="SelectedItem.DateNaissance" />
+										<Binding ElementName="lbxAdherents" Path="SelectedItem.Age" />
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</Label.Content>
+					</Label>
+				</StackPanel>
 
-						<Label Style="{StaticResource lblValue}">
-							<Label.Content>
-								<TextBlock>
-									<TextBlock.Text>
-										<MultiBinding StringFormat="{}{0:d} ({1} ans)">
-											<Binding ElementName="lbxAdherents" Path="SelectedItem.DateNaissance" />
-											<Binding ElementName="lbxAdherents" Path="SelectedItem.Age" />
-										</MultiBinding>
-									</TextBlock.Text>
-								</TextBlock>
-							</Label.Content>
-						</Label>
-					</StackPanel>
-
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Sexe : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Sexe : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.LibelleSexe}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Adresse : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Adresse : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Adresse}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Ville : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Ville : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Ville}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Téléphone : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="Téléphone : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Telephone1}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="" />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="" />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Telephone2}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="" />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="" />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Telephone3}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="E-mail : " />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="E-mail : " />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Mail1}"/>
-					</StackPanel>
+				</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="" />
-						<Label Style="{StaticResource lblValue}" 
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="" />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Mail2}"/>
-					</StackPanel>
-					
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="" />
-						<Label Style="{StaticResource lblValue}" 
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="" />
+					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Mail3}"/>
-					</StackPanel>
-				</WrapPanel>
-			</GroupBox>
-		</StackPanel>
+				</StackPanel>
+			</WrapPanel>
+		</GroupBox>
 	</DockPanel>
 </UserControl>
