@@ -56,7 +56,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.AddAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent);
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireAdherent);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationAdherents);
 		}
 	}
 }

@@ -69,7 +69,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.JoursSemaine = this._services.GetJoursSemaine();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireGroupe);
 		}
 		#endregion
 	}

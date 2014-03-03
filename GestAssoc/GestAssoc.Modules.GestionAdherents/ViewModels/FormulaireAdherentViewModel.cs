@@ -64,7 +64,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.Sexes = this._services.GetSexes();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireAdherent);
 		}
 		#endregion
 	}
