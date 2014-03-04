@@ -1,4 +1,5 @@
-﻿using GestAssoc.Common.Constantes;
+﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using GestAssoc.Modules.GestionInfosClub.Views;
@@ -10,7 +11,7 @@ using Microsoft.Practices.Unity;
 namespace GestAssoc.Modules.GestionInfosClub
 {
 	[Priority(100)]
-	public class ModuleGestionInfosClub : IModule
+	public class ModuleGestionInfosClub : ModuleBase, IModule
 	{
 		public void Initialize() {
 			// trace
@@ -20,7 +21,7 @@ namespace GestAssoc.Modules.GestionInfosClub
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 			
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(InfosClubRibbonTabView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(InfosClubMenuView));
 
 			// Enregistrement des vues
 			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub);

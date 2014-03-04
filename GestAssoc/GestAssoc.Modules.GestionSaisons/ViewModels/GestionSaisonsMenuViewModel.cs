@@ -6,12 +6,12 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionSaisons.ViewModels
 {
-	public class GestionSaisonsRibbonTabViewModel : ViewModelBase
+	public class GestionSaisonsMenuViewModel : ViewModelBase
 	{
 		public ICommand ShowConsultationSaisonsCmd { get; set; }
 		public ICommand ShowFormulaireCreationSaisonCmd { get; set; }
 
-		public GestionSaisonsRibbonTabViewModel() {
+		public GestionSaisonsMenuViewModel() {
 			this.ShowConsultationSaisonsCmd = new ShowViewCommand(ViewNames.ConsultationSaisons);
 			this.ShowFormulaireCreationSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison);
 

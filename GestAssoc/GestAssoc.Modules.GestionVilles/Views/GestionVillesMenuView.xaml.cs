@@ -5,13 +5,13 @@ using System.Windows.Controls.Ribbon;
 namespace GestAssoc.Modules.GestionVilles.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour GestionVillesRibbonTabView.xaml
+	/// Logique d'interaction pour GestionVillesMenuView.xaml
 	/// </summary>
-	public partial class GestionVillesRibbonTabView : RibbonTab, IRegionMemberLifetime
+	public partial class GestionVillesMenuView : RibbonGroup, IRegionMemberLifetime
 	{
-		public GestionVillesRibbonTabView() {
+		public GestionVillesMenuView() {
 			InitializeComponent();
-			this.DataContext = new GestionVillesRibbonTabViewModel();
+			this.DataContext = new GestionVillesMenuViewModel();
 		}
 
 		public bool KeepAlive {

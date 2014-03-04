@@ -1,0 +1,15 @@
+﻿<RibbonGroup x:Class="GestAssoc.Modules.GestionAdherents.Views.GestionAdherentsMenuView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d" 
+		     Header="Gestion des adhérents"
+			 d:DesignHeight="100" d:DesignWidth="150">
+	<RibbonButton Label="Liste des adhérents"
+				  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"
+				  Command="{Binding Path=ShowConsultationAdherentsCmd}" />
+	<RibbonButton Label="Nouvel adhérent" 
+				  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"
+				  Command="{Binding Path=ShowFormulaireCreationAdherentCmd}" />
+</RibbonGroup>

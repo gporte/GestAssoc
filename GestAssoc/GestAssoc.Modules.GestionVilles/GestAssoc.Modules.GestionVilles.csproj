@@ -106,15 +106,15 @@
     <Compile Include="Services\IGestionVillesServices.cs" />
     <Compile Include="ViewModels\ConsultationVillesViewModel.cs" />
     <Compile Include="ViewModels\FormulaireVilleViewModel.cs" />
-    <Compile Include="ViewModels\GestionVillesRibbonTabViewModel.cs" />
+    <Compile Include="ViewModels\GestionVillesMenuViewModel.cs" />
     <Compile Include="Views\ConsultationVillesView.xaml.cs">
       <DependentUpon>ConsultationVillesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormulaireVilleView.xaml.cs">
       <DependentUpon>FormulaireVilleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GestionVillesRibbonTabView.xaml.cs">
-      <DependentUpon>GestionVillesRibbonTabView.xaml</DependentUpon>
+    <Compile Include="Views\GestionVillesMenuView.xaml.cs">
+      <DependentUpon>GestionVillesMenuView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +140,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GestionVillesRibbonTabView.xaml">
+    <Page Include="Views\GestionVillesMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

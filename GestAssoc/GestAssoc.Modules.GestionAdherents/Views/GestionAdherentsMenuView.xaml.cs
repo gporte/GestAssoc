@@ -5,13 +5,13 @@ using System.Windows.Controls.Ribbon;
 namespace GestAssoc.Modules.GestionAdherents.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour GestionAdherentsRibbonTabView.xaml
+	/// Logique d'interaction pour GestionAdherentsMenuView.xaml
 	/// </summary>
-	public partial class GestionAdherentsRibbonTabView : RibbonTab, IRegionMemberLifetime
+	public partial class GestionAdherentsMenuView : RibbonGroup, IRegionMemberLifetime
 	{
-		public GestionAdherentsRibbonTabView() {
+		public GestionAdherentsMenuView() {
 			InitializeComponent();
-			this.DataContext = new GestionAdherentsRibbonTabViewModel();
+			this.DataContext = new GestionAdherentsMenuViewModel();
 		}
 
 		public bool KeepAlive {

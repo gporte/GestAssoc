@@ -124,13 +124,13 @@
     <Compile Include="Services\GestionInfosClubServices.cs" />
     <Compile Include="Services\IGestionInfosClubServices.cs" />
     <Compile Include="ViewModels\FormulaireInfosClubViewModel.cs" />
-    <Compile Include="ViewModels\InfosClubRibbonTabViewModel.cs" />
+    <Compile Include="ViewModels\InfosClubMenuViewModel.cs" />
     <Compile Include="ViewModels\InfosClubViewModel.cs" />
     <Compile Include="Views\FormulaireInfosClubView.xaml.cs">
       <DependentUpon>FormulaireInfosClubView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InfosClubRibbonTabView.xaml.cs">
-      <DependentUpon>InfosClubRibbonTabView.xaml</DependentUpon>
+    <Compile Include="Views\InfosClubMenuView.xaml.cs">
+      <DependentUpon>InfosClubMenuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\InfosClubView.xaml.cs">
       <DependentUpon>InfosClubView.xaml</DependentUpon>
@@ -152,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\InfosClubRibbonTabView.xaml">
+    <Page Include="Views\InfosClubMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

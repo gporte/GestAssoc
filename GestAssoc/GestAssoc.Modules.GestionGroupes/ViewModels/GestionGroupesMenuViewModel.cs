@@ -6,12 +6,12 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionGroupes.ViewModels
 {
-	public class GestionGroupesRibbonTabViewModel : ViewModelBase
+	public class GestionGroupesMenuViewModel : ViewModelBase
 	{
 		public ICommand ShowConsultationGroupesCmd { get; set; }
 		public ICommand ShowFormulaireCreationGroupeCmd { get; set; }
 
-		public GestionGroupesRibbonTabViewModel() {
+		public GestionGroupesMenuViewModel() {
 			this.ShowConsultationGroupesCmd = new ShowViewCommand(ViewNames.ConsultationGroupes);
 			this.ShowFormulaireCreationGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe);
 

@@ -1,4 +1,5 @@
-﻿using GestAssoc.Common.Constantes;
+﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionGroupes.Services;
 using GestAssoc.Modules.GestionGroupes.Views;
@@ -10,17 +11,19 @@ using Microsoft.Practices.Unity;
 namespace GestAssoc.Modules.GestionGroupes
 {
 	[Priority(400)]
-	public class ModuleGestionGroupes : IModule
+	public class ModuleGestionGroupes : ModuleBase, IModule
 	{
 		public void Initialize() {
 			// trace
 			NotificationHelper.WriteNotification("Initialisation du Module GestionGroupes.");
 
+			this.TabRegion = RibbonTabRegion.Inscriptions;
+
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(GestionGroupesRibbonTabView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionGroupesMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationGroupesView>(

@@ -6,12 +6,12 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionVilles.ViewModels
 {
-	public class GestionVillesRibbonTabViewModel : ViewModelBase
+	public class GestionVillesMenuViewModel : ViewModelBase
 	{
 		public ICommand ShowConsultationVillesCmd { get; set; }
 		public ICommand ShowFormulaireCreationVilleCmd { get; set; }
 
-		public GestionVillesRibbonTabViewModel() {
+		public GestionVillesMenuViewModel() {
 			this.ShowConsultationVillesCmd = new ShowViewCommand(ViewNames.ConsultationVilles);
 			this.ShowFormulaireCreationVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille);
 

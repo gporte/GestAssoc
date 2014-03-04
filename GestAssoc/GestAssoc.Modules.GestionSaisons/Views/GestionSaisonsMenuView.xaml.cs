@@ -5,13 +5,13 @@ using System.Windows.Controls.Ribbon;
 namespace GestAssoc.Modules.GestionSaisons.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour GestionSaisonsRibbonTabView.xaml
+	/// Logique d'interaction pour GestionSaisonsMenuView.xaml
 	/// </summary>
-	public partial class GestionSaisonsRibbonTabView : RibbonTab, IRegionMemberLifetime
+	public partial class GestionSaisonsMenuView : RibbonGroup, IRegionMemberLifetime
 	{
-		public GestionSaisonsRibbonTabView() {
+		public GestionSaisonsMenuView() {
 			InitializeComponent();
-			this.DataContext = new GestionSaisonsRibbonTabViewModel();
+			this.DataContext = new GestionSaisonsMenuViewModel();
 		}
 
 		public bool KeepAlive {

@@ -5,13 +5,13 @@ using System.Windows.Controls.Ribbon;
 namespace GestAssoc.Modules.GestionInfosClub.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour InfosClubRibbonTabView.xaml
+	/// Logique d'interaction pour InfosClubMenuView.xaml
 	/// </summary>
-	public partial class InfosClubRibbonTabView : RibbonTab, IRegionMemberLifetime
+	public partial class InfosClubMenuView : RibbonGroup, IRegionMemberLifetime
 	{
-		public InfosClubRibbonTabView() {
+		public InfosClubMenuView() {
 			InitializeComponent();
-			this.DataContext = new InfosClubRibbonTabViewModel();
+			this.DataContext = new InfosClubMenuViewModel();
 		}
 
 		public bool KeepAlive {

@@ -119,15 +119,15 @@
     <Compile Include="Services\IGestionGroupesServices.cs" />
     <Compile Include="ViewModels\ConsultationGroupesViewModel.cs" />
     <Compile Include="ViewModels\FormulaireGroupeViewModel.cs" />
-    <Compile Include="ViewModels\GestionGroupesRibbonTabViewModel.cs" />
+    <Compile Include="ViewModels\GestionGroupesMenuViewModel.cs" />
     <Compile Include="Views\ConsultationGroupesView.xaml.cs">
       <DependentUpon>ConsultationGroupesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormulaireGroupeView.xaml.cs">
       <DependentUpon>FormulaireGroupeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GestionGroupesRibbonTabView.xaml.cs">
-      <DependentUpon>GestionGroupesRibbonTabView.xaml</DependentUpon>
+    <Compile Include="Views\GestionGroupesMenuView.xaml.cs">
+      <DependentUpon>GestionGroupesMenuView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GestionGroupesRibbonTabView.xaml">
+    <Page Include="Views\GestionGroupesMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

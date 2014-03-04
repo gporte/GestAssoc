@@ -1,4 +1,5 @@
-﻿using GestAssoc.Common.Constantes;
+﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionSaisons.Services;
 using GestAssoc.Modules.GestionSaisons.Views;
@@ -10,17 +11,19 @@ using Microsoft.Practices.Unity;
 namespace GestAssoc.Modules.GestionSaisons
 {
 	[Priority(300)]
-	public class ModuleGestionSaisons : IModule
+	public class ModuleGestionSaisons : ModuleBase, IModule
 	{
 		public void Initialize() {
 			// trace
 			NotificationHelper.WriteNotification("Initialisation du Module GestionSaisons.");
 
+			this.TabRegion = RibbonTabRegion.Referentiel;
+
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(GestionSaisonsRibbonTabView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionSaisonsMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationSaisonsView>(

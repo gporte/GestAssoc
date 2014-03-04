@@ -31,6 +31,10 @@
 					<RibbonApplicationMenuItem Header="Quitter" Command="{Binding Path=ExitCmd}" />
 				</RibbonApplicationMenu>
 			</Ribbon.ApplicationMenu>
+
+			<RibbonTab Header="Référentiel" prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonTabReferentielRegion}" />
+			<RibbonTab Header="Inscriptions" prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonTabInscriptionsRegion}" />
+			<RibbonTab Header="Autre" prism:RegionManager.RegionName="{x:Static const:RegionNames.RibbonTabAutreRegion}" />
 		</Ribbon>
 
 		<ContentControl Name="ContentRegion" Grid.Row="1" Margin="5,5,5,5"

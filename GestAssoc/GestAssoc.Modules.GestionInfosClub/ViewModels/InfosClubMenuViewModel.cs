@@ -6,12 +6,12 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 {
-	public class InfosClubRibbonTabViewModel : ViewModelBase
+	public class InfosClubMenuViewModel : ViewModelBase
 	{
 		public ICommand ShowDetailsInfosClub { get; set; }
 		public ICommand ShowFormulaireInfosClub { get; set; }
 
-		public InfosClubRibbonTabViewModel() {
+		public InfosClubMenuViewModel() {
 			this.ShowDetailsInfosClub = new ShowViewCommand(ViewNames.ConsultationInfosClub);
 			this.ShowFormulaireInfosClub = new ShowViewCommand(ViewNames.FormulaireInfosClub);
 
