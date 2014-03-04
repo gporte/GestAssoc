@@ -26,7 +26,21 @@
 		</WrapPanel>
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<TextBox Text="{Binding Item.Nom}"
+						 Style="{StaticResource tbxValueMedium}"
+						 CharacterCasing="Upper"
+						 ToolTip="Nom"/>
+				<TextBox Text="{Binding Item.Prenom}" Margin="20,0,0,0"
+						 Style="{StaticResource tbxValueMedium}" 
+						 ToolTip="Prénom"/>
+			</StackPanel>
 
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Naissance : " Style="{StaticResource lblName}" />
+				<DatePicker Style="{StaticResource dtpValueMedium}" Margin="20,0,0,0"
+							Text="{Binding Path=Item.DateNaissance}" />
+			</StackPanel>
 		</WrapPanel>
 	</DockPanel>
 </UserControl>
