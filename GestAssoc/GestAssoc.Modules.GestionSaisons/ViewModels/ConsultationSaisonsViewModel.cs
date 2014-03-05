@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionSaisons.Commands;
+using GestAssoc.Modules.GestionSaisons.Constantes;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -54,13 +54,13 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
 			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Saison)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
-			this.EditSaisonCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireSaison);
+			this.EditSaisonCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireSaison.ToString());
 			this.DeleteSaisonCmd = new DeleteSaisonCommand();
-			this.AddSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison);
+			this.AddSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison.ToString());
 			this.ChangeSaisonCouranteCmd = new ChangeSaisonCouranteCommand();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationSaisons);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationSaisons.ToString());
 		}
 	}
 }

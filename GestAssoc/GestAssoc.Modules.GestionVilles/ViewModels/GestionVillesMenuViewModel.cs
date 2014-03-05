@@ -1,7 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
+using GestAssoc.Modules.GestionVilles.Constantes;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionVilles.ViewModels
@@ -12,8 +12,8 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		public ICommand ShowFormulaireCreationVilleCmd { get; set; }
 
 		public GestionVillesMenuViewModel() {
-			this.ShowConsultationVillesCmd = new ShowViewCommand(ViewNames.ConsultationVilles);
-			this.ShowFormulaireCreationVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille);
+			this.ShowConsultationVillesCmd = new ShowViewCommand(ViewNames.ConsultationVilles.ToString());
+			this.ShowFormulaireCreationVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionVilles");

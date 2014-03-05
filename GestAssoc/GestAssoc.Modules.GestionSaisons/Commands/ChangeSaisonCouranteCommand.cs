@@ -1,7 +1,7 @@
 ﻿using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionSaisons.Constantes;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -33,7 +33,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				try {
 					service.SetSaisonCourante(itemToSave);
 					NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
-					new ShowViewCommand(ViewNames.ConsultationSaisons).Execute(null);
+					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
 				catch (Exception) {
 					throw;

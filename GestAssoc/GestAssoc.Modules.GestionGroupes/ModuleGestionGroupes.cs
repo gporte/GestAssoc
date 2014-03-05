@@ -1,5 +1,5 @@
 ﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Common.Constantes;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionGroupes.Services;
 using GestAssoc.Modules.GestionGroupes.Views;
@@ -27,10 +27,10 @@ namespace GestAssoc.Modules.GestionGroupes
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationGroupesView>(
-				ViewNames.ConsultationGroupes
+				ViewNames.ConsultationGroupes.ToString()
 			);
 			container.RegisterType<object, FormulaireGroupeView>(
-				ViewNames.FormulaireGroupe
+				ViewNames.FormulaireGroupe.ToString()
 			);
 
 			// enregistrement des services

@@ -1,6 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
+using GestAssoc.Modules.GestionInfosClub.Constantes;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using GestAssoc.Modules.GestionInfosClub.Views;
 using Microsoft.Practices.Prism.Modularity;
@@ -24,8 +24,8 @@ namespace GestAssoc.Modules.GestionInfosClub
 			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(InfosClubMenuView));
 
 			// Enregistrement des vues
-			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub);
-			container.RegisterType<object, FormulaireInfosClubView>(ViewNames.FormulaireInfosClub);
+			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub.ToString());
+			container.RegisterType<object, FormulaireInfosClubView>(ViewNames.FormulaireInfosClub.ToString());
 
 			// enregistrement des services
 			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();

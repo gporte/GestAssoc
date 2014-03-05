@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\SaveFormulaireInfosClubCommand.cs" />
+    <Compile Include="Constantes\Enums.cs" />
     <Compile Include="ModuleGestionInfosClub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

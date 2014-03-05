@@ -1,6 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Commands;
@@ -51,12 +51,12 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
 			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Groupe)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
-			this.EditGroupeCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireGroupe);
+			this.EditGroupeCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireGroupe.ToString());
 			this.DeleteGroupeCmd = new DeleteGroupeCommand();
-			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe);
+			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes.ToString());
 		}
 	}
 }

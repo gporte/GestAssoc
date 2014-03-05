@@ -1,6 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Commands;
@@ -65,7 +65,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			}
 
 			this.SaveCmd = new SaveGroupeCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationGroupes);
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationGroupes.ToString());
 			this.JoursSemaine = this._services.GetJoursSemaine();
 
 			// trace

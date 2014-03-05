@@ -1,5 +1,5 @@
 ﻿using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Services;
@@ -35,7 +35,7 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 
 				NotificationHelper.WriteNotification("Enregistrement effectué.");
 
-				new ShowViewCommand(ViewNames.ConsultationGroupes).Execute(null);
+				new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 			}
 			catch (Exception) {
 				throw;

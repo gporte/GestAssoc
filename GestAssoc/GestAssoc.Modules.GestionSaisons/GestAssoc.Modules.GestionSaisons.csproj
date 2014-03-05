@@ -103,6 +103,7 @@
     <Compile Include="Commands\ChangeSaisonCouranteCommand.cs" />
     <Compile Include="Commands\DeleteSaisonCommand.cs" />
     <Compile Include="Commands\SaveSaisonCommand.cs" />
+    <Compile Include="Constantes\Enums.cs" />
     <Compile Include="ModuleGestionSaisons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

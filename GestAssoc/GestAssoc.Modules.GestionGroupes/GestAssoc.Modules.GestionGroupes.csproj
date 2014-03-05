@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Commands\DeleteGroupeCommand.cs" />
     <Compile Include="Commands\SaveGroupeCommand.cs" />
+    <Compile Include="Constantes\Enums.cs" />
     <Compile Include="ModuleGestionGroupes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionSaisons.Commands;
+using GestAssoc.Modules.GestionSaisons.Constantes;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -53,10 +53,10 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			}
 
 			this.SaveCmd = new SaveSaisonCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationSaisons);
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationSaisons.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireSaison);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireSaison.ToString());
 		}
 		#endregion
 	}

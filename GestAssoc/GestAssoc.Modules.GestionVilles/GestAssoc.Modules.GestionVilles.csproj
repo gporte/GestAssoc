@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="Commands\DeleteVilleCommand.cs" />
     <Compile Include="Commands\SaveVilleCommand.cs" />
+    <Compile Include="Constantes\Enums.cs" />
     <Compile Include="ModuleGestionVilles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GestionVillesServices.cs" />

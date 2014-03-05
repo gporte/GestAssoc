@@ -1,6 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
+using GestAssoc.Modules.GestionVilles.Constantes;
 using GestAssoc.Modules.GestionVilles.Services;
 using GestAssoc.Modules.GestionVilles.Views;
 using Microsoft.Practices.Prism.Modularity;
@@ -27,10 +27,10 @@ namespace GestAssoc.Modules.GestionVilles
 			
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationVillesView>(
-				ViewNames.ConsultationVilles
+				ViewNames.ConsultationVilles.ToString()
 			);
 			container.RegisterType<object, FormulaireVilleView>(
-				ViewNames.FormulaireVille
+				ViewNames.FormulaireVille.ToString()
 			);
 
 			// enregistrement des services

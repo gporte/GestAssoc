@@ -1,7 +1,7 @@
 ﻿using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionVilles.Constantes;
 using GestAssoc.Modules.GestionVilles.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -37,7 +37,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
 
-				new ShowViewCommand(ViewNames.ConsultationVilles).Execute(null);
+				new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 			}
 			catch (Exception) {
 				throw;

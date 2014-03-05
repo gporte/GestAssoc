@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Commands;
+using GestAssoc.Modules.GestionVilles.Constantes;
 using GestAssoc.Modules.GestionVilles.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -51,12 +51,12 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
 			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
-			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille);
+			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille.ToString());
 			this.DeleteVilleCmd = new DeleteVilleCommand();
-			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille);
+			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationVilles);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationVilles.ToString());
 		}
 	}
 }
