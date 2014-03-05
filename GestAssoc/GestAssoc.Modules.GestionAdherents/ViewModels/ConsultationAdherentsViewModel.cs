@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionAdherents.Commands;
+using GestAssoc.Modules.GestionAdherents.Constantes;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -51,12 +51,12 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this._items = CollectionViewSource.GetDefaultView(this.Items);
 			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Adherent)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
-			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent);
+			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent.ToString());
 			this.DeleteAdherentCmd = new DeleteAdherentCommand();
-			this.AddAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent);
+			this.AddAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationAdherents);
+			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationAdherents.ToString());
 		}
 	}
 }

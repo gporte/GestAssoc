@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Commands\DeleteAdherentCommand.cs" />
     <Compile Include="Commands\SaveAdherentCommand.cs" />
+    <Compile Include="Constantes\Enums.cs" />
     <Compile Include="ModuleGestionAdherents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

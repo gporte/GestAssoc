@@ -14,8 +14,5 @@ namespace GestAssoc.Common.Constantes
 
 		public const string ConsultationGroupes = "ConsultationGroupes";
 		public const string FormulaireGroupe = "FormulaireGroupe";
-
-		public const string ConsultationAdherents = "ConsultationAdherents";
-		public const string FormulaireAdherent = "FormulaireAdherent";
 	}
 }

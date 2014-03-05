@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionAdherents.Commands;
+using GestAssoc.Modules.GestionAdherents.Constantes;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -60,7 +60,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			}
 
 			this.SaveCmd = new SaveAdherentCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents);
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());
 			this.Sexes = this._services.GetSexes();
 
 			// trace

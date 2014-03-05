@@ -1,7 +1,7 @@
 ﻿using GestAssoc.Common.Commands;
-using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionAdherents.Constantes;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -35,7 +35,7 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 
 				NotificationHelper.WriteNotification("Enregistrement effectué.");
 
-				new ShowViewCommand(ViewNames.ConsultationAdherents).Execute(null);
+				new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 			}
 			catch (Exception) {
 				throw;
