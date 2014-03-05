@@ -9,6 +9,7 @@ using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionAdherents.ViewModels
@@ -45,6 +46,19 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		}
 		#endregion
 
+		#region Villes property
+		private ObservableCollection<Ville> _villes;
+		public ObservableCollection<Ville> Villes {
+			get { return this._villes; }
+			set {
+				if (this._villes != value) {
+					this._villes = value;
+					this.RaisePropertyChangedEvent("Villes");
+				}
+			}
+		}
+		#endregion
+
 		#region Constructors
 		public FormulaireAdherentViewModel(Guid itemId) {
 			this._services = ServiceLocator
@@ -52,7 +66,12 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 				.Resolve<IGestionAdherentsServices>();
 
 			if (itemId == Guid.Empty) {
-				this.Item = new Adherent();
+				this.Item = new Adherent()
+				{
+					DateNaissance = DefaultValueHelper.DateTimeSQLMinValue,
+					DateCreation = DateTime.Now,
+					DateModification = DateTime.Now
+				};
 			}
 			else {
 				UIServices.SetBusyState();
@@ -62,6 +81,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.SaveCmd = new SaveAdherentCommand();
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());
 			this.Sexes = this._services.GetSexes();
+			this.Villes = this._services.GetAllVilles();
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireAdherent);

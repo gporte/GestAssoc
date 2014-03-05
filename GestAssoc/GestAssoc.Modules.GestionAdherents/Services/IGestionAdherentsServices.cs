@@ -37,5 +37,11 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 		/// </summary>
 		/// <returns>Dictionnaire des sexes.</returns>
 		IDictionary<int, string> GetSexes();
+
+		/// <summary>
+		/// Obtient la liste des villes.
+		/// </summary>
+		/// <returns>Villes</returns>
+		ObservableCollection<Ville> GetAllVilles();
 	}
 }

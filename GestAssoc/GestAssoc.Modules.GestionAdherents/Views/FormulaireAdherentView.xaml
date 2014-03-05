@@ -3,8 +3,9 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="500">
+			 d:DesignHeight="500" d:DesignWidth="500">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
 	</UserControl.Resources>
@@ -27,7 +28,8 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<TextBox Text="{Binding Item.Nom}"
+				<Label Content="Nom / prénom :  : " Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Nom}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValueMedium}"
 						 CharacterCasing="Upper"
 						 ToolTip="Nom"/>
@@ -40,6 +42,74 @@
 				<Label Content="Naissance : " Style="{StaticResource lblName}" />
 				<DatePicker Style="{StaticResource dtpValueMedium}" Margin="20,0,0,0"
 							Text="{Binding Path=Item.DateNaissance}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Sexe : " Style="{StaticResource lblName}" />
+				<ComboBox Style="{StaticResource cmbValueLittle}" Margin="20,0,0,0"
+						  ItemsSource="{Binding Path=Sexes}" 
+						  DisplayMemberPath="Value"
+						  SelectedValuePath="Key"
+						  SelectedValue="{Binding Path=Item.Sexe}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Adresse : " Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Adresse}" Margin="20,0,0,0"
+						 Style="{StaticResource tbxValue}" 
+						 ToolTip="Adresse"/>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="" Style="{StaticResource lblName}" />
+				<ComboBox Style="{StaticResource cmbValue}" Margin="20,0,0,0"
+						  ItemsSource="{Binding Path=Villes}" 
+						  SelectedItem="{Binding Path=Item.Ville}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Téléphones : " Style="{StaticResource lblName}" />
+				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
+								   Text="{Binding Item.Telephone1}" Margin="20,0,0,0"
+								   Style="{StaticResource tbxValueMedium}" 
+								   ToolTip="N° de tél. principal"/>
+				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
+								   Text="{Binding Item.Telephone2}" Margin="20,0,0,0"
+								   Style="{StaticResource tbxValueMedium}" 
+								   ToolTip="N° de tél. secondaire"/>
+				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
+								   Text="{Binding Item.Telephone3}" Margin="20,0,0,0"
+								   Style="{StaticResource tbxValueMedium}" 
+								   ToolTip="N° de tél. tertiaire"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="E-mails : " Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Mail1}" Margin="20,0,0,0"
+						 Style="{StaticResource tbxValue}" 
+						 ToolTip="Adresse e-mail principale"/>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="" Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Mail2}" Margin="20,0,0,0"
+						 Style="{StaticResource tbxValue}" 
+						 ToolTip="Adresse e-mail secondaire"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="" Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Item.Mail3}" Margin="20,0,0,0"
+						 Style="{StaticResource tbxValue}" 
+						 ToolTip="Adresse e-mail tertiaire"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Commentaire : " Style="{StaticResource lblName}" VerticalAlignment="Top" />
+				<TextBox Text="{Binding Item.Commentaire}"  Margin="20,0,0,0"
+						 Style="{StaticResource tbxCommentaire}" 
+						 AcceptsReturn="True"
+						 TextWrapping="Wrap"/>
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>

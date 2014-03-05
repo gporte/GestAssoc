@@ -149,6 +149,12 @@
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Mail3}"/>
 				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+					<Label Style="{StaticResource lblName}" Content="" />
+					<Label Style="{StaticResource lblValue}" 
+							   Content="{Binding ElementName=lbxAdherents, Path=SelectedItem.Commentaire}"/>
+				</StackPanel>
 			</WrapPanel>
 		</GroupBox>
 	</DockPanel>

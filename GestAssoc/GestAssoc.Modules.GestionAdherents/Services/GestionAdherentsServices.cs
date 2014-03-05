@@ -35,12 +35,14 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 			}
 
 			if (originalItem != null) { // item trouvé => update
+				originalItem.DateModification = DateTime.Now;
 				this._context.Entry<Adherent>(originalItem).CurrentValues.SetValues(itemToSave);
 			}
 			else { // item non trouvé => insert
 				itemToSave.ID = Guid.NewGuid();
 				itemToSave.Ville_ID = itemToSave.Ville.ID;
 				itemToSave.Ville = this._context.Villes.Find(itemToSave.Ville_ID);
+				itemToSave.DateCreation = DateTime.Now;
 
 				this._context.Adherents.Add(itemToSave);
 			}
@@ -69,6 +71,11 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 			sexes.Add(1, LibellesHelper.GetSexeLibelle(1));
 
 			return sexes;
+		}
+
+		public ObservableCollection<Ville> GetAllVilles() {
+			var villes = this._context.Villes.OrderBy(x => x.CodePostal).ThenBy(x => x.Libelle);
+			return new ObservableCollection<Ville>(villes);
 		}
 	}
 }

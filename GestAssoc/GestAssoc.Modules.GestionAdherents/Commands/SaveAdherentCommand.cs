@@ -22,7 +22,7 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 		}
 
 		public void Execute(object parameter) {
-			// TODO contrôler la validité
+			// TODO contrôler la validité des données et des dates
 
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
