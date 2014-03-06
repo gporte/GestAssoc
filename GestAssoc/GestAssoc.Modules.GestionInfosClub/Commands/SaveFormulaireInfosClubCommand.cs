@@ -6,6 +6,7 @@ using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionInfosClub.Commands
@@ -29,19 +30,47 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 				.Resolve<IGestionInfosClubServices>();
 
 			var itemToSave = parameter as InfosClub;
+			List<string> errorsList;
 			itemToSave.Ville_ID = itemToSave.Ville.ID;
 
 			try {
-				service.SaveInfosClub(itemToSave);
-
-				NotificationHelper.WriteNotification("Enregistrement effectué.");
-
-				new ShowViewCommand(ViewNames.ConsultationInfosClub.ToString()).Execute(null);
+				if (this.IsValidForSaving(itemToSave, out errorsList)) {
+					UIServices.SetBusyState();
+					service.SaveInfosClub(itemToSave);
+					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					new ShowViewCommand(ViewNames.ConsultationInfosClub.ToString()).Execute(null);
+				}
+				else {
+					errorsList.Insert(0, "Saisie non valide. Enregistrement annulé.");
+					NotificationHelper.WriteNotificationList(errorsList);
+				}
 			}
-			catch (Exception) {				
+			catch (Exception) {		
+				// TODO gérer l'exception??
 				throw;
 			}
 			
+		}
+
+		private bool IsValidForSaving(InfosClub itemToSave, out List<string> errorsList) {
+			var service = ServiceLocator
+				.Current.GetInstance<IGestionInfosClubServices>();
+
+			errorsList = new List<string>();
+
+			if (string.IsNullOrWhiteSpace(itemToSave.Nom)) {
+				errorsList.Add("Nom obligatoire.");
+			}
+
+			if (string.IsNullOrWhiteSpace(itemToSave.Adresse)) {
+				errorsList.Add("Adresse obligatoire.");
+			}
+
+			if (itemToSave.Ville == null) {
+				errorsList.Add("Ville obligatoire.");
+			}
+
+			return errorsList.Count == 0;
 		}
 	}
 }
