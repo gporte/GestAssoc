@@ -64,7 +64,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				errorsList.Add("Code postal obligatoire.");
 			}
 
-			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code poatsl+libellé
+			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code postal+libellé
 			UIServices.SetBusyState();
 			var itemExists = service.GetAllVilles().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 

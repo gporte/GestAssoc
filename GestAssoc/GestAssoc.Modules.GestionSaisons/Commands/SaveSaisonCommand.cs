@@ -24,8 +24,6 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 		}
 
 		public void Execute(object parameter) {
-			// TODO contrôler la validité
-
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionSaisonsServices>();
@@ -70,12 +68,12 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				errorsList.Add("L'année de fin doit être supérieure à l'année de début.");
 			}
 
-			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code poatsl+libellé
+			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple année début+année fin
 			UIServices.SetBusyState();
 			var itemExists = service.GetAllSaisons().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add("Cette saison existe déjà.");
+				errorsList.Add("Cette saison existe déjà (année début + année fin).");
 			}
 
 			return errorsList.Count == 0;
