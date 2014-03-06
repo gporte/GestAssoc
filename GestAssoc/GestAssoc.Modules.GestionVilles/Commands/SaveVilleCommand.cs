@@ -64,14 +64,12 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				errorsList.Add("Code postal obligatoire.");
 			}
 
-			// si on est sur un ajout => le couple code postal+libellé ne doit pas déjà exister
-			if (itemToSave.ID == Guid.Empty) {
-				UIServices.SetBusyState();
-				var itemExists = service.GetAllVilles().Count(x => x.ToString() == itemToSave.ToString()) > 0;
+			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code poatsl+libellé
+			UIServices.SetBusyState();
+			var itemExists = service.GetAllVilles().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
-				if (itemExists) {
-					errorsList.Add("Cette ville existe déjà (code postal + libellé).");
-				}
+			if (itemExists) {
+				errorsList.Add("Cette ville existe déjà (code postal + libellé).");
 			}
 
 			return errorsList.Count == 0;
