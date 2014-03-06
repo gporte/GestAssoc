@@ -31,6 +31,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				.Resolve<IGestionSaisonsServices>();
 
 			var itemToSave = parameter as Saison;
+			bool isNewSaison = itemToSave.ID == Guid.Empty;
 			List<string> errorsList;
 
 			try {
@@ -38,6 +39,13 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 					UIServices.SetBusyState();
 					service.SaveSaison(itemToSave);
 					NotificationHelper.WriteNotification("Enregistrement effectué.");
+
+					// si il s'agit d'une nouvelle saison, elle devient la saison courante
+					if (isNewSaison) {
+						service.SetSaisonCourante(itemToSave);
+						NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
+					}
+
 					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
 				else {

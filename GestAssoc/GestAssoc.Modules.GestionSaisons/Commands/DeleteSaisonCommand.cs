@@ -6,6 +6,7 @@ using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using System.Linq;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionSaisons.Commands
@@ -33,9 +34,23 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 			var itemToDelete = parameter as Saison;
 
 			try {
+				UIServices.SetBusyState();
 				service.DeleteSaison(itemToDelete);
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
+
+				// La saison la plus récente devient la saison courante
+				UIServices.SetBusyState();
+				var newSaisonCourante = service.GetAllSaisons().LastOrDefault();
+
+				if (newSaisonCourante != null) {
+					UIServices.SetBusyState();
+					service.SetSaisonCourante(newSaisonCourante);
+					NotificationHelper.WriteNotification("Nouvelle saison courante : " + newSaisonCourante.ToString());
+				}
+				else {
+					NotificationHelper.WriteNotification("Aucune saison disponible. Pas de saison courante.");
+				}
 
 				new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 			}
