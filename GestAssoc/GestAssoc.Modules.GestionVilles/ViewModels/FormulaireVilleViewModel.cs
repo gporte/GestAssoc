@@ -41,8 +41,13 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 				this.Item = new Ville();
 			}
 			else {
-				UIServices.SetBusyState();
-				this.Item = this._services.GetVille(itemId);
+				try {
+					UIServices.SetBusyState();
+					this.Item = this._services.GetVille(itemId);
+				}
+				catch (Exception ex) {
+					NotificationHelper.ShowError(ex);
+				}
 			}
 
 			this.SaveCmd = new SaveVilleCommand();

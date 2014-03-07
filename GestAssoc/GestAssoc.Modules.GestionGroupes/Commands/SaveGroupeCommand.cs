@@ -43,9 +43,8 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
-			catch (Exception) {
-				// TODO gérer l'exception??
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 

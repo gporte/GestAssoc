@@ -54,8 +54,8 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 
 				new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 			}
-			catch (Exception) {
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 	}

@@ -76,6 +76,7 @@
     <Compile Include="Commands\ShowViewCommandWithParameter.cs" />
     <Compile Include="Constantes\RegionNames.cs" />
     <Compile Include="Event\NotificationEvent.cs" />
+    <Compile Include="Event\ShowErrorEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\DefaultValueHelper.cs" />
     <Compile Include="Utility\NotificationHelper.cs" />

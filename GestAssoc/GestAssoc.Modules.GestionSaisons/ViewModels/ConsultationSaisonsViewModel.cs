@@ -7,6 +7,7 @@ using GestAssoc.Modules.GestionSaisons.Constantes;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
@@ -49,10 +50,15 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionSaisonsServices>();
 
-			UIServices.SetBusyState();
-			this.Items = new ObservableCollection<Saison>(this._services.GetAllSaisons());
-			this._items = CollectionViewSource.GetDefaultView(this.Items);
-			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Saison)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+			try {
+				UIServices.SetBusyState();
+				this.Items = new ObservableCollection<Saison>(this._services.GetAllSaisons());
+				this._items = CollectionViewSource.GetDefaultView(this.Items);
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Saison)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+			}
+			catch(Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 
 			this.EditSaisonCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireSaison.ToString());
 			this.DeleteSaisonCmd = new DeleteSaisonCommand();

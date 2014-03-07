@@ -1,5 +1,10 @@
-﻿using GestAssoc.ViewModels;
+﻿using GestAssoc.Common.Event;
+using GestAssoc.ViewModels;
+using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 using System.Windows.Controls.Ribbon;
+using Xceed.Wpf.Toolkit;
 
 namespace GestAssoc.Views
 {
@@ -11,6 +16,16 @@ namespace GestAssoc.Views
 		public ShellWindow(ShellWindowViewModel vm) {
 			InitializeComponent();
 			this.DataContext = vm;
+
+			var aggregator = ServiceLocator
+							.Current.GetInstance<IUnityContainer>()
+							.Resolve<IEventAggregator>();
+
+			aggregator.GetEvent<ShowErrorEvent>().Subscribe(this.ShowError);
+		}
+
+		private void ShowError(string errorMsg) {
+			MessageBox.Show(errorMsg, "Erreur");
 		}
 	}
 }

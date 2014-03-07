@@ -40,6 +40,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 
 					// si il s'agit d'une nouvelle saison, elle devient la saison courante
 					if (isNewSaison) {
+						UIServices.SetBusyState();
 						service.SetSaisonCourante(itemToSave);
 						NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
 					}
@@ -51,9 +52,8 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
-			catch (Exception) {
-				// TODO gérer l'exception??
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 

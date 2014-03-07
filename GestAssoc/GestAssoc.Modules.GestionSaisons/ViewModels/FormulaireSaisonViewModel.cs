@@ -48,8 +48,13 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				};
 			}
 			else {
-				UIServices.SetBusyState();
-				this.Item = this._services.GetSaison(itemId);
+				try {
+					UIServices.SetBusyState();
+					this.Item = this._services.GetSaison(itemId);
+				}
+				catch (Exception ex) {
+					NotificationHelper.ShowError(ex);
+				}
 			}
 
 			this.SaveCmd = new SaveSaisonCommand();

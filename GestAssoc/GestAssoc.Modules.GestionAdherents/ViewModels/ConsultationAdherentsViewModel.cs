@@ -7,6 +7,7 @@ using GestAssoc.Modules.GestionAdherents.Constantes;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
@@ -46,10 +47,15 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionAdherentsServices>();
 
-			UIServices.SetBusyState();
-			this.Items = new ObservableCollection<Adherent>(this._services.GetAllAdherents());
-			this._items = CollectionViewSource.GetDefaultView(this.Items);
-			this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Adherent)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+			try {
+				UIServices.SetBusyState();
+				this.Items = new ObservableCollection<Adherent>(this._services.GetAllAdherents());
+				this._items = CollectionViewSource.GetDefaultView(this.Items);
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Adherent)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 
 			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent.ToString());
 			this.DeleteAdherentCmd = new DeleteAdherentCommand();

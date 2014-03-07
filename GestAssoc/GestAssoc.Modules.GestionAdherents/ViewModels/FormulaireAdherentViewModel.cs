@@ -65,23 +65,30 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionAdherentsServices>();
 
-			if (itemId == Guid.Empty) {
-				this.Item = new Adherent()
-				{
-					DateNaissance = DefaultValueHelper.DateTimeSQLMinValue,
-					DateCreation = DateTime.Now,
-					DateModification = DateTime.Now
-				};
-			}
-			else {
+			try {
+				if (itemId == Guid.Empty) {
+					this.Item = new Adherent()
+					{
+						DateNaissance = DefaultValueHelper.DateTimeSQLMinValue,
+						DateCreation = DateTime.Now,
+						DateModification = DateTime.Now
+					};
+				}
+				else {
+					UIServices.SetBusyState();
+					this.Item = this._services.GetAdherent(itemId);
+				}
+
 				UIServices.SetBusyState();
-				this.Item = this._services.GetAdherent(itemId);
+				this.Villes = this._services.GetAllVilles();
+				this.Sexes = this._services.GetSexes();
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 
 			this.SaveCmd = new SaveAdherentCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());
-			this.Sexes = this._services.GetSexes();
-			this.Villes = this._services.GetAllVilles();
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());			
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireAdherent);

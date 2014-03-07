@@ -6,6 +6,7 @@ using GestAssoc.Modules.GestionInfosClub.Constantes;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using System;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 {
@@ -35,8 +36,13 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 
 			this.ShowEditViewCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireInfosClub.ToString());
 
-			UIServices.SetBusyState();
-			this.Item = this._services.GetInfosClub();
+			try {
+				UIServices.SetBusyState();
+				this.Item = this._services.GetInfosClub();
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationInfosClub.ToString());

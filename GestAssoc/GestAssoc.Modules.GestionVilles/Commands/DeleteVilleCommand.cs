@@ -33,14 +33,15 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 			var itemToDelete = parameter as Ville;
 
 			try {
+				UIServices.SetBusyState();
 				service.DeleteVille(itemToDelete);
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
 
 				new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 			}
-			catch (Exception) {
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 	}

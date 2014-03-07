@@ -6,6 +6,7 @@ using GestAssoc.Modules.GestionInfosClub.Constantes;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -47,9 +48,14 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
 
-			UIServices.SetBusyState();
-			this.Item = this._services.GetInfosClub();
-			this.Villes = this._services.GetAllVilles();
+			try {
+				UIServices.SetBusyState();
+				this.Item = this._services.GetInfosClub();
+				this.Villes = this._services.GetAllVilles();
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
 

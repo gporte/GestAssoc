@@ -31,12 +31,13 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 					.Resolve<IGestionSaisonsServices>();
 
 				try {
+					UIServices.SetBusyState();
 					service.SetSaisonCourante(itemToSave);
 					NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
 					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
-				catch (Exception) {
-					throw;
+				catch (Exception ex) {
+					NotificationHelper.ShowError(ex);
 				}
 			}
 		}

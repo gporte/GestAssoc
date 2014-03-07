@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Commands;
-using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Commands;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -51,22 +51,28 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionGroupesServices>();
 
-			if (itemId == Guid.Empty) {
-				this.Item = new Groupe()
-				{
-					Saison = this._services.GetSaisonCourante(),
-					HeureDebut = DefaultValueHelper.DateTimeSQLMinValue,
-					HeureFin = DefaultValueHelper.DateTimeSQLMinValue
-				};
+			try {
+				if (itemId == Guid.Empty) {
+					this.Item = new Groupe()
+					{
+						Saison = this._services.GetSaisonCourante(),
+						HeureDebut = DefaultValueHelper.DateTimeSQLMinValue,
+						HeureFin = DefaultValueHelper.DateTimeSQLMinValue
+					};
+				}
+				else {
+					UIServices.SetBusyState();
+					this.Item = this._services.GetGroupe(itemId);
+				}
+
+				this.JoursSemaine = this._services.GetJoursSemaine();
 			}
-			else {
-				UIServices.SetBusyState();
-				this.Item = this._services.GetGroupe(itemId);
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 
 			this.SaveCmd = new SaveGroupeCommand();
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationGroupes.ToString());
-			this.JoursSemaine = this._services.GetJoursSemaine();
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireGroupe);

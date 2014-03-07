@@ -40,7 +40,7 @@
 		<ContentControl Name="ContentRegion" Grid.Row="1" Margin="5,5,5,5"
 						prism:RegionManager.RegionName="{x:Static const:RegionNames.ContentRegion}" />
 				
-		<Expander Header="Traces" Grid.Row="2" Name="NotificationRegion" IsExpanded="False" Margin="5,5,5,5">
+		<Expander Header="Journal" Grid.Row="2" Name="NotificationRegion" IsExpanded="False" Margin="5,5,5,5">
 			<TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" Height="150"
 					 Text="{Binding Path=Notifications}"/>
 		</Expander>

@@ -32,14 +32,15 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 			var itemToDelete = parameter as Adherent;
 
 			try {
+				UIServices.SetBusyState();
 				service.DeleteAdherent(itemToDelete);
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
 
 				new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 			}
-			catch (Exception) {
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 	}

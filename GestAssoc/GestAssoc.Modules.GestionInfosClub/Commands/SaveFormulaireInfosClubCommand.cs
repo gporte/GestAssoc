@@ -23,8 +23,6 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 		}
 
 		public void Execute(object parameter) {
-			// TODO contrôler la validité
-			
 			var service = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();
@@ -45,9 +43,8 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
-			catch (Exception) {		
-				// TODO gérer l'exception??
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 			
 		}

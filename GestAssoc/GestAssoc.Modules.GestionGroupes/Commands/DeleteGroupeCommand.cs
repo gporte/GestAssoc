@@ -1,7 +1,7 @@
 ﻿using GestAssoc.Common.Commands;
-using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -32,14 +32,15 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 			var itemToDelete = parameter as Groupe;
 
 			try {
+				UIServices.SetBusyState();
 				service.DeleteGroupe(itemToDelete);
 
 				NotificationHelper.WriteNotification("Enregistrement supprimé.");
 
 				new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 			}
-			catch (Exception) {
-				throw;
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
 			}
 		}
 	}
