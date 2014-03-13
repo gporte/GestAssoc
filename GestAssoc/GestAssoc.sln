@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionGr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionAdherents", "GestAssoc.Modules.GestionAdherents\GestAssoc.Modules.GestionAdherents.csproj", "{B2729D56-E18D-47D3-A484-BF0B6E3776C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionInscriptions", "GestAssoc.Modules.GestionInscriptions\GestAssoc.Modules.GestionInscriptions.csproj", "{AC2AE2D5-6875-457E-9B88-971EA06683B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{B2729D56-E18D-47D3-A484-BF0B6E3776C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2729D56-E18D-47D3-A484-BF0B6E3776C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2729D56-E18D-47D3-A484-BF0B6E3776C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2AE2D5-6875-457E-9B88-971EA06683B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2AE2D5-6875-457E-9B88-971EA06683B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2AE2D5-6875-457E-9B88-971EA06683B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2AE2D5-6875-457E-9B88-971EA06683B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{01527FFD-B195-4DF0-9602-0B22533AC308} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 		{2E54E7AC-3AAE-47DF-A750-BE41F889BC54} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 		{B2729D56-E18D-47D3-A484-BF0B6E3776C9} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
+		{AC2AE2D5-6875-457E-9B88-971EA06683B9} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
