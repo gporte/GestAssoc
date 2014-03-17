@@ -80,6 +80,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DeleteInscriptionCommand.cs" />
+    <Compile Include="Commands\SaveInscriptionCommand.cs" />
     <Compile Include="Constantes\Enums.cs" />
     <Compile Include="Services\GestionInscriptionServices.cs" />
     <Compile Include="Services\IGestionInscriptionsServices.cs" />
@@ -111,7 +113,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>

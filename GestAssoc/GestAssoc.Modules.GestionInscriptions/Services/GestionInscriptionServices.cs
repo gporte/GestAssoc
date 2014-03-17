@@ -19,6 +19,12 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 			this._context = new GestAssocContext();
 		}
 
+		/// <summary>
+		/// Obtient toutes les inscriptions de la saison courante.
+		/// </summary>
+		/// <returns>
+		/// Incriptions pour la saison courante.
+		/// </returns>
 		public ObservableCollection<Inscription> GetAllInscriptions() {
 			var inscriptions = this._context.Inscriptions
 				.Where(x => x.Groupe.Saison.EstSaisonCourante)
@@ -28,10 +34,19 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 			return new ObservableCollection<Inscription>(inscriptions);
 		}
 
+		/// <summary>
+		/// Gets the inscription.
+		/// </summary>
+		/// <param name="idInscription">The identifier inscription.</param>
+		/// <returns></returns>
 		public Inscription GetInscription(Guid idInscription) {
 			return this._context.Inscriptions.Find(idInscription);
 		}
 
+		/// <summary>
+		/// Saves the inscription.
+		/// </summary>
+		/// <param name="itemToSave">The inscription.</param>
 		public void SaveInscription(Inscription itemToSave) {
 			Inscription originalItem = null;
 
@@ -63,6 +78,10 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 			this._context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Deletes the inscription.
+		/// </summary>
+		/// <param name="itemToDelete">The inscription.</param>
 		public void DeleteInscription(Inscription itemToDelete) {
 			Inscription originalItem = null;
 
@@ -77,11 +96,19 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 			this._context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Gets all adherents.
+		/// </summary>
+		/// <returns></returns>
 		public ObservableCollection<Adherent> GetAllAdherents() {
 			var adherents = this._context.Adherents.OrderBy(x => x.Nom).ThenBy(x => x.Prenom);
 			return new ObservableCollection<Adherent>(adherents);
 		}
 
+		/// <summary>
+		/// Gets all groupes.
+		/// </summary>
+		/// <returns></returns>
 		public ObservableCollection<Groupe> GetAllGroupes() {
 			var groupes = this._context.Groupes
 				.Where(x => x.Saison.EstSaisonCourante)
