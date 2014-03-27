@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -83,8 +84,18 @@
     <Compile Include="Commands\DeleteInscriptionCommand.cs" />
     <Compile Include="Commands\SaveInscriptionCommand.cs" />
     <Compile Include="Constantes\Enums.cs" />
+    <Compile Include="ModuleGestionInscriptions.cs" />
     <Compile Include="Services\GestionInscriptionServices.cs" />
     <Compile Include="Services\IGestionInscriptionsServices.cs" />
+    <Compile Include="ViewModels\ConsultationInscriptionsViewModel.cs" />
+    <Compile Include="ViewModels\FormulaireInscriptionViewModel.cs" />
+    <Compile Include="ViewModels\GestionInscriptionsMenuViewModel.cs" />
+    <Compile Include="Views\ConsultationInscriptionsView.xaml.cs">
+      <DependentUpon>ConsultationInscriptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GestionInscriptionsMenuView.xaml.cs">
+      <DependentUpon>GestionInscriptionsMenuView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,10 +123,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GestAssoc.Common\GestAssoc.Common.csproj">
       <Project>{cc7f8a9e-0b32-4a76-8f2b-a56a0de454de}</Project>
@@ -126,6 +134,16 @@
       <Name>GestAssoc.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ConsultationInscriptionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GestionInscriptionsMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -134,6 +152,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)GestAssoc\$(OutDir)Modules\"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

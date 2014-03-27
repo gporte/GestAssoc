@@ -28,8 +28,9 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 		public ObservableCollection<Inscription> GetAllInscriptions() {
 			var inscriptions = this._context.Inscriptions
 				.Where(x => x.Groupe.Saison.EstSaisonCourante)
-				.OrderBy(x => x.Groupe)
-				.ThenBy(x => x.Adherent);
+				.OrderBy(x => x.Groupe.Libelle)
+				.ThenBy(x => x.Adherent.Nom)
+				.ThenBy(x => x.Adherent.Prenom);
 
 			return new ObservableCollection<Inscription>(inscriptions);
 		}
@@ -106,9 +107,9 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 		}
 
 		/// <summary>
-		/// Gets all groupes.
+		/// Obtient tous les groupes pour la saison courante.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Liste des groupes pour la saison courante.</returns>
 		public ObservableCollection<Groupe> GetAllGroupes() {
 			var groupes = this._context.Groupes
 				.Where(x => x.Saison.EstSaisonCourante)
