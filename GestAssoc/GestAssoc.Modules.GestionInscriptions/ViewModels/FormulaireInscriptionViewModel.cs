@@ -8,6 +8,7 @@ using GestAssoc.Modules.GestionInscriptions.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -58,6 +59,19 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		}
 		#endregion
 
+		#region Statuts property
+		private ObservableCollection<int> _statuts;
+		public ObservableCollection<int> Statuts {
+			get { return this._statuts; }
+			set {
+				if (this._statuts != value) {
+					this._statuts = value;
+					this.RaisePropertyChangedEvent("Statuts");
+				}
+			}
+		}
+		#endregion
+
 		#region Constructors
 		public FormulaireInscriptionViewModel(Guid itemId) {
 			this._services = ServiceLocator
@@ -86,7 +100,9 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			}
 
 			this.SaveCmd = new SaveInscriptionCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString());			
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString());
+
+			this.Statuts = new ObservableCollection<int>(new List<int>() { 0, 1, 2 });
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireInscription);

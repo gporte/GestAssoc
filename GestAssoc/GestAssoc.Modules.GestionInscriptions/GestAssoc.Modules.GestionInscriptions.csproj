@@ -93,6 +93,9 @@
     <Compile Include="Views\ConsultationInscriptionsView.xaml.cs">
       <DependentUpon>ConsultationInscriptionsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormulaireInscriptionView.xaml.cs">
+      <DependentUpon>FormulaireInscriptionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GestionInscriptionsMenuView.xaml.cs">
       <DependentUpon>GestionInscriptionsMenuView.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ConsultationInscriptionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FormulaireInscriptionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

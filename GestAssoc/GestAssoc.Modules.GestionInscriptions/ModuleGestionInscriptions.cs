@@ -29,9 +29,9 @@ namespace GestAssoc.Modules.GestionInscriptions
 			container.RegisterType<object, ConsultationInscriptionsView>(
 				ViewNames.ConsultationInscriptions.ToString()
 			);
-			//container.RegisterType<object, FormulaireAdherentView>(
-			//	ViewNames.FormulaireAdherent.ToString()
-			//);
+			container.RegisterType<object, FormulaireInscriptionView>(
+				ViewNames.FormulaireInscription.ToString()
+			);
 
 			// enregistrement des services
 			container.RegisterType<IGestionInscriptionsServices, GestionInscriptionServices>();

@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="GestAssoc.Modules.GestionInscriptions.Views.FormulaireInscriptionView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="500" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
+	</UserControl.Resources>
+	
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="Inscription" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+					Command="{Binding Path=CancelCmd}">
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
+			</Button>
+
+			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
+				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
+			</Button>
+		</WrapPanel>
+
+		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Adhérent :  : " Style="{StaticResource lblName}" />
+				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
+						  ItemsSource="{Binding Path=Adherents}" 
+						  SelectedItem="{Binding Path=Item.Adherent}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Groupe :  : " Style="{StaticResource lblName}" />
+				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
+						  ItemsSource="{Binding Path=Groupes}" 
+						  SelectedItem="{Binding Path=Item.Groupe}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="Statut :  : " Style="{StaticResource lblName}" />
+				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
+						  ItemsSource="{Binding Path=Statuts}" 
+						  SelectedItem="{Binding Path=Item.StatutInscription}" />
+			</StackPanel>
+		</WrapPanel>
+	</DockPanel>
+</UserControl>
