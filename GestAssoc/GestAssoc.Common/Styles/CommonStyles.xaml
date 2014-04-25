@@ -78,6 +78,11 @@
 		<Setter Property="Height" Value="25" />
 	</Style>
 
+	<Style x:Key="cmbValueMedium" TargetType="{x:Type ComboBox}">
+		<Setter Property="Width" Value="100" />
+		<Setter Property="Height" Value="25" />
+	</Style>
+
 	<!-- StackPanel -->
 	<Style x:Key="skpLabelValue" TargetType="{x:Type StackPanel}">
 		<Setter Property="Margin" Value="0,5,0,0" />

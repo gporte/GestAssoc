@@ -1,3 +1,4 @@
+using GestAssoc.Model.Libelles;
 using System;
 
 namespace GestAssoc.Model.Models
@@ -19,6 +20,10 @@ namespace GestAssoc.Model.Models
 		public virtual Adherent Adherent { get; set; }
 		public virtual Groupe Groupe { get; set; }
 		public virtual Section Section { get; set; }
+
+		public string LibelleStatutInscription {
+			get { return LibellesHelper.GetStatutInscriptionLibelle(this.StatutInscription); }
+		}
 
 		public override string ToString() {
 			return string.Format("{0} - {1}", this.Groupe, this.Adherent);

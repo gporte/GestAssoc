@@ -141,6 +141,15 @@
   <data name="LIBELLE_ABSENT" xml:space="preserve">
     <value>&lt;LIBELLE ABSENT&gt;</value>
   </data>
+  <data name="STI0" xml:space="preserve">
+    <value>A suivre</value>
+  </data>
+  <data name="STI1" xml:space="preserve">
+    <value>Validée</value>
+  </data>
+  <data name="STI2" xml:space="preserve">
+    <value>Annulée</value>
+  </data>
   <data name="SX0" xml:space="preserve">
     <value>M</value>
   </data>

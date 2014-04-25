@@ -1,5 +1,6 @@
 ﻿using GestAssoc.Model.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace GestAssoc.Modules.GestionInscriptions.Services
@@ -42,5 +43,11 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 		/// </summary>
 		/// <returns></returns>
 		ObservableCollection<Groupe> GetAllGroupes();
+
+		/// <summary>
+		/// Obtient un dictionnaire contenant la liste des statuts ainsi que leur numéro.
+		/// </summary>
+		/// <returns>Dictionnaire des statuts.</returns>
+		IDictionary<int, string> GetStatuts();
 	}
 }

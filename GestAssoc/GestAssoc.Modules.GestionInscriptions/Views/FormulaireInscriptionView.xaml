@@ -43,9 +43,11 @@
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="Statut :  : " Style="{StaticResource lblName}" />
-				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
+				<ComboBox Style="{StaticResource cmbValueMedium}" Margin="20,0,0,0"
 						  ItemsSource="{Binding Path=Statuts}" 
-						  SelectedItem="{Binding Path=Item.StatutInscription}" />
+						  DisplayMemberPath="Value"
+						  SelectedValuePath="Key"
+						  SelectedValue="{Binding Path=Item.StatutInscription}" />
 			</StackPanel>
 		</WrapPanel>
 	</DockPanel>

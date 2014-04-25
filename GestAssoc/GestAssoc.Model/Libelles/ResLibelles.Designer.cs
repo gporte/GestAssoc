@@ -133,6 +133,33 @@ namespace GestAssoc.Model.Libelles {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à A suivre.
+        /// </summary>
+        public static string STI0 {
+            get {
+                return ResourceManager.GetString("STI0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Validée.
+        /// </summary>
+        public static string STI1 {
+            get {
+                return ResourceManager.GetString("STI1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annulée.
+        /// </summary>
+        public static string STI2 {
+            get {
+                return ResourceManager.GetString("STI2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à M.
         /// </summary>
         public static string SX0 {

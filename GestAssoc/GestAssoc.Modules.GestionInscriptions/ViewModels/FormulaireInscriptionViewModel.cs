@@ -60,8 +60,8 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		#endregion
 
 		#region Statuts property
-		private ObservableCollection<int> _statuts;
-		public ObservableCollection<int> Statuts {
+		private IDictionary<int, string> _statuts;
+		public IDictionary<int, string> Statuts {
 			get { return this._statuts; }
 			set {
 				if (this._statuts != value) {
@@ -103,7 +103,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			this.SaveCmd = new SaveInscriptionCommand();
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString());
 
-			this.Statuts = new ObservableCollection<int>(new List<int>() { 0, 1, 2 });
+			this.Statuts = this._services.GetStatuts();
 
 			// trace
 			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireInscription);

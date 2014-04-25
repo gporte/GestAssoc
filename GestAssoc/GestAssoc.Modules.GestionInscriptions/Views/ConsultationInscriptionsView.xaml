@@ -140,7 +140,7 @@
 					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 						<Label Style="{StaticResource lblName}" Content="Statut : " />
 						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding Path=StatutInscription}"/>
+							   Content="{Binding Path=LibelleStatutInscription}"/>
 					</StackPanel>
 
 					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">

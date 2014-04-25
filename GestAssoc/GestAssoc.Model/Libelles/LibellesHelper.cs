@@ -22,6 +22,15 @@ namespace GestAssoc.Model.Libelles
 
 			return rm.GetString("SX" + sexe.ToString()) ?? ResLibelles.LIBELLE_ABSENT;
 		}
+
+		public static string GetStatutInscriptionLibelle(int statut) {
+			var rm = new ResourceManager(
+				"GestAssoc.Model.Libelles.ResLibelles",
+				Assembly.GetExecutingAssembly()
+			);
+
+			return rm.GetString("STI" + statut.ToString()) ?? ResLibelles.LIBELLE_ABSENT;
+		}
 	}
 
 }

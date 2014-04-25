@@ -1,10 +1,9 @@
-﻿using GestAssoc.Model.Models;
+﻿using GestAssoc.Model.Libelles;
+using GestAssoc.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestAssoc.Modules.GestionInscriptions.Services
 {
@@ -117,6 +116,16 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 				.ThenBy(x => x.HeureDebut);
 
 			return new ObservableCollection<Groupe>(groupes);
+		}
+
+		public IDictionary<int, string> GetStatuts() {
+			var statuts = new Dictionary<int, string>();
+
+			statuts.Add(0, LibellesHelper.GetStatutInscriptionLibelle(0));
+			statuts.Add(1, LibellesHelper.GetStatutInscriptionLibelle(1));
+			statuts.Add(2, LibellesHelper.GetStatutInscriptionLibelle(2));
+
+			return statuts;
 		}
 
 		public void Dispose() {
