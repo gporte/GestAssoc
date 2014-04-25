@@ -60,6 +60,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		#endregion
 
 		#region Constructors
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireAdherentViewModel(Guid itemId) {
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()

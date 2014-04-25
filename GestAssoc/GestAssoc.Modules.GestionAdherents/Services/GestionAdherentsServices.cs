@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace GestAssoc.Modules.GestionAdherents.Services
 {
-	public class GestionAdherentsServices : IGestionAdherentsServices
+	public class GestionAdherentsServices : IGestionAdherentsServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -76,6 +76,19 @@ namespace GestAssoc.Modules.GestionAdherents.Services
 		public ObservableCollection<Ville> GetAllVilles() {
 			var villes = this._context.Villes.OrderBy(x => x.CodePostal).ThenBy(x => x.Libelle);
 			return new ObservableCollection<Ville>(villes);
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
+			}
 		}
 	}
 }

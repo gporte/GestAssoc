@@ -29,6 +29,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 		}
 		#endregion
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public InfosClubViewModel() {
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()

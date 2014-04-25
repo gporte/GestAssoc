@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GestAssoc.Modules.GestionSaisons.Services
 {
-	public class GestionSaisonsServices : IGestionSaisonsServices
+	public class GestionSaisonsServices : IGestionSaisonsServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -74,6 +74,19 @@ namespace GestAssoc.Modules.GestionSaisons.Services
 			this._context.Entry<Saison>(originalNewSaisonCourante).CurrentValues.SetValues(newSaisonCourante);
 
 			this._context.SaveChanges();
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
+			}
 		}
 	}
 }

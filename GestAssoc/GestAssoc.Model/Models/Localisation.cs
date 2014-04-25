@@ -5,7 +5,8 @@ namespace GestAssoc.Model.Models
 {
     public partial class Localisation
     {
-        public Localisation()
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public Localisation()
         {
             this.Equipements = new List<Equipement>();
         }

@@ -5,7 +5,8 @@ namespace GestAssoc.Model.Models
 {
     public partial class Modele
     {
-        public Modele()
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public Modele()
         {
             this.Equipements = new List<Equipement>();
         }

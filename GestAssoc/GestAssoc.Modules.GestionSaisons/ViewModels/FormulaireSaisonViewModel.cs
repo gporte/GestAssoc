@@ -33,6 +33,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 		#endregion
 
 		#region Constructors
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireSaisonViewModel(Guid itemId) {
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()

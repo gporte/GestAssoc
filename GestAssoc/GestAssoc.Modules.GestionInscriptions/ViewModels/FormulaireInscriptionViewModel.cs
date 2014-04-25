@@ -73,6 +73,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		#endregion
 
 		#region Constructors
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireInscriptionViewModel(Guid itemId) {
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()

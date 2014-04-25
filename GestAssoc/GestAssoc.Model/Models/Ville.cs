@@ -5,6 +5,7 @@ namespace GestAssoc.Model.Models
 {
 	public partial class Ville
 	{
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public Ville()
 		{
 			this.Adherents = new List<Adherent>();

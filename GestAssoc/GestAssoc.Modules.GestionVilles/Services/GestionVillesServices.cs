@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GestAssoc.Modules.GestionVilles.Services
 {
-	public class GestionVillesServices : IGestionVillesServices
+	public class GestionVillesServices : IGestionVillesServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -55,6 +55,19 @@ namespace GestAssoc.Modules.GestionVilles.Services
 			}
 
 			this._context.SaveChanges();
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
+			}
 		}
 	}
 }

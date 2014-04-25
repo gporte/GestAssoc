@@ -7,6 +7,7 @@ namespace GestAssoc.Model.Models
 {
 	public partial class Groupe
 	{
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public Groupe()
 		{
 			this.Inscriptions = new List<Inscription>();

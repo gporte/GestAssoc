@@ -5,7 +5,8 @@ namespace GestAssoc.Model.Models
 {
     public partial class Marque
     {
-        public Marque()
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public Marque()
         {
             this.Modeles = new List<Modele>();
         }

@@ -5,7 +5,8 @@ namespace GestAssoc.Model.Models
 {
     public partial class CampagneVerification
     {
-        public CampagneVerification()
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public CampagneVerification()
         {
             this.Verifications = new List<Verification>();
         }

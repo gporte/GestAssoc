@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GestAssoc.Modules.GestionInscriptions.Services
 {
-	public class GestionInscriptionServices : IGestionInscriptionsServices
+	public class GestionInscriptionServices : IGestionInscriptionsServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -117,6 +117,19 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 				.ThenBy(x => x.HeureDebut);
 
 			return new ObservableCollection<Groupe>(groupes);
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
+			}
 		}
 	}
 }

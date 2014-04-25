@@ -4,6 +4,7 @@ namespace GestAssoc.Model.Models
 {
 	public partial class Saison
 	{
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public Saison()
 		{
 			this.Groupes = new List<Groupe>();

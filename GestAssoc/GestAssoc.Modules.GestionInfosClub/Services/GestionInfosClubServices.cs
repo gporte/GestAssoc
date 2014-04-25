@@ -1,10 +1,11 @@
 ﻿using GestAssoc.Model.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace GestAssoc.Modules.GestionInfosClub.Services
 {
-	public class GestionInfosClubServices : IGestionInfosClubServices
+	public class GestionInfosClubServices : IGestionInfosClubServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -27,6 +28,19 @@ namespace GestAssoc.Modules.GestionInfosClub.Services
 			if (originalItem != null) {
 				this._context.Entry<InfosClub>(originalItem).CurrentValues.SetValues(itemToSave);
 				this._context.SaveChanges();
+			}
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
 			}
 		}
 	}

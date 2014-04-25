@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace GestAssoc.Modules.GestionGroupes.Services
 {
-	public class GestionGroupesServices : IGestionGroupesServices
+	public class GestionGroupesServices : IGestionGroupesServices, IDisposable
 	{
 		private GestAssocContext _context;
 
@@ -81,6 +81,19 @@ namespace GestAssoc.Modules.GestionGroupes.Services
 			joursSemaine.Add(6, LibellesHelper.GetJourSemaineLibelle(6));
 
 			return joursSemaine;
+		}
+
+		public void Dispose() {
+			this.Dispose(true);
+		}
+
+		protected virtual void Dispose(bool disposing) {
+			if (disposing) {
+				if (this._context != null) {
+					this._context.Dispose();
+					this._context = null;
+				}
+			}
 		}
 	}
 }

@@ -5,7 +5,8 @@ namespace GestAssoc.Model.Models
 {
     public partial class Section
     {
-        public Section()
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public Section()
         {
             this.Inscriptions = new List<Inscription>();
         }
