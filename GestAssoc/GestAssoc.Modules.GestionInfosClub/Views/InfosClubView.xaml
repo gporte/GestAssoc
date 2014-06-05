@@ -35,7 +35,7 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="" Style="{StaticResource lblName}" />
+				<Label Content="Ville : " Style="{StaticResource lblName}" />
 				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
