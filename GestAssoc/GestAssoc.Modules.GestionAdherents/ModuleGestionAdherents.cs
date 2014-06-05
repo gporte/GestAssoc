@@ -1,7 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionAdherents.Constantes;
-using GestAssoc.Modules.GestionAdherents.Services;
 using GestAssoc.Modules.GestionAdherents.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -32,9 +31,6 @@ namespace GestAssoc.Modules.GestionAdherents
 			container.RegisterType<object, FormulaireAdherentView>(
 				ViewNames.FormulaireAdherent.ToString()
 			);
-
-			// enregistrement des services
-			container.RegisterType<IGestionAdherentsServices, GestionAdherentsServices>();
 		}
 	}
 }

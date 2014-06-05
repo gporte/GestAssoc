@@ -46,6 +46,9 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 		#endregion
 
 		public ConsultationSaisonsViewModel() {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionSaisonsServices, GestionSaisonsServices>();
+			
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionSaisonsServices>();

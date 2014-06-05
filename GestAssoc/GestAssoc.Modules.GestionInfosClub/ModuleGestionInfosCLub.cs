@@ -1,7 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionInfosClub.Constantes;
-using GestAssoc.Modules.GestionInfosClub.Services;
 using GestAssoc.Modules.GestionInfosClub.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -26,9 +25,6 @@ namespace GestAssoc.Modules.GestionInfosClub
 			// Enregistrement des vues
 			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub.ToString());
 			container.RegisterType<object, FormulaireInfosClubView>(ViewNames.FormulaireInfosClub.ToString());
-
-			// enregistrement des services
-			container.RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();
 		}
 	}
 }

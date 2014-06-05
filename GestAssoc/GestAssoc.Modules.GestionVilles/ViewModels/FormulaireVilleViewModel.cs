@@ -34,6 +34,9 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		#region Constructors
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireVilleViewModel(Guid itemId) {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionVillesServices, GestionVillesServices>();
+
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionVillesServices>();

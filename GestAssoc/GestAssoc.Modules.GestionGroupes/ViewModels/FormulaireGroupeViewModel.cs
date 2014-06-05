@@ -48,6 +48,10 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 		#region Constructors
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireGroupeViewModel(Guid itemId) {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>()
+				.RegisterType<IGestionGroupesServices, GestionGroupesServices>();
+
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionGroupesServices>();

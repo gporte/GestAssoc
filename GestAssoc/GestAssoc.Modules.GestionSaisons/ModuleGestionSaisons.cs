@@ -1,7 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionSaisons.Constantes;
-using GestAssoc.Modules.GestionSaisons.Services;
 using GestAssoc.Modules.GestionSaisons.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -32,10 +31,6 @@ namespace GestAssoc.Modules.GestionSaisons
 			container.RegisterType<object, FormulaireSaisonView>(
 				ViewNames.FormulaireSaison.ToString()
 			);
-
-			// enregistrement des services
-			container.RegisterType<IGestionSaisonsServices, GestionSaisonsServices>();
-
 		}
 	}
 }

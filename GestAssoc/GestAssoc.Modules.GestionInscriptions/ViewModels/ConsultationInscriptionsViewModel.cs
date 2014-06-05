@@ -43,6 +43,9 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		public ICommand AddInscriptionCmd { get; set; }
 
 		public ConsultationInscriptionsViewModel() {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionInscriptionsServices, GestionInscriptionServices>();
+
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInscriptionsServices>();

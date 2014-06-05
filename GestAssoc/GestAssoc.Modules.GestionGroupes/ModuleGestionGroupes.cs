@@ -1,7 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Common.Utility;
-using GestAssoc.Modules.GestionGroupes.Services;
+using GestAssoc.Modules.GestionGroupes.Constantes;
 using GestAssoc.Modules.GestionGroupes.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -32,9 +31,6 @@ namespace GestAssoc.Modules.GestionGroupes
 			container.RegisterType<object, FormulaireGroupeView>(
 				ViewNames.FormulaireGroupe.ToString()
 			);
-
-			// enregistrement des services
-			container.RegisterType<IGestionGroupesServices, GestionGroupesServices>();
 		}
 	}
 }

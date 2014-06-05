@@ -62,9 +62,11 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		#region Constructors
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public FormulaireAdherentViewModel(Guid itemId) {
-			this._services = ServiceLocator
-				.Current.GetInstance<IUnityContainer>()
-				.Resolve<IGestionAdherentsServices>();
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>()
+				.RegisterType<IGestionAdherentsServices, GestionAdherentsServices>();
+
+			this._services = ServiceLocator.Current.GetInstance<IUnityContainer>().Resolve<IGestionAdherentsServices>();
 
 			try {
 				if (itemId == Guid.Empty) {

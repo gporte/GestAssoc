@@ -43,9 +43,11 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		public ICommand AddAdherentCmd { get; set; }
 
 		public ConsultationAdherentsViewModel() {
-			this._services = ServiceLocator
-				.Current.GetInstance<IUnityContainer>()
-				.Resolve<IGestionAdherentsServices>();
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>()
+				.RegisterType<IGestionAdherentsServices, GestionAdherentsServices>();
+
+			this._services = ServiceLocator.Current.GetInstance<IUnityContainer>().Resolve<IGestionAdherentsServices>();
 
 			try {
 				UIServices.SetBusyState();

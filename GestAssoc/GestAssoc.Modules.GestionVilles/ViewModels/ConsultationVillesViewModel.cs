@@ -43,6 +43,9 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		public ICommand AddVilleCmd { get; set; }
 
 		public ConsultationVillesViewModel() {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionVillesServices, GestionVillesServices>();
+			
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionVillesServices>();

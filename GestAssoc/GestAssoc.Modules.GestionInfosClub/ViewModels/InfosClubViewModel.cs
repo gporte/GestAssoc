@@ -31,6 +31,8 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 		public InfosClubViewModel() {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionInfosClubServices, GestionInfosClubServices>();
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInfosClubServices>();

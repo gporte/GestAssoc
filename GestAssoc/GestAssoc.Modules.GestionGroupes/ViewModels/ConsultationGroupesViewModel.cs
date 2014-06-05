@@ -43,6 +43,10 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 		public ICommand AddGroupeCmd { get; set; }
 
 		public ConsultationGroupesViewModel() {
+			// enregistrement et initialisation des services
+			ServiceLocator.Current.GetInstance<IUnityContainer>()
+				.RegisterType<IGestionGroupesServices, GestionGroupesServices>();
+
 			this._services = ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionGroupesServices>();

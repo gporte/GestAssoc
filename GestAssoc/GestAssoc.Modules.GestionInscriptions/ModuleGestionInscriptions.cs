@@ -1,7 +1,6 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionInscriptions.Constantes;
-using GestAssoc.Modules.GestionInscriptions.Services;
 using GestAssoc.Modules.GestionInscriptions.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -32,9 +31,6 @@ namespace GestAssoc.Modules.GestionInscriptions
 			container.RegisterType<object, FormulaireInscriptionView>(
 				ViewNames.FormulaireInscription.ToString()
 			);
-
-			// enregistrement des services
-			container.RegisterType<IGestionInscriptionsServices, GestionInscriptionServices>();
 		}
 	}
 }
