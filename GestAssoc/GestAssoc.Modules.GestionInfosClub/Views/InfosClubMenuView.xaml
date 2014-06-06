@@ -3,13 +3,14 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:res="clr-namespace:GestAssoc.Modules.GestionInfosClub.Resources"
 			 mc:Ignorable="d" 
 		     Header="Infos Club"
 			 d:DesignHeight="300" d:DesignWidth="300">
-	<RibbonButton Label="Infos" 
+	<RibbonButton Label="{x:Static res:Resource.MenuButton_Infos}" 
 					Command="{Binding Path=ShowDetailsInfosClub}"
 					SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"/>
-	<RibbonButton Label="Edition" 
+	<RibbonButton Label="{x:Static res:Resource.MenuButton_Edition}"
 					Command="{Binding Path=ShowFormulaireInfosClub}"
 					SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"/>
 </RibbonGroup>
