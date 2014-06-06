@@ -25,7 +25,7 @@
 
 	<!-- Labels -->
 	<Style x:Key="lblName" TargetType="{x:Type Label}">
-		<Setter Property="Width" Value="100" />
+		<Setter Property="Width" Value="120" />
 		<Setter Property="Height" Value="25" />
 	</Style>
 

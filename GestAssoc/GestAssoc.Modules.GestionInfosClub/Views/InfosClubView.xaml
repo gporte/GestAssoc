@@ -3,9 +3,12 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-			 xmlns:res="clr-namespace:GestAssoc.Modules.GestionInfosClub.Resources"
+			 xmlns:lex="http://wpflocalizeextension.codeplex.com"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="500" d:DesignWidth="500">
+			 d:DesignHeight="500" d:DesignWidth="500"
+			 lex:LocalizeDictionary.DesignCulture="fr-FR"
+			 lex:ResxLocalizationProvider.DefaultAssembly="GestAssoc.Modules.GestionInfosClub"
+			 lex:ResxLocalizationProvider.DefaultDictionary="Strings">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
@@ -13,12 +16,12 @@
 	<DockPanel LastChildFill="True" Margin="5,5,5,5">
 		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
 			   Style="{StaticResource titreUC}"
-			   Content="{x:Static res:Resource.Titre_Consultation}" />
+			   Content="{lex:LocText Titre_Consultation}" />
 
-		<GroupBox Header="{x:Static res:Resource.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
+		<GroupBox Header="{lex:LocText Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Style="{StaticResource btnCmd}" 
-						ToolTip="{x:Static res:Resource.Tooltip_Editer}"
+						ToolTip="{lex:LocText Tooltip_Editer}"
 						Command="{Binding Path=ShowEditViewCmd}" CommandParameter="{Binding Path=Item.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
@@ -27,47 +30,47 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_NomAssociation}" />
+				<Label Content="{lex:Loc Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Nom}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_Adresse}" />
+				<Label Content="{lex:Loc Label_Adresse}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Adresse}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_Adresse}" />
+				<Label Content="{lex:Loc Label_Ville}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_Telephone}" />
+				<Label Content="{lex:Loc Key=Label_Telephone}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Telephone}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_Email}" />
+				<Label Content="{lex:Loc Label_Email}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Mail}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_NomAssociation}" />
+				<Label Content="{lex:Loc Label_NumeroAssociation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_NumeroAPS}" />
+				<Label Content="{lex:Loc Label_NumeroAPS}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_NumeroFederation}" />
+				<Label Content="{lex:Loc Label_NumeroFederation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static res:Resource.Label_SIRET}" />
+				<Label Content="{lex:Loc Label_SIRET}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Siret}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 		</WrapPanel>

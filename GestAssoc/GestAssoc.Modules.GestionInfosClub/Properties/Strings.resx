@@ -133,7 +133,7 @@
     <value>Num. APS : </value>
   </data>
   <data name="Label_NumeroAssociation" xml:space="preserve">
-    <value>Numéro : </value>
+    <value>Num. Association : </value>
   </data>
   <data name="Label_NumeroFederation" xml:space="preserve">
     <value>Num. Fédération : </value>
@@ -153,6 +153,9 @@
   <data name="MenuButton_Infos" xml:space="preserve">
     <value>Infos</value>
   </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Infos Club</value>
+  </data>
   <data name="Titre_Consultation" xml:space="preserve">
     <value>Association</value>
   </data>
@@ -161,5 +164,8 @@
   </data>
   <data name="Tooltip_Editer" xml:space="preserve">
     <value>Editer</value>
+  </data>
+  <data name="Tooltip_Enregistrer" xml:space="preserve">
+    <value>Enregistrer</value>
   </data>
 </root>
