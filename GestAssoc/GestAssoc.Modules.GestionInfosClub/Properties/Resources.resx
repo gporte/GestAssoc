@@ -141,6 +141,9 @@
   <data name="Label_SIRET" xml:space="preserve">
     <value>SIRET : </value>
   </data>
+  <data name="Label_SiteWeb" xml:space="preserve">
+    <value>Web : </value>
+  </data>
   <data name="Label_Telephone" xml:space="preserve">
     <value>Tél. : </value>
   </data>

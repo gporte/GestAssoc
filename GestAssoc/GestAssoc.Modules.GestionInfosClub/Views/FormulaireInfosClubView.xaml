@@ -6,7 +6,7 @@
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInfosClub.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="400" d:DesignWidth="500">
+			 d:DesignHeight="500" d:DesignWidth="500">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
@@ -23,6 +23,7 @@
 				</Button>
 			</WrapPanel>
 		</GroupBox>
+
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
@@ -50,6 +51,11 @@
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="{x:Static p:Resources.Label_Email}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Mail}" Style="{StaticResource tbxValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="{x:Static p:Resources.Label_SiteWeb}" Style="{StaticResource lblName}" />
+				<TextBox Text="{Binding Path=Item.SiteWeb}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">

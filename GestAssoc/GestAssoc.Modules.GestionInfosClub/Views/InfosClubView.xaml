@@ -52,6 +52,11 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
+				<Label Content="{x:Static p:Resources.Label_SiteWeb}" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{Binding Path=Item.SiteWeb}" Style="{StaticResource lblValue}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
 			</StackPanel>

@@ -133,6 +133,15 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Web : .
+        /// </summary>
+        public static string Label_SiteWeb {
+            get {
+                return ResourceManager.GetString("Label_SiteWeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Tél. : .
         /// </summary>
         public static string Label_Telephone {
