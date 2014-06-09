@@ -30,6 +30,14 @@ using System.Windows;
                                       // dans l'application ou dans l'un des dictionnaires de ressources spécifiques à un thème)
 )]
 
+//Pour commencer à générer des applications localisables, définissez 
+//<UICulture>CultureYouAreCodingWith</UICulture> dans votre fichier .csproj
+//dans <PropertyGroup>.  Par exemple, si vous utilisez le français
+//dans vos fichiers sources, définissez <UICulture> à fr-FR.  Puis, supprimez les marques de commentaire de
+//l'attribut NeutralResourceLanguage ci-dessous.  Mettez à jour "fr-FR" dans
+//la ligne ci-après pour qu'elle corresponde au paramètre UICulture du fichier projet.
+
+//[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
@@ -43,4 +51,3 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("fr-FR", UltimateResourceFallbackLocation.Satellite)]
