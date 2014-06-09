@@ -160,6 +160,15 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Initialisation du Module GestionInfosClub..
+        /// </summary>
+        public static string Log_InitModule {
+            get {
+                return ResourceManager.GetString("Log_InitModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Editer.
         /// </summary>
         public static string MenuButton_Edition {

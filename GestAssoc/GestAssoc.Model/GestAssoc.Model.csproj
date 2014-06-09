@@ -94,6 +94,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Libelles\ResLibelles.en.resx" />
     <EmbeddedResource Include="Libelles\ResLibelles.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResLibelles.Designer.cs</LastGenOutput>
@@ -108,7 +109,8 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)GestAssoc\$(OutDir)"</PostBuildEvent>
+    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)GestAssoc\$(OutDir)"
+xcopy /y "$(TargetDir)en\*" "$(SolutionDir)GestAssoc\$(OutDir)en\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

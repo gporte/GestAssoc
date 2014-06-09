@@ -150,6 +150,9 @@
   <data name="Label_Ville" xml:space="preserve">
     <value>Ville : </value>
   </data>
+  <data name="Log_InitModule" xml:space="preserve">
+    <value>Initialisation du Module GestionInfosClub.</value>
+  </data>
   <data name="MenuButton_Edition" xml:space="preserve">
     <value>Editer</value>
   </data>
