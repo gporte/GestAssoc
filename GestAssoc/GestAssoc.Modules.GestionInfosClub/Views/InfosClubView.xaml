@@ -5,7 +5,7 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInfosClub.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="500" d:DesignWidth="500">
+			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
@@ -25,56 +25,54 @@
 			</WrapPanel>
 		</GroupBox>
 
-		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Nom}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Adresse}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Item.Nom}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Item.Adresse}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Telephone}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=Item.Ville}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_Email}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Mail}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Item.Telephone}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_SiteWeb}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.SiteWeb}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Email}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="4" Grid.Column="1" Content="{Binding Path=Item.Mail}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_SiteWeb}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="5" Grid.Column="1" Content="{Binding Path=Item.SiteWeb}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_NumeroAPS}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_NumeroAssociation}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="6" Grid.Column="1" Content="{Binding Path=Item.Numero}" />
 
-			<StackPanel  Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_NumeroFederation}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
-			</StackPanel>
+			<Label Grid.Row="7" Grid.Column="0" Content="{x:Static p:Resources.Label_NumeroAPS}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="7" Grid.Column="1" Content="{Binding Path=Item.NumAPS}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="{x:Static p:Resources.Label_SIRET}" Style="{StaticResource ResourceKey=lblName}" />
-				<Label Content="{Binding Path=Item.Siret}" Style="{StaticResource lblValue}" />
-			</StackPanel>
-		</WrapPanel>
+			<Label Grid.Row="8" Grid.Column="0" Content="{x:Static p:Resources.Label_NumeroFederation}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="8" Grid.Column="1" Content="{Binding Path=Item.NumFederation}" />
+
+			<Label Grid.Row="9" Grid.Column="0" Content="{x:Static p:Resources.Label_SIRET}" Style="{StaticResource ResourceKey=lblNameGrid}" />
+			<Label Grid.Row="9" Grid.Column="1" Content="{Binding Path=Item.Siret}" />
+		</Grid>
 	</DockPanel>
 </UserControl>

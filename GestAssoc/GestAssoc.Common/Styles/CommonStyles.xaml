@@ -24,6 +24,10 @@
 	</Style>
 
 	<!-- Labels -->
+	<Style x:Key="lblNameGrid" TargetType="{x:Type Label}">
+		<Setter Property="FontWeight" Value="Bold" />
+	</Style>
+	
 	<Style x:Key="lblName" TargetType="{x:Type Label}">
 		<Setter Property="Width" Value="120" />
 		<Setter Property="Height" Value="25" />
