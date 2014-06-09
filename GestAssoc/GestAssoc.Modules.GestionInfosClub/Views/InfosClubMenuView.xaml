@@ -3,17 +3,13 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-			 xmlns:lex="http://wpflocalizeextension.codeplex.com"
 			 mc:Ignorable="d" 
-		     Header="{lex:LocText MenuHeader}"
-			 d:DesignHeight="300" d:DesignWidth="300"
-			 lex:LocalizeDictionary.DesignCulture="en-US"
-			 lex:ResxLocalizationProvider.DefaultAssembly="GestAssoc.Modules.GestionInfosClub"
-			 lex:ResxLocalizationProvider.DefaultDictionary="Strings">
-	<RibbonButton Label="{lex:LocText MenuButton_Infos}" 
+		     Header="MenuHeader"
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<RibbonButton Label="MenuButton_Infos"
 					Command="{Binding Path=ShowDetailsInfosClub}"
 					SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"/>
-	<RibbonButton Label="{lex:LocText MenuButton_Edition}"
+	<RibbonButton Label="MenuButton_Edition"
 					Command="{Binding Path=ShowFormulaireInfosClub}"
 					SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"/>
 </RibbonGroup>
