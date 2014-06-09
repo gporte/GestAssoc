@@ -8,6 +8,7 @@ using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionInfosClub.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionInfosClub.Commands
 {
@@ -35,11 +36,11 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveInfosClub(itemToSave);
-					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementTermine);
 					new ShowViewCommand(ViewNames.ConsultationInfosClub.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0, "Saisie non valide. Enregistrement annulé.");
+					errorsList.Insert(0, GlblRes.Log_EnregistrementAnnule);
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
@@ -56,15 +57,15 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 			errorsList = new List<string>();
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Nom)) {
-				errorsList.Add("Nom obligatoire.");
+				errorsList.Add(GlblRes.Err_NomObligatoire);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Adresse)) {
-				errorsList.Add("Adresse obligatoire.");
+				errorsList.Add(GlblRes.Err_AdresseObligatoire);
 			}
 
 			if (itemToSave.Ville == null) {
-				errorsList.Add("Ville obligatoire.");
+				errorsList.Add(GlblRes.Err_VilleObligatoire);
 			}
 
 			return errorsList.Count == 0;
