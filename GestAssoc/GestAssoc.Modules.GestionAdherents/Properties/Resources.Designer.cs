@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace GestAssoc.Modules.GestionAdherents.Properties {
+    using System;
     
     
     /// <summary>
@@ -21,7 +22,7 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,9 +36,9 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if ((resourceMan == null)) {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestAssoc.Modules.GestionAdherents.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
@@ -50,12 +51,147 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cet adhérent existe déjà (nom + prénom)..
+        /// </summary>
+        public static string Err_AdherentExiste {
+            get {
+                return ResourceManager.GetString("Err_AdherentExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse obligatoire..
+        /// </summary>
+        public static string Err_AdresseObligatoire {
+            get {
+                return ResourceManager.GetString("Err_AdresseObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de naissance obligatoire..
+        /// </summary>
+        public static string Err_NaissanceObligatoire {
+            get {
+                return ResourceManager.GetString("Err_NaissanceObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom obligatoire..
+        /// </summary>
+        public static string Err_NomObligatoire {
+            get {
+                return ResourceManager.GetString("Err_NomObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prénom obligatoire..
+        /// </summary>
+        public static string Err_PrenomObligatoire {
+            get {
+                return ResourceManager.GetString("Err_PrenomObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à VilleObligatoire..
+        /// </summary>
+        public static string Err_VilleObligatoire {
+            get {
+                return ResourceManager.GetString("Err_VilleObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents.
+        /// </summary>
+        public static string Log_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage de la vue .
+        /// </summary>
+        public static string Log_AffichageVue {
+            get {
+                return ResourceManager.GetString("Log_AffichageVue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enregistrement effectué..
+        /// </summary>
+        public static string Log_EnregistrementEffectue {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enregistrement supprimé..
+        /// </summary>
+        public static string Log_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementSupprime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Initialisation du Module GestionAdherents..
+        /// </summary>
+        public static string Log_InitialisationModule {
+            get {
+                return ResourceManager.GetString("Log_InitialisationModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des adhérents.
+        /// </summary>
+        public static string MenuButton_List {
+            get {
+                return ResourceManager.GetString("MenuButton_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvel adhérent.
+        /// </summary>
+        public static string MenuButton_New {
+            get {
+                return ResourceManager.GetString("MenuButton_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gestion des adhérents.
+        /// </summary>
+        public static string MenuHeader {
+            get {
+                return ResourceManager.GetString("MenuHeader", resourceCulture);
             }
         }
     }

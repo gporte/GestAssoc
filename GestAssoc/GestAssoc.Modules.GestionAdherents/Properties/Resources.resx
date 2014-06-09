@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,54 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Err_AdherentExiste" xml:space="preserve">
+    <value>Cet adhérent existe déjà (nom + prénom).</value>
+  </data>
+  <data name="Err_AdresseObligatoire" xml:space="preserve">
+    <value>Adresse obligatoire.</value>
+  </data>
+  <data name="Err_NaissanceObligatoire" xml:space="preserve">
+    <value>Date de naissance obligatoire.</value>
+  </data>
+  <data name="Err_NomObligatoire" xml:space="preserve">
+    <value>Nom obligatoire.</value>
+  </data>
+  <data name="Err_PrenomObligatoire" xml:space="preserve">
+    <value>Prénom obligatoire.</value>
+  </data>
+  <data name="Err_VilleObligatoire" xml:space="preserve">
+    <value>VilleObligatoire.</value>
+  </data>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionAdherents</value>
+  </data>
+  <data name="Log_AffichageVue" xml:space="preserve">
+    <value>Affichage de la vue </value>
+  </data>
+  <data name="Log_EnregistrementAnnule" xml:space="preserve">
+    <value>Adhérent non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Log_EnregistrementEffectue" xml:space="preserve">
+    <value>Enregistrement effectué.</value>
+  </data>
+  <data name="Log_EnregistrementSupprime" xml:space="preserve">
+    <value>Enregistrement supprimé.</value>
+  </data>
+  <data name="Log_InitialisationModule" xml:space="preserve">
+    <value>Initialisation du Module GestionAdherents.</value>
+  </data>
+  <data name="MenuButton_List" xml:space="preserve">
+    <value>Liste des adhérents</value>
+  </data>
+  <data name="MenuButton_New" xml:space="preserve">
+    <value>Nouvel adhérent</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Gestion des adhérents</value>
+  </data>
 </root>

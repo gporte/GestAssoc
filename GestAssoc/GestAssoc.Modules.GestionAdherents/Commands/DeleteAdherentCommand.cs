@@ -2,6 +2,7 @@
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionAdherents.Constantes;
+using GestAssoc.Modules.GestionAdherents.Properties;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -35,7 +36,7 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 				UIServices.SetBusyState();
 				service.DeleteAdherent(itemToDelete);
 
-				NotificationHelper.WriteNotification("Enregistrement supprimé.");
+				NotificationHelper.WriteNotification(Resources.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 			}

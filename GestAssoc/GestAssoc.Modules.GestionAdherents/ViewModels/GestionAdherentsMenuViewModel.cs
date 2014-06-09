@@ -2,6 +2,7 @@
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionAdherents.Constantes;
+using GestAssoc.Modules.GestionAdherents.Properties;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionAdherents.ViewModels
@@ -16,7 +17,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.ShowFormulaireCreationAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionAdherents");
+			NotificationHelper.WriteNotification(Resources.Log_AffichageMenu);
 		}
 	}
 }

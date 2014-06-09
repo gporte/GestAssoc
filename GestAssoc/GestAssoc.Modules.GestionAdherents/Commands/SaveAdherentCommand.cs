@@ -2,6 +2,7 @@
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionAdherents.Constantes;
+using GestAssoc.Modules.GestionAdherents.Properties;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -35,11 +36,11 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveAdherent(itemToSave);
-					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					NotificationHelper.WriteNotification(Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0, "Adhérent non valide. Enregistrement annulé.");
+					errorsList.Insert(0, Resources.Log_EnregistrementAnnule);
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
@@ -56,23 +57,23 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 			errorsList = new List<string>();
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Nom)) {
-				errorsList.Add("Nom obligatoire.");
+				errorsList.Add(Resources.Err_NomObligatoire);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Prenom)) {
-				errorsList.Add("Prénom obligatoire.");
+				errorsList.Add(Resources.Err_PrenomObligatoire);
 			}
 
 			if (itemToSave.DateNaissance == DateTime.MinValue) {
-				errorsList.Add("Date de naissance obligatoire.");
+				errorsList.Add(Resources.Err_NaissanceObligatoire);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Adresse)) {
-				errorsList.Add("Adresse obligatoire.");
+				errorsList.Add(Resources.Err_AdresseObligatoire);
 			}
 
 			if (itemToSave.Ville == null) {
-				errorsList.Add("Ville obligatoire.");
+				errorsList.Add(Resources.Err_VilleObligatoire);
 			}
 
 			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple nom + prénom
@@ -80,7 +81,7 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 			var itemExists = service.GetAllAdherents().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add("Cet adhérent existe déjà (nom + prénom).");
+				errorsList.Add(Resources.Err_AdherentExiste);
 			}
 
 			return errorsList.Count == 0;

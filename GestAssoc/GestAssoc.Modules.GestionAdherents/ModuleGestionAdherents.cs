@@ -6,6 +6,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using GlblRes = global::GestAssoc.Modules.GestionAdherents.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionAdherents
 {
@@ -14,7 +15,7 @@ namespace GestAssoc.Modules.GestionAdherents
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionAdherents.");
+			NotificationHelper.WriteNotification(GlblRes.Log_InitialisationModule);
 
 			this.TabRegion = RibbonTabRegion.Inscriptions;
 

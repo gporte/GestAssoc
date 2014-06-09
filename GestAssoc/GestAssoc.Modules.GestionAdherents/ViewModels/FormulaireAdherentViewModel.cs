@@ -4,6 +4,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionAdherents.Commands;
 using GestAssoc.Modules.GestionAdherents.Constantes;
+using GestAssoc.Modules.GestionAdherents.Properties;
 using GestAssoc.Modules.GestionAdherents.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -94,7 +95,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());			
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireAdherent);
+			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireAdherent);
 		}
 		#endregion
 	}

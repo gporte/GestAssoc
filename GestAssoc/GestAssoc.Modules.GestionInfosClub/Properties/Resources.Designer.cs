@@ -187,7 +187,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du RibbonTab GestionClub.
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionClub.
         /// </summary>
         public static string Log_AffichageMenu {
             get {
