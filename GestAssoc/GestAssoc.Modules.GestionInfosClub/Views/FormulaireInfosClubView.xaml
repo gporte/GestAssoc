@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInfosClub.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="400" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,12 +12,12 @@
 	</UserControl.Resources>
 	
 	<DockPanel LastChildFill="True" Margin="5,5,5,5">
-		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="Titre_Formulaire"
+		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" Content="{x:Static p:Resources.Titre_Edition}"
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="Header_Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Tooltip_Enregistrer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 						Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 				</Button>
@@ -25,49 +26,49 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NomAssociation" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Nom}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Adresse" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Adresse}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Ville" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource lblName}" />
 				<ComboBox Style="{StaticResource cmbValue}" 
 						  ItemsSource="{Binding Path=Villes}" 
 						  SelectedItem="{Binding Path=Item.Ville}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Telephone" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Telephone}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Email" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Email}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Mail}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroAssociation" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NumeroAssociation}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.Numero}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroAPS}" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NumeroAPS}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.NumAPS}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroFederation" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NumeroFederation}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Path=Item.NumFederation}" Style="{StaticResource tbxValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_SIRET" Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_SIRET}" Style="{StaticResource lblName}" />
 				<wpf:MaskedTextBox Mask="000000000" HorizontalContentAlignment="Right"
 								   Text="{Binding Path=Item.Siren}" 
 								   Style="{StaticResource tbxValueMedium}" />

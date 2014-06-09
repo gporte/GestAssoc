@@ -3,6 +3,7 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInfosClub.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="500" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -12,12 +13,12 @@
 	<DockPanel LastChildFill="True" Margin="5,5,5,5">
 		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
 			   Style="{StaticResource titreUC}"
-			   Content="Titre_Consultation" />
+			   Content="{x:Static p:Resources.Titre_Infos}" />
 
-		<GroupBox Header="Header_Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom" Width="200">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Style="{StaticResource btnCmd}" 
-						ToolTip="Tooltip_Editer}"
+						ToolTip="{x:Static p:Resources.Tooltip_Editer}"
 						Command="{Binding Path=ShowEditViewCmd}" CommandParameter="{Binding Path=Item.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
@@ -26,47 +27,47 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NomAssociation" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Nom}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Adresse" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Adresse}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Ville" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Ville}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Telephone" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Telephone}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_Email" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Email}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Mail}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroAssociation" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NomAssociation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Numero}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroAPS" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NumeroAPS}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.NumAPS}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel  Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_NumeroFederation" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NumeroFederation}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.NumFederation}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Label_SIRET" Style="{StaticResource ResourceKey=lblName}" />
+				<Label Content="{x:Static p:Resources.Label_SIRET}" Style="{StaticResource ResourceKey=lblName}" />
 				<Label Content="{Binding Path=Item.Siret}" Style="{StaticResource lblValue}" />
 			</StackPanel>
 		</WrapPanel>
