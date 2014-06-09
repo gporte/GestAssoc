@@ -174,4 +174,25 @@
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
+  <data name="Log_AffichageVue" xml:space="preserve">
+    <value>Affichage de la vue </value>
+  </data>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Affichage du RibbonTab GestionClub</value>
+  </data>
+  <data name="Err_VilleObligatoire" xml:space="preserve">
+    <value>Ville obligatoire.</value>
+  </data>
+  <data name="Log_EnregistrementTermine" xml:space="preserve">
+    <value>Enregistrement effectué.</value>
+  </data>
+  <data name="Log_EnregistrementAnnule" xml:space="preserve">
+    <value>Saisie non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Err_NomObligatoire" xml:space="preserve">
+    <value>Nom obligatoire.</value>
+  </data>
+  <data name="Err_AdresseObligatoire" xml:space="preserve">
+    <value>Adresse obligatoire.</value>
+  </data>
 </root>

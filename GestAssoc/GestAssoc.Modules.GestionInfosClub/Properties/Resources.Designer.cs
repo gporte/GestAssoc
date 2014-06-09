@@ -61,6 +61,33 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse obligatoire..
+        /// </summary>
+        public static string Err_AdresseObligatoire {
+            get {
+                return ResourceManager.GetString("Err_AdresseObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom obligatoire..
+        /// </summary>
+        public static string Err_NomObligatoire {
+            get {
+                return ResourceManager.GetString("Err_NomObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville obligatoire..
+        /// </summary>
+        public static string Err_VilleObligatoire {
+            get {
+                return ResourceManager.GetString("Err_VilleObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Actions.
         /// </summary>
         public static string Header_Actions {
@@ -156,6 +183,42 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         public static string Label_Ville {
             get {
                 return ResourceManager.GetString("Label_Ville", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du RibbonTab GestionClub.
+        /// </summary>
+        public static string Log_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage de la vue .
+        /// </summary>
+        public static string Log_AffichageVue {
+            get {
+                return ResourceManager.GetString("Log_AffichageVue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saisie non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enregistrement effectué..
+        /// </summary>
+        public static string Log_EnregistrementTermine {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementTermine", resourceCulture);
             }
         }
         

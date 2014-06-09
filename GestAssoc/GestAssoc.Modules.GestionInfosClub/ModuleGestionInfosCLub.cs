@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionInfosClub.Constantes;
+using GestAssoc.Modules.GestionInfosClub.Properties;
 using GestAssoc.Modules.GestionInfosClub.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -14,7 +15,7 @@ namespace GestAssoc.Modules.GestionInfosClub
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionInfosClub.");
+			NotificationHelper.WriteNotification(Resources.Log_InitModule);
 			
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();

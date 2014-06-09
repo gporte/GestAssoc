@@ -3,6 +3,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionInfosClub.Commands;
 using GestAssoc.Modules.GestionInfosClub.Constantes;
+using GestAssoc.Modules.GestionInfosClub.Properties;
 using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -63,7 +64,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireInfosClub.ToString());
+			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireInfosClub.ToString());
 		}
 	}
 }

@@ -172,6 +172,27 @@
     <value>Save</value>
   </data>
   <data name="Log_InitModule" xml:space="preserve">
-    <value>Initialization of module GestionInfosClub.</value>
+    <value>Initialization of GestionInfosClub's module.</value>
+  </data>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionInfosClub's menu.</value>
+  </data>
+  <data name="Log_AffichageVue" xml:space="preserve">
+    <value>Loading of view </value>
+  </data>
+  <data name="Err_AdresseObligatoire" xml:space="preserve">
+    <value>Address is mandatory.</value>
+  </data>
+  <data name="Err_NomObligatoire" xml:space="preserve">
+    <value>Name is mandatory.</value>
+  </data>
+  <data name="Err_VilleObligatoire" xml:space="preserve">
+    <value>City is mandatory.</value>
+  </data>
+  <data name="Log_EnregistrementAnnule" xml:space="preserve">
+    <value>Invalid input. Save cancelled.</value>
+  </data>
+  <data name="Log_EnregistrementTermine" xml:space="preserve">
+    <value>Datas saved with success.</value>
   </data>
 </root>

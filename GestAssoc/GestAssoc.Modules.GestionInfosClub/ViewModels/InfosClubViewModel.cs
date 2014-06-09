@@ -7,6 +7,7 @@ using GestAssoc.Modules.GestionInfosClub.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
+using GlblRes = global::GestAssoc.Modules.GestionInfosClub.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 {
@@ -48,7 +49,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			}
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationInfosClub.ToString());
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationInfosClub.ToString());
 		}
 	}
 }

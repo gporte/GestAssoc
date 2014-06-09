@@ -3,6 +3,7 @@ using GestAssoc.Common.Commands;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionInfosClub.Constantes;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionInfosClub.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 {
@@ -16,7 +17,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.ShowFormulaireInfosClub = new ShowViewCommand(ViewNames.FormulaireInfosClub.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionClub");
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageMenu);
 		}
 	}
 }
