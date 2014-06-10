@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdherents.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
@@ -11,10 +12,10 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Adhérents" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_List}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="Adhérents" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_Adherents}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
 			<DockPanel LastChildFill="True">
 				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
 						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
@@ -29,40 +30,40 @@
 			</DockPanel>
 		</GroupBox>
 
-		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
 			<WrapPanel Orientation="Vertical">
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_NbTotal}" />
 					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_NbFiltre}" />
 					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxAdherents, Path=Items.Count}"/>
 				</StackPanel>
 			</WrapPanel>
 		</GroupBox>
 
-		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Ajouter}"
 						Command="{Binding Path=AddAdherentCmd}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Editer}"
 						Command="{Binding Path=EditAdherentCmd}" CommandParameter="{Binding ElementName=lbxAdherents, Path=SelectedItem.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Supprimer}"
 						Command="{Binding Path=DeleteAdherentCmd}" CommandParameter="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
 				</Button>
 			</WrapPanel>
-		</GroupBox>		
-		
-		<GroupBox Header="Détails" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
+		</GroupBox>
+
+		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
 			<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 					<Label Style="{StaticResource lblBigValue}">
@@ -80,42 +81,34 @@
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Né le : " />
-
-					<Label Style="{StaticResource lblValue}">
-						<Label.Content>
-							<TextBlock>
-								<TextBlock.Text>
-									<MultiBinding StringFormat="{}{0:d} ({1} ans)">
-										<Binding Path="DateNaissance" />
-										<Binding Path="Age" />
-									</MultiBinding>
-								</TextBlock.Text>
-							</TextBlock>
-						</Label.Content>
-					</Label>
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Naissance}" />
+					<Label Content="{Binding Path=DateNaissance}" />
+					<Label Content=" (" />
+					<Label Content="{Binding Path=Age}" />
+					<Label Content="{x:Static p:Resources.Label_Ans}" />
+					<Label Content=")" />
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Sexe : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Sexe}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=LibelleSexe}"/>
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Adresse : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Adresse}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Adresse}"/>
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Ville : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Ville}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Ville}"/>
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Téléphone : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Telephones}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Telephone1}"/>
 				</StackPanel>
@@ -133,7 +126,7 @@
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="E-mail : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Emails}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Mail1}"/>
 				</StackPanel>
@@ -151,7 +144,7 @@
 				</StackPanel>
 
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Commentaire : " />
+					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_Commentaire}" />
 					<Label Style="{StaticResource lblValue}" 
 							   Content="{Binding Path=Commentaire}"/>
 				</StackPanel>

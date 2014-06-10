@@ -225,4 +225,34 @@
   <data name="Tooltip_TelTertiaire" xml:space="preserve">
     <value>Third phone number</value>
   </data>
+  <data name="Header_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Header_Adherents" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="Header_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Header_Statistiques" xml:space="preserve">
+    <value>Stats</value>
+  </data>
+  <data name="Label_NbFiltre" xml:space="preserve">
+    <value>Filtered count:</value>
+  </data>
+  <data name="Label_NbTotal" xml:space="preserve">
+    <value>Total count:</value>
+  </data>
+  <data name="Label_Ville" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="Tooltip_Ajouter" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Tooltip_Supprimer" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Label_Ans" xml:space="preserve">
+    <value> years</value>
+  </data>
 </root>

@@ -115,11 +115,56 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Actions.
+        /// </summary>
+        public static string Header_Actions {
+            get {
+                return ResourceManager.GetString("Header_Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérents.
+        /// </summary>
+        public static string Header_Adherents {
+            get {
+                return ResourceManager.GetString("Header_Adherents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Détails.
+        /// </summary>
+        public static string Header_Details {
+            get {
+                return ResourceManager.GetString("Header_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Stats.
+        /// </summary>
+        public static string Header_Statistiques {
+            get {
+                return ResourceManager.GetString("Header_Statistiques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse : .
         /// </summary>
         public static string Label_Adresse {
             get {
                 return ResourceManager.GetString("Label_Adresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à  ans.
+        /// </summary>
+        public static string Label_Ans {
+            get {
+                return ResourceManager.GetString("Label_Ans", resourceCulture);
             }
         }
         
@@ -151,6 +196,24 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nb. filtré(s) : .
+        /// </summary>
+        public static string Label_NbFiltre {
+            get {
+                return ResourceManager.GetString("Label_NbFiltre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nb. total : .
+        /// </summary>
+        public static string Label_NbTotal {
+            get {
+                return ResourceManager.GetString("Label_NbTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom / prénom : .
         /// </summary>
         public static string Label_NomPrenom {
@@ -174,6 +237,15 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         public static string Label_Telephones {
             get {
                 return ResourceManager.GetString("Label_Telephones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville : .
+        /// </summary>
+        public static string Label_Ville {
+            get {
+                return ResourceManager.GetString("Label_Ville", resourceCulture);
             }
         }
         
@@ -286,6 +358,15 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter.
+        /// </summary>
+        public static string Tooltip_Ajouter {
+            get {
+                return ResourceManager.GetString("Tooltip_Ajouter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Annuler.
         /// </summary>
         public static string Tooltip_Annuler {
@@ -354,6 +435,15 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         public static string Tooltip_Prenom {
             get {
                 return ResourceManager.GetString("Tooltip_Prenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Supprimer.
+        /// </summary>
+        public static string Tooltip_Supprimer {
+            get {
+                return ResourceManager.GetString("Tooltip_Supprimer", resourceCulture);
             }
         }
         
