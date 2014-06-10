@@ -135,6 +135,27 @@
   <data name="Err_VilleObligatoire" xml:space="preserve">
     <value>VilleObligatoire.</value>
   </data>
+  <data name="Label_Adresse" xml:space="preserve">
+    <value>Adresse : </value>
+  </data>
+  <data name="Label_Commentaire" xml:space="preserve">
+    <value>Commentaires : </value>
+  </data>
+  <data name="Label_Emails" xml:space="preserve">
+    <value>E-mails : </value>
+  </data>
+  <data name="Label_Naissance" xml:space="preserve">
+    <value>Date de naissance : </value>
+  </data>
+  <data name="Label_NomPrenom" xml:space="preserve">
+    <value>Nom / prénom : </value>
+  </data>
+  <data name="Label_Sexe" xml:space="preserve">
+    <value>Sexe : </value>
+  </data>
+  <data name="Label_Telephones" xml:space="preserve">
+    <value>Téléphones : </value>
+  </data>
   <data name="Log_AffichageMenu" xml:space="preserve">
     <value>Affichage du menu GestionAdherents</value>
   </data>
@@ -161,5 +182,47 @@
   </data>
   <data name="MenuHeader" xml:space="preserve">
     <value>Gestion des adhérents</value>
+  </data>
+  <data name="Titre_Formulaire" xml:space="preserve">
+    <value>Adhérent</value>
+  </data>
+  <data name="Titre_List" xml:space="preserve">
+    <value>Adhérents</value>
+  </data>
+  <data name="Tooltip_Adresse" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Tooltip_Annuler" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Tooltip_Editer" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="Tooltip_EmailPrincipal" xml:space="preserve">
+    <value>Adresse e-mail principale</value>
+  </data>
+  <data name="Tooltip_EmailSecondaire" xml:space="preserve">
+    <value>Adresse e-mail secondaire</value>
+  </data>
+  <data name="Tooltip_EmailTertiaire" xml:space="preserve">
+    <value>Adresse e-mail tertiaire</value>
+  </data>
+  <data name="Tooltip_Enregistrer" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Tooltip_Nom" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Tooltip_Prenom" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="Tooltip_TelPrincipal" xml:space="preserve">
+    <value>N° de tél. principal</value>
+  </data>
+  <data name="Tooltip_TelSecondaire" xml:space="preserve">
+    <value>N° de tél. secondaire</value>
+  </data>
+  <data name="Tooltip_TelTertiaire" xml:space="preserve">
+    <value>N° de tél. tertiaire</value>
   </data>
 </root>

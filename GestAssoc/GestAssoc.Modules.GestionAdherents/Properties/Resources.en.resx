@@ -162,4 +162,67 @@
   <data name="MenuHeader" xml:space="preserve">
     <value>Members managment</value>
   </data>
+  <data name="Label_Adresse" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="Label_Commentaire" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_Emails" xml:space="preserve">
+    <value>E-Mails:</value>
+  </data>
+  <data name="Label_Naissance" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="Label_NomPrenom" xml:space="preserve">
+    <value>Last name / First name:</value>
+  </data>
+  <data name="Label_Sexe" xml:space="preserve">
+    <value>Sex:</value>
+  </data>
+  <data name="Label_Telephones" xml:space="preserve">
+    <value>Phone numbers:</value>
+  </data>
+  <data name="Titre_Formulaire" xml:space="preserve">
+    <value>Member</value>
+  </data>
+  <data name="Titre_List" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="Tooltip_Adresse" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Tooltip_Annuler" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Tooltip_Editer" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Tooltip_EmailPrincipal" xml:space="preserve">
+    <value>First e-mail address</value>
+  </data>
+  <data name="Tooltip_EmailSecondaire" xml:space="preserve">
+    <value>Second e-mail address</value>
+  </data>
+  <data name="Tooltip_EmailTertiaire" xml:space="preserve">
+    <value>Third e-mail address</value>
+  </data>
+  <data name="Tooltip_Enregistrer" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Tooltip_Nom" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Tooltip_Prenom" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Tooltip_TelPrincipal" xml:space="preserve">
+    <value>First phone number</value>
+  </data>
+  <data name="Tooltip_TelSecondaire" xml:space="preserve">
+    <value>Second phone number</value>
+  </data>
+  <data name="Tooltip_TelTertiaire" xml:space="preserve">
+    <value>Third phone number</value>
+  </data>
 </root>

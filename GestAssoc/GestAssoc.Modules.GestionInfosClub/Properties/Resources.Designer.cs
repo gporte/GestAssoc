@@ -106,7 +106,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Email : .
+        ///   Recherche une chaîne localisée semblable à E-mail : .
         /// </summary>
         public static string Label_Email {
             get {

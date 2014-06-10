@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdherents.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="500" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,16 +12,16 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Adhérent" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_List}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Annuler}"
 					Command="{Binding Path=CancelCmd}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
 
-			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
@@ -28,24 +29,24 @@
 
 		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Nom / prénom :  : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Nom}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValueMedium}"
 						 CharacterCasing="Upper"
-						 ToolTip="Nom"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Nom}"/>
 				<TextBox Text="{Binding Item.Prenom}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValueMedium}" 
-						 ToolTip="Prénom"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Prenom}"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Naissance : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource lblName}" />
 				<DatePicker Style="{StaticResource dtpValueMedium}" Margin="20,0,0,0"
 							Text="{Binding Path=Item.DateNaissance}" />
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Sexe : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Sexe}" Style="{StaticResource lblName}" />
 				<ComboBox Style="{StaticResource cmbValueLittle}" Margin="20,0,0,0"
 						  ItemsSource="{Binding Path=Sexes}" 
 						  DisplayMemberPath="Value"
@@ -54,10 +55,10 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Adresse : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Adresse}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValue}" 
-						 ToolTip="Adresse"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adresse}"/>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
@@ -68,44 +69,44 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Téléphones : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource lblName}" />
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone1}" Margin="20,0,0,0"
 								   Style="{StaticResource tbxValueMedium}" 
-								   ToolTip="N° de tél. principal"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_TelPrincipal}"/>
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone2}" Margin="20,0,0,0"
 								   Style="{StaticResource tbxValueMedium}" 
-								   ToolTip="N° de tél. secondaire"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_TelSecondaire}"/>
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone3}" Margin="20,0,0,0"
 								   Style="{StaticResource tbxValueMedium}" 
-								   ToolTip="N° de tél. tertiaire"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_TelTertiaire}"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="E-mails : " Style="{StaticResource lblName}" />
+				<Label Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Mail1}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValue}" 
-						 ToolTip="Adresse e-mail principale"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_EmailPrincipal}"/>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Mail2}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValue}" 
-						 ToolTip="Adresse e-mail secondaire"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_EmailSecondaire}"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 				<Label Content="" Style="{StaticResource lblName}" />
 				<TextBox Text="{Binding Item.Mail3}" Margin="20,0,0,0"
 						 Style="{StaticResource tbxValue}" 
-						 ToolTip="Adresse e-mail tertiaire"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_EmailTertiaire}"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Commentaire : " Style="{StaticResource lblName}" VerticalAlignment="Top" />
+				<Label Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource lblName}" VerticalAlignment="Top" />
 				<TextBox Text="{Binding Item.Commentaire}"  Margin="20,0,0,0"
 						 Style="{StaticResource tbxCommentaire}" 
 						 AcceptsReturn="True"

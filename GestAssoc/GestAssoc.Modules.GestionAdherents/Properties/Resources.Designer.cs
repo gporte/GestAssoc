@@ -115,6 +115,69 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse : .
+        /// </summary>
+        public static string Label_Adresse {
+            get {
+                return ResourceManager.GetString("Label_Adresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Commentaires : .
+        /// </summary>
+        public static string Label_Commentaire {
+            get {
+                return ResourceManager.GetString("Label_Commentaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à E-mails : .
+        /// </summary>
+        public static string Label_Emails {
+            get {
+                return ResourceManager.GetString("Label_Emails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de naissance : .
+        /// </summary>
+        public static string Label_Naissance {
+            get {
+                return ResourceManager.GetString("Label_Naissance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom / prénom : .
+        /// </summary>
+        public static string Label_NomPrenom {
+            get {
+                return ResourceManager.GetString("Label_NomPrenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sexe : .
+        /// </summary>
+        public static string Label_Sexe {
+            get {
+                return ResourceManager.GetString("Label_Sexe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Téléphones : .
+        /// </summary>
+        public static string Label_Telephones {
+            get {
+                return ResourceManager.GetString("Label_Telephones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents.
         /// </summary>
         public static string Log_AffichageMenu {
@@ -192,6 +255,132 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         public static string MenuHeader {
             get {
                 return ResourceManager.GetString("MenuHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent.
+        /// </summary>
+        public static string Titre_Formulaire {
+            get {
+                return ResourceManager.GetString("Titre_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérents.
+        /// </summary>
+        public static string Titre_List {
+            get {
+                return ResourceManager.GetString("Titre_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse.
+        /// </summary>
+        public static string Tooltip_Adresse {
+            get {
+                return ResourceManager.GetString("Tooltip_Adresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annuler.
+        /// </summary>
+        public static string Tooltip_Annuler {
+            get {
+                return ResourceManager.GetString("Tooltip_Annuler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Editer.
+        /// </summary>
+        public static string Tooltip_Editer {
+            get {
+                return ResourceManager.GetString("Tooltip_Editer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail principale.
+        /// </summary>
+        public static string Tooltip_EmailPrincipal {
+            get {
+                return ResourceManager.GetString("Tooltip_EmailPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail secondaire.
+        /// </summary>
+        public static string Tooltip_EmailSecondaire {
+            get {
+                return ResourceManager.GetString("Tooltip_EmailSecondaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail tertiaire.
+        /// </summary>
+        public static string Tooltip_EmailTertiaire {
+            get {
+                return ResourceManager.GetString("Tooltip_EmailTertiaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enregistrer.
+        /// </summary>
+        public static string Tooltip_Enregistrer {
+            get {
+                return ResourceManager.GetString("Tooltip_Enregistrer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom.
+        /// </summary>
+        public static string Tooltip_Nom {
+            get {
+                return ResourceManager.GetString("Tooltip_Nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prénom.
+        /// </summary>
+        public static string Tooltip_Prenom {
+            get {
+                return ResourceManager.GetString("Tooltip_Prenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. principal.
+        /// </summary>
+        public static string Tooltip_TelPrincipal {
+            get {
+                return ResourceManager.GetString("Tooltip_TelPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. secondaire.
+        /// </summary>
+        public static string Tooltip_TelSecondaire {
+            get {
+                return ResourceManager.GetString("Tooltip_TelSecondaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. tertiaire.
+        /// </summary>
+        public static string Tooltip_TelTertiaire {
+            get {
+                return ResourceManager.GetString("Tooltip_TelTertiaire", resourceCulture);
             }
         }
     }
