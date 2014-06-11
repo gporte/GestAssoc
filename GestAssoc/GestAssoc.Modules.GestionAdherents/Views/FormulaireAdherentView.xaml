@@ -6,7 +6,7 @@
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdherents.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="500" d:DesignWidth="500">
+			 d:DesignHeight="500" d:DesignWidth="600">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
 	</UserControl.Resources>
@@ -27,7 +27,7 @@
 			</Button>
 		</WrapPanel>
 
-		<Grid>
+		<Grid HorizontalAlignment="Center">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
@@ -47,16 +47,16 @@
 			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
 				<TextBox Text="{Binding Item.Nom}"
-						 Style="{StaticResource tbxValueMedium}"
+						 Style="{StaticResource tbxValueStd}"
 						 CharacterCasing="Upper"
 						 ToolTip="{x:Static p:Resources.Tooltip_Nom}"/>
-				<TextBox Text="{Binding Item.Prenom}" Margin="20,0,0,0"
-						 Style="{StaticResource tbxValueMedium}" 
+				<TextBox Text="{Binding Item.Prenom}" Margin="50,0,0,0"
+						 Style="{StaticResource tbxValueStd}" 
 						 ToolTip="{x:Static p:Resources.Tooltip_Prenom}"/>
 			</StackPanel>
 
 			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
-			<DatePicker Grid.Row="1" Grid.Column="1" Style="{StaticResource dtpValueMedium}"
+			<DatePicker Grid.Row="1" Grid.Column="1"
 						HorizontalAlignment="Left"
 						Text="{Binding Path=Item.DateNaissance}" />
 
@@ -71,7 +71,7 @@
 			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Item.Adresse}"
 					 HorizontalAlignment="Left"
-					 Style="{StaticResource tbxValue}" 
+					 Style="{StaticResource tbxAdresse}" 
 					 ToolTip="{x:Static p:Resources.Tooltip_Adresse}"/>
 
 			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
@@ -84,32 +84,32 @@
 			<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone1}"
-								   Style="{StaticResource tbxValueMedium}" 
+								   Style="{StaticResource tbxTelephone}" 
 								   ToolTip="{x:Static p:Resources.Tooltip_TelPrincipal}"/>
 
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone2}" 
-								   Style="{StaticResource tbxValueMedium}" 
+								   Style="{StaticResource tbxTelephone}" 
 								   ToolTip="{x:Static p:Resources.Tooltip_TelSecondaire}"/>
 
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone3}"
-								   Style="{StaticResource tbxValueMedium}" 
+								   Style="{StaticResource tbxTelephone}" 
 								   ToolTip="{x:Static p:Resources.Tooltip_TelTertiaire}"/>
 			</StackPanel>
 
 			<Label Grid.Row="6" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 				<TextBox Text="{Binding Item.Mail1}"
-						 Style="{StaticResource tbxValue}" 
+						 Style="{StaticResource tbxAdresse}" 
 						 ToolTip="{x:Static p:Resources.Tooltip_EmailPrincipal}"/>
 
 				<TextBox Text="{Binding Item.Mail2}"
-						 Style="{StaticResource tbxValue}" 
+						 Style="{StaticResource tbxAdresse}" 
 						 ToolTip="{x:Static p:Resources.Tooltip_EmailSecondaire}"/>
 
 				<TextBox Text="{Binding Item.Mail3}"
-						 Style="{StaticResource tbxValue}" 
+						 Style="{StaticResource tbxAdresse}" 
 						 ToolTip="{x:Static p:Resources.Tooltip_EmailTertiaire}"/>
 			</StackPanel>
 

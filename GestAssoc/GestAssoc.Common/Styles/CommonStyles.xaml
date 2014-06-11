@@ -51,10 +51,24 @@
 	</Style>
 	
 	<!-- TextBox -->
+	<Style x:Key="tbxTelephone" TargetType="{x:Type TextBox}">
+		<Setter Property="Width" Value="100" />
+	</Style>
+
+	<Style x:Key="tbxAdresse" TargetType="{x:Type TextBox}">
+		<Setter Property="Width" Value="450" />
+	</Style>
+
 	<Style x:Key="tbxCommentaire" TargetType="{x:Type TextBox}">
-		<Setter Property="Width" Value="300" />
+		<Setter Property="Width" Value="450" />
 		<Setter Property="Height" Value="50" />
 	</Style>
+
+	<Style x:Key="tbxValueStd" TargetType="{x:Type TextBox}">
+		<Setter Property="Width" Value="200" />
+	</Style>
+
+	<!-- déprécié -->
 	
 	<Style x:Key="tbxValue" TargetType="{x:Type TextBox}">
 		<Setter Property="Width" Value="200" />
@@ -73,7 +87,7 @@
 
 	<!-- ComboBox -->
 	<Style x:Key="cmbValue" TargetType="{x:Type ComboBox}">
-		<Setter Property="Width" Value="200" />
+		<Setter Property="Width" Value="250" />
 		<Setter Property="Height" Value="25" />
 	</Style>
 
@@ -94,7 +108,6 @@
 	
 	<!-- DatePicker -->
 	<Style x:Key="dtpValueMedium" TargetType="{x:Type DatePicker}">
-		<Setter Property="Width" Value="100" />
-		<Setter Property="Height" Value="25" />
+		<Setter Property="Width" Value="150" />
 	</Style>
 </ResourceDictionary>
