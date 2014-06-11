@@ -64,7 +64,6 @@
 		</GroupBox>
 
 		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
-			
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto" />
@@ -72,10 +71,6 @@
 				</Grid.ColumnDefinitions>
 
 				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
@@ -127,24 +122,22 @@
 				<Label Grid.Row="4" Grid.Column="1" 
 					   Content="{Binding Path=Ville}"/>
 
-				<Label Grid.Row="5" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
-				<Label Grid.Row="5" Grid.Column="1" 
-					   Content="{Binding Path=Telephone1}"/>
-				<Label Grid.Row="6" Grid.Column="1" 
-					   Content="{Binding Path=Telephone2}"/>
+				<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
+					<Label Content="{Binding Path=Telephone1}"/>
+					<Label Content="{Binding Path=Telephone2}"/>
+					<Label Content="{Binding Path=Telephone3}"/>
+				</StackPanel>
+
+				<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
+					<Label Content="{Binding Path=Mail1}"/>
+					<Label Content="{Binding Path=Mail2}"/>
+					<Label Content="{Binding Path=Mail3}"/>
+				</StackPanel>
+
+				<Label Grid.Row="7" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="7" Grid.Column="1" 
-					   Content="{Binding Path=Telephone3}"/>
-
-				<Label Grid.Row="8" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
-				<Label Grid.Row="8" Grid.Column="1" 
-					   Content="{Binding Path=Mail1}"/>
-				<Label Grid.Row="9" Grid.Column="1" 
-					   Content="{Binding Path=Mail2}"/>
-				<Label Grid.Row="10" Grid.Column="1" 
-					   Content="{Binding Path=Mail3}"/>
-
-				<Label Grid.Row="11" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
-				<Label Grid.Row="11" Grid.Column="1" 
 					   Content="{Binding Path=Commentaire}"/>
 			</Grid>
 		</GroupBox>
