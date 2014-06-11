@@ -64,6 +64,9 @@
 		</GroupBox>
 
 		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
+			
+			
+			
 			<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
 				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
 					<Label Content="{x:Static p:Resources.Label_NomPrenom}" />
