@@ -4,6 +4,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Commands;
 using GestAssoc.Modules.GestionGroupes.Constantes;
+using GestAssoc.Modules.GestionGroupes.Properties;
 using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -66,7 +67,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationGroupes.ToString());
+			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.ConsultationGroupes.ToString());
 		}
 	}
 }

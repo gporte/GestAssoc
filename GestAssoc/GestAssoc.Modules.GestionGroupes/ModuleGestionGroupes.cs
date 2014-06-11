@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionGroupes.Constantes;
+using GestAssoc.Modules.GestionGroupes.Properties;
 using GestAssoc.Modules.GestionGroupes.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -14,7 +15,7 @@ namespace GestAssoc.Modules.GestionGroupes
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionGroupes.");
+			NotificationHelper.WriteNotification(Resources.Log_InitModule);
 
 			this.TabRegion = RibbonTabRegion.Inscriptions;
 

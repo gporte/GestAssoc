@@ -2,6 +2,7 @@
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionGroupes.Constantes;
+using GestAssoc.Modules.GestionGroupes.Properties;
 using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionGroupes.ViewModels
@@ -16,7 +17,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.ShowFormulaireCreationGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionGroupes");
+			NotificationHelper.WriteNotification(Resources.Log_AffichageMenu);
 		}
 	}
 }

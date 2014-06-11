@@ -120,50 +120,47 @@
   <data name="Header_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
-  <data name="Label_Adresse" xml:space="preserve">
-    <value>Adress:</value>
+  <data name="Header_Details" xml:space="preserve">
+    <value>Details</value>
   </data>
-  <data name="Label_Email" xml:space="preserve">
-    <value>E-mail:</value>
+  <data name="Header_List" xml:space="preserve">
+    <value>Groups</value>
   </data>
-  <data name="Label_NomAssociation" xml:space="preserve">
+  <data name="Header_Statistiques" xml:space="preserve">
+    <value>Stats</value>
+  </data>
+  <data name="Label_Commentaire" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="Label_Creneau" xml:space="preserve">
+    <value>Time slot:</value>
+  </data>
+  <data name="Label_Jour" xml:space="preserve">
+    <value>Day:</value>
+  </data>
+  <data name="Label_Nom" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="Label_NumeroAPS" xml:space="preserve">
-    <value>APS ID:</value>
+  <data name="Label_Saison" xml:space="preserve">
+    <value>Season:</value>
   </data>
-  <data name="Label_NumeroAssociation" xml:space="preserve">
-    <value>ID:</value>
+  <data name="MenuButton_List" xml:space="preserve">
+    <value>All groups</value>
   </data>
-  <data name="Label_NumeroFederation" xml:space="preserve">
-    <value>Federation ID:</value>
-  </data>
-  <data name="Label_SIRET" xml:space="preserve">
-    <value>SIRET : </value>
-  </data>
-  <data name="Label_SiteWeb" xml:space="preserve">
-    <value>Website:</value>
-  </data>
-  <data name="Label_Telephone" xml:space="preserve">
-    <value>Phone:</value>
-  </data>
-  <data name="Label_Ville" xml:space="preserve">
-    <value>City:</value>
-  </data>
-  <data name="MenuButton_Edition" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="MenuButton_Infos" xml:space="preserve">
-    <value>Consult</value>
-  </data>
-  <data name="MenuHeader" xml:space="preserve">
-    <value>Club info</value>
+  <data name="MenuButton_New" xml:space="preserve">
+    <value>Add group</value>
   </data>
   <data name="Titre_Edition" xml:space="preserve">
-    <value>Association</value>
+    <value>Group</value>
   </data>
-  <data name="Titre_Infos" xml:space="preserve">
-    <value>Association</value>
+  <data name="Titre_List" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Tooltip_Ajouter" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Tooltip_Annuler" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="Tooltip_Editer" xml:space="preserve">
     <value>Edit</value>
@@ -171,28 +168,52 @@
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="Log_InitModule" xml:space="preserve">
-    <value>Initialization of GestionInfosClub module.</value>
+  <data name="Tooltip_Supprimer" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Group management</value>
+  </data>
+  <data name="Label_NbFiltre" xml:space="preserve">
+    <value>Filtered count:</value>
+  </data>
+  <data name="Label_NbTotal" xml:space="preserve">
+    <value>Total count:</value>
+  </data>
+  <data name="Label_NbPlaces" xml:space="preserve">
+    <value>Capacity:</value>
   </data>
   <data name="Log_AffichageMenu" xml:space="preserve">
-    <value>Loading of GestionInfosClub menu.</value>
+    <value>Loading of GestionGroupes menu.</value>
   </data>
   <data name="Log_AffichageVue" xml:space="preserve">
     <value>Loading of view </value>
   </data>
-  <data name="Err_AdresseObligatoire" xml:space="preserve">
-    <value>Address is required.</value>
+  <data name="Log_EnregistrementEffectue" xml:space="preserve">
+    <value>Group successfully saved.</value>
   </data>
-  <data name="Err_NomObligatoire" xml:space="preserve">
-    <value>Name is required.</value>
+  <data name="Log_EnregistrementSupprime" xml:space="preserve">
+    <value>Group deleted.</value>
   </data>
-  <data name="Err_VilleObligatoire" xml:space="preserve">
-    <value>City is required.</value>
+  <data name="Log_InitModule" xml:space="preserve">
+    <value>Initialization of GestionGroupes module</value>
+  </data>
+  <data name="Err_GroupeExiste" xml:space="preserve">
+    <value>This group already exists (name + time slot)</value>
+  </data>
+  <data name="Err_HeureDebutHeureFin" xml:space="preserve">
+    <value>The end time must be greater than the start time.</value>
+  </data>
+  <data name="Err_HeureDebutObligatoire" xml:space="preserve">
+    <value>Start time required.</value>
+  </data>
+  <data name="Err_HeureFinObligatoire" xml:space="preserve">
+    <value>End time required.</value>
+  </data>
+  <data name="Err_LibelleObligatoire" xml:space="preserve">
+    <value>Name required.</value>
   </data>
   <data name="Log_EnregistrementAnnule" xml:space="preserve">
-    <value>Invalid input. Save cancelled.</value>
-  </data>
-  <data name="Log_EnregistrementTermine" xml:space="preserve">
-    <value>Datas successfully saved.</value>
+    <value>Group invalid. Save cancelled.</value>
   </data>
 </root>

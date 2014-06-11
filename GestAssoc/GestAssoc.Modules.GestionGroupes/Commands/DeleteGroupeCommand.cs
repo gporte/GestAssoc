@@ -2,6 +2,7 @@
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Constantes;
+using GestAssoc.Modules.GestionGroupes.Properties;
 using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -35,7 +36,7 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 				UIServices.SetBusyState();
 				service.DeleteGroupe(itemToDelete);
 
-				NotificationHelper.WriteNotification("Enregistrement supprimé.");
+				NotificationHelper.WriteNotification(Resources.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 			}

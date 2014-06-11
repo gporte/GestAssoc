@@ -2,6 +2,7 @@
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionGroupes.Constantes;
+using GestAssoc.Modules.GestionGroupes.Properties;
 using GestAssoc.Modules.GestionGroupes.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -35,11 +36,11 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveGroupe(itemToSave);
-					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					NotificationHelper.WriteNotification(Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0, "Groupe non valide. Enregistrement annulé.");
+					errorsList.Insert(0, Resources.Log_EnregistrementAnnule);
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
@@ -56,20 +57,20 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 			errorsList = new List<string>();
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Libelle)) {
-				errorsList.Add("Libellé obligatoire.");
+				errorsList.Add(Resources.Err_LibelleObligatoire);
 			}
 
 			if (itemToSave.HeureDebut == DateTime.MinValue) {
-				errorsList.Add("Heure de début obligatoire.");
+				errorsList.Add(Resources.Err_HeureDebutObligatoire);
 			}
 
 			if (itemToSave.HeureFin == DateTime.MinValue) {
-				errorsList.Add("Heure de fin obligatoire.");
+				errorsList.Add(Resources.Err_HeureFinObligatoire);
 			}
 
 			if((itemToSave.HeureDebut.Hour > itemToSave.HeureFin.Hour)
 				|| (itemToSave.HeureDebut.Hour == itemToSave.HeureFin.Hour && itemToSave.HeureDebut.Minute >= itemToSave.HeureFin.Minute)) {
-					errorsList.Add("L'heure de fin doit être strictement supérieure à l'heure de début.");
+					errorsList.Add(Resources.Err_HeureDebutHeureFin);
 			}
 
 			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple libellé+créneau
@@ -77,7 +78,7 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 			var itemExists = service.GetAllGroupes().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add("Ce groupe existe déjà (libellé + créneau).");
+				errorsList.Add(Resources.Err_GroupeExiste);
 			}
 
 			return errorsList.Count == 0;

@@ -121,22 +121,22 @@
     <value>Member already exists (first name+last name).</value>
   </data>
   <data name="Err_AdresseObligatoire" xml:space="preserve">
-    <value>Address is mandatory.</value>
+    <value>Address is required.</value>
   </data>
   <data name="Err_NaissanceObligatoire" xml:space="preserve">
-    <value>Birthday is mandatory.</value>
+    <value>Birthday is required.</value>
   </data>
   <data name="Err_NomObligatoire" xml:space="preserve">
-    <value>Last name is mandatory.</value>
+    <value>Last name is required.</value>
   </data>
   <data name="Err_PrenomObligatoire" xml:space="preserve">
-    <value>First name is mandatory.</value>
+    <value>First name is required.</value>
   </data>
   <data name="Err_VilleObligatoire" xml:space="preserve">
-    <value>City is mandatory.</value>
+    <value>City is required.</value>
   </data>
   <data name="Log_AffichageMenu" xml:space="preserve">
-    <value>Loading of GestionInfosClub's menu.</value>
+    <value>Loading of GestionAdherents menu.</value>
   </data>
   <data name="Log_AffichageVue" xml:space="preserve">
     <value>Loading of view </value>
@@ -145,13 +145,13 @@
     <value>Member is invalid. Save cancelled.</value>
   </data>
   <data name="Log_EnregistrementEffectue" xml:space="preserve">
-    <value>Member saved with success.</value>
+    <value>Member successfully saved.</value>
   </data>
   <data name="Log_EnregistrementSupprime" xml:space="preserve">
     <value>Member deleted.</value>
   </data>
   <data name="Log_InitialisationModule" xml:space="preserve">
-    <value>Initialization of GestionInfosAdherents's module.</value>
+    <value>Initialization of GestionInfosAdherents module.</value>
   </data>
   <data name="MenuButton_List" xml:space="preserve">
     <value>All members</value>
@@ -160,7 +160,7 @@
     <value>Add member</value>
   </data>
   <data name="MenuHeader" xml:space="preserve">
-    <value>Members managment</value>
+    <value>Membership management</value>
   </data>
   <data name="Label_Adresse" xml:space="preserve">
     <value>Address:</value>
