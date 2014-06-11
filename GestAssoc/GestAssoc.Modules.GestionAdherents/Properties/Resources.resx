@@ -151,7 +151,7 @@
     <value>Adresse : </value>
   </data>
   <data name="Label_Ans" xml:space="preserve">
-    <value> ans</value>
+    <value>ans</value>
   </data>
   <data name="Label_Commentaire" xml:space="preserve">
     <value>Commentaires : </value>
