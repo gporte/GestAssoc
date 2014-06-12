@@ -141,6 +141,9 @@
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
   </data>
+  <data name="Label_Adherent" xml:space="preserve">
+    <value>Adhérent : </value>
+  </data>
   <data name="Label_Ans" xml:space="preserve">
     <value>an(s)</value>
   </data>

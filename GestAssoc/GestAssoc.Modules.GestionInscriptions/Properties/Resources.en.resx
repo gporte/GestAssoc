@@ -228,4 +228,7 @@
   <data name="Label_Cotisation" xml:space="preserve">
     <value>Subscription: </value>
   </data>
+  <data name="Label_Adherent" xml:space="preserve">
+    <value>Member: </value>
+  </data>
 </root>

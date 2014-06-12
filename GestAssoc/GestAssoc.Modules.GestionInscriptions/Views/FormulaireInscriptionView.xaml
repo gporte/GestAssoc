@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInscriptions.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="500" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,44 +12,49 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Inscription" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Annuler}"
 					Command="{Binding Path=CancelCmd}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
 
-			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
 		</WrapPanel>
 
-		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Adhérent :  : " Style="{StaticResource lblName}" />
-				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
-						  ItemsSource="{Binding Path=Adherents}" 
-						  SelectedItem="{Binding Path=Item.Adherent}" />
-			</StackPanel>
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Groupe :  : " Style="{StaticResource lblName}" />
-				<ComboBox Margin="20,0,0,0" Style="{StaticResource cmbValue}"
-						  ItemsSource="{Binding Path=Groupes}" 
-						  SelectedItem="{Binding Path=Item.Groupe}" />
-			</StackPanel>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Statut :  : " Style="{StaticResource lblName}" />
-				<ComboBox Style="{StaticResource cmbValueMedium}" Margin="20,0,0,0"
-						  ItemsSource="{Binding Path=Statuts}" 
-						  DisplayMemberPath="Value"
-						  SelectedValuePath="Key"
-						  SelectedValue="{Binding Path=Item.StatutInscription}" />
-			</StackPanel>
-		</WrapPanel>
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Adherent}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  ItemsSource="{Binding Path=Adherents}" 
+					  SelectedItem="{Binding Path=Item.Adherent}" />
+
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Groupe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  ItemsSource="{Binding Path=Groupes}" 
+					  SelectedItem="{Binding Path=Item.Groupe}" />
+
+			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Statut}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  ItemsSource="{Binding Path=Statuts}" 
+					  DisplayMemberPath="Value"
+					  SelectedValuePath="Key"
+					  SelectedValue="{Binding Path=Item.StatutInscription}" />
+		</Grid>
 	</DockPanel>
 </UserControl>

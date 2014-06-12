@@ -133,6 +133,15 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent : .
+        /// </summary>
+        public static string Label_Adherent {
+            get {
+                return ResourceManager.GetString("Label_Adherent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à an(s).
         /// </summary>
         public static string Label_Ans {
