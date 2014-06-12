@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace GestAssoc.Modules.GestionInscriptions.Properties {
+    using System;
     
     
     /// <summary>
@@ -37,7 +38,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if ((resourceMan == null)) {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestAssoc.Modules.GestionInscriptions.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
@@ -56,6 +57,15 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription supprimée..
+        /// </summary>
+        internal static string Log_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementSupprime", resourceCulture);
             }
         }
     }
