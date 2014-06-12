@@ -313,6 +313,15 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Certificat médical remis et cotisation payée. L&apos;inscription est validée..
+        /// </summary>
+        public static string Log_StatutValide {
+            get {
+                return ResourceManager.GetString("Log_StatutValide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Liste des inscriptions.
         /// </summary>
         public static string MenuButton_List {

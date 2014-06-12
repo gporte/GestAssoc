@@ -118,6 +118,23 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 			return new ObservableCollection<Groupe>(groupes);
 		}
 
+
+
+		/// <summary>
+		/// Gets all sections.
+		/// </summary>
+		/// <returns></returns>
+		public ObservableCollection<Section> GetAllSections() {
+			var sections = this._context.Sections.OrderBy(x => x.Libelle);
+			return new ObservableCollection<Section>(sections);
+		}
+
+		/// <summary>
+		/// Obtient un dictionnaire contenant la liste des statuts ainsi que leur numéro.
+		/// </summary>
+		/// <returns>
+		/// Dictionnaire des statuts.
+		/// </returns>
 		public IDictionary<int, string> GetStatuts() {
 			var statuts = new Dictionary<int, string>();
 

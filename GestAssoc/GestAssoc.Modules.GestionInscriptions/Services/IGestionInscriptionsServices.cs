@@ -49,5 +49,11 @@ namespace GestAssoc.Modules.GestionInscriptions.Services
 		/// </summary>
 		/// <returns>Dictionnaire des statuts.</returns>
 		IDictionary<int, string> GetStatuts();
+
+		/// <summary>
+		/// Gets all sections.
+		/// </summary>
+		/// <returns></returns>
+		ObservableCollection<Section> GetAllSections();
 	}
 }

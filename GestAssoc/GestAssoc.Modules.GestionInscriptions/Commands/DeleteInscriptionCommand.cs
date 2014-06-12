@@ -14,10 +14,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 	public class DeleteInscriptionCommand : ICommand
 	{
 		public bool CanExecute(object parameter) {
-			var itemToDelete = parameter as Adherent;
-
-			return itemToDelete != null
-				&& itemToDelete.Inscriptions.Count == 0;
+			return true;
 		}
 
 		public event EventHandler CanExecuteChanged {

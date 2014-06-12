@@ -33,6 +33,11 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 
 			try {
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
+					this.SetStatus(itemToSave);
+
+					// la notion de section n'étant actuellement pas utilisée, on assignera automatiquement la section par défaut.
+					itemToSave.Section = service.GetAllSections().Single(x => x.EstDefaut);
+
 					UIServices.SetBusyState();
 					service.SaveInscription(itemToSave);
 					NotificationHelper.WriteNotification(Properties.Resources.Log_EnregistrementEffectue);
@@ -72,6 +77,13 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 			}
 
 			return errorsList.Count == 0;
+		}
+
+		private void SetStatus(Inscription itemToSave) {
+			if (itemToSave.CertificatMedicalRemis && itemToSave.Cotisation > 0) {
+				itemToSave.StatutInscription = 1;
+				NotificationHelper.WriteNotification(Properties.Resources.Log_StatutValide);
+			}
 		}
 	}
 }

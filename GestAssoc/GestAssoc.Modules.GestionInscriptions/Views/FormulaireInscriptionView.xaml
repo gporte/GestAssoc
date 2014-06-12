@@ -6,11 +6,23 @@
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInscriptions.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="500" d:DesignWidth="500">
+			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
-		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+
+				<ResourceDictionary>
+					<Style x:Key="dupForm" TargetType="{x:Type wpf:DecimalUpDown}">
+						<Setter Property="Width" Value="100" />
+						<Setter Property="Height" Value="25" />
+					</Style>
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+
 	</UserControl.Resources>
-	
+
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
@@ -37,24 +49,47 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
 			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Adherent}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Adherents}" 
 					  SelectedItem="{Binding Path=Item.Adherent}" />
 
 			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Groupe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Groupes}" 
 					  SelectedItem="{Binding Path=Item.Groupe}" />
 
 			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Statut}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource cmbValue}"
+					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Statuts}" 
 					  DisplayMemberPath="Value"
 					  SelectedValuePath="Key"
 					  SelectedValue="{Binding Path=Item.StatutInscription}" />
+
+			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_CertificatMedical}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0"
+					  IsChecked="{Binding Path=Item.CertificatMedicalRemis}" />
+
+			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Cotisation}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<wpf:DecimalUpDown Grid.Row="4" Grid.Column="1" Style="{StaticResource ResourceKey=dupForm}"
+							   HorizontalAlignment="Left"
+							   FormatString="C" 
+							   Value="{Binding Path=Item.Cotisation}" />
+
+			<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left"
+					 Text="{Binding Item.Commentaire}"
+					 Style="{StaticResource tbxCommentaire}" 
+					 AcceptsReturn="True"
+					 TextWrapping="Wrap"/>
 		</Grid>
 	</DockPanel>
 </UserControl>

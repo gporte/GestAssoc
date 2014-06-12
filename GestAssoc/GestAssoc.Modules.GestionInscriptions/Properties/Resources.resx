@@ -201,6 +201,9 @@
   <data name="Log_InitModule" xml:space="preserve">
     <value>Initialisation du Module GestionInscriptions.</value>
   </data>
+  <data name="Log_StatutValide" xml:space="preserve">
+    <value>Certificat médical remis et cotisation payée. L'inscription est validée.</value>
+  </data>
   <data name="MenuButton_List" xml:space="preserve">
     <value>Liste des inscriptions</value>
   </data>
