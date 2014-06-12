@@ -150,6 +150,12 @@
   <data name="Label_Creneau" xml:space="preserve">
     <value>Créneau : </value>
   </data>
+  <data name="Label_HeureDebut" xml:space="preserve">
+    <value>Heure de début : </value>
+  </data>
+  <data name="Label_HeureFin" xml:space="preserve">
+    <value>Heure de fin : </value>
+  </data>
   <data name="Label_Jour" xml:space="preserve">
     <value>Jour : </value>
   </data>

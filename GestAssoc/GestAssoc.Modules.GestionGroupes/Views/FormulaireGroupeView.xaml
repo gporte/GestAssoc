@@ -4,8 +4,9 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionGroupes.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="500">
+			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
@@ -28,69 +29,71 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Groupe" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Edition}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Annuler}"
 					Command="{Binding Path=CancelCmd}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
 
-			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
 		</WrapPanel>
 
-		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Nom : " Style="{StaticResource lblName}" />
-				<TextBox Text="{Binding Item.Libelle}" 
-						 Style="{StaticResource tbxValue}" 
-						 CharacterCasing="Upper"/>
-			</StackPanel>
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Style="{StaticResource lblName}" Content="Saison : " />
-				<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding Path=Item.Saison}"/>
-			</StackPanel>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Jour : " Style="{StaticResource lblName}" />
-				<ComboBox Style="{StaticResource cmbValue}" 
-						  ItemsSource="{Binding Path=JoursSemaine}" 
-						  DisplayMemberPath="Value"
-						  SelectedValuePath="Key"
-						  SelectedValue="{Binding Path=Item.JourSemaine}" />
-			</StackPanel>
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Nom}" Style="{StaticResource lblNameGrid}" />
+			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Item.Libelle}" 
+					CharacterCasing="Upper"/>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Style="{StaticResource lblName}" Content="Début : " />
-				<wpf:TimePicker Style="{StaticResource tpkValue}" Format="ShortTime" Value="{Binding Path=Item.HeureDebut}" />
-			</StackPanel>
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Saison}" Style="{StaticResource lblNameGrid}" />
+			<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Item.Saison}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Style="{StaticResource lblName}" Content="Fin : " />
-				<wpf:TimePicker Style="{StaticResource tpkValue}" Format="ShortTime" Value="{Binding Path=Item.HeureFin}" />
-			</StackPanel>
+			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Jour}" Style="{StaticResource lblNameGrid}" />
+			<ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource cmbValue}" 
+					  HorizontalAlignment="Left"
+					  ItemsSource="{Binding Path=JoursSemaine}" 
+					  DisplayMemberPath="Value"
+					  SelectedValuePath="Key"
+					  SelectedValue="{Binding Path=Item.JourSemaine}" />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Style="{StaticResource lblName}" Content="NbPlaces : " />
-				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
-								   Value="{Binding Item.NbPlaces}"
-								   Increment="1"
-								   AllowSpin="True"/>
-			</StackPanel>
+			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_HeureDebut}" Style="{StaticResource lblNameGrid}" />
+			<wpf:TimePicker Grid.Row="3" Grid.Column="1" Style="{StaticResource ResourceKey=tpkValue}" HorizontalAlignment="Left"
+							Format="ShortTime" Value="{Binding Path=Item.HeureDebut}"  />
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Commentaire : " Style="{StaticResource lblName}" VerticalAlignment="Top" />
-				<TextBox Text="{Binding Item.Commentaire}" 
-						 Style="{StaticResource tbxCommentaire}" 
-						 AcceptsReturn="True"
-						 TextWrapping="Wrap"/>
-			</StackPanel>
-		</WrapPanel>
+			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_HeureFin}" Style="{StaticResource lblNameGrid}" />
+			<wpf:TimePicker Grid.Row="4" Grid.Column="1" Style="{StaticResource ResourceKey=tpkValue}" HorizontalAlignment="Left"
+							Format="ShortTime" Value="{Binding Path=Item.HeureFin}" />
+
+			<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_NbPlaces}" Style="{StaticResource lblNameGrid}" />
+			<wpf:IntegerUpDown Grid.Row="5" Grid.Column="1" Style="{StaticResource ResourceKey=iupForm}" HorizontalAlignment="Left"
+						   Value="{Binding Item.NbPlaces}"
+						   Increment="1"
+						   AllowSpin="True"/>
+
+			<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource lblNameGrid}" />
+			<TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Item.Commentaire}" 
+					 Style="{StaticResource tbxCommentaire}" 
+					 AcceptsReturn="True"
+					 TextWrapping="Wrap"/>
+		</Grid>
 	</DockPanel>
 </UserControl>
