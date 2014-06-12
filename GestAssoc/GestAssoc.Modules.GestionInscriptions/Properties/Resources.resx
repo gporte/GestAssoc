@@ -157,16 +157,16 @@
     <value>Groupe : </value>
   </data>
   <data name="Label_Naissance" xml:space="preserve">
-    <value>Né le : </value>
+    <value>Date de naissance : </value>
   </data>
   <data name="Label_NbFiltre" xml:space="preserve">
-    <value>Nb. filtré(s) :</value>
+    <value>Nb. filtrée(s) :</value>
   </data>
   <data name="Label_NbTotal" xml:space="preserve">
     <value>Nb. total : </value>
   </data>
   <data name="Label_NomPrenom" xml:space="preserve">
-    <value>Nom/Prénom : </value>
+    <value>Nom / Prénom : </value>
   </data>
   <data name="Label_Saison" xml:space="preserve">
     <value>Saison : </value>
@@ -190,19 +190,16 @@
     <value>Inscription non valide. Enregistrement annulé.</value>
   </data>
   <data name="Log_EnregistrementEffectue" xml:space="preserve">
-    <value>Enregistrement effectué.</value>
+    <value>Inscription enregistrée.</value>
   </data>
   <data name="Log_EnregistrementSupprime" xml:space="preserve">
-    <value>Inscription supprimée.</value>
-  </data>
-  <data name="Log_EnregistrementSupprime1" xml:space="preserve">
     <value>Inscription supprimée.</value>
   </data>
   <data name="Log_InitModule" xml:space="preserve">
     <value>Initialisation du Module GestionInscriptions.</value>
   </data>
   <data name="MenuButton_List" xml:space="preserve">
-    <value>Consulter</value>
+    <value>Liste des inscriptions</value>
   </data>
   <data name="MenuButton_New" xml:space="preserve">
     <value>Nouvelle inscription</value>

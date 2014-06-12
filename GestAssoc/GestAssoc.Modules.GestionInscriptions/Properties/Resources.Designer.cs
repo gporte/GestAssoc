@@ -178,7 +178,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Né le : .
+        ///   Recherche une chaîne localisée semblable à Date de naissance : .
         /// </summary>
         public static string Label_Naissance {
             get {
@@ -187,7 +187,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nb. filtré(s) :.
+        ///   Recherche une chaîne localisée semblable à Nb. filtrée(s) :.
         /// </summary>
         public static string Label_NbFiltre {
             get {
@@ -205,7 +205,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nom/Prénom : .
+        ///   Recherche une chaîne localisée semblable à Nom / Prénom : .
         /// </summary>
         public static string Label_NomPrenom {
             get {
@@ -277,7 +277,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enregistrement effectué..
+        ///   Recherche une chaîne localisée semblable à Inscription enregistrée..
         /// </summary>
         public static string Log_EnregistrementEffectue {
             get {
@@ -295,15 +295,6 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Inscription supprimée..
-        /// </summary>
-        public static string Log_EnregistrementSupprime1 {
-            get {
-                return ResourceManager.GetString("Log_EnregistrementSupprime1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Initialisation du Module GestionInscriptions..
         /// </summary>
         public static string Log_InitModule {
@@ -313,7 +304,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Consulter.
+        ///   Recherche une chaîne localisée semblable à Liste des inscriptions.
         /// </summary>
         public static string MenuButton_List {
             get {

@@ -135,4 +135,7 @@
   <data name="Tab_Referentiel" xml:space="preserve">
     <value>Repository</value>
   </data>
+  <data name="Titre_Erreur" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>

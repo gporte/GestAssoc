@@ -190,7 +190,7 @@
     <value>Adhérent non valide. Enregistrement annulé.</value>
   </data>
   <data name="Log_EnregistrementEffectue" xml:space="preserve">
-    <value>Enregistrement effectué.</value>
+    <value>Adhérent enregistré.</value>
   </data>
   <data name="Log_EnregistrementSupprime" xml:space="preserve">
     <value>Enregistrement supprimé.</value>

@@ -142,7 +142,7 @@ namespace GestAssoc.Modules.GestionVilles.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nb. filtré(s) : .
+        ///   Recherche une chaîne localisée semblable à Nb. filtrée(s) : .
         /// </summary>
         public static string Label_NbFiltre {
             get {

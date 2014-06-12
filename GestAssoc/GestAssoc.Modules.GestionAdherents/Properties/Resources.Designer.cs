@@ -277,7 +277,7 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enregistrement effectué..
+        ///   Recherche une chaîne localisée semblable à Adhérent enregistré..
         /// </summary>
         public static string Log_EnregistrementEffectue {
             get {
