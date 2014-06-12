@@ -61,8 +61,9 @@
 			</Grid.RowDefinitions>
 
 			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Nom}" Style="{StaticResource lblNameGrid}" />
-			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Item.Libelle}" 
-					CharacterCasing="Upper"/>
+			<TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ResourceKey=tbxValueStd}" HorizontalAlignment="Left"
+					 Text="{Binding Item.Libelle}" 
+					 CharacterCasing="Upper"/>
 
 			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Saison}" Style="{StaticResource lblNameGrid}" />
 			<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Item.Saison}" />
