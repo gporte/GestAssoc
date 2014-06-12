@@ -117,7 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Err_AdherentObligatoire" xml:space="preserve">
+    <value>Adhérent obligatoire.</value>
+  </data>
+  <data name="Err_GroupeObligatoire" xml:space="preserve">
+    <value>Groupe obligatoire.</value>
+  </data>
+  <data name="Err_InscriptionExiste" xml:space="preserve">
+    <value>Cette inscription existe déjà (adhérent + groupe).</value>
+  </data>
+  <data name="Header_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Header_Adherent" xml:space="preserve">
+    <value>Adhérent</value>
+  </data>
+  <data name="Header_Inscription" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="Header_List" xml:space="preserve">
+    <value>Inscriptions</value>
+  </data>
+  <data name="Header_Statistiques" xml:space="preserve">
+    <value>Stats</value>
+  </data>
+  <data name="Label_Ans" xml:space="preserve">
+    <value>an(s)</value>
+  </data>
+  <data name="Label_CertificatMedical" xml:space="preserve">
+    <value>Certificat médical : </value>
+  </data>
+  <data name="Label_Commentaire" xml:space="preserve">
+    <value>Commentaires : </value>
+  </data>
+  <data name="Label_Cotisation" xml:space="preserve">
+    <value>Cotisation : </value>
+  </data>
+  <data name="Label_Groupe" xml:space="preserve">
+    <value>Groupe : </value>
+  </data>
+  <data name="Label_Naissance" xml:space="preserve">
+    <value>Né le : </value>
+  </data>
+  <data name="Label_NbFiltre" xml:space="preserve">
+    <value>Nb. filtré(s) :</value>
+  </data>
+  <data name="Label_NbTotal" xml:space="preserve">
+    <value>Nb. total : </value>
+  </data>
+  <data name="Label_NomPrenom" xml:space="preserve">
+    <value>Nom/Prénom : </value>
+  </data>
+  <data name="Label_Saison" xml:space="preserve">
+    <value>Saison : </value>
+  </data>
+  <data name="Label_Sexe" xml:space="preserve">
+    <value>Sexe : </value>
+  </data>
+  <data name="Label_Statut" xml:space="preserve">
+    <value>Statut : </value>
+  </data>
+  <data name="Label_Ville" xml:space="preserve">
+    <value>Ville : </value>
+  </data>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionInscriptions</value>
+  </data>
+  <data name="Log_AffichageVue" xml:space="preserve">
+    <value>Affichage de la vue </value>
+  </data>
+  <data name="Log_EnregistrementAnnule" xml:space="preserve">
+    <value>Inscription non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Log_EnregistrementEffectue" xml:space="preserve">
+    <value>Enregistrement effectué.</value>
+  </data>
   <data name="Log_EnregistrementSupprime" xml:space="preserve">
     <value>Inscription supprimée.</value>
+  </data>
+  <data name="Log_EnregistrementSupprime1" xml:space="preserve">
+    <value>Inscription supprimée.</value>
+  </data>
+  <data name="Log_InitModule" xml:space="preserve">
+    <value>Initialisation du Module GestionInscriptions.</value>
+  </data>
+  <data name="MenuButton_List" xml:space="preserve">
+    <value>Consulter</value>
+  </data>
+  <data name="MenuButton_New" xml:space="preserve">
+    <value>Nouvelle inscription</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Gestion des inscriptions</value>
+  </data>
+  <data name="Titre_Consultation" xml:space="preserve">
+    <value>Inscriptions</value>
+  </data>
+  <data name="Titre_Formulaire" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="Tooltip_Ajouter" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="Tooltip_Annuler" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Tooltip_Editer" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="Tooltip_Enregistrer" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Tooltip_Supprimer" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
 </root>

@@ -16,7 +16,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			this.ShowFormulaireCreationInscriptionCmd = new ShowViewCommand(ViewNames.FormulaireInscription.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionInscriptions");
+			NotificationHelper.WriteNotification(Properties.Resources.Log_AffichageMenu);
 		}
 	}
 }

@@ -35,11 +35,11 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveInscription(itemToSave);
-					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					NotificationHelper.WriteNotification(Properties.Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0, "Inscription non valide. Enregistrement annulé.");
+					errorsList.Insert(0, Properties.Resources.Log_EnregistrementAnnule);
 					NotificationHelper.WriteNotificationList(errorsList);
 				}
 			}
@@ -56,11 +56,11 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 			errorsList = new List<string>();
 
 			if (itemToSave.Adherent == null) {
-				errorsList.Add("Adhérent obligatoire.");
+				errorsList.Add(Properties.Resources.Err_AdherentObligatoire);
 			}
 
 			if (itemToSave.Groupe == null) {
-				errorsList.Add("Groupe obligatoire.");
+				errorsList.Add(Properties.Resources.Err_GroupeObligatoire);
 			}
 
 			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple adhérent + groupe
@@ -68,7 +68,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 			var itemExists = service.GetAllInscriptions().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add("Cette inscription existe déjà (adhérent + groupe).");
+				errorsList.Add(Properties.Resources.Err_InscriptionExiste);
 			}
 
 			return errorsList.Count == 0;

@@ -65,7 +65,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			this.AddInscriptionCmd = new ShowViewCommand(ViewNames.FormulaireInscription.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationInscriptions.ToString());
+			NotificationHelper.WriteNotification(Properties.Resources.Log_AffichageVue + ViewNames.ConsultationInscriptions.ToString());
 		}
 	}
 }

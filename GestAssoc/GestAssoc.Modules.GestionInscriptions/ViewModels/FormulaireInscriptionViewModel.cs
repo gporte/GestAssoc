@@ -109,7 +109,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			this.Statuts = this._services.GetStatuts();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireInscription);
+			NotificationHelper.WriteNotification(Properties.Resources.Log_AffichageVue + ViewNames.FormulaireInscription);
 		}
 		#endregion
 	}

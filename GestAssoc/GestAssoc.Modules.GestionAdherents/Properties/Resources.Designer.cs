@@ -160,7 +160,7 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à ans.
+        ///   Recherche une chaîne localisée semblable à an(s).
         /// </summary>
         public static string Label_Ans {
             get {

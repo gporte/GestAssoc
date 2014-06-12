@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInscriptions.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
@@ -11,10 +12,10 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Inscriptions" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Consultation}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="Inscriptions" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_List}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
 			<DockPanel LastChildFill="True">
 				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
 						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
@@ -29,33 +30,43 @@
 			</DockPanel>
 		</GroupBox>
 
-		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
-			<WrapPanel Orientation="Vertical">
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
-				</StackPanel>
+		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxAdherents, Path=Items.Count}"/>
-				</StackPanel>
-			</WrapPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbTotal}" />
+				<Label Grid.Row="0" Grid.Column="1"
+					   Content="{Binding Path=Items.Count}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbFiltre}" />
+				<Label Grid.Row="1" Grid.Column="1"
+					   Content="{Binding ElementName=lbxInscriptions, Path=Items.Count}"/>
+			</Grid>
 		</GroupBox>
 
-		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Ajouter}"
 						Command="{Binding Path=AddInscriptionCmd}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Editer}"
 						Command="{Binding Path=EditInscriptionCmd}" CommandParameter="{Binding ElementName=lbxInscriptions, Path=SelectedItem.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Supprimer}"
 						Command="{Binding Path=DeleteInscriptionCmd}" CommandParameter="{Binding ElementName=lbxInscriptions, Path=SelectedItem}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
 				</Button>
@@ -63,91 +74,91 @@
 		</GroupBox>		
 		
 		<StackPanel Orientation="Vertical">
-			<GroupBox Name="gbxAdherent" Header="Adhérent" Margin="0,0,0,10" DataContext="{Binding ElementName=lbxInscriptions, Path=SelectedItem.Adherent}">
-				<WrapPanel Orientation="Vertical">
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblBigValue}">
-							<Label.Content>
-								<TextBlock>
-									<TextBlock.Text>
-										<MultiBinding StringFormat="{}{0} {1}">
-											<Binding Path="Prenom" />
-											<Binding Path="Nom" />
-										</MultiBinding>
-									</TextBlock.Text>
-								</TextBlock>
-							</Label.Content>
-						</Label>
-					</StackPanel>
+			<GroupBox Name="gbxAdherent" Header="{x:Static p:Resources.Header_Adherent}" Margin="0,0,0,10" DataContext="{Binding ElementName=lbxInscriptions, Path=SelectedItem.Adherent}">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Né le : " />
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
 
-						<Label Style="{StaticResource lblValue}">
-							<Label.Content>
-								<TextBlock>
-									<TextBlock.Text>
-										<MultiBinding StringFormat="{}{0:d} ({1} ans)">
-											<Binding Path="DateNaissance" />
-											<Binding Path="Age" />
-										</MultiBinding>
-									</TextBlock.Text>
-								</TextBlock>
-							</Label.Content>
-						</Label>
-					</StackPanel>
+					<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource lblBigValue}">
+						<Label.Content>
+							<TextBlock>
+								<TextBlock.Text>
+									<MultiBinding StringFormat="{}{0} {1}">
+										<Binding Path="Nom" />
+										<Binding Path="Prenom" />
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</Label.Content>
+					</Label>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Sexe : " />
-						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding Path=LibelleSexe}"/>
-					</StackPanel>
+					<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="1" Grid.Column="1">
+						<Label.Content>
+							<TextBlock>
+								<TextBlock.Text>
+									<MultiBinding StringFormat="{}{0:d} ({1} {2})">
+										<Binding Path="DateNaissance" />
+										<Binding Path="Age" />
+										<Binding Source="{x:Static p:Resources.Label_Ans}" />
+									</MultiBinding>
+								</TextBlock.Text>
+							</TextBlock>
+						</Label.Content>
+					</Label>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Ville : " />
-						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding Path=Ville}"/>
-					</StackPanel>
-				</WrapPanel>
+					<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=LibelleSexe}"/>
+
+					<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Ville}"/>
+				</Grid>
 			</GroupBox>
 
-			<GroupBox Name="gbxInscription" Header="Inscription" Margin="0,0,0,10" DataContext="{Binding ElementName=lbxInscriptions, Path=SelectedItem}">
-				<WrapPanel Orientation="Vertical">
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Saison : " />
+			<GroupBox Name="gbxInscription" Header="{x:Static p:Resources.Header_Inscription}" Margin="0,0,0,10" DataContext="{Binding ElementName=lbxInscriptions, Path=SelectedItem}">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
 
-						<Label Style="{StaticResource lblValue}" Content="{Binding Path=Groupe.Saison}" />
-					</StackPanel>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Groupe : " />
+					<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Saison}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Groupe.Saison}"/>
 
-						<Label Style="{StaticResource lblValue}" Content="{Binding Path=Groupe}" />
-					</StackPanel>
+					<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Groupe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Groupe}"/>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Certificat : " />
+					<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_CertificatMedical}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=CertificatMedicalRemis}"/>
 
-						<Label Style="{StaticResource lblValue}" Content="{Binding Path=CertificatMedicalRemis}" />
-					</StackPanel>
+					<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Cotisation}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Cotisation, StringFormat={}{0:C}}"/>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Cotisation : " />
+					<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Statut}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="4" Grid.Column="1" Content="{Binding Path=LibelleStatutInscription}"/>
 
-						<Label Style="{StaticResource lblValue}" Content="{Binding Path=Cotisation, StringFormat={}{0:C}}" />
-					</StackPanel>
-
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Statut : " />
-						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding Path=LibelleStatutInscription}"/>
-					</StackPanel>
-
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Commentaire : " />
-						<Label Style="{StaticResource lblValue}" Content="{Binding Path=Commentaire}"/>
-					</StackPanel>
-				</WrapPanel>
+					<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+					<Label Grid.Row="5" Grid.Column="1" Content="{Binding Path=Commentaire}"/>
+				</Grid>
 			</GroupBox>
 		</StackPanel>		
 	</DockPanel>
