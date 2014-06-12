@@ -7,6 +7,7 @@ using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionVilles.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionVilles.Commands
 {
@@ -36,7 +37,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				UIServices.SetBusyState();
 				service.DeleteVille(itemToDelete);
 
-				NotificationHelper.WriteNotification("Enregistrement supprimé.");
+				NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 			}

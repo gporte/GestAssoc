@@ -6,6 +6,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using GlblRes = global::GestAssoc.Modules.GestionVilles.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionVilles
 {
@@ -14,7 +15,7 @@ namespace GestAssoc.Modules.GestionVilles
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionVilles.");
+			NotificationHelper.WriteNotification(GlblRes.Log_InitialisationModule);
 
 			this.TabRegion = RibbonTabRegion.Referentiel;
 			

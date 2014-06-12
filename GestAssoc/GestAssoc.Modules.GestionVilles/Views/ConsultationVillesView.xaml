@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionVilles.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,10 +12,10 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Villes" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Consultation}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="Villes" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_List}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
 			<DockPanel LastChildFill="True">
 				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
 						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
@@ -29,53 +30,67 @@
 			</DockPanel>
 		</GroupBox>
 
-		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
-			<WrapPanel Orientation="Vertical">
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
-				</StackPanel>
+		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxVilles, Path=Items.Count}"/>
-				</StackPanel>
-			</WrapPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbTotal}" />
+				<Label Grid.Row="0" Grid.Column="1"
+					   Content="{Binding Path=Items.Count}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbFiltre}" />
+				<Label Grid.Row="1" Grid.Column="1"
+					   Content="{Binding ElementName=lbxVilles, Path=Items.Count}"/>
+			</Grid>
 		</GroupBox>
-		
-		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Ajouter}"
 						Command="{Binding Path=AddVilleCmd}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
 				</Button>
-				
-				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Editer}"
 						Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
-				
-				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Supprimer}"
 						Command="{Binding Path=DeleteVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
 				</Button>
 			</WrapPanel>
 		</GroupBox>
 
-		<GroupBox Header="Détails" Margin="10,0,10,0">
-			<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nom : " />
-					<Label Style="{StaticResource lblValue}" 
-							Content="{Binding ElementName=lbxVilles, Path=SelectedItem.Libelle}"/>
-				</StackPanel>
+		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxVilles, Path=SelectedItem}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Code postal : " />
-					<Label Style="{StaticResource lblValue}" 
-							Content="{Binding ElementName=lbxVilles, Path=SelectedItem.CodePostal}"/>
-				</StackPanel>
-			</WrapPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Libelle}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Libelle}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_CodePostal}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=CodePostal}"/>
+			</Grid>
 		</GroupBox>			
 	</DockPanel>
 </UserControl>

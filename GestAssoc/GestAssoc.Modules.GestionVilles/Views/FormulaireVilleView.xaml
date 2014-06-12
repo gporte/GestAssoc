@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:wpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionVilles.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,36 +12,43 @@
 	</UserControl.Resources>
 
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Ville" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Annuler}"
 					Command="{Binding Path=CancelCmd}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
-			
-			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
 		</WrapPanel>
 
-		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Nom : " Style="{StaticResource lblName}" />
-				<TextBox Text="{Binding Item.Libelle}" 
-						 Style="{StaticResource tbxValue}" 
-						 CharacterCasing="Upper"/>
-			</StackPanel>
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Code postal : " Style="{StaticResource lblName}" />
-				<wpf:MaskedTextBox Mask="00000" 
-								   Text="{Binding Item.CodePostal}" 
-								   HorizontalContentAlignment="Right"
-								   Style="{StaticResource tbxValueLittle}"/>
-			</StackPanel>
-		</WrapPanel>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Libelle}" Style="{StaticResource lblNameGrid}" />
+			<TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ResourceKey=tbxValueStd}" HorizontalAlignment="Left"
+					 Text="{Binding Item.Libelle}" 
+					 CharacterCasing="Upper"/>
+
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_CodePostal}" Style="{StaticResource lblNameGrid}" />
+			<wpf:MaskedTextBox  Grid.Row="1" Grid.Column="1" Mask="00000" 
+								Text="{Binding Item.CodePostal}" 
+								HorizontalAlignment="Left"
+								HorizontalContentAlignment="Right"
+								Style="{StaticResource tbxCodePostal}"/>
+		</Grid>
 	</DockPanel>
 </UserControl>

@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionVilles.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionVilles.Commands
 {
@@ -35,11 +36,11 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveVille(itemToSave);
-					NotificationHelper.WriteNotification("Enregistrement effectué.");
+					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0,"Ville non valide. Enregistrement annulé.");					
+					errorsList.Insert(0,GlblRes.Log_EnregistrementAnnule);					
 					NotificationHelper.WriteNotificationList(errorsList);
 				}				
 			}
@@ -56,11 +57,11 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 			errorsList = new List<string>();
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Libelle)) {
-				errorsList.Add("Libellé obligatoire.");
+				errorsList.Add(GlblRes.Err_LibelleObligatoire);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.CodePostal)) {
-				errorsList.Add("Code postal obligatoire.");
+				errorsList.Add(GlblRes.Err_CodePostalObligatoire);
 			}
 
 			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code postal+libellé
@@ -68,7 +69,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 			var itemExists = service.GetAllVilles().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add("Cette ville existe déjà (code postal + libellé).");
+				errorsList.Add(GlblRes.Err_VilleExiste);
 			}
 
 			return errorsList.Count == 0;

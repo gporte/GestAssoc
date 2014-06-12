@@ -12,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionVilles.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionVilles.ViewModels
 {
@@ -65,7 +66,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationVilles.ToString());
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationVilles.ToString());
 		}
 	}
 }

@@ -4,6 +4,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Commands;
 using GestAssoc.Modules.GestionVilles.Constantes;
+using GestAssoc.Modules.GestionVilles.Properties;
 using GestAssoc.Modules.GestionVilles.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -58,7 +59,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationVilles.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.FormulaireVille.ToString());
+			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
 		}
 		#endregion
 	}
