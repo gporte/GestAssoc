@@ -25,7 +25,7 @@ namespace GestAssoc.Views
 		}
 
 		private void ShowError(string errorMsg) {
-			MessageBox.Show(errorMsg, "Erreur");
+			MessageBox.Show(errorMsg, Properties.Resources.Titre_Erreur);
 		}
 	}
 }

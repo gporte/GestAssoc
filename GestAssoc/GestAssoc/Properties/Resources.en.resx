@@ -118,24 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label_Journal" xml:space="preserve">
-    <value>Journal</value>
+    <value>Log</value>
   </data>
   <data name="Label_Quitter" xml:space="preserve">
-    <value>Quitter</value>
+    <value>Exit</value>
   </data>
   <data name="Log_InitialisationShell" xml:space="preserve">
-    <value>Initialisation du Shell.</value>
+    <value>Initialization of the Shell.</value>
   </data>
   <data name="Tab_Autres" xml:space="preserve">
-    <value>Autres</value>
+    <value>Other</value>
   </data>
   <data name="Tab_Inscriptions" xml:space="preserve">
-    <value>Inscription</value>
+    <value>Enrollment </value>
   </data>
   <data name="Tab_Referentiel" xml:space="preserve">
-    <value>Référentiel</value>
-  </data>
-  <data name="Titre_Erreur" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Repository</value>
   </data>
 </root>

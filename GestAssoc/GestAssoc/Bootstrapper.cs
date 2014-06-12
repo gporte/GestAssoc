@@ -29,7 +29,7 @@ namespace GestAssoc
 			container.RegisterType<IEventAggregator, EventAggregator>();
 
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Shell.");
+			NotificationHelper.WriteNotification(Properties.Resources.Log_InitialisationShell);
 		}
 
 		protected override Microsoft.Practices.Prism.Modularity.IModuleCatalog CreateModuleCatalog() {

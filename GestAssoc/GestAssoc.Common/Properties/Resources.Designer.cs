@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestAssoc.Properties {
+namespace GestAssoc.Common.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GestAssoc.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestAssoc.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestAssoc.Common.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,69 +57,6 @@ namespace GestAssoc.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Journal.
-        /// </summary>
-        public static string Label_Journal {
-            get {
-                return ResourceManager.GetString("Label_Journal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Quitter.
-        /// </summary>
-        public static string Label_Quitter {
-            get {
-                return ResourceManager.GetString("Label_Quitter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Initialisation du Shell..
-        /// </summary>
-        public static string Log_InitialisationShell {
-            get {
-                return ResourceManager.GetString("Log_InitialisationShell", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Autres.
-        /// </summary>
-        public static string Tab_Autres {
-            get {
-                return ResourceManager.GetString("Tab_Autres", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Inscription.
-        /// </summary>
-        public static string Tab_Inscriptions {
-            get {
-                return ResourceManager.GetString("Tab_Inscriptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Référentiel.
-        /// </summary>
-        public static string Tab_Referentiel {
-            get {
-                return ResourceManager.GetString("Tab_Referentiel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur.
-        /// </summary>
-        public static string Titre_Erreur {
-            get {
-                return ResourceManager.GetString("Titre_Erreur", resourceCulture);
             }
         }
     }
