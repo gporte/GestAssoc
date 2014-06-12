@@ -286,11 +286,29 @@ namespace GestAssoc.Modules.GestionSaisons.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annuler.
+        /// </summary>
+        public static string Tooltip_Annuler {
+            get {
+                return ResourceManager.GetString("Tooltip_Annuler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Editer.
         /// </summary>
         public static string Tooltip_Editer {
             get {
                 return ResourceManager.GetString("Tooltip_Editer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enregistrer.
+        /// </summary>
+        public static string Tooltip_Enregistrer {
+            get {
+                return ResourceManager.GetString("Tooltip_Enregistrer", resourceCulture);
             }
         }
         

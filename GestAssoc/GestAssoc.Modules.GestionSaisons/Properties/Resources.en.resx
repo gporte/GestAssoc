@@ -201,4 +201,10 @@
   <data name="Tooltip_Supprimer" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Tooltip_Annuler" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Tooltip_Enregistrer" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

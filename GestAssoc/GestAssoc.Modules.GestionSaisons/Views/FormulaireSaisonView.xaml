@@ -23,39 +23,43 @@
 	</UserControl.Resources>
 
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Saison" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-			<Button Style="{StaticResource btnCmd}" ToolTip="Retour"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Annuler}"
 					Command="{Binding Path=CancelCmd}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_back.png" />
 			</Button>
 
-			<Button Style="{StaticResource btnCmd}" ToolTip="Enregistrer"
+			<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Enregistrer}"
 					Command="{Binding Path=SaveCmd}" CommandParameter="{Binding Path=Item}">
 				<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_save.png" />
 			</Button>
 		</WrapPanel>
 
-		<WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Début : " Style="{StaticResource lblName}" />
-				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
-								   Value="{Binding Item.AnneeDebut}"
-								   Increment="1"
-								   Minimum="0"
-								   AllowSpin="True"/>
-			</StackPanel>
+		<Grid HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
 
-			<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-				<Label Content="Fin : " Style="{StaticResource lblName}" />
-				<wpf:IntegerUpDown Style="{StaticResource iupForm}"
-								   Value="{Binding Item.AnneeFin}"
-								   Increment="1"
-								   Minimum="0"
-								   AllowSpin="True"/>
-			</StackPanel>
-		</WrapPanel>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_AnneeDebut}" Style="{StaticResource lblNameGrid}" />
+			<wpf:IntegerUpDown Grid.Row="0" Grid.Column="1" Style="{StaticResource ResourceKey=iupForm}" HorizontalAlignment="Left"
+							   Value="{Binding Item.AnneeDebut}"
+							   Increment="1"
+							   AllowSpin="True"/>
+
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_AnneeDebut}" Style="{StaticResource lblNameGrid}" />
+			<wpf:IntegerUpDown Grid.Row="1" Grid.Column="1" Style="{StaticResource ResourceKey=iupForm}" HorizontalAlignment="Left"
+							   Value="{Binding Item.AnneeFin}"
+							   Increment="1"
+							   AllowSpin="True"/>
+		</Grid>
 	</DockPanel>
 </UserControl>
