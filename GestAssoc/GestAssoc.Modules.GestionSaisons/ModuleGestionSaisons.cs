@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.BaseClasses;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionSaisons.Constantes;
+using GestAssoc.Modules.GestionSaisons.Properties;
 using GestAssoc.Modules.GestionSaisons.Views;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
@@ -14,7 +15,7 @@ namespace GestAssoc.Modules.GestionSaisons
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification("Initialisation du Module GestionSaisons.");
+			NotificationHelper.WriteNotification(Resources.Log_InitModule);
 
 			this.TabRegion = RibbonTabRegion.Referentiel;
 

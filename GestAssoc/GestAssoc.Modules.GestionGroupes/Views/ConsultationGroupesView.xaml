@@ -31,17 +31,27 @@
 		</GroupBox>
 
 		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
-			<WrapPanel Orientation="Vertical">
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_NbTotal}" />
-					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
-				</StackPanel>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="{x:Static p:Resources.Label_NbFiltre}" />
-					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxGroupes, Path=Items.Count}"/>
-				</StackPanel>
-			</WrapPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbTotal}" />
+				<Label Grid.Row="0" Grid.Column="1"
+					   Content="{Binding Path=Items.Count}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbFiltre}" />
+				<Label Grid.Row="1" Grid.Column="1"
+					   Content="{Binding ElementName=lbxGroupes, Path=Items.Count}"/>
+			</Grid>
 		</GroupBox>
 
 		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">

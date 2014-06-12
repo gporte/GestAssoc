@@ -2,12 +2,14 @@
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionSaisons.Constantes;
+using GestAssoc.Modules.GestionSaisons.Properties;
 using GestAssoc.Modules.GestionSaisons.Services;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
 using System.Linq;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionSaisons.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionSaisons.Commands
 {
@@ -37,7 +39,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				UIServices.SetBusyState();
 				service.DeleteSaison(itemToDelete);
 
-				NotificationHelper.WriteNotification("Enregistrement supprimé.");
+				NotificationHelper.WriteNotification(GlblRes.Log_ElementSupprime);
 
 				// La saison la plus récente devient la saison courante
 				UIServices.SetBusyState();
@@ -46,10 +48,10 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				if (newSaisonCourante != null) {
 					UIServices.SetBusyState();
 					service.SetSaisonCourante(newSaisonCourante);
-					NotificationHelper.WriteNotification("Nouvelle saison courante : " + newSaisonCourante.ToString());
+					NotificationHelper.WriteNotification(Resources.Log_NouvelleSaisonCourante + newSaisonCourante.ToString());
 				}
 				else {
-					NotificationHelper.WriteNotification("Aucune saison disponible. Pas de saison courante.");
+					NotificationHelper.WriteNotification(GlblRes.Log_AucuneSaisonCourante);
 				}
 
 				new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);

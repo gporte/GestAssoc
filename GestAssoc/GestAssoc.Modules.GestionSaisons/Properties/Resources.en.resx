@@ -117,62 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionSaisons menu.</value>
+  </data>
+  <data name="Log_AffichageVue" xml:space="preserve">
+    <value>Loading of view </value>
+  </data>
+  <data name="Log_AucuneSaisonCourante" xml:space="preserve">
+    <value>No season available. Current season is empty.</value>
+  </data>
+  <data name="Log_ElementSupprime" xml:space="preserve">
+    <value>Season deleted.</value>
+  </data>
+  <data name="Log_InitModule" xml:space="preserve">
+    <value>Initialization of module GestionSaisons.</value>
+  </data>
+  <data name="Log_NouvelleSaisonCourante" xml:space="preserve">
+    <value>New current season: </value>
+  </data>
+  <data name="Err_AnneeDebutAnneeFin" xml:space="preserve">
+    <value>The end year must be greater than the start year.</value>
+  </data>
+  <data name="Err_SaisonExiste" xml:space="preserve">
+    <value>This season already exists (start year + end year).</value>
+  </data>
+  <data name="Log_EnregistrementAnnule" xml:space="preserve">
+    <value>Season invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_EnregistrementEffectue" xml:space="preserve">
+    <value>Season succesfully saved.</value>
+  </data>
   <data name="Header_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
   <data name="Header_Details" xml:space="preserve">
     <value>Details</value>
   </data>
-  <data name="Header_List" xml:space="preserve">
-    <value>Groups</value>
+  <data name="Header_Liste" xml:space="preserve">
+    <value>Seasons</value>
   </data>
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
   </data>
-  <data name="Label_Commentaire" xml:space="preserve">
-    <value>Comments:</value>
+  <data name="Label_AnneeDebut" xml:space="preserve">
+    <value>Start year: </value>
   </data>
-  <data name="Label_Creneau" xml:space="preserve">
-    <value>Time slot:</value>
-  </data>
-  <data name="Label_Jour" xml:space="preserve">
-    <value>Day:</value>
-  </data>
-  <data name="Label_Nom" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="Label_Saison" xml:space="preserve">
-    <value>Season:</value>
-  </data>
-  <data name="MenuButton_List" xml:space="preserve">
-    <value>All groups</value>
-  </data>
-  <data name="MenuButton_New" xml:space="preserve">
-    <value>Add group</value>
-  </data>
-  <data name="Titre_Edition" xml:space="preserve">
-    <value>Group</value>
-  </data>
-  <data name="Titre_List" xml:space="preserve">
-    <value>Groups</value>
-  </data>
-  <data name="Tooltip_Ajouter" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="Tooltip_Annuler" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Tooltip_Editer" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="Tooltip_Enregistrer" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="Tooltip_Supprimer" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="MenuHeader" xml:space="preserve">
-    <value>Groups management</value>
+  <data name="Label_AnneeFin" xml:space="preserve">
+    <value>End year: </value>
   </data>
   <data name="Label_NbFiltre" xml:space="preserve">
     <value>Filtered count:</value>
@@ -180,46 +171,34 @@
   <data name="Label_NbTotal" xml:space="preserve">
     <value>Total count:</value>
   </data>
-  <data name="Label_NbPlaces" xml:space="preserve">
-    <value>Capacity:</value>
+  <data name="Label_SaisonCourante" xml:space="preserve">
+    <value>Current season: </value>
   </data>
-  <data name="Log_AffichageMenu" xml:space="preserve">
-    <value>Loading of GestionGroupes menu.</value>
+  <data name="MenuButton_Add" xml:space="preserve">
+    <value>Add season</value>
   </data>
-  <data name="Log_AffichageVue" xml:space="preserve">
-    <value>Loading of view </value>
+  <data name="MenuButton_List" xml:space="preserve">
+    <value>All seasons</value>
   </data>
-  <data name="Log_EnregistrementEffectue" xml:space="preserve">
-    <value>Group successfully saved.</value>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Seasons management</value>
   </data>
-  <data name="Log_EnregistrementSupprime" xml:space="preserve">
-    <value>Group deleted.</value>
+  <data name="Titre_Consultation" xml:space="preserve">
+    <value>Seasons</value>
   </data>
-  <data name="Log_InitModule" xml:space="preserve">
-    <value>Initialization of GestionGroupes module</value>
+  <data name="Titre_Formulaire" xml:space="preserve">
+    <value>Season</value>
   </data>
-  <data name="Err_GroupeExiste" xml:space="preserve">
-    <value>This group already exists (name + time slot)</value>
+  <data name="Tooltip_Ajouter" xml:space="preserve">
+    <value>Add</value>
   </data>
-  <data name="Err_HeureDebutHeureFin" xml:space="preserve">
-    <value>The end time must be greater than the start time.</value>
+  <data name="Tooltip_Editer" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="Err_HeureDebutObligatoire" xml:space="preserve">
-    <value>Start time required.</value>
+  <data name="Tooltip_SaisonCourante" xml:space="preserve">
+    <value>Set as current season</value>
   </data>
-  <data name="Err_HeureFinObligatoire" xml:space="preserve">
-    <value>End time required.</value>
-  </data>
-  <data name="Err_LibelleObligatoire" xml:space="preserve">
-    <value>Name required.</value>
-  </data>
-  <data name="Log_EnregistrementAnnule" xml:space="preserve">
-    <value>Group invalid. Save cancelled.</value>
-  </data>
-  <data name="Label_HeureDebut" xml:space="preserve">
-    <value>Start time:</value>
-  </data>
-  <data name="Label_HeureFin" xml:space="preserve">
-    <value>End time: </value>
+  <data name="Tooltip_Supprimer" xml:space="preserve">
+    <value>Delete</value>
   </data>
 </root>

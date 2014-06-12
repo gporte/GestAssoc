@@ -4,6 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionSaisons.Properties"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -11,10 +12,10 @@
 	</UserControl.Resources>
 
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="Saisons" HorizontalContentAlignment="Center"
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Consultation}" HorizontalContentAlignment="Center"
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="Saisons" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_Liste}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
 			<DockPanel LastChildFill="True">
 				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
 						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
@@ -29,62 +30,75 @@
 			</DockPanel>
 		</GroupBox>
 
-		<GroupBox Header="Statistiques" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
-			<WrapPanel Orientation="Vertical">
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. total : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding Path=Items.Count}"/>
-				</StackPanel>
+		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-				<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-					<Label Style="{StaticResource lblName}" Content="Nb. filtré : " />
-					<Label Style="{StaticResource lblValue}" Content="{Binding ElementName=lbxSaisons, Path=Items.Count}"/>
-				</StackPanel>
-			</WrapPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbTotal}" />
+				<Label Grid.Row="0" Grid.Column="1"
+					   Content="{Binding Path=Items.Count}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbFiltre}" />
+				<Label Grid.Row="1" Grid.Column="1"
+					   Content="{Binding ElementName=lbxSaisons, Path=Items.Count}"/>
+			</Grid>
 		</GroupBox>
-		
-		<GroupBox Header="Actions" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Style="{StaticResource btnCmd}" ToolTip="Ajouter"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Ajouter}"
 						Command="{Binding Path=AddSaisonCmd}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Editer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Editer}"
 						Command="{Binding Path=EditSaisonCmd}" CommandParameter="{Binding ElementName=lbxSaisons, Path=SelectedItem.ID}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
 				</Button>
 
-				<Button Style="{StaticResource btnCmd}" ToolTip="Supprimer"
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Supprimer}"
 						Command="{Binding Path=DeleteSaisonCmd}" CommandParameter="{Binding ElementName=lbxSaisons, Path=SelectedItem}">
 					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
 				</Button>
 			</WrapPanel>
 		</GroupBox>
 
-			<GroupBox Header="Détails" Margin="10,0,10,0">
-				<WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,0,10,0">
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Début : " />
-						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding ElementName=lbxSaisons, Path=SelectedItem.AnneeDebut}"/>
-					</StackPanel>
+		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Fin : " />
-						<Label Style="{StaticResource lblValue}" 
-							   Content="{Binding ElementName=lbxSaisons, Path=SelectedItem.AnneeFin}"/>
-					</StackPanel>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
 
-					<StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=skpLabelValue}">
-						<Label Style="{StaticResource lblName}" Content="Saison courante : " />
-						<Button Style="{StaticResource btnLittle}" ToolTip="Définir comme saison courante"
-								Command="{Binding Path=ChangeSaisonCouranteCmd}" 
-								CommandParameter="{Binding ElementName=lbxSaisons, Path=SelectedItem}">
-							<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_check.png" />
-						</Button>
-					</StackPanel>
-				</WrapPanel>
-			</GroupBox>
+				<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_AnneeDebut}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Libelle}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_AnneeFin}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Saison}"/>
+
+				<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_SaisonCourante}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Button Grid.Row="2" Grid.Column="1" Style="{StaticResource btnLittle}" ToolTip="{x:Static p:Resources.Tooltip_SaisonCourante}"
+						Command="{Binding Path=ChangeSaisonCouranteCmd}" 
+						CommandParameter="{Binding ElementName=lbxSaisons, Path=SelectedItem}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_check.png" />
+				</Button>
+			</Grid>
+		</GroupBox>
 	</DockPanel>
 </UserControl>

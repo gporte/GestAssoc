@@ -7,6 +7,7 @@ using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionSaisons.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionSaisons.Commands
 {
@@ -33,7 +34,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				try {
 					UIServices.SetBusyState();
 					service.SetSaisonCourante(itemToSave);
-					NotificationHelper.WriteNotification("Nouvelle saison courante : " + itemToSave.ToString());
+					NotificationHelper.WriteNotification(GlblRes.Log_NouvelleSaisonCourante + itemToSave.ToString());
 					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
 				catch (Exception ex) {

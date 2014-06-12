@@ -3,6 +3,7 @@ using GestAssoc.Common.Commands;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionSaisons.Constantes;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionSaisons.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionSaisons.ViewModels
 {
@@ -16,7 +17,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.ShowFormulaireCreationSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage du RibbonTab GestionSaisons");
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageMenu);
 		}
 	}
 }

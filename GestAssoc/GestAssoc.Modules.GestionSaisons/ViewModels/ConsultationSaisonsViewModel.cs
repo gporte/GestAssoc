@@ -12,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
 using System.Windows.Input;
+using GlblRes = global::GestAssoc.Modules.GestionSaisons.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionSaisons.ViewModels
 {
@@ -69,7 +70,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.ChangeSaisonCouranteCmd = new ChangeSaisonCouranteCommand();
 
 			// trace
-			NotificationHelper.WriteNotification("Affichage de la vue " + ViewNames.ConsultationSaisons.ToString());
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationSaisons.ToString());
 		}
 	}
 }
