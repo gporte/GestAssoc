@@ -79,6 +79,15 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La date de naissance saisie est trop ancienne pour le système..
+        /// </summary>
+        public static string Err_DateNaissanceTropAncienne {
+            get {
+                return ResourceManager.GetString("Err_DateNaissanceTropAncienne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Date de naissance obligatoire..
         /// </summary>
         public static string Err_NaissanceObligatoire {

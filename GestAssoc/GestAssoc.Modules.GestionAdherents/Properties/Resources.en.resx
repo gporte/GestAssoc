@@ -255,4 +255,7 @@
   <data name="Label_Ans" xml:space="preserve">
     <value>years</value>
   </data>
+  <data name="Err_DateNaissanceTropAncienne" xml:space="preserve">
+    <value>Birthday is too old for the system.</value>
+  </data>
 </root>

@@ -73,9 +73,9 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 				if (itemId == Guid.Empty) {
 					this.Item = new Adherent()
 					{
-						DateNaissance = DefaultValueHelper.DateTimeSQLMinValue,
-						DateCreation = DateTime.Now,
-						DateModification = DateTime.Now
+						DateNaissance = DateTime.Today,
+						DateCreation = DateTime.Today,
+						DateModification = DateTime.Today
 					};
 				}
 				else {

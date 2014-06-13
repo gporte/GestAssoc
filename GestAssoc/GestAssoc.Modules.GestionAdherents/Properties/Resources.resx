@@ -123,6 +123,9 @@
   <data name="Err_AdresseObligatoire" xml:space="preserve">
     <value>Adresse obligatoire.</value>
   </data>
+  <data name="Err_DateNaissanceTropAncienne" xml:space="preserve">
+    <value>La date de naissance saisie est trop ancienne pour le système.</value>
+  </data>
   <data name="Err_NaissanceObligatoire" xml:space="preserve">
     <value>Date de naissance obligatoire.</value>
   </data>

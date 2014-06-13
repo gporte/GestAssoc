@@ -68,6 +68,10 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 				errorsList.Add(Resources.Err_NaissanceObligatoire);
 			}
 
+			if (itemToSave.DateNaissance < DefaultValueHelper.DateTimeSQLMinValue) {
+				errorsList.Add(Resources.Err_DateNaissanceTropAncienne);
+			}
+
 			if (string.IsNullOrWhiteSpace(itemToSave.Adresse)) {
 				errorsList.Add(Resources.Err_AdresseObligatoire);
 			}
