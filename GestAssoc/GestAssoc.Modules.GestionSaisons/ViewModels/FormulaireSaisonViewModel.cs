@@ -44,7 +44,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				.Resolve<IGestionSaisonsServices>();
 
 			if (itemId == Guid.Empty) {
-				var now = DateTime.Now;
+				var now = DateTime.Today;
 
 				this.Item = new Saison()
 				{
