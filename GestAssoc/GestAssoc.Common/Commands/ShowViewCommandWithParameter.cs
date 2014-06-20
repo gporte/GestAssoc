@@ -25,7 +25,7 @@ namespace GestAssoc.Common.Commands
 		}
 
 		public void Execute(object itemId) {
-			if (this.ViewName != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
+			if (itemId != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
 				var regionManager = (RegionManager)ServiceLocator.Current.GetInstance<IRegionManager>();
 
 				var q = new NavigationParameters();

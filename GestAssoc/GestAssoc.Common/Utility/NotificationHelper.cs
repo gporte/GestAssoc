@@ -9,6 +9,7 @@ namespace GestAssoc.Common.Utility
 {
 	public static class NotificationHelper
 	{
+		[Obsolete]
 		public static void WriteNotification(string message, bool clearBefore = false) {
 			ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
@@ -17,6 +18,7 @@ namespace GestAssoc.Common.Utility
 				.Publish(new UserNotification(message, clearBefore));				
 		}
 
+		[Obsolete]
 		public static void WriteNotificationList(List<string> messagesList, bool clearBefore = false) {
 			var message = string.Join(" ", messagesList);
 			WriteNotification(message, clearBefore);
