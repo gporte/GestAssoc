@@ -198,4 +198,10 @@
   <data name="Tooltip_Supprimer" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Confirm_SuppressionVille" xml:space="preserve">
+    <value>Do you really want to delete this city?</value>
+  </data>
+  <data name="TitreConfirm_SuppressionVille" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
 </root>

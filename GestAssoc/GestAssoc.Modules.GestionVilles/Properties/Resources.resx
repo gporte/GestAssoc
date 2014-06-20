@@ -198,4 +198,10 @@
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
+  <data name="Confirm_SuppressionVille" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer la ville suivante?</value>
+  </data>
+  <data name="TitreConfirm_SuppressionVille" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
 </root>

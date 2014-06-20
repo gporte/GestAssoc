@@ -12,6 +12,12 @@
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
 	
+	<i:Interaction.Triggers>
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=DeleteVilleCmd.ConfirmationRequest, Mode=OneWay}">
+			<prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+		</prism:InteractionRequestTrigger>
+	</i:Interaction.Triggers>
+	
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Consultation}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>

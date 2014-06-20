@@ -36,9 +36,9 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		}
 		#endregion
 
-		public ICommand EditVilleCmd { get; set; }
-		public ICommand DeleteVilleCmd { get; set; }
+		public ICommand EditVilleCmd { get; set; }		
 		public ICommand AddVilleCmd { get; set; }
+		public ICommand DeleteVilleCmd { get; set; }
 
 		public ConsultationVillesViewModel() {
 			// enregistrement et initialisation des services
@@ -48,22 +48,28 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionVillesServices>();
 
+			this.LoadItems();
+
+			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille.ToString());
+			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
+			this.DeleteVilleCmd = new DeleteVilleCommand(this.LoadItems);
+
+			// trace
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationVilles.ToString());
+		}
+
+		private void LoadItems() {
 			try {
 				UIServices.SetBusyState();
 				this.Items = new ObservableCollection<Ville>(this._services.GetAllVilles());
 				this._items = CollectionViewSource.GetDefaultView(this.Items);
 				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+
+				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
 			}
 			catch (Exception ex) {
 				NotificationHelper.ShowError(ex);
 			}
-
-			this.EditVilleCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireVille.ToString());
-			this.DeleteVilleCmd = new DeleteVilleCommand();
-			this.AddVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
-
-			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationVilles.ToString());
 		}
 	}
 }

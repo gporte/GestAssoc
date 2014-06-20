@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.GestionVilles.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer la ville suivante?.
+        /// </summary>
+        public static string Confirm_SuppressionVille {
+            get {
+                return ResourceManager.GetString("Confirm_SuppressionVille", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Code postal obligatoire..
         /// </summary>
         public static string Err_CodePostalObligatoire {
@@ -255,6 +264,15 @@ namespace GestAssoc.Modules.GestionVilles.Properties {
         public static string Titre_Formulaire {
             get {
                 return ResourceManager.GetString("Titre_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Confirmation.
+        /// </summary>
+        public static string TitreConfirm_SuppressionVille {
+            get {
+                return ResourceManager.GetString("TitreConfirm_SuppressionVille", resourceCulture);
             }
         }
         

@@ -57,8 +57,6 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 
 			// trace
 			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
-
-			this.RaiseNotification("test de notification");
 		}
 		#endregion
 	}

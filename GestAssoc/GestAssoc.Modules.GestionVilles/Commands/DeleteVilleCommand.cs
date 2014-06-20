@@ -3,6 +3,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Constantes;
 using GestAssoc.Modules.GestionVilles.Services;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
@@ -13,6 +14,14 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 {
 	public class DeleteVilleCommand : ICommand
 	{
+		public InteractionRequest<IConfirmation> ConfirmationRequest { get; private set; }
+		private Action _commandCallBack;
+
+		public DeleteVilleCommand(Action callback) {
+			this.ConfirmationRequest = new InteractionRequest<IConfirmation>();
+			this._commandCallBack = callback;
+		}
+
 		public bool CanExecute(object parameter) {
 			var itemToDelete = parameter as Ville;
 
@@ -27,22 +36,29 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 		}
 
 		public void Execute(object parameter) {
-			var service = ServiceLocator
-				.Current.GetInstance<IUnityContainer>()
-				.Resolve<IGestionVillesServices>();
+			this.ConfirmationRequest.Raise(
+				new Confirmation { Content=GlblRes.Confirm_SuppressionVille + Environment.NewLine + (parameter as Ville).ToString(), Title=GlblRes.TitreConfirm_SuppressionVille},
+				c => this.ExecuteCallback(c.Confirmed, parameter as Ville)
+			);
+		}
 
-			var itemToDelete = parameter as Ville;
+		private void ExecuteCallback(bool deleteConfirmed, Ville itemToDelete) {
+			if(deleteConfirmed) {
+				var service = ServiceLocator
+					.Current.GetInstance<IUnityContainer>()
+					.Resolve<IGestionVillesServices>();
 
-			try {
-				UIServices.SetBusyState();
-				service.DeleteVille(itemToDelete);
+				try {
+					UIServices.SetBusyState();
+					service.DeleteVille(itemToDelete);
 
-				NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementSupprime);
+					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementSupprime);
 
-				new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
-			}
-			catch (Exception ex) {
-				NotificationHelper.ShowError(ex);
+					this._commandCallBack();
+				}
+				catch (Exception ex) {
+					NotificationHelper.ShowError(ex);
+				}
 			}
 		}
 	}
