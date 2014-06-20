@@ -13,7 +13,7 @@
 	</UserControl.Resources>
 	
 	<i:Interaction.Triggers>
-		<prism:InteractionRequestTrigger SourceObject="{Binding Path=DeleteVilleCmd.ConfirmationRequest, Mode=OneWay}">
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=DeleteVilleCmd.RqConfirmDelete, Mode=OneWay}">
 			<prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
 		</prism:InteractionRequestTrigger>
 	</i:Interaction.Triggers>

@@ -3,6 +3,7 @@ using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
 using GestAssoc.Modules.GestionVilles.Constantes;
 using GestAssoc.Modules.GestionVilles.Services;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
@@ -15,6 +16,12 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 {
 	public class SaveVilleCommand : ICommand
 	{
+		public InteractionRequest<INotification> RqNotifSaveErrors { get; private set; }
+
+		public SaveVilleCommand() {
+			this.RqNotifSaveErrors = new InteractionRequest<INotification>();
+		}
+		
 		public bool CanExecute(object parameter) {
 			return parameter != null;
 		}
@@ -40,6 +47,10 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 					new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 				}
 				else {
+					this.RqNotifSaveErrors.Raise(
+						new Notification { Content = string.Join(",", errorsList.ToArray()), Title = "Erreurs" }
+					);
+
 					errorsList.Insert(0,GlblRes.Log_EnregistrementAnnule);					
 					NotificationHelper.WriteNotificationList(errorsList);
 				}				

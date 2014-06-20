@@ -14,11 +14,11 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 {
 	public class DeleteVilleCommand : ICommand
 	{
-		public InteractionRequest<IConfirmation> ConfirmationRequest { get; private set; }
+		public InteractionRequest<IConfirmation> RqConfirmDelete { get; private set; }
 		private Action _commandCallBack;
 
 		public DeleteVilleCommand(Action callback) {
-			this.ConfirmationRequest = new InteractionRequest<IConfirmation>();
+			this.RqConfirmDelete = new InteractionRequest<IConfirmation>();
 			this._commandCallBack = callback;
 		}
 
@@ -36,7 +36,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 		}
 
 		public void Execute(object parameter) {
-			this.ConfirmationRequest.Raise(
+			this.RqConfirmDelete.Raise(
 				new Confirmation { Content=GlblRes.Confirm_SuppressionVille + Environment.NewLine + (parameter as Ville).ToString(), Title=GlblRes.TitreConfirm_SuppressionVille},
 				c => this.ExecuteCallback(c.Confirmed, parameter as Ville)
 			);
