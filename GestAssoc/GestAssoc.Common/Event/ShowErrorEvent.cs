@@ -1,8 +1,8 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace GestAssoc.Common.Event
 {
-	public class ShowErrorEvent : CompositePresentationEvent<string>
+	public class ShowErrorEvent : PubSubEvent<string>
 	{
 	}
 }

@@ -28,7 +28,7 @@ namespace GestAssoc.Common.Commands
 			if (this.ViewName != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
 				var regionManager = (RegionManager)ServiceLocator.Current.GetInstance<IRegionManager>();
 
-				var q = new UriQuery();
+				var q = new NavigationParameters();
 				q.Add("ItemId", itemId.ToString());
 
 				regionManager.RequestNavigate(

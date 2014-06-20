@@ -2,7 +2,7 @@
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Event;
 using GestAssoc.Common.Utility;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;

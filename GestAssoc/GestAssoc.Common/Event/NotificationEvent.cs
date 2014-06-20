@@ -1,9 +1,9 @@
 ﻿using GestAssoc.Common.Utility;
-using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace GestAssoc.Common.Event
 {
-	public class NotificationEvent : CompositePresentationEvent<UserNotification>
+	public class NotificationEvent : PubSubEvent<UserNotification>
 	{
 	}
 }

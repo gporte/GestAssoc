@@ -23,7 +23,7 @@ namespace GestAssoc.Modules.GestionAdherents.Views
 		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext) {
-			var itemId = navigationContext.Parameters["ItemId"];
+			var itemId = navigationContext.Parameters["ItemId"].ToString();
 			var parseItemId = Guid.Empty;
 			Guid.TryParse(itemId, out parseItemId);
 
