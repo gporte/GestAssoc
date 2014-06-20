@@ -46,7 +46,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			}
 
 			// trace
-			this.RaiseNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationInfosClub.ToString());
+			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationInfosClub.ToString());
 		}
 	}
 }
