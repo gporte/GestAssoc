@@ -24,17 +24,14 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 		public Ville Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion
 
 		#region Constructors
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-		public FormulaireVilleViewModel(Guid itemId) {
+		public FormulaireVilleViewModel(Guid itemId) : base() {
 			// enregistrement et initialisation des services
 			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionVillesServices, GestionVillesServices>();
 
@@ -60,6 +57,8 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 
 			// trace
 			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
+
+			this.RaiseNotification("test de notification");
 		}
 		#endregion
 	}

@@ -30,11 +30,8 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		public string ItemsFilter {
 			get { return this._itemsFilter; }
 			set {
-				if (this._itemsFilter != value) {
-					this._itemsFilter = value;
-					this._items.Refresh();
-					this.RaisePropertyChangedEvent("ItemsFilter");
-				}
+				this._items.Refresh();
+				this.SetProperty(ref this._itemsFilter, value);
 			}
 		}
 		#endregion

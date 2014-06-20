@@ -1,7 +1,7 @@
-﻿using GestAssoc.Common.BaseClasses;
-using GestAssoc.Common.Commands;
+﻿using GestAssoc.Common.Commands;
 using GestAssoc.Common.Event;
 using GestAssoc.Common.Utility;
+using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -9,7 +9,7 @@ using System;
 
 namespace GestAssoc.ViewModels
 {
-	public class ShellWindowViewModel : ViewModelBase
+	public class ShellWindowViewModel : BindableBase
 	{
 		#region Commands
 		public ExitCommand ExitCmd { get; set; }
@@ -20,10 +20,7 @@ namespace GestAssoc.ViewModels
 		public string Notifications {
 			get { return this._notifications; }
 			set {
-				if (this._notifications != value) {
-					this._notifications = value;
-					this.RaisePropertyChangedEvent("Notifications");
-				}
+				this.SetProperty(ref this._notifications, value);
 			}
 		}
 		#endregion

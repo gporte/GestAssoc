@@ -22,10 +22,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 		public InfosClub Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion
@@ -49,7 +46,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			}
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationInfosClub.ToString());
+			this.RaiseNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationInfosClub.ToString());
 		}
 	}
 }

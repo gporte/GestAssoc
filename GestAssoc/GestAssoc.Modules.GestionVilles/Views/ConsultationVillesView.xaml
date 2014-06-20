@@ -5,6 +5,7 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionVilles.Properties"
+			 xmlns:prism="http://www.codeplex.com/prism"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="300" d:DesignWidth="500">
 	<UserControl.Resources>
@@ -23,7 +24,7 @@
 				<ListBox Name="lbxVilles" ItemsSource="{Binding Path=Items}">
 					<i:Interaction.Triggers>
 						<i:EventTrigger EventName="MouseDoubleClick">
-							<i:InvokeCommandAction Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}" />
+							<prism:InvokeCommandAction Command="{Binding Path=EditVilleCmd}" CommandParameter="{Binding ElementName=lbxVilles, Path=SelectedItem.ID}" />
 						</i:EventTrigger>
 					</i:Interaction.Triggers>
 				</ListBox>

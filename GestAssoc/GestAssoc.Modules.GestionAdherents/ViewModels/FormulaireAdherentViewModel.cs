@@ -26,10 +26,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		public Adherent Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion
@@ -39,10 +36,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		public IDictionary<int, string> Sexes {
 			get { return this._sexes; }
 			set {
-				if (this._sexes != value) {
-					this._sexes = value;
-					this.RaisePropertyChangedEvent("Sexes");
-				}
+				this.SetProperty(ref this._sexes, value);
 			}
 		}
 		#endregion
@@ -52,10 +46,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 		public ObservableCollection<Ville> Villes {
 			get { return this._villes; }
 			set {
-				if (this._villes != value) {
-					this._villes = value;
-					this.RaisePropertyChangedEvent("Villes");
-				}
+				this.SetProperty(ref this._villes, value);
 			}
 		}
 		#endregion

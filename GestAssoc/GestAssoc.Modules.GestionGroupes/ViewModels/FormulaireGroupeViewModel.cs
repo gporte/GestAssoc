@@ -25,10 +25,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 		public Groupe Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion
@@ -38,10 +35,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 		public IDictionary<int, string> JoursSemaine {
 			get { return this._joursSemaine; }
 			set {
-				if (this._joursSemaine != value) {
-					this._joursSemaine = value;
-					this.RaisePropertyChangedEvent("JoursSemaine");
-				}
+				this.SetProperty(ref this._joursSemaine, value);
 			}
 		}
 		#endregion

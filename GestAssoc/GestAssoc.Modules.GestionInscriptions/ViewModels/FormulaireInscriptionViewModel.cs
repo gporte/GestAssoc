@@ -25,10 +25,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		public Inscription Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion
@@ -38,10 +35,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		public ObservableCollection<Adherent> Adherents {
 			get { return this._adherents; }
 			set {
-				if (this._adherents != value) {
-					this._adherents = value;
-					this.RaisePropertyChangedEvent("Adherents");
-				}
+				this.SetProperty(ref this._adherents, value);
 			}
 		}
 		#endregion
@@ -51,10 +45,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		public ObservableCollection<Groupe> Groupes {
 			get { return this._groupes; }
 			set {
-				if (this._groupes != value) {
-					this._groupes = value;
-					this.RaisePropertyChangedEvent("Groupes");
-				}
+				this.SetProperty(ref this._groupes, value);
 			}
 		}
 		#endregion
@@ -64,10 +55,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 		public IDictionary<int, string> Statuts {
 			get { return this._statuts; }
 			set {
-				if (this._statuts != value) {
-					this._statuts = value;
-					this.RaisePropertyChangedEvent("Statuts");
-				}
+				this.SetProperty(ref this._statuts, value);
 			}
 		}
 		#endregion

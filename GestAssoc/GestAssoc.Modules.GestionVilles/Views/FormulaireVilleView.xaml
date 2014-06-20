@@ -10,7 +10,7 @@
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
-
+	
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>

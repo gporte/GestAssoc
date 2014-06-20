@@ -24,11 +24,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 		public Saison Item {
 			get { return this._item; }
 			set {
-				if (this._item != value) {
-					this._item = value;
-
-					this.RaisePropertyChangedEvent("Item");
-				}
+				this.SetProperty(ref this._item, value);
 			}
 		}
 		#endregion

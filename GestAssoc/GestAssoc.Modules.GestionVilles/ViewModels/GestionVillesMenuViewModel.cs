@@ -8,6 +8,7 @@ using GlblRes = global::GestAssoc.Modules.GestionVilles.Properties.Resources;
 namespace GestAssoc.Modules.GestionVilles.ViewModels
 {
 	public class GestionVillesMenuViewModel : ViewModelBase
+
 	{
 		public ICommand ShowConsultationVillesCmd { get; set; }
 		public ICommand ShowFormulaireCreationVilleCmd { get; set; }

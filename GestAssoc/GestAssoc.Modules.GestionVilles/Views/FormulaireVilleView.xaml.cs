@@ -15,9 +15,9 @@ namespace GestAssoc.Modules.GestionVilles.Views
 		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext) {
-			var itemId = navigationContext.Parameters["ItemId"].ToString();
+			var itemId = navigationContext.Parameters["ItemId"] ?? string.Empty;
 			var parseItemId = Guid.Empty;
-			Guid.TryParse(itemId, out parseItemId);
+			Guid.TryParse(itemId.ToString(), out parseItemId);
 
 			this.DataContext = new FormulaireVilleViewModel(parseItemId);
 		}
