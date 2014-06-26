@@ -204,4 +204,7 @@
   <data name="TitreConfirm_SuppressionVille" xml:space="preserve">
     <value>Confirmation</value>
   </data>
+  <data name="Titre_SaisieInvalide" xml:space="preserve">
+    <value>Saisie invalide</value>
+  </data>
 </root>

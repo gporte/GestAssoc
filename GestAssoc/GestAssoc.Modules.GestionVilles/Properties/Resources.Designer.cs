@@ -268,6 +268,15 @@ namespace GestAssoc.Modules.GestionVilles.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saisie invalide.
+        /// </summary>
+        public static string Titre_SaisieInvalide {
+            get {
+                return ResourceManager.GetString("Titre_SaisieInvalide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Confirmation.
         /// </summary>
         public static string TitreConfirm_SuppressionVille {

@@ -48,7 +48,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				}
 				else {
 					this.RqNotifSaveErrors.Raise(
-						new Notification { Content = string.Join(",", errorsList.ToArray()), Title = "Erreurs" }
+						new Notification { Content = string.Join(Environment.NewLine, errorsList.ToArray()), Title = GlblRes.Titre_SaisieInvalide }
 					);
 
 					errorsList.Insert(0,GlblRes.Log_EnregistrementAnnule);					
