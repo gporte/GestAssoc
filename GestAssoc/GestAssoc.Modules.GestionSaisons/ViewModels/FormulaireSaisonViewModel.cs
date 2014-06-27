@@ -62,7 +62,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationSaisons.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireSaison.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireSaison.ToString());
 		}
 		#endregion
 	}

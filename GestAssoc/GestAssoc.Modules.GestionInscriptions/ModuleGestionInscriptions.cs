@@ -14,7 +14,7 @@ namespace GestAssoc.Modules.GestionInscriptions
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification(Properties.Resources.Log_InitModule);
+			NotificationHelper.WriteLog(Properties.Resources.Log_InitModule);
 
 			this.TabRegion = RibbonTabRegion.Inscriptions;
 

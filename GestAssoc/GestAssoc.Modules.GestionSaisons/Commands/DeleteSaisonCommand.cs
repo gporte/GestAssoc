@@ -39,7 +39,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				UIServices.SetBusyState();
 				service.DeleteSaison(itemToDelete);
 
-				NotificationHelper.WriteNotification(GlblRes.Log_ElementSupprime);
+				NotificationHelper.WriteLog(GlblRes.Log_ElementSupprime);
 
 				// La saison la plus récente devient la saison courante
 				UIServices.SetBusyState();
@@ -48,10 +48,10 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				if (newSaisonCourante != null) {
 					UIServices.SetBusyState();
 					service.SetSaisonCourante(newSaisonCourante);
-					NotificationHelper.WriteNotification(Resources.Log_NouvelleSaisonCourante + newSaisonCourante.ToString());
+					NotificationHelper.WriteLog(Resources.Log_NouvelleSaisonCourante + newSaisonCourante.ToString());
 				}
 				else {
-					NotificationHelper.WriteNotification(GlblRes.Log_AucuneSaisonCourante);
+					NotificationHelper.WriteLog(GlblRes.Log_AucuneSaisonCourante);
 				}
 
 				new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);

@@ -34,7 +34,7 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				try {
 					UIServices.SetBusyState();
 					service.SetSaisonCourante(itemToSave);
-					NotificationHelper.WriteNotification(GlblRes.Log_NouvelleSaisonCourante + itemToSave.ToString());
+					NotificationHelper.WriteLog(GlblRes.Log_NouvelleSaisonCourante + itemToSave.ToString());
 					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
 				catch (Exception ex) {

@@ -36,12 +36,12 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveGroupe(itemToSave);
-					NotificationHelper.WriteNotification(Resources.Log_EnregistrementEffectue);
+					NotificationHelper.WriteLog(Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 				}
 				else {
 					errorsList.Insert(0, Resources.Log_EnregistrementAnnule);
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
 			catch (Exception ex) {

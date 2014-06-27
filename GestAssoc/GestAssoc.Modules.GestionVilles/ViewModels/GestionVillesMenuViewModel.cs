@@ -18,7 +18,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.ShowFormulaireCreationVilleCmd = new ShowViewCommand(ViewNames.FormulaireVille.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageMenu);
+			NotificationHelper.WriteLog(GlblRes.Log_AffichageMenu);
 		}
 	}
 }

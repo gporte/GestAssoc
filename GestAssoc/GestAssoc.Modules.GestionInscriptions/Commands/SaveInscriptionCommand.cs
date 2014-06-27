@@ -40,12 +40,12 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 
 					UIServices.SetBusyState();
 					service.SaveInscription(itemToSave);
-					NotificationHelper.WriteNotification(Properties.Resources.Log_EnregistrementEffectue);
+					NotificationHelper.WriteLog(Properties.Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString()).Execute(null);
 				}
 				else {
 					errorsList.Insert(0, Properties.Resources.Log_EnregistrementAnnule);
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
 			catch (Exception ex) {
@@ -82,7 +82,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 		private void SetStatus(Inscription itemToSave) {
 			if (itemToSave.CertificatMedicalRemis && itemToSave.Cotisation > 0) {
 				itemToSave.StatutInscription = 1;
-				NotificationHelper.WriteNotification(Properties.Resources.Log_StatutValide);
+				NotificationHelper.WriteLog(Properties.Resources.Log_StatutValide);
 			}
 		}
 	}

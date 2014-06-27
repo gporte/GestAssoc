@@ -38,20 +38,20 @@ namespace GestAssoc.Modules.GestionSaisons.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveSaison(itemToSave);
-					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementEffectue);
+					NotificationHelper.WriteLog(GlblRes.Log_EnregistrementEffectue);
 
 					// si il s'agit d'une nouvelle saison, elle devient la saison courante
 					if (isNewSaison) {
 						UIServices.SetBusyState();
 						service.SetSaisonCourante(itemToSave);
-						NotificationHelper.WriteNotification(Resources.Log_NouvelleSaisonCourante + itemToSave.ToString());
+						NotificationHelper.WriteLog(Resources.Log_NouvelleSaisonCourante + itemToSave.ToString());
 					}
 
 					new ShowViewCommand(ViewNames.ConsultationSaisons.ToString()).Execute(null);
 				}
 				else {
 					errorsList.Insert(0, GlblRes.Log_EnregistrementAnnule);
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
 			catch (Exception ex) {

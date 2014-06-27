@@ -3,7 +3,7 @@ using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace GestAssoc.Common.Event
 {
-	public class NotificationEvent : PubSubEvent<UserNotification>
+	public class LogEvent : PubSubEvent<LogEntry>
 	{
 	}
 }

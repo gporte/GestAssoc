@@ -15,7 +15,7 @@ namespace GestAssoc.Modules.GestionVilles
 	{
 		public void Initialize() {
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_InitialisationModule);
+			NotificationHelper.WriteLog(GlblRes.Log_InitialisationModule);
 
 			this.TabRegion = RibbonTabRegion.Referentiel;
 			

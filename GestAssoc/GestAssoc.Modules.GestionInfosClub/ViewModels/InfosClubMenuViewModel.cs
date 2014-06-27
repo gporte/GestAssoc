@@ -17,7 +17,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.ShowFormulaireInfosClub = new ShowViewCommand(ViewNames.FormulaireInfosClub.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageMenu);
+			NotificationHelper.WriteLog(GlblRes.Log_AffichageMenu);
 		}
 	}
 }

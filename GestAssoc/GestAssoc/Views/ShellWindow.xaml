@@ -4,6 +4,7 @@
 		xmlns:prism="http://www.codeplex.com/prism"
 		xmlns:const="clr-namespace:GestAssoc.Common.Constantes;assembly=GestAssoc.Common"
 		xmlns:p="clr-namespace:GestAssoc.Properties"
+		xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 		Icon="pack://application:,,,/GestAssoc.Common;component/Images/AppIcon.png"
 		Title="GestAssoc" Height="350" Width="525" WindowState="Maximized">
 	<RibbonWindow.Resources>
@@ -16,7 +17,13 @@
 	<RibbonWindow.Background>
 		<StaticResource ResourceKey="WindowBackgroundBrush" />
 	</RibbonWindow.Background>
-	
+
+	<i:Interaction.Triggers>
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=RqNotifError, Mode=OneWay}">
+			<prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+		</prism:InteractionRequestTrigger>
+	</i:Interaction.Triggers>
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition x:Name="RibbonRow" Height="Auto"/>
@@ -43,7 +50,7 @@
 
 		<Expander Header="{x:Static p:Resources.Label_Journal}" Grid.Row="2" Name="NotificationRegion" IsExpanded="False" Margin="5,5,5,5">
 			<TextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" Height="150"
-					 Text="{Binding Path=Notifications}"/>
+					 Text="{Binding Path=LogEntries}"/>
 		</Expander>
 	</Grid>
 </RibbonWindow>

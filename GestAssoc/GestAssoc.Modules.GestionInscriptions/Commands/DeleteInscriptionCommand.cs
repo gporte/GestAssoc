@@ -33,7 +33,7 @@ namespace GestAssoc.Modules.GestionInscriptions.Commands
 				UIServices.SetBusyState();
 				service.DeleteInscription(itemToDelete);
 
-				NotificationHelper.WriteNotification(Resources.Log_EnregistrementSupprime);
+				NotificationHelper.WriteLog(Resources.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationInscriptions.ToString()).Execute(null);
 			}

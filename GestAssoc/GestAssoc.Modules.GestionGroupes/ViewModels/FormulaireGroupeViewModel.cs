@@ -75,7 +75,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationGroupes.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireGroupe);
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireGroupe);
 		}
 		#endregion
 	}

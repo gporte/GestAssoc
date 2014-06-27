@@ -56,7 +56,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationVilles.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
 		}
 		#endregion
 	}

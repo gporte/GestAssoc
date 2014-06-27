@@ -36,12 +36,12 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveAdherent(itemToSave);
-					NotificationHelper.WriteNotification(Resources.Log_EnregistrementEffectue);
+					NotificationHelper.WriteLog(Resources.Log_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 				}
 				else {
 					errorsList.Insert(0, Resources.Log_EnregistrementAnnule);
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
 			catch (Exception ex) {

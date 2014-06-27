@@ -64,7 +64,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.ConsultationGroupes.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ConsultationGroupes.ToString());
 		}
 	}
 }

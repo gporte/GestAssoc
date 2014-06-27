@@ -36,7 +36,7 @@ namespace GestAssoc.Modules.GestionAdherents.Commands
 				UIServices.SetBusyState();
 				service.DeleteAdherent(itemToDelete);
 
-				NotificationHelper.WriteNotification(Resources.Log_EnregistrementSupprime);
+				NotificationHelper.WriteLog(Resources.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 			}

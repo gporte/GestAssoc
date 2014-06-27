@@ -89,8 +89,8 @@
     <Compile Include="Commands\ShowViewCommand.cs" />
     <Compile Include="Commands\ShowViewCommandWithParameter.cs" />
     <Compile Include="Constantes\RegionNames.cs" />
-    <Compile Include="Event\NotificationEvent.cs" />
-    <Compile Include="Event\ShowErrorEvent.cs" />
+    <Compile Include="Event\LogEvent.cs" />
+    <Compile Include="Event\UserNotificationEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -101,6 +101,7 @@
     <Compile Include="Utility\NotificationHelper.cs" />
     <Compile Include="Utility\PriorityAttribute.cs" />
     <Compile Include="Utility\UIServices.cs" />
+    <Compile Include="Utility\LogEntry.cs" />
     <Compile Include="Utility\UserNotification.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,7 @@
     <Resource Include="Images\AppIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

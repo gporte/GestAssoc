@@ -58,7 +58,7 @@ namespace GestAssoc.Modules.GestionInfosClub.ViewModels
 			this.SaveCmd = new SaveFormulaireInfosClubCommand();
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireInfosClub.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireInfosClub.ToString());
 		}
 	}
 }

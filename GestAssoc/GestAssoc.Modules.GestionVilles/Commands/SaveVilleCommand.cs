@@ -16,11 +16,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 {
 	public class SaveVilleCommand : ICommand
 	{
-		public InteractionRequest<INotification> RqNotifSaveErrors { get; private set; }
-
-		public SaveVilleCommand() {
-			this.RqNotifSaveErrors = new InteractionRequest<INotification>();
-		}
+		public SaveVilleCommand() {}
 		
 		public bool CanExecute(object parameter) {
 			return parameter != null;
@@ -43,16 +39,16 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveVille(itemToSave);
-					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementEffectue);
+					
+					NotificationHelper.WriteLog(GlblRes.Log_EnregistrementEffectue);
+
 					new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
 				}
 				else {
-					this.RqNotifSaveErrors.Raise(
-						new Notification { Content = string.Join(Environment.NewLine, errorsList.ToArray()), Title = GlblRes.Titre_SaisieInvalide }
-					);
+					NotificationHelper.ShowUserNotification(string.Join(Environment.NewLine, errorsList.ToArray()));
 
 					errorsList.Insert(0,GlblRes.Log_EnregistrementAnnule);					
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}				
 			}
 			catch (Exception ex) {

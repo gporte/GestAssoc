@@ -52,7 +52,7 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 					UIServices.SetBusyState();
 					service.DeleteVille(itemToDelete);
 
-					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementSupprime);
+					NotificationHelper.WriteLog(GlblRes.Log_EnregistrementSupprime);
 
 					this._commandCallBack();
 				}

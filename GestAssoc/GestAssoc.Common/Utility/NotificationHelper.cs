@@ -9,27 +9,37 @@ namespace GestAssoc.Common.Utility
 {
 	public static class NotificationHelper
 	{
-		public static void WriteNotification(string message, bool clearBefore = false) {
+		public static void WriteLog(string message) {
 			ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IEventAggregator>()
-				.GetEvent<NotificationEvent>()
-				.Publish(new UserNotification(message, clearBefore));				
+				.GetEvent<LogEvent>()
+				.Publish(new LogEntry(message));				
 		}
 
-		public static void WriteNotificationList(List<string> messagesList, bool clearBefore = false) {
+		public static void WriteLogs(List<string> messagesList) {
 			var message = string.Join(" ", messagesList);
-			WriteNotification(message, clearBefore);
+			WriteLog(message);
 		}
 
 		public static void ShowError(Exception ex) {
-			// envoyer un message au shell pour qu'il affiche l'exception comme il veut
-			// TODO voir si on peut enrichir les infos à partir de l'exception
 			ServiceLocator
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IEventAggregator>()
-				.GetEvent<ShowErrorEvent>()
-				.Publish(ex.Message);	
+				.GetEvent<UserNotificationEvent>()
+				.Publish(
+					new UserNotification() { Message=ex.Message, Titre=Properties.Resources.Titre_Erreur}
+				);
+		}
+
+		public static void ShowUserNotification(string message) {
+			ServiceLocator
+				.Current.GetInstance<IUnityContainer>()
+				.Resolve<IEventAggregator>()
+				.GetEvent<UserNotificationEvent>()
+				.Publish(
+					new UserNotification() { Message=message, Titre=Properties.Resources.Titre_Info}
+				);
 		}
 	}
 }

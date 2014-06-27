@@ -67,7 +67,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.ChangeSaisonCouranteCmd = new ChangeSaisonCouranteCommand();
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationSaisons.ToString());
+			NotificationHelper.WriteLog(GlblRes.Log_AffichageVue + ViewNames.ConsultationSaisons.ToString());
 		}
 	}
 }

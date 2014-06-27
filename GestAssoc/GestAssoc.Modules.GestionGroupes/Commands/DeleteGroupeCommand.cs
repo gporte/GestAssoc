@@ -36,7 +36,7 @@ namespace GestAssoc.Modules.GestionGroupes.Commands
 				UIServices.SetBusyState();
 				service.DeleteGroupe(itemToDelete);
 
-				NotificationHelper.WriteNotification(Resources.Log_EnregistrementSupprime);
+				NotificationHelper.WriteLog(Resources.Log_EnregistrementSupprime);
 
 				new ShowViewCommand(ViewNames.ConsultationGroupes.ToString()).Execute(null);
 			}

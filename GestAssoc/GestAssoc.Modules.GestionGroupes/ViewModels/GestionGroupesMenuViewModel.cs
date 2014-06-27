@@ -17,7 +17,7 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 			this.ShowFormulaireCreationGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageMenu);
+			NotificationHelper.WriteLog(Resources.Log_AffichageMenu);
 		}
 	}
 }

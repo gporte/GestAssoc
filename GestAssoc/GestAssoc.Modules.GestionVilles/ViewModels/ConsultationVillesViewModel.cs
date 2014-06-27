@@ -55,7 +55,7 @@ namespace GestAssoc.Modules.GestionVilles.ViewModels
 			this.DeleteVilleCmd = new DeleteVilleCommand(this.LoadItems);
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageVue + ViewNames.ConsultationVilles.ToString());
+			NotificationHelper.WriteLog(GlblRes.Log_AffichageVue + ViewNames.ConsultationVilles.ToString());
 		}
 
 		private void LoadItems() {

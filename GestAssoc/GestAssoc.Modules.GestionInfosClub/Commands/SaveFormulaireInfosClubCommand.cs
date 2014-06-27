@@ -36,12 +36,12 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveInfosClub(itemToSave);
-					NotificationHelper.WriteNotification(GlblRes.Log_EnregistrementTermine);
+					NotificationHelper.WriteLog(GlblRes.Log_EnregistrementTermine);
 					new ShowViewCommand(ViewNames.ConsultationInfosClub.ToString()).Execute(null);
 				}
 				else {
 					errorsList.Insert(0, GlblRes.Log_EnregistrementAnnule);
-					NotificationHelper.WriteNotificationList(errorsList);
+					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
 			catch (Exception ex) {

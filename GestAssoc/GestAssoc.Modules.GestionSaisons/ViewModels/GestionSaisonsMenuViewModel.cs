@@ -17,7 +17,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 			this.ShowFormulaireCreationSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison.ToString());
 
 			// trace
-			NotificationHelper.WriteNotification(GlblRes.Log_AffichageMenu);
+			NotificationHelper.WriteLog(GlblRes.Log_AffichageMenu);
 		}
 	}
 }

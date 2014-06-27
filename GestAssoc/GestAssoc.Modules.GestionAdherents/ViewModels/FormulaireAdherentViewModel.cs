@@ -86,7 +86,7 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());			
 
 			// trace
-			NotificationHelper.WriteNotification(Resources.Log_AffichageVue + ViewNames.FormulaireAdherent);
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireAdherent);
 		}
 		#endregion
 	}

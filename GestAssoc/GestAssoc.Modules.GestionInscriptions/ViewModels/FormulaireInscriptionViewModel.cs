@@ -97,7 +97,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 			this.Statuts = this._services.GetStatuts();
 
 			// trace
-			NotificationHelper.WriteNotification(Properties.Resources.Log_AffichageVue + ViewNames.FormulaireInscription);
+			NotificationHelper.WriteLog(Properties.Resources.Log_AffichageVue + ViewNames.FormulaireInscription);
 		}
 		#endregion
 	}

@@ -59,5 +59,23 @@ namespace GestAssoc.Common.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        public static string Titre_Erreur {
+            get {
+                return ResourceManager.GetString("Titre_Erreur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Information.
+        /// </summary>
+        public static string Titre_Info {
+            get {
+                return ResourceManager.GetString("Titre_Info", resourceCulture);
+            }
+        }
     }
 }
