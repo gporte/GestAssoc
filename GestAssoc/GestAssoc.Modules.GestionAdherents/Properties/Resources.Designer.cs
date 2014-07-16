@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.GestionAdherents.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer cet adhérent?.
+        /// </summary>
+        public static string Confirm_SuppressionAdherent {
+            get {
+                return ResourceManager.GetString("Confirm_SuppressionAdherent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cet adhérent existe déjà (nom + prénom)..
         /// </summary>
         public static string Err_AdherentExiste {

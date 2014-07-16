@@ -258,4 +258,7 @@
   <data name="Err_DateNaissanceTropAncienne" xml:space="preserve">
     <value>Birthday is too old for the system.</value>
   </data>
+  <data name="Confirm_SuppressionAdherent" xml:space="preserve">
+    <value>Do you really want to delete this member?</value>
+  </data>
 </root>

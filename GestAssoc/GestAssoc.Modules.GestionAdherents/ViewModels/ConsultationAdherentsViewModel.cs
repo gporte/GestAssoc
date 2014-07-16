@@ -47,22 +47,28 @@ namespace GestAssoc.Modules.GestionAdherents.ViewModels
 
 			this._services = ServiceLocator.Current.GetInstance<IUnityContainer>().Resolve<IGestionAdherentsServices>();
 
+			this.LoadItems();
+
+			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent.ToString());
+			this.DeleteAdherentCmd = new DeleteAdherentCommand(this.LoadItems);
+			this.AddAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent.ToString());
+
+			// trace
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ConsultationAdherents.ToString());
+		}
+
+		private void LoadItems() {
 			try {
 				UIServices.SetBusyState();
 				this.Items = new ObservableCollection<Adherent>(this._services.GetAllAdherents());
 				this._items = CollectionViewSource.GetDefaultView(this.Items);
 				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Adherent)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+
+				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
 			}
 			catch (Exception ex) {
 				NotificationHelper.ShowError(ex);
 			}
-
-			this.EditAdherentCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireAdherent.ToString());
-			this.DeleteAdherentCmd = new DeleteAdherentCommand();
-			this.AddAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent.ToString());
-
-			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ConsultationAdherents.ToString());
 		}
 	}
 }
