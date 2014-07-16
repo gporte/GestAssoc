@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.GestionGroupes.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer ce groupe?.
+        /// </summary>
+        public static string Confirm_SuppressionGroupe {
+            get {
+                return ResourceManager.GetString("Confirm_SuppressionGroupe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ce groupe existe déjà (nom + créneau)..
         /// </summary>
         public static string Err_GroupeExiste {

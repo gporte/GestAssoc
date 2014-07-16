@@ -222,4 +222,7 @@
   <data name="Label_HeureFin" xml:space="preserve">
     <value>End time: </value>
   </data>
+  <data name="Confirm_SuppressionGroupe" xml:space="preserve">
+    <value>Do you really want to delete this group?</value>
+  </data>
 </root>

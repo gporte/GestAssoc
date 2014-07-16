@@ -67,7 +67,7 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				UIServices.SetBusyState();
 				this.Items = new ObservableCollection<Saison>(this._services.GetAllSaisons());
 				this._items = CollectionViewSource.GetDefaultView(this.Items);
-				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Saison)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
 				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
 			}

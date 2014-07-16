@@ -62,7 +62,7 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 				UIServices.SetBusyState();
 				this.Items = new ObservableCollection<Inscription>(this._services.GetAllInscriptions());
 				this._items = CollectionViewSource.GetDefaultView(this.Items);
-				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Inscription)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
 
 				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
 			}

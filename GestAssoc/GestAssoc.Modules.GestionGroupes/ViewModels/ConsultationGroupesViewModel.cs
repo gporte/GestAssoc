@@ -49,22 +49,28 @@ namespace GestAssoc.Modules.GestionGroupes.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionGroupesServices>();
 
+			this.LoadItems();
+
+			this.EditGroupeCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireGroupe.ToString());
+			this.DeleteGroupeCmd = new DeleteGroupeCommand(this.LoadItems);
+			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
+
+			// trace
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ConsultationGroupes.ToString());
+		}
+
+		private void LoadItems() {
 			try {
 				UIServices.SetBusyState();
 				this.Items = new ObservableCollection<Groupe>(this._services.GetAllGroupes());
 				this._items = CollectionViewSource.GetDefaultView(this.Items);
 				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Groupe)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+
+				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
 			}
 			catch (Exception ex) {
 				NotificationHelper.ShowError(ex);
 			}
-
-			this.EditGroupeCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireGroupe.ToString());
-			this.DeleteGroupeCmd = new DeleteGroupeCommand();
-			this.AddGroupeCmd = new ShowViewCommand(ViewNames.FormulaireGroupe.ToString());
-
-			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ConsultationGroupes.ToString());
 		}
 	}
 }
