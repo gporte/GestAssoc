@@ -42,8 +42,8 @@ namespace GestAssoc.Modules.GestionGroupes.Services
 			}
 			else { // item non trouvé => insert
 				itemToSave.ID = Guid.NewGuid();
+				itemToSave.Saison = this._context.Saisons.FirstOrDefault(x => x.EstSaisonCourante);
 				itemToSave.Saison_ID = itemToSave.Saison.ID;
-				itemToSave.Saison = this._context.Saisons.Find(itemToSave.Saison_ID);
 
 				this._context.Groupes.Add(itemToSave);
 			}

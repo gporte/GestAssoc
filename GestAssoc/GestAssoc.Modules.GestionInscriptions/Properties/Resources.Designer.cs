@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.GestionInscriptions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer cette inscription?.
+        /// </summary>
+        public static string Confirm_SuppressionInscription {
+            get {
+                return ResourceManager.GetString("Confirm_SuppressionInscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adhérent obligatoire..
         /// </summary>
         public static string Err_AdherentObligatoire {

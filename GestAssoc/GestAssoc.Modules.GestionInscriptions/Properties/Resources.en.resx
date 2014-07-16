@@ -223,12 +223,18 @@
     <value>Delete</value>
   </data>
   <data name="Label_CertificatMedical" xml:space="preserve">
-    <value>Mecical certificate: </value>
+    <value>Medical certificate: </value>
   </data>
   <data name="Label_Cotisation" xml:space="preserve">
     <value>Subscription: </value>
   </data>
   <data name="Label_Adherent" xml:space="preserve">
     <value>Member: </value>
+  </data>
+  <data name="Confirm_SuppressionInscription" xml:space="preserve">
+    <value>Do you really want to delete this enrollment?</value>
+  </data>
+  <data name="Log_StatutValide" xml:space="preserve">
+    <value>Medical certificate and subscription paid. Enrollment valid.</value>
   </data>
 </root>

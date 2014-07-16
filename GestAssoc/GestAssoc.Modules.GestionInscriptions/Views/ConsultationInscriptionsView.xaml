@@ -5,12 +5,19 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionInscriptions.Properties"
+			 xmlns:prism="http://www.codeplex.com/prism"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="600" d:DesignWidth="800">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
 	</UserControl.Resources>
-	
+
+	<i:Interaction.Triggers>
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=DeleteInscriptionCmd.RqConfirmDelete, Mode=OneWay}">
+			<prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+		</prism:InteractionRequestTrigger>
+	</i:Interaction.Triggers>
+
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Consultation}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>

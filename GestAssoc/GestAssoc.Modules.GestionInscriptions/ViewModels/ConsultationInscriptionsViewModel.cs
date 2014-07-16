@@ -47,22 +47,28 @@ namespace GestAssoc.Modules.GestionInscriptions.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionInscriptionsServices>();
 
-			try {
-				UIServices.SetBusyState();
-				this.Items = new ObservableCollection<Inscription>(this._services.GetAllInscriptions());
-				this._items = CollectionViewSource.GetDefaultView(this.Items);
-				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Inscription)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
-			}
-			catch (Exception ex) {
-				NotificationHelper.ShowError(ex);
-			}
+			this.LoadItems();
 
 			this.EditInscriptionCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireInscription.ToString());
-			this.DeleteInscriptionCmd = new DeleteInscriptionCommand();
+			this.DeleteInscriptionCmd = new DeleteInscriptionCommand(this.LoadItems);
 			this.AddInscriptionCmd = new ShowViewCommand(ViewNames.FormulaireInscription.ToString());
 
 			// trace
 			NotificationHelper.WriteLog(Properties.Resources.Log_AffichageVue + ViewNames.ConsultationInscriptions.ToString());
+		}
+
+		private void LoadItems() {
+			try {
+				UIServices.SetBusyState();
+				this.Items = new ObservableCollection<Inscription>(this._services.GetAllInscriptions());
+				this._items = CollectionViewSource.GetDefaultView(this.Items);
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+
+				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 		}
 	}
 }
