@@ -207,4 +207,10 @@
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
+  <data name="Confirm_SuppressionSaison" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer la saison suivante?</value>
+  </data>
+  <data name="Log_EnregistrementSupprime" xml:space="preserve">
+    <value>Saison supprimée.</value>
+  </data>
 </root>

@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.GestionSaisons.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer la saison suivante?.
+        /// </summary>
+        public static string Confirm_SuppressionSaison {
+            get {
+                return ResourceManager.GetString("Confirm_SuppressionSaison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à L&apos;année de fin doit être supérieure à l&apos;année de début..
         /// </summary>
         public static string Err_AnneeDebutAnneeFin {
@@ -210,6 +219,15 @@ namespace GestAssoc.Modules.GestionSaisons.Properties {
         public static string Log_EnregistrementEffectue {
             get {
                 return ResourceManager.GetString("Log_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison supprimée..
+        /// </summary>
+        public static string Log_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_EnregistrementSupprime", resourceCulture);
             }
         }
         

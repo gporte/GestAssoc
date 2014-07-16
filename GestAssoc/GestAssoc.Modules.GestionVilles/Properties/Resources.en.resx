@@ -201,9 +201,6 @@
   <data name="Confirm_SuppressionVille" xml:space="preserve">
     <value>Do you really want to delete this city?</value>
   </data>
-  <data name="TitreConfirm_SuppressionVille" xml:space="preserve">
-    <value>Confirmation</value>
-  </data>
   <data name="Titre_SaisieInvalide" xml:space="preserve">
     <value>Invalid input</value>
   </data>

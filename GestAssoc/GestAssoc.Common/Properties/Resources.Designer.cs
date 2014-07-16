@@ -61,6 +61,15 @@ namespace GestAssoc.Common.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Confirmation.
+        /// </summary>
+        public static string Titre_Confirmation {
+            get {
+                return ResourceManager.GetString("Titre_Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur.
         /// </summary>
         public static string Titre_Erreur {

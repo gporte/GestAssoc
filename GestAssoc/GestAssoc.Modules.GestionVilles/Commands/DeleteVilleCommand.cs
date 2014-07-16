@@ -37,7 +37,11 @@ namespace GestAssoc.Modules.GestionVilles.Commands
 
 		public void Execute(object parameter) {
 			this.RqConfirmDelete.Raise(
-				new Confirmation { Content=GlblRes.Confirm_SuppressionVille + Environment.NewLine + (parameter as Ville).ToString(), Title=GlblRes.TitreConfirm_SuppressionVille},
+				new Confirmation 
+				{ 
+					Content=GlblRes.Confirm_SuppressionVille + Environment.NewLine + (parameter as Ville).ToString(), 
+					Title=Common.Properties.Resources.Titre_Confirmation
+				},
 				c => this.ExecuteCallback(c.Confirmed, parameter as Ville)
 			);
 		}

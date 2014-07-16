@@ -277,15 +277,6 @@ namespace GestAssoc.Modules.GestionVilles.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Confirmation.
-        /// </summary>
-        public static string TitreConfirm_SuppressionVille {
-            get {
-                return ResourceManager.GetString("TitreConfirm_SuppressionVille", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ajouter.
         /// </summary>
         public static string Tooltip_Ajouter {

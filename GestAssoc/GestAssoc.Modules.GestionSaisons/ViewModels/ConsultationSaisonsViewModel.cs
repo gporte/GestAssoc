@@ -51,23 +51,29 @@ namespace GestAssoc.Modules.GestionSaisons.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IGestionSaisonsServices>();
 
-			try {
-				UIServices.SetBusyState();
-				this.Items = new ObservableCollection<Saison>(this._services.GetAllSaisons());
-				this._items = CollectionViewSource.GetDefaultView(this.Items);
-				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Saison)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
-			}
-			catch(Exception ex) {
-				NotificationHelper.ShowError(ex);
-			}
+			this.LoadItems();
 
 			this.EditSaisonCmd = new ShowViewCommandWithParameter(ViewNames.FormulaireSaison.ToString());
-			this.DeleteSaisonCmd = new DeleteSaisonCommand();
+			this.DeleteSaisonCmd = new DeleteSaisonCommand(this.LoadItems);
 			this.AddSaisonCmd = new ShowViewCommand(ViewNames.FormulaireSaison.ToString());
 			this.ChangeSaisonCouranteCmd = new ChangeSaisonCouranteCommand();
 
 			// trace
 			NotificationHelper.WriteLog(GlblRes.Log_AffichageVue + ViewNames.ConsultationSaisons.ToString());
+		}
+
+		private void LoadItems() {
+			try {
+				UIServices.SetBusyState();
+				this.Items = new ObservableCollection<Saison>(this._services.GetAllSaisons());
+				this._items = CollectionViewSource.GetDefaultView(this.Items);
+				this._items.Filter = x => string.IsNullOrEmpty(this.ItemsFilter) ? true : ((Ville)x).ToString().ToUpper().Contains(this.ItemsFilter.ToUpper());
+
+				this.OnPropertyChanged(""); // raccourci permettant de notifier toutes les propriétés
+			}
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+			}
 		}
 	}
 }
