@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,77 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Confirm_SuppressionAdherent" xml:space="preserve">
-    <value>Do you really want to delete this member?</value>
-  </data>
-  <data name="Confirm_SuppressionGroupe" xml:space="preserve">
-    <value>Do you really want to delete this group?</value>
-  </data>
-  <data name="Err_AdherentExiste" xml:space="preserve">
-    <value>Member already exists (first name+last name).</value>
-  </data>
-  <data name="Err_AdresseObligatoire" xml:space="preserve">
-    <value>Address is required.</value>
-  </data>
-  <data name="Err_DateNaissanceTropAncienne" xml:space="preserve">
-    <value>Birthday is too old for the system.</value>
-  </data>
-  <data name="Err_GroupeExiste" xml:space="preserve">
-    <value>This group already exists (name + time slot)</value>
-  </data>
-  <data name="Err_HeureDebutHeureFin" xml:space="preserve">
-    <value>The end time must be greater than the start time.</value>
-  </data>
-  <data name="Err_HeureDebutObligatoire" xml:space="preserve">
-    <value>Start time required.</value>
-  </data>
-  <data name="Err_HeureFinObligatoire" xml:space="preserve">
-    <value>End time required.</value>
-  </data>
-  <data name="Err_LibelleObligatoire" xml:space="preserve">
-    <value>Name required.</value>
-  </data>
-  <data name="Err_NaissanceObligatoire" xml:space="preserve">
-    <value>Birthday is required.</value>
-  </data>
-  <data name="Err_NomObligatoire" xml:space="preserve">
-    <value>Last name is required.</value>
-  </data>
-  <data name="Err_PrenomObligatoire" xml:space="preserve">
-    <value>First name is required.</value>
-  </data>
-  <data name="Err_VilleObligatoire" xml:space="preserve">
-    <value>City is required.</value>
-  </data>
   <data name="Header_Actions" xml:space="preserve">
     <value>Actions</value>
-  </data>
-  <data name="Header_Adherents" xml:space="preserve">
-    <value>Members</value>
   </data>
   <data name="Header_Details" xml:space="preserve">
     <value>Details</value>
   </data>
-  <data name="Header_List" xml:space="preserve">
-    <value>Groups</value>
-  </data>
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
   </data>
-  <data name="Label_Adresse" xml:space="preserve">
-    <value>Address:</value>
-  </data>
-  <data name="Label_Ans" xml:space="preserve">
-    <value>years</value>
-  </data>
   <data name="Label_Commentaire" xml:space="preserve">
     <value>Comments:</value>
-  </data>
-  <data name="Label_Emails" xml:space="preserve">
-    <value>E-Mails:</value>
-  </data>
-  <data name="Label_Naissance" xml:space="preserve">
-    <value>Birthday:</value>
   </data>
   <data name="Label_NbFiltre" xml:space="preserve">
     <value>Filtered count:</value>
@@ -195,62 +135,11 @@
   <data name="Label_NbTotal" xml:space="preserve">
     <value>Total count:</value>
   </data>
-  <data name="Label_Nom" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="Label_NomPrenom" xml:space="preserve">
-    <value>Last name / First name:</value>
-  </data>
-  <data name="Label_Saison" xml:space="preserve">
-    <value>Season:</value>
-  </data>
-  <data name="Label_Sexe" xml:space="preserve">
-    <value>Sex:</value>
-  </data>
-  <data name="Label_Telephones" xml:space="preserve">
-    <value>Phone numbers:</value>
-  </data>
-  <data name="Label_Ville" xml:space="preserve">
-    <value>City:</value>
-  </data>
-  <data name="Log_AffichageMenu" xml:space="preserve">
-    <value>Loading of GestionAdherents menu.</value>
-  </data>
   <data name="Log_AffichageVue" xml:space="preserve">
     <value>Loading of view </value>
   </data>
-  <data name="Log_EnregistrementAnnule" xml:space="preserve">
-    <value>Member is invalid. Save cancelled.</value>
-  </data>
-  <data name="Log_EnregistrementEffectue" xml:space="preserve">
-    <value>Member successfully saved.</value>
-  </data>
-  <data name="Log_EnregistrementSupprime" xml:space="preserve">
-    <value>Member deleted.</value>
-  </data>
   <data name="Log_InitialisationModule" xml:space="preserve">
     <value>Initialization of GestionInfosAdhesions module.</value>
-  </data>
-  <data name="MenuButton_List" xml:space="preserve">
-    <value>All members</value>
-  </data>
-  <data name="MenuButton_New" xml:space="preserve">
-    <value>Add member</value>
-  </data>
-  <data name="MenuHeader" xml:space="preserve">
-    <value>Membership management</value>
-  </data>
-  <data name="Titre_Edition" xml:space="preserve">
-    <value>Group</value>
-  </data>
-  <data name="Titre_Formulaire" xml:space="preserve">
-    <value>Member</value>
-  </data>
-  <data name="Titre_List" xml:space="preserve">
-    <value>Members</value>
-  </data>
-  <data name="Tooltip_Adresse" xml:space="preserve">
-    <value>Address</value>
   </data>
   <data name="Tooltip_Ajouter" xml:space="preserve">
     <value>Add</value>
@@ -261,34 +150,184 @@
   <data name="Tooltip_Editer" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="Tooltip_EmailPrincipal" xml:space="preserve">
-    <value>First e-mail address</value>
-  </data>
-  <data name="Tooltip_EmailSecondaire" xml:space="preserve">
-    <value>Second e-mail address</value>
-  </data>
-  <data name="Tooltip_EmailTertiaire" xml:space="preserve">
-    <value>Third e-mail address</value>
-  </data>
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Save</value>
-  </data>
-  <data name="Tooltip_Nom" xml:space="preserve">
-    <value>Last name</value>
-  </data>
-  <data name="Tooltip_Prenom" xml:space="preserve">
-    <value>First name</value>
   </data>
   <data name="Tooltip_Supprimer" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="Tooltip_TelPrincipal" xml:space="preserve">
+  <data name="Confirm_Adh_Suppression" xml:space="preserve">
+    <value>Do you really want to delete this member?</value>
+  </data>
+  <data name="Confirm_Grp_Suppression" xml:space="preserve">
+    <value>Do you really want to delete this group?</value>
+  </data>
+  <data name="Err_Adh_Existe" xml:space="preserve">
+    <value>Member already exists (first name+last name).</value>
+  </data>
+  <data name="Err_Adh_AdresseObligatoire" xml:space="preserve">
+    <value>Address is required.</value>
+  </data>
+  <data name="Err_Adh_DateNaissanceTropAncienne" xml:space="preserve">
+    <value>Birthday is too old for the system.</value>
+  </data>
+  <data name="Err_Grp_Existe" xml:space="preserve">
+    <value>This group already exists (name + time slot)</value>
+  </data>
+  <data name="Err_Grp_HeureDebutHeureFin" xml:space="preserve">
+    <value>The end time must be greater than the start time.</value>
+  </data>
+  <data name="Err_Grp_HeureDebutObligatoire" xml:space="preserve">
+    <value>Start time required.</value>
+  </data>
+  <data name="Err_Grp_HeureFinObligatoire" xml:space="preserve">
+    <value>End time required.</value>
+  </data>
+  <data name="Err_Grp_LibelleObligatoire" xml:space="preserve">
+    <value>Name required.</value>
+  </data>
+  <data name="Err_Adh_NaissanceObligatoire" xml:space="preserve">
+    <value>Birthday is required.</value>
+  </data>
+  <data name="Err_Adh_NomObligatoire" xml:space="preserve">
+    <value>Last name is required.</value>
+  </data>
+  <data name="Err_Adh_PrenomObligatoire" xml:space="preserve">
+    <value>First name is required.</value>
+  </data>
+  <data name="Err_Adh_VilleObligatoire" xml:space="preserve">
+    <value>City is required.</value>
+  </data>
+  <data name="Header_Adh_List" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="Header_Grp_List" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Label_Adh_Adresse" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="Label_Adh_Ans" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Label_Adh_Emails" xml:space="preserve">
+    <value>E-Mails:</value>
+  </data>
+  <data name="Label_Adh_Naissance" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="Label_Grp_Nom" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Label_Adh_NomPrenom" xml:space="preserve">
+    <value>Last name / First name:</value>
+  </data>
+  <data name="Label_Grp_Saison" xml:space="preserve">
+    <value>Season:</value>
+  </data>
+  <data name="Label_Adh_Sexe" xml:space="preserve">
+    <value>Sex:</value>
+  </data>
+  <data name="Label_Adh_Telephones" xml:space="preserve">
+    <value>Phone numbers:</value>
+  </data>
+  <data name="Label_Adh_Ville" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="Log_Adh_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionAdherents menu.</value>
+  </data>
+  <data name="Log_Adh_EnregistrementAnnule" xml:space="preserve">
+    <value>Member is invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_Adh_EnregistrementEffectue" xml:space="preserve">
+    <value>Member successfully saved.</value>
+  </data>
+  <data name="Log_Adh_EnregistrementSupprime" xml:space="preserve">
+    <value>Member deleted.</value>
+  </data>
+  <data name="MenuButton_Adh_List" xml:space="preserve">
+    <value>All members</value>
+  </data>
+  <data name="MenuButton_Adh_New" xml:space="preserve">
+    <value>Add member</value>
+  </data>
+  <data name="MenuHeader_Adh" xml:space="preserve">
+    <value>Membership management</value>
+  </data>
+  <data name="Titre_Grp_Formulaire" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="Tooltip_Adh_TelPrincipal" xml:space="preserve">
     <value>First phone number</value>
   </data>
-  <data name="Tooltip_TelSecondaire" xml:space="preserve">
+  <data name="Tooltip_Adh_TelSecondaire" xml:space="preserve">
     <value>Second phone number</value>
   </data>
-  <data name="Tooltip_TelTertiaire" xml:space="preserve">
+  <data name="Tooltip_Adh_TelTertiaire" xml:space="preserve">
     <value>Third phone number</value>
+  </data>
+  <data name="Tooltip_Adh_Nom" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Tooltip_Adh_Prenom" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Tooltip_Adh_EmailPrincipal" xml:space="preserve">
+    <value>First e-mail address</value>
+  </data>
+  <data name="Tooltip_Adh_EmailSecondaire" xml:space="preserve">
+    <value>Second e-mail address</value>
+  </data>
+  <data name="Tooltip_Adh_EmailTertiaire" xml:space="preserve">
+    <value>Third e-mail address</value>
+  </data>
+  <data name="Tooltip_Adh_Adresse" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Titre_Adh_List" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="Titre_Adh_Formulaire" xml:space="preserve">
+    <value>Member</value>
+  </data>
+  <data name="Titre_Grp_List" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="MenuHeader_Grp" xml:space="preserve">
+    <value>Groups management</value>
+  </data>
+  <data name="MenuButton_Grp_New" xml:space="preserve">
+    <value>Add group</value>
+  </data>
+  <data name="MenuButton_Grp_List" xml:space="preserve">
+    <value>All groups</value>
+  </data>
+  <data name="Log_Grp_EnregistrementSupprime" xml:space="preserve">
+    <value>Group deleted.</value>
+  </data>
+  <data name="Log_Grp_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionGroupes menu.</value>
+  </data>
+  <data name="Log_Grp_EnregistrementAnnule" xml:space="preserve">
+    <value>Group is invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_Grp_EnregistrementEffectue" xml:space="preserve">
+    <value>Group successfully saved.</value>
+  </data>
+  <data name="Label_Grp_HeureDebut" xml:space="preserve">
+    <value>Start time: </value>
+  </data>
+  <data name="Label_Grp_HeureFin" xml:space="preserve">
+    <value>End time: </value>
+  </data>
+  <data name="Label_Grp_Jour" xml:space="preserve">
+    <value>Day: </value>
+  </data>
+  <data name="Label_Grp_NbPlaces" xml:space="preserve">
+    <value>Capacity: </value>
+  </data>
+  <data name="Label_Grp_Creneau" xml:space="preserve">
+    <value>Time slot: </value>
   </data>
 </root>
