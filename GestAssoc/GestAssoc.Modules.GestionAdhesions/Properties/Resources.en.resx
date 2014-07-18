@@ -172,7 +172,7 @@
     <value>Birthday is too old for the system.</value>
   </data>
   <data name="Err_Grp_Existe" xml:space="preserve">
-    <value>This group already exists (name + time slot)</value>
+    <value>This group already exists (name + time slot).</value>
   </data>
   <data name="Err_Grp_HeureDebutHeureFin" xml:space="preserve">
     <value>The end time must be greater than the start time.</value>
@@ -329,5 +329,143 @@
   </data>
   <data name="Label_Grp_Creneau" xml:space="preserve">
     <value>Time slot: </value>
+  </data>
+  <data name="Confirm_Ins_Suppression" xml:space="preserve">
+    <value>Do you really want to delete this enrollment?</value>
+  </data>
+  <data name="Confirm_Sai_Suppression" xml:space="preserve">
+    <value>Do you really want to delete this season?</value>
+  </data>
+  <data name="Err_Ins_AdherentObligatoire" xml:space="preserve">
+    <value>Member required.</value>
+  </data>
+  <data name="Err_Ins_GroupeObligatoire" xml:space="preserve">
+    <value>Group required.</value>
+  </data>
+  <data name="Err_Ins_InscriptionExiste" xml:space="preserve">
+    <value>This enrollment already exists (member + group).</value>
+  </data>
+  <data name="Err_Sai_AnneeDebutAnneeFin" xml:space="preserve">
+    <value>End year must be greater than start year.</value>
+  </data>
+  <data name="Err_Sai_Existe" xml:space="preserve">
+    <value>This season already exists (start year + end year).</value>
+  </data>
+  <data name="Header_Ins_Adherent" xml:space="preserve">
+    <value>Member</value>
+  </data>
+  <data name="Header_Ins_Inscription" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="Header_Ins_List" xml:space="preserve">
+    <value>Enrollments</value>
+  </data>
+  <data name="Header_Sai_List" xml:space="preserve">
+    <value>Seasons</value>
+  </data>
+  <data name="Label_Ins_Adherent" xml:space="preserve">
+    <value>Member: </value>
+  </data>
+  <data name="Label_Ins_Ans" xml:space="preserve">
+    <value>year(s)</value>
+  </data>
+  <data name="Label_Ins_CertificatMedical" xml:space="preserve">
+    <value>Medical certificate: </value>
+  </data>
+  <data name="Label_Ins_Groupe" xml:space="preserve">
+    <value>Group:</value>
+  </data>
+  <data name="Label_Ins_Naissance" xml:space="preserve">
+    <value>Birthday: </value>
+  </data>
+  <data name="Label_Ins_NomPrenom" xml:space="preserve">
+    <value>Last name / First name: </value>
+  </data>
+  <data name="Label_Ins_Saison" xml:space="preserve">
+    <value>Season: </value>
+  </data>
+  <data name="Label_Ins_Sexe" xml:space="preserve">
+    <value>Sex: </value>
+  </data>
+  <data name="Label_Ins_Statut" xml:space="preserve">
+    <value>Statut: </value>
+  </data>
+  <data name="Label_Ins_Ville" xml:space="preserve">
+    <value>City: </value>
+  </data>
+  <data name="Label_Ins_Cotisation" xml:space="preserve">
+    <value>Membership fee: </value>
+  </data>
+  <data name="Label_Sai_AnneeDebut" xml:space="preserve">
+    <value>Start year: </value>
+  </data>
+  <data name="Label_Sai_AnneeFin" xml:space="preserve">
+    <value>End year: </value>
+  </data>
+  <data name="Label_Sai_SaisonCourante" xml:space="preserve">
+    <value>Current season: </value>
+  </data>
+  <data name="Log_Ins_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionInscriptions menu.</value>
+  </data>
+  <data name="Log_Ins_EnregistrementAnnule" xml:space="preserve">
+    <value>Enrollment is invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_Ins_EnregistrementEffectue" xml:space="preserve">
+    <value>Enrollment saved.</value>
+  </data>
+  <data name="Log_Ins_EnregistrementSupprime" xml:space="preserve">
+    <value>Enrollment deleted.</value>
+  </data>
+  <data name="Log_Ins_StatutValide" xml:space="preserve">
+    <value>Medical certificat issued and paids dues. Enrollment is valid.</value>
+  </data>
+  <data name="Log_Sai_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionSaisons menu.</value>
+  </data>
+  <data name="Log_Sai_EnregistrementAnnule" xml:space="preserve">
+    <value>Season is invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_Sai_EnregistrementEffectue" xml:space="preserve">
+    <value>Season saved.</value>
+  </data>
+  <data name="Log_Sai_EnregistrementSupprime" xml:space="preserve">
+    <value>Season deleted.</value>
+  </data>
+  <data name="Log_Sai_NouvelleSaisonCourante" xml:space="preserve">
+    <value>New current season: </value>
+  </data>
+  <data name="MenuButton_Ins_List" xml:space="preserve">
+    <value>All enrollments</value>
+  </data>
+  <data name="MenuButton_Ins_New" xml:space="preserve">
+    <value>Add enrollment</value>
+  </data>
+  <data name="MenuButton_Sai_List" xml:space="preserve">
+    <value>All seasons</value>
+  </data>
+  <data name="MenuButton_Sai_New" xml:space="preserve">
+    <value>Add season</value>
+  </data>
+  <data name="MenuHeader_Ins" xml:space="preserve">
+    <value>Enrollments management</value>
+  </data>
+  <data name="MenuHeader_Sai" xml:space="preserve">
+    <value>Seasons management</value>
+  </data>
+  <data name="Titre_Ins_Formulaire" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="Titre_Ins_List" xml:space="preserve">
+    <value>Enrollments</value>
+  </data>
+  <data name="Titre_Sai_Formulaire" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="Titre_Sai_List" xml:space="preserve">
+    <value>Seasons</value>
+  </data>
+  <data name="Tooltip_Sai_SaisonCourante" xml:space="preserve">
+    <value>Set as current season</value>
   </data>
 </root>

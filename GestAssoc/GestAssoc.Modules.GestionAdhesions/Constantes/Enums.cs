@@ -8,6 +8,8 @@ namespace GestAssoc.Modules.GestionAdhesions.Constantes
 		ConsultationGroupes,
 		FormulaireGroupe,
 		ConsultationSaisons,
-		FormulaireSaison
+		FormulaireSaison,
+		ConsultationInscriptions,
+		FormulaireInscription
 	}
 }

@@ -118,10 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Confirm_Adh_Suppression" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer cet adhérent?</value>
+    <value>Etes-vous sûr de vouloir supprimer l'adhérent suivant?</value>
   </data>
   <data name="Confirm_Grp_Suppression" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer ce groupe?</value>
+    <value>Etes-vous sûr de vouloir supprimer le groupe suivant?</value>
+  </data>
+  <data name="Confirm_Ins_Suppression" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer l'inscription suivante?</value>
   </data>
   <data name="Confirm_Sai_Suppression" xml:space="preserve">
     <value>Etes-vous sûr de vouloir supprimer la saison suivante?</value>
@@ -162,6 +165,15 @@
   <data name="Err_Grp_LibelleObligatoire" xml:space="preserve">
     <value>Nom obligatoire.</value>
   </data>
+  <data name="Err_Ins_AdherentObligatoire" xml:space="preserve">
+    <value>Adhérent obligatoire.</value>
+  </data>
+  <data name="Err_Ins_GroupeObligatoire" xml:space="preserve">
+    <value>Groupe obligatoire.</value>
+  </data>
+  <data name="Err_Ins_InscriptionExiste" xml:space="preserve">
+    <value>Cette inscription existe déjà (adhérent + groupe).</value>
+  </data>
   <data name="Err_Sai_AnneeDebutAnneeFin" xml:space="preserve">
     <value>L'année de fin doit être supérieure à l'année de début.</value>
   </data>
@@ -179,6 +191,15 @@
   </data>
   <data name="Header_Grp_List" xml:space="preserve">
     <value>Groupes</value>
+  </data>
+  <data name="Header_Ins_Adherent" xml:space="preserve">
+    <value>Adhérent</value>
+  </data>
+  <data name="Header_Ins_Inscription" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="Header_Ins_List" xml:space="preserve">
+    <value>Inscriptions</value>
   </data>
   <data name="Header_Sai_List" xml:space="preserve">
     <value>Saisons</value>
@@ -234,6 +255,39 @@
   <data name="Label_Grp_Saison" xml:space="preserve">
     <value>Saison : </value>
   </data>
+  <data name="Label_Ins_Adherent" xml:space="preserve">
+    <value>Adhérent : </value>
+  </data>
+  <data name="Label_Ins_Ans" xml:space="preserve">
+    <value>an(s)</value>
+  </data>
+  <data name="Label_Ins_CertificatMedical" xml:space="preserve">
+    <value>Certificat médical :</value>
+  </data>
+  <data name="Label_Ins_Cotisation" xml:space="preserve">
+    <value>Cotisation : </value>
+  </data>
+  <data name="Label_Ins_Groupe" xml:space="preserve">
+    <value>Groupe : </value>
+  </data>
+  <data name="Label_Ins_Naissance" xml:space="preserve">
+    <value>Date de naissance : </value>
+  </data>
+  <data name="Label_Ins_NomPrenom" xml:space="preserve">
+    <value>Nom / prénom : </value>
+  </data>
+  <data name="Label_Ins_Saison" xml:space="preserve">
+    <value>Saison : </value>
+  </data>
+  <data name="Label_Ins_Sexe" xml:space="preserve">
+    <value>Sexe : </value>
+  </data>
+  <data name="Label_Ins_Statut" xml:space="preserve">
+    <value>Statut : </value>
+  </data>
+  <data name="Label_Ins_Ville" xml:space="preserve">
+    <value>Ville : </value>
+  </data>
   <data name="Label_NbFiltre" xml:space="preserve">
     <value>Nb. filtré(s) : </value>
   </data>
@@ -279,6 +333,21 @@
   <data name="Log_InitialisationModule" xml:space="preserve">
     <value>Initialisation du Module GestionAdhesions.</value>
   </data>
+  <data name="Log_Ins_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionInscriptions</value>
+  </data>
+  <data name="Log_Ins_EnregistrementAnnule" xml:space="preserve">
+    <value>Inscription non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Log_Ins_EnregistrementEffectue" xml:space="preserve">
+    <value>Inscription enregistrée.</value>
+  </data>
+  <data name="Log_Ins_EnregistrementSupprime" xml:space="preserve">
+    <value>Inscription supprimée.</value>
+  </data>
+  <data name="Log_Ins_StatutValide" xml:space="preserve">
+    <value>Certificat médical remis et cotisation payée. L'inscription est validée.</value>
+  </data>
   <data name="Log_Sai_AffichageMenu" xml:space="preserve">
     <value>Affichage du menu GestionSaisons</value>
   </data>
@@ -292,7 +361,7 @@
     <value>Saison supprimée.</value>
   </data>
   <data name="Log_Sai_NouvelleSaisonCourante" xml:space="preserve">
-    <value>Nouvelle saison courante :</value>
+    <value>Nouvelle saison courante : </value>
   </data>
   <data name="MenuButton_Adh_List" xml:space="preserve">
     <value>Liste des adhérents</value>
@@ -306,6 +375,12 @@
   <data name="MenuButton_Grp_New" xml:space="preserve">
     <value>Nouveau groupe</value>
   </data>
+  <data name="MenuButton_Ins_List" xml:space="preserve">
+    <value>Liste des inscriptions</value>
+  </data>
+  <data name="MenuButton_Ins_New" xml:space="preserve">
+    <value>Nouvelle inscription</value>
+  </data>
   <data name="MenuButton_Sai_List" xml:space="preserve">
     <value>Liste des saisons</value>
   </data>
@@ -317,6 +392,9 @@
   </data>
   <data name="MenuHeader_Grp" xml:space="preserve">
     <value>Gestion des groupes</value>
+  </data>
+  <data name="MenuHeader_Ins" xml:space="preserve">
+    <value>Gestion des inscriptions</value>
   </data>
   <data name="MenuHeader_Sai" xml:space="preserve">
     <value>Gestion des saisons</value>
@@ -332,6 +410,12 @@
   </data>
   <data name="Titre_Grp_List" xml:space="preserve">
     <value>Groupes</value>
+  </data>
+  <data name="Titre_Ins_Formulaire" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="Titre_Ins_List" xml:space="preserve">
+    <value>Inscriptions</value>
   </data>
   <data name="Titre_Sai_Formulaire" xml:space="preserve">
     <value>Saison</value>

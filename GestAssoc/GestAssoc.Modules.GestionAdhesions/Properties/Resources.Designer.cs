@@ -61,7 +61,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer cet adhérent?.
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer l&apos;adhérent suivant?.
         /// </summary>
         public static string Confirm_Adh_Suppression {
             get {
@@ -70,11 +70,20 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer ce groupe?.
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer le groupe suivant?.
         /// </summary>
         public static string Confirm_Grp_Suppression {
             get {
                 return ResourceManager.GetString("Confirm_Grp_Suppression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer l&apos;inscription suivante?.
+        /// </summary>
+        public static string Confirm_Ins_Suppression {
+            get {
+                return ResourceManager.GetString("Confirm_Ins_Suppression", resourceCulture);
             }
         }
         
@@ -196,6 +205,33 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent obligatoire..
+        /// </summary>
+        public static string Err_Ins_AdherentObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Ins_AdherentObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupe obligatoire..
+        /// </summary>
+        public static string Err_Ins_GroupeObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Ins_GroupeObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cette inscription existe déjà (adhérent + groupe)..
+        /// </summary>
+        public static string Err_Ins_InscriptionExiste {
+            get {
+                return ResourceManager.GetString("Err_Ins_InscriptionExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à L&apos;année de fin doit être supérieure à l&apos;année de début..
         /// </summary>
         public static string Err_Sai_AnneeDebutAnneeFin {
@@ -246,6 +282,33 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Header_Grp_List {
             get {
                 return ResourceManager.GetString("Header_Grp_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent.
+        /// </summary>
+        public static string Header_Ins_Adherent {
+            get {
+                return ResourceManager.GetString("Header_Ins_Adherent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription.
+        /// </summary>
+        public static string Header_Ins_Inscription {
+            get {
+                return ResourceManager.GetString("Header_Ins_Inscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscriptions.
+        /// </summary>
+        public static string Header_Ins_List {
+            get {
+                return ResourceManager.GetString("Header_Ins_List", resourceCulture);
             }
         }
         
@@ -412,6 +475,105 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent : .
+        /// </summary>
+        public static string Label_Ins_Adherent {
+            get {
+                return ResourceManager.GetString("Label_Ins_Adherent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à an(s).
+        /// </summary>
+        public static string Label_Ins_Ans {
+            get {
+                return ResourceManager.GetString("Label_Ins_Ans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Certificat médical :.
+        /// </summary>
+        public static string Label_Ins_CertificatMedical {
+            get {
+                return ResourceManager.GetString("Label_Ins_CertificatMedical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cotisation : .
+        /// </summary>
+        public static string Label_Ins_Cotisation {
+            get {
+                return ResourceManager.GetString("Label_Ins_Cotisation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupe : .
+        /// </summary>
+        public static string Label_Ins_Groupe {
+            get {
+                return ResourceManager.GetString("Label_Ins_Groupe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de naissance : .
+        /// </summary>
+        public static string Label_Ins_Naissance {
+            get {
+                return ResourceManager.GetString("Label_Ins_Naissance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom / prénom : .
+        /// </summary>
+        public static string Label_Ins_NomPrenom {
+            get {
+                return ResourceManager.GetString("Label_Ins_NomPrenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison : .
+        /// </summary>
+        public static string Label_Ins_Saison {
+            get {
+                return ResourceManager.GetString("Label_Ins_Saison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sexe : .
+        /// </summary>
+        public static string Label_Ins_Sexe {
+            get {
+                return ResourceManager.GetString("Label_Ins_Sexe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Statut : .
+        /// </summary>
+        public static string Label_Ins_Statut {
+            get {
+                return ResourceManager.GetString("Label_Ins_Statut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville : .
+        /// </summary>
+        public static string Label_Ins_Ville {
+            get {
+                return ResourceManager.GetString("Label_Ins_Ville", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nb. filtré(s) : .
         /// </summary>
         public static string Label_NbFiltre {
@@ -547,6 +709,51 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionInscriptions.
+        /// </summary>
+        public static string Log_Ins_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_Ins_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_Ins_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_Ins_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription enregistrée..
+        /// </summary>
+        public static string Log_Ins_EnregistrementEffectue {
+            get {
+                return ResourceManager.GetString("Log_Ins_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription supprimée..
+        /// </summary>
+        public static string Log_Ins_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_Ins_EnregistrementSupprime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Certificat médical remis et cotisation payée. L&apos;inscription est validée..
+        /// </summary>
+        public static string Log_Ins_StatutValide {
+            get {
+                return ResourceManager.GetString("Log_Ins_StatutValide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affichage du menu GestionSaisons.
         /// </summary>
         public static string Log_Sai_AffichageMenu {
@@ -583,7 +790,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nouvelle saison courante :.
+        ///   Recherche une chaîne localisée semblable à Nouvelle saison courante : .
         /// </summary>
         public static string Log_Sai_NouvelleSaisonCourante {
             get {
@@ -628,6 +835,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des inscriptions.
+        /// </summary>
+        public static string MenuButton_Ins_List {
+            get {
+                return ResourceManager.GetString("MenuButton_Ins_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvelle inscription.
+        /// </summary>
+        public static string MenuButton_Ins_New {
+            get {
+                return ResourceManager.GetString("MenuButton_Ins_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Liste des saisons.
         /// </summary>
         public static string MenuButton_Sai_List {
@@ -660,6 +885,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string MenuHeader_Grp {
             get {
                 return ResourceManager.GetString("MenuHeader_Grp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gestion des inscriptions.
+        /// </summary>
+        public static string MenuHeader_Ins {
+            get {
+                return ResourceManager.GetString("MenuHeader_Ins", resourceCulture);
             }
         }
         
@@ -705,6 +939,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Titre_Grp_List {
             get {
                 return ResourceManager.GetString("Titre_Grp_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscription.
+        /// </summary>
+        public static string Titre_Ins_Formulaire {
+            get {
+                return ResourceManager.GetString("Titre_Ins_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Inscriptions.
+        /// </summary>
+        public static string Titre_Ins_List {
+            get {
+                return ResourceManager.GetString("Titre_Ins_List", resourceCulture);
             }
         }
         
