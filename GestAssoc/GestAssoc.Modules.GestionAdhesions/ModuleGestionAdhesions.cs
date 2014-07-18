@@ -24,12 +24,20 @@ namespace GestAssoc.Modules.GestionAdhesions
 
 			// Enregistrement du RibbonTab
 			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionAdherentsMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionGroupesMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationAdherentsView>(
 				ViewNames.ConsultationAdherents.ToString()
 			);
 			container.RegisterType<object, FormulaireAdherentView>(
+				ViewNames.FormulaireAdherent.ToString()
+			);
+
+			container.RegisterType<object, ConsultationGroupesView>(
+				ViewNames.ConsultationAdherents.ToString()
+			);
+			container.RegisterType<object, FormulaireGroupeView>(
 				ViewNames.FormulaireAdherent.ToString()
 			);
 		}
