@@ -17,7 +17,7 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 			this.ShowFormulaireCreationAdherentCmd = new ShowViewCommand(ViewNames.FormulaireAdherent.ToString());
 
 			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageMenu);
+			NotificationHelper.WriteLog(Resources.Log_Adh_AffichageMenu);
 		}
 	}
 }

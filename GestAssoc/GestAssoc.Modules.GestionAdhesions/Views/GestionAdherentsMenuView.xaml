@@ -5,12 +5,12 @@
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdhesions.Properties"
 			 mc:Ignorable="d" 
-		     Header="{x:Static p:Resources.MenuHeader}"
+		     Header="{x:Static p:Resources.MenuHeader_Adh}"
 			 d:DesignHeight="100" d:DesignWidth="150">
-	<RibbonButton Label="{x:Static p:Resources.MenuButton_List}"
+	<RibbonButton Label="{x:Static p:Resources.MenuButton_Adh_List}"
 				  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_list.png"
 				  Command="{Binding Path=ShowConsultationAdherentsCmd}" />
-	<RibbonButton Label="{x:Static p:Resources.MenuButton_New}" 
+	<RibbonButton Label="{x:Static p:Resources.MenuButton_Adh_New}" 
 				  SmallImageSource="pack://application:,,,/GestAssoc.Common;component/Images/btn_listAdd.png"
 				  Command="{Binding Path=ShowFormulaireCreationAdherentCmd}" />
 </RibbonGroup>

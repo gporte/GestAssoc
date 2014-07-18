@@ -14,7 +14,7 @@
 	</UserControl.Resources>
 	
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_List}" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Adh_Formulaire}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
 		<WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
@@ -46,18 +46,18 @@
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
-			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
 				<TextBox Text="{Binding Item.Nom}"
 						 Style="{StaticResource tbxValueStd}"
 						 CharacterCasing="Upper"
-						 ToolTip="{x:Static p:Resources.Tooltip_Nom}"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adh_Nom}"/>
 				<TextBox Text="{Binding Item.Prenom}" Margin="50,0,0,0"
 						 Style="{StaticResource tbxValueStd}" 
-						 ToolTip="{x:Static p:Resources.Tooltip_Prenom}"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adh_Prenom}"/>
 			</StackPanel>
 
-			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<DatePicker Grid.Row="1" Grid.Column="1"
 						HorizontalAlignment="Left"
 						SelectedDate="{Binding Path=Item.DateNaissance}"
@@ -65,7 +65,7 @@
 						DisplayDateStart="{x:Static cu:DefaultValueHelper.DateTimeSQLMinValue}"
 						DisplayDateEnd="{x:Static sys:DateTime.Today}"/>
 
-			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource cmbValueLittle}"
 					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Sexes}" 
@@ -73,49 +73,49 @@
 					  SelectedValuePath="Key"
 					  SelectedValue="{Binding Path=Item.Sexe}" />
 
-			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Item.Adresse}"
 					 HorizontalAlignment="Left"
 					 Style="{StaticResource tbxAdresse}" 
-					 ToolTip="{x:Static p:Resources.Tooltip_Adresse}"/>
+					 ToolTip="{x:Static p:Resources.Tooltip_Adh_Adresse}"/>
 
-			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource cmbValue}"
 					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Villes}" 
 					  SelectedItem="{Binding Path=Item.Ville}" />
 
-			<Label Grid.Row="5" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="5" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Adh_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone1}"
 								   Style="{StaticResource tbxTelephone}" 
-								   ToolTip="{x:Static p:Resources.Tooltip_TelPrincipal}"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_Adh_TelPrincipal}"/>
 
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone2}" 
 								   Style="{StaticResource tbxTelephone}" 
-								   ToolTip="{x:Static p:Resources.Tooltip_TelSecondaire}"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_Adh_TelSecondaire}"/>
 
 				<wpf:MaskedTextBox Mask="00 00 00 00 00" HorizontalContentAlignment="Right"
 								   Text="{Binding Item.Telephone3}"
 								   Style="{StaticResource tbxTelephone}" 
-								   ToolTip="{x:Static p:Resources.Tooltip_TelTertiaire}"/>
+								   ToolTip="{x:Static p:Resources.Tooltip_Adh_TelTertiaire}"/>
 			</StackPanel>
 
-			<Label Grid.Row="6" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+			<Label Grid.Row="6" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Adh_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 				<TextBox Text="{Binding Item.Mail1}"
 						 Style="{StaticResource tbxAdresse}" 
-						 ToolTip="{x:Static p:Resources.Tooltip_EmailPrincipal}"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adh_EmailPrincipal}"/>
 
 				<TextBox Text="{Binding Item.Mail2}"
 						 Style="{StaticResource tbxAdresse}" 
-						 ToolTip="{x:Static p:Resources.Tooltip_EmailSecondaire}"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adh_EmailSecondaire}"/>
 
 				<TextBox Text="{Binding Item.Mail3}"
 						 Style="{StaticResource tbxAdresse}" 
-						 ToolTip="{x:Static p:Resources.Tooltip_EmailTertiaire}"/>
+						 ToolTip="{x:Static p:Resources.Tooltip_Adh_EmailTertiaire}"/>
 			</StackPanel>
 
 			<Label Grid.Row="7" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>

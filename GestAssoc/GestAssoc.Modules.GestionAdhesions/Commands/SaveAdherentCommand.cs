@@ -36,11 +36,11 @@ namespace GestAssoc.Modules.GestionAdhesions.Commands
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
 					UIServices.SetBusyState();
 					service.SaveAdherent(itemToSave);
-					NotificationHelper.WriteLog(Resources.Log_EnregistrementEffectue);
+					NotificationHelper.WriteLog(Resources.Log_Adh_EnregistrementEffectue);
 					new ShowViewCommand(ViewNames.ConsultationAdherents.ToString()).Execute(null);
 				}
 				else {
-					errorsList.Insert(0, Resources.Log_EnregistrementAnnule);
+					errorsList.Insert(0, Resources.Log_Adh_EnregistrementAnnule);
 					NotificationHelper.WriteLogs(errorsList);
 				}
 			}
@@ -57,27 +57,27 @@ namespace GestAssoc.Modules.GestionAdhesions.Commands
 			errorsList = new List<string>();
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Nom)) {
-				errorsList.Add(Resources.Err_NomObligatoire);
+				errorsList.Add(Resources.Err_Adh_NomObligatoire);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Prenom)) {
-				errorsList.Add(Resources.Err_PrenomObligatoire);
+				errorsList.Add(Resources.Err_Adh_PrenomObligatoire);
 			}
 
 			if (itemToSave.DateNaissance == DateTime.MinValue) {
-				errorsList.Add(Resources.Err_NaissanceObligatoire);
+				errorsList.Add(Resources.Err_Adh_NaissanceObligatoire);
 			}
 
 			if (itemToSave.DateNaissance < DefaultValueHelper.DateTimeSQLMinValue) {
-				errorsList.Add(Resources.Err_DateNaissanceTropAncienne);
+				errorsList.Add(Resources.Err_Adh_DateNaissanceTropAncienne);
 			}
 
 			if (string.IsNullOrWhiteSpace(itemToSave.Adresse)) {
-				errorsList.Add(Resources.Err_AdresseObligatoire);
+				errorsList.Add(Resources.Err_Adh_AdresseObligatoire);
 			}
 
 			if (itemToSave.Ville == null) {
-				errorsList.Add(Resources.Err_VilleObligatoire);
+				errorsList.Add(Resources.Err_Adh_VilleObligatoire);
 			}
 
 			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple nom + prénom
@@ -85,7 +85,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Commands
 			var itemExists = service.GetAllAdherents().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
 
 			if (itemExists) {
-				errorsList.Add(Resources.Err_AdherentExiste);
+				errorsList.Add(Resources.Err_Adh_Existe);
 			}
 
 			return errorsList.Count == 0;

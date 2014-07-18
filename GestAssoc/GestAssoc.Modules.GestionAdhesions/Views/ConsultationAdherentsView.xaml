@@ -19,10 +19,10 @@
 	</i:Interaction.Triggers>
 
 	<DockPanel>
-		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_List}" HorizontalContentAlignment="Center" 
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Adh_List}" HorizontalContentAlignment="Center" 
 			   Style="{StaticResource titreUC}"/>
 
-		<GroupBox Header="{x:Static p:Resources.Header_Adherents}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+		<GroupBox Header="{x:Static p:Resources.Header_Adh_List}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
 			<DockPanel LastChildFill="True">
 				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
 						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
@@ -98,7 +98,7 @@
 					<RowDefinition Height="Auto" />
 				</Grid.RowDefinitions>
 
-				<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource lblBigValue}">
 					<Label.Content>
 						<TextBlock>
@@ -112,7 +112,7 @@
 					</Label.Content>
 				</Label>
 
-				<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="1" Grid.Column="1">
 					<Label.Content>
 						<TextBlock>
@@ -120,33 +120,33 @@
 								<MultiBinding StringFormat="{}{0:d} ({1} {2})">
 									<Binding Path="DateNaissance" />
 									<Binding Path="Age" />
-									<Binding Source="{x:Static p:Resources.Label_Ans}" />
+									<Binding Source="{x:Static p:Resources.Label_Adh_Ans}" />
 								</MultiBinding>
 							</TextBlock.Text>
 						</TextBlock>
 					</Label.Content>
 				</Label>
 
-				<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="2" Grid.Column="1" 
 					   Content="{Binding Path=LibelleSexe}"/>
 
-				<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="3" Grid.Column="1" 
 					   Content="{Binding Path=Adresse}"/>
 
-				<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<Label Grid.Row="4" Grid.Column="1" 
 					   Content="{Binding Path=Ville}"/>
 
-				<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 					<Label Content="{Binding Path=Telephone1}"/>
 					<Label Content="{Binding Path=Telephone2}"/>
 					<Label Content="{Binding Path=Telephone3}"/>
 				</StackPanel>
 
-				<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 				<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
 					<Label Content="{Binding Path=Mail1}"/>
 					<Label Content="{Binding Path=Mail2}"/>

@@ -63,72 +63,126 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer cet adhérent?.
         /// </summary>
-        public static string Confirm_SuppressionAdherent {
+        public static string Confirm_Adh_Suppression {
             get {
-                return ResourceManager.GetString("Confirm_SuppressionAdherent", resourceCulture);
+                return ResourceManager.GetString("Confirm_Adh_Suppression", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cet adhérent existe déjà (nom + prénom)..
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer ce groupe?.
         /// </summary>
-        public static string Err_AdherentExiste {
+        public static string Confirm_Grp_Suppression {
             get {
-                return ResourceManager.GetString("Err_AdherentExiste", resourceCulture);
+                return ResourceManager.GetString("Confirm_Grp_Suppression", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse obligatoire..
         /// </summary>
-        public static string Err_AdresseObligatoire {
+        public static string Err_Adh_AdresseObligatoire {
             get {
-                return ResourceManager.GetString("Err_AdresseObligatoire", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_AdresseObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à La date de naissance saisie est trop ancienne pour le système..
         /// </summary>
-        public static string Err_DateNaissanceTropAncienne {
+        public static string Err_Adh_DateNaissanceTropAncienne {
             get {
-                return ResourceManager.GetString("Err_DateNaissanceTropAncienne", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_DateNaissanceTropAncienne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cet adhérent existe déjà (nom + prénom)..
+        /// </summary>
+        public static string Err_Adh_Existe {
+            get {
+                return ResourceManager.GetString("Err_Adh_Existe", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Date de naissance obligatoire..
         /// </summary>
-        public static string Err_NaissanceObligatoire {
+        public static string Err_Adh_NaissanceObligatoire {
             get {
-                return ResourceManager.GetString("Err_NaissanceObligatoire", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_NaissanceObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom obligatoire..
         /// </summary>
-        public static string Err_NomObligatoire {
+        public static string Err_Adh_NomObligatoire {
             get {
-                return ResourceManager.GetString("Err_NomObligatoire", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_NomObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Prénom obligatoire..
         /// </summary>
-        public static string Err_PrenomObligatoire {
+        public static string Err_Adh_PrenomObligatoire {
             get {
-                return ResourceManager.GetString("Err_PrenomObligatoire", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_PrenomObligatoire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à VilleObligatoire..
         /// </summary>
-        public static string Err_VilleObligatoire {
+        public static string Err_Adh_VilleObligatoire {
             get {
-                return ResourceManager.GetString("Err_VilleObligatoire", resourceCulture);
+                return ResourceManager.GetString("Err_Adh_VilleObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ce groupe existe déjà (nom + créneau)..
+        /// </summary>
+        public static string Err_Grp_Existe {
+            get {
+                return ResourceManager.GetString("Err_Grp_Existe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;heure de fin doit être strictement supérieure à l&apos;heure de début..
+        /// </summary>
+        public static string Err_Grp_HeureDebutHeureFin {
+            get {
+                return ResourceManager.GetString("Err_Grp_HeureDebutHeureFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Heure de début obligatoire..
+        /// </summary>
+        public static string Err_Grp_HeureDebutObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Grp_HeureDebutObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Heure de fin obligatoire..
+        /// </summary>
+        public static string Err_Grp_HeureFinObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Grp_HeureFinObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom obligatoire..
+        /// </summary>
+        public static string Err_Grp_LibelleObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Grp_LibelleObligatoire", resourceCulture);
             }
         }
         
@@ -144,9 +198,9 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adhérents.
         /// </summary>
-        public static string Header_Adherents {
+        public static string Header_Adh_List {
             get {
-                return ResourceManager.GetString("Header_Adherents", resourceCulture);
+                return ResourceManager.GetString("Header_Adh_List", resourceCulture);
             }
         }
         
@@ -156,6 +210,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Header_Details {
             get {
                 return ResourceManager.GetString("Header_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupes.
+        /// </summary>
+        public static string Header_Grp_List {
+            get {
+                return ResourceManager.GetString("Header_Grp_List", resourceCulture);
             }
         }
         
@@ -171,18 +234,72 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse : .
         /// </summary>
-        public static string Label_Adresse {
+        public static string Label_Adh_Adresse {
             get {
-                return ResourceManager.GetString("Label_Adresse", resourceCulture);
+                return ResourceManager.GetString("Label_Adh_Adresse", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à an(s).
         /// </summary>
-        public static string Label_Ans {
+        public static string Label_Adh_Ans {
             get {
-                return ResourceManager.GetString("Label_Ans", resourceCulture);
+                return ResourceManager.GetString("Label_Adh_Ans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à E-mails : .
+        /// </summary>
+        public static string Label_Adh_Emails {
+            get {
+                return ResourceManager.GetString("Label_Adh_Emails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de naissance : .
+        /// </summary>
+        public static string Label_Adh_Naissance {
+            get {
+                return ResourceManager.GetString("Label_Adh_Naissance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom / prénom : .
+        /// </summary>
+        public static string Label_Adh_NomPrenom {
+            get {
+                return ResourceManager.GetString("Label_Adh_NomPrenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sexe : .
+        /// </summary>
+        public static string Label_Adh_Sexe {
+            get {
+                return ResourceManager.GetString("Label_Adh_Sexe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Téléphones : .
+        /// </summary>
+        public static string Label_Adh_Telephones {
+            get {
+                return ResourceManager.GetString("Label_Adh_Telephones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville : .
+        /// </summary>
+        public static string Label_Adh_Ville {
+            get {
+                return ResourceManager.GetString("Label_Adh_Ville", resourceCulture);
             }
         }
         
@@ -196,20 +313,65 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à E-mails : .
+        ///   Recherche une chaîne localisée semblable à Créneau : .
         /// </summary>
-        public static string Label_Emails {
+        public static string Label_Grp_Creneau {
             get {
-                return ResourceManager.GetString("Label_Emails", resourceCulture);
+                return ResourceManager.GetString("Label_Grp_Creneau", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Date de naissance : .
+        ///   Recherche une chaîne localisée semblable à Heure de début : .
         /// </summary>
-        public static string Label_Naissance {
+        public static string Label_Grp_HeureDebut {
             get {
-                return ResourceManager.GetString("Label_Naissance", resourceCulture);
+                return ResourceManager.GetString("Label_Grp_HeureDebut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Heure de fin : .
+        /// </summary>
+        public static string Label_Grp_HeureFin {
+            get {
+                return ResourceManager.GetString("Label_Grp_HeureFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Jour : .
+        /// </summary>
+        public static string Label_Grp_Jour {
+            get {
+                return ResourceManager.GetString("Label_Grp_Jour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nb. places : .
+        /// </summary>
+        public static string Label_Grp_NbPlaces {
+            get {
+                return ResourceManager.GetString("Label_Grp_NbPlaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom : .
+        /// </summary>
+        public static string Label_Grp_Nom {
+            get {
+                return ResourceManager.GetString("Label_Grp_Nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison : .
+        /// </summary>
+        public static string Label_Grp_Saison {
+            get {
+                return ResourceManager.GetString("Label_Grp_Saison", resourceCulture);
             }
         }
         
@@ -232,47 +394,38 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nom / prénom : .
-        /// </summary>
-        public static string Label_NomPrenom {
-            get {
-                return ResourceManager.GetString("Label_NomPrenom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sexe : .
-        /// </summary>
-        public static string Label_Sexe {
-            get {
-                return ResourceManager.GetString("Label_Sexe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Téléphones : .
-        /// </summary>
-        public static string Label_Telephones {
-            get {
-                return ResourceManager.GetString("Label_Telephones", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ville : .
-        /// </summary>
-        public static string Label_Ville {
-            get {
-                return ResourceManager.GetString("Label_Ville", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents.
         /// </summary>
-        public static string Log_AffichageMenu {
+        public static string Log_Adh_AffichageMenu {
             get {
-                return ResourceManager.GetString("Log_AffichageMenu", resourceCulture);
+                return ResourceManager.GetString("Log_Adh_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_Adh_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_Adh_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent enregistré..
+        /// </summary>
+        public static string Log_Adh_EnregistrementEffectue {
+            get {
+                return ResourceManager.GetString("Log_Adh_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent supprimé..
+        /// </summary>
+        public static string Log_Adh_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_Adh_EnregistrementSupprime", resourceCulture);
             }
         }
         
@@ -286,29 +439,38 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Adhérent non valide. Enregistrement annulé..
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionGroupes.
         /// </summary>
-        public static string Log_EnregistrementAnnule {
+        public static string Log_Grp_AffichageMenu {
             get {
-                return ResourceManager.GetString("Log_EnregistrementAnnule", resourceCulture);
+                return ResourceManager.GetString("Log_Grp_AffichageMenu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Adhérent enregistré..
+        ///   Recherche une chaîne localisée semblable à Groupe non valide. Enregistrement annulé..
         /// </summary>
-        public static string Log_EnregistrementEffectue {
+        public static string Log_Grp_EnregistrementAnnule {
             get {
-                return ResourceManager.GetString("Log_EnregistrementEffectue", resourceCulture);
+                return ResourceManager.GetString("Log_Grp_EnregistrementAnnule", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enregistrement supprimé..
+        ///   Recherche une chaîne localisée semblable à Groupe enregistré..
         /// </summary>
-        public static string Log_EnregistrementSupprime {
+        public static string Log_Grp_EnregistrementEffectue {
             get {
-                return ResourceManager.GetString("Log_EnregistrementSupprime", resourceCulture);
+                return ResourceManager.GetString("Log_Grp_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupe supprimé..
+        /// </summary>
+        public static string Log_Grp_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_Grp_EnregistrementSupprime", resourceCulture);
             }
         }
         
@@ -324,54 +486,171 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Liste des adhérents.
         /// </summary>
-        public static string MenuButton_List {
+        public static string MenuButton_Adh_List {
             get {
-                return ResourceManager.GetString("MenuButton_List", resourceCulture);
+                return ResourceManager.GetString("MenuButton_Adh_List", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Nouvel adhérent.
         /// </summary>
-        public static string MenuButton_New {
+        public static string MenuButton_Adh_New {
             get {
-                return ResourceManager.GetString("MenuButton_New", resourceCulture);
+                return ResourceManager.GetString("MenuButton_Adh_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des groupes.
+        /// </summary>
+        public static string MenuButton_Grp_List {
+            get {
+                return ResourceManager.GetString("MenuButton_Grp_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouveau groupe.
+        /// </summary>
+        public static string MenuButton_Grp_New {
+            get {
+                return ResourceManager.GetString("MenuButton_Grp_New", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Gestion des adhérents.
         /// </summary>
-        public static string MenuHeader {
+        public static string MenuHeader_Adh {
             get {
-                return ResourceManager.GetString("MenuHeader", resourceCulture);
+                return ResourceManager.GetString("MenuHeader_Adh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gestion des groupes.
+        /// </summary>
+        public static string MenuHeader_Grp {
+            get {
+                return ResourceManager.GetString("MenuHeader_Grp", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adhérent.
         /// </summary>
-        public static string Titre_Formulaire {
+        public static string Titre_Adh_Formulaire {
             get {
-                return ResourceManager.GetString("Titre_Formulaire", resourceCulture);
+                return ResourceManager.GetString("Titre_Adh_Formulaire", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adhérents.
         /// </summary>
-        public static string Titre_List {
+        public static string Titre_Adh_List {
             get {
-                return ResourceManager.GetString("Titre_List", resourceCulture);
+                return ResourceManager.GetString("Titre_Adh_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupe.
+        /// </summary>
+        public static string Titre_Grp_Formulaire {
+            get {
+                return ResourceManager.GetString("Titre_Grp_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Groupes.
+        /// </summary>
+        public static string Titre_Grp_List {
+            get {
+                return ResourceManager.GetString("Titre_Grp_List", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse.
         /// </summary>
-        public static string Tooltip_Adresse {
+        public static string Tooltip_Adh_Adresse {
             get {
-                return ResourceManager.GetString("Tooltip_Adresse", resourceCulture);
+                return ResourceManager.GetString("Tooltip_Adh_Adresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail principale.
+        /// </summary>
+        public static string Tooltip_Adh_EmailPrincipal {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_EmailPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail secondaire.
+        /// </summary>
+        public static string Tooltip_Adh_EmailSecondaire {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_EmailSecondaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse e-mail tertiaire.
+        /// </summary>
+        public static string Tooltip_Adh_EmailTertiaire {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_EmailTertiaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom.
+        /// </summary>
+        public static string Tooltip_Adh_Nom {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_Nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prénom.
+        /// </summary>
+        public static string Tooltip_Adh_Prenom {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_Prenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. principal.
+        /// </summary>
+        public static string Tooltip_Adh_TelPrincipal {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_TelPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. secondaire.
+        /// </summary>
+        public static string Tooltip_Adh_TelSecondaire {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_TelSecondaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à N° de tél. tertiaire.
+        /// </summary>
+        public static string Tooltip_Adh_TelTertiaire {
+            get {
+                return ResourceManager.GetString("Tooltip_Adh_TelTertiaire", resourceCulture);
             }
         }
         
@@ -403,33 +682,6 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Adresse e-mail principale.
-        /// </summary>
-        public static string Tooltip_EmailPrincipal {
-            get {
-                return ResourceManager.GetString("Tooltip_EmailPrincipal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Adresse e-mail secondaire.
-        /// </summary>
-        public static string Tooltip_EmailSecondaire {
-            get {
-                return ResourceManager.GetString("Tooltip_EmailSecondaire", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Adresse e-mail tertiaire.
-        /// </summary>
-        public static string Tooltip_EmailTertiaire {
-            get {
-                return ResourceManager.GetString("Tooltip_EmailTertiaire", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Enregistrer.
         /// </summary>
         public static string Tooltip_Enregistrer {
@@ -439,56 +691,11 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nom.
-        /// </summary>
-        public static string Tooltip_Nom {
-            get {
-                return ResourceManager.GetString("Tooltip_Nom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Prénom.
-        /// </summary>
-        public static string Tooltip_Prenom {
-            get {
-                return ResourceManager.GetString("Tooltip_Prenom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Supprimer.
         /// </summary>
         public static string Tooltip_Supprimer {
             get {
                 return ResourceManager.GetString("Tooltip_Supprimer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à N° de tél. principal.
-        /// </summary>
-        public static string Tooltip_TelPrincipal {
-            get {
-                return ResourceManager.GetString("Tooltip_TelPrincipal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à N° de tél. secondaire.
-        /// </summary>
-        public static string Tooltip_TelSecondaire {
-            get {
-                return ResourceManager.GetString("Tooltip_TelSecondaire", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à N° de tél. tertiaire.
-        /// </summary>
-        public static string Tooltip_TelTertiaire {
-            get {
-                return ResourceManager.GetString("Tooltip_TelTertiaire", resourceCulture);
             }
         }
     }

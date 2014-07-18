@@ -10,18 +10,18 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.GestionAdhesions.Commands
 {
-	public class DeleteAdherentCommand : ICommand
+	public class DeleteGroupeCommand : ICommand
 	{
 		public InteractionRequest<IConfirmation> RqConfirmDelete { get; private set; }
 		private Action _commandCallBack;
 
-		public DeleteAdherentCommand(Action callback) {
+		public DeleteGroupeCommand(Action callback) {
 			this.RqConfirmDelete = new InteractionRequest<IConfirmation>();
 			this._commandCallBack = callback;
 		}
 		
 		public bool CanExecute(object parameter) {
-			var itemToDelete = parameter as Adherent;
+			var itemToDelete = parameter as Groupe;
 
 			return itemToDelete != null
 				&& itemToDelete.Inscriptions.Count == 0;
@@ -36,24 +36,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Commands
 			this.RqConfirmDelete.Raise(
 				new Confirmation
 				{
-					Content = Resources.Confirm_Adh_Suppression + Environment.NewLine + (parameter as Adherent).ToString(),
+					Content = Resources.Confirm_Grp_Suppression + Environment.NewLine + (parameter as Groupe).ToString(),
 					Title = Common.Properties.Resources.Titre_Confirmation
 				},
-				c => this.ExecuteCallback(c.Confirmed, parameter as Adherent)
+				c => this.ExecuteCallback(c.Confirmed, parameter as Groupe)
 			);
 		}
 
-		private void ExecuteCallback(bool deleteConfirmed, Adherent itemToDelete) {
+		private void ExecuteCallback(bool deleteConfirmed, Groupe itemToDelete) {
 			if (deleteConfirmed) {
 				var service = ServiceLocator
 					.Current.GetInstance<IUnityContainer>()
-					.Resolve<IGestionAdherentsServices>();
+					.Resolve<IGestionGroupesServices>();
 
 				try {
 					UIServices.SetBusyState();
-					service.DeleteAdherent(itemToDelete);
+					service.DeleteGroupe(itemToDelete);
 
-					NotificationHelper.WriteLog(Resources.Log_Adh_EnregistrementSupprime);
+					NotificationHelper.WriteLog(Resources.Log_Grp_EnregistrementSupprime);
 
 					this._commandCallBack();
 				}

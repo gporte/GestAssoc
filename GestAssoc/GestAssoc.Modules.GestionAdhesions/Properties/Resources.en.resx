@@ -120,6 +120,9 @@
   <data name="Confirm_SuppressionAdherent" xml:space="preserve">
     <value>Do you really want to delete this member?</value>
   </data>
+  <data name="Confirm_SuppressionGroupe" xml:space="preserve">
+    <value>Do you really want to delete this group?</value>
+  </data>
   <data name="Err_AdherentExiste" xml:space="preserve">
     <value>Member already exists (first name+last name).</value>
   </data>
@@ -128,6 +131,21 @@
   </data>
   <data name="Err_DateNaissanceTropAncienne" xml:space="preserve">
     <value>Birthday is too old for the system.</value>
+  </data>
+  <data name="Err_GroupeExiste" xml:space="preserve">
+    <value>This group already exists (name + time slot)</value>
+  </data>
+  <data name="Err_HeureDebutHeureFin" xml:space="preserve">
+    <value>The end time must be greater than the start time.</value>
+  </data>
+  <data name="Err_HeureDebutObligatoire" xml:space="preserve">
+    <value>Start time required.</value>
+  </data>
+  <data name="Err_HeureFinObligatoire" xml:space="preserve">
+    <value>End time required.</value>
+  </data>
+  <data name="Err_LibelleObligatoire" xml:space="preserve">
+    <value>Name required.</value>
   </data>
   <data name="Err_NaissanceObligatoire" xml:space="preserve">
     <value>Birthday is required.</value>
@@ -149,6 +167,9 @@
   </data>
   <data name="Header_Details" xml:space="preserve">
     <value>Details</value>
+  </data>
+  <data name="Header_List" xml:space="preserve">
+    <value>Groups</value>
   </data>
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
@@ -174,8 +195,14 @@
   <data name="Label_NbTotal" xml:space="preserve">
     <value>Total count:</value>
   </data>
+  <data name="Label_Nom" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="Label_NomPrenom" xml:space="preserve">
     <value>Last name / First name:</value>
+  </data>
+  <data name="Label_Saison" xml:space="preserve">
+    <value>Season:</value>
   </data>
   <data name="Label_Sexe" xml:space="preserve">
     <value>Sex:</value>
@@ -212,6 +239,9 @@
   </data>
   <data name="MenuHeader" xml:space="preserve">
     <value>Membership management</value>
+  </data>
+  <data name="Titre_Edition" xml:space="preserve">
+    <value>Group</value>
   </data>
   <data name="Titre_Formulaire" xml:space="preserve">
     <value>Member</value>
