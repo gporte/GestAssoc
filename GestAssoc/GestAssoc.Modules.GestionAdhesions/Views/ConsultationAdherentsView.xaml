@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="GestAssoc.Modules.GestionAdhesions.Views.ConsultationAdherentsView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdhesions.Properties"
+			 xmlns:prism="http://www.codeplex.com/prism"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="600" d:DesignWidth="800">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+	</UserControl.Resources>
+
+	<i:Interaction.Triggers>
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=DeleteAdherentCmd.RqConfirmDelete, Mode=OneWay}">
+			<prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+		</prism:InteractionRequestTrigger>
+	</i:Interaction.Triggers>
+
+	<DockPanel>
+		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_List}" HorizontalContentAlignment="Center" 
+			   Style="{StaticResource titreUC}"/>
+
+		<GroupBox Header="{x:Static p:Resources.Header_Adherents}" DockPanel.Dock="Left" Margin="10,0,0,0" MinWidth="300">
+			<DockPanel LastChildFill="True">
+				<TextBox DockPanel.Dock="Top" Margin="0,0,0,10"
+						 Text="{Binding Path=ItemsFilter, UpdateSourceTrigger=PropertyChanged}" />
+
+				<ListBox Name="lbxAdherents" ItemsSource="{Binding Path=Items}">
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="MouseDoubleClick">
+							<i:InvokeCommandAction Command="{Binding Path=EditAdherentCmd}" CommandParameter="{Binding ElementName=lbxAdherents, Path=SelectedItem.ID}" />
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+				</ListBox>
+			</DockPanel>
+		</GroupBox>
+
+		<GroupBox Header="{x:Static p:Resources.Header_Statistiques}" DockPanel.Dock="Bottom" Margin="10,0,0,0" MinWidth="300">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbTotal}" />
+				<Label Grid.Row="0" Grid.Column="1"
+					   Content="{Binding Path=Items.Count}"/>
+
+				<Label Grid.Row="1" Grid.Column="0" Style="{StaticResource lblNameGrid}" 
+					   Content="{x:Static p:Resources.Label_NbFiltre}" />
+				<Label Grid.Row="1" Grid.Column="1"
+					   Content="{Binding ElementName=lbxAdherents, Path=Items.Count}"/>
+			</Grid>
+		</GroupBox>
+
+		<GroupBox Header="{x:Static p:Resources.Header_Actions}" Margin="10,10,10,0" DockPanel.Dock="Bottom">
+			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Ajouter}"
+						Command="{Binding Path=AddAdherentCmd}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
+				</Button>
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Editer}"
+						Command="{Binding Path=EditAdherentCmd}" CommandParameter="{Binding ElementName=lbxAdherents, Path=SelectedItem.ID}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_edit.png" />
+				</Button>
+
+				<Button Style="{StaticResource btnCmd}" ToolTip="{x:Static p:Resources.Tooltip_Supprimer}"
+						Command="{Binding Path=DeleteAdherentCmd}" CommandParameter="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_moins.png" />
+				</Button>
+			</WrapPanel>
+		</GroupBox>
+
+		<GroupBox Header="{x:Static p:Resources.Header_Details}" Margin="10,0,10,0" DataContext="{Binding ElementName=lbxAdherents, Path=SelectedItem}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Label_NomPrenom}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="0" Grid.Column="1" Style="{StaticResource lblBigValue}">
+					<Label.Content>
+						<TextBlock>
+							<TextBlock.Text>
+								<MultiBinding StringFormat="{}{0} {1}">
+									<Binding Path="Nom" />
+									<Binding Path="Prenom" />
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+					</Label.Content>
+				</Label>
+
+				<Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.Label_Naissance}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="1" Grid.Column="1">
+					<Label.Content>
+						<TextBlock>
+							<TextBlock.Text>
+								<MultiBinding StringFormat="{}{0:d} ({1} {2})">
+									<Binding Path="DateNaissance" />
+									<Binding Path="Age" />
+									<Binding Source="{x:Static p:Resources.Label_Ans}" />
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+					</Label.Content>
+				</Label>
+
+				<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Sexe}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="2" Grid.Column="1" 
+					   Content="{Binding Path=LibelleSexe}"/>
+
+				<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Adresse}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="3" Grid.Column="1" 
+					   Content="{Binding Path=Adresse}"/>
+
+				<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="4" Grid.Column="1" 
+					   Content="{Binding Path=Ville}"/>
+
+				<Label Grid.Row="5" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
+					<Label Content="{Binding Path=Telephone1}"/>
+					<Label Content="{Binding Path=Telephone2}"/>
+					<Label Content="{Binding Path=Telephone3}"/>
+				</StackPanel>
+
+				<Label Grid.Row="6" Grid.Column="0" Content="{x:Static p:Resources.Label_Emails}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
+					<Label Content="{Binding Path=Mail1}"/>
+					<Label Content="{Binding Path=Mail2}"/>
+					<Label Content="{Binding Path=Mail3}"/>
+				</StackPanel>
+
+				<Label Grid.Row="7" Grid.Column="0" Content="{x:Static p:Resources.Label_Commentaire}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
+				<Label Grid.Row="7" Grid.Column="1" 
+					   Content="{Binding Path=Commentaire}"/>
+			</Grid>
+		</GroupBox>
+	</DockPanel>
+</UserControl>
