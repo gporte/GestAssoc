@@ -126,8 +126,8 @@
     <Compile Include="Commands\DeleteAdherentCommand.cs" />
     <Compile Include="Commands\SaveAdherentCommand.cs" />
     <Compile Include="Constantes\Enums.cs" />
-    <Compile Include="Constantes\GestionAdherentsServices.cs" />
-    <Compile Include="Constantes\IGestionAdherentsServices.cs" />
+    <Compile Include="Services\GestionAdherentsServices.cs" />
+    <Compile Include="Services\IGestionAdherentsServices.cs" />
     <Compile Include="ModuleGestionAdhesions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -177,9 +177,7 @@
       <Name>GestAssoc.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\ConsultationAdherentsView.xaml">
       <Generator>MSBuild:Compile</Generator>
