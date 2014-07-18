@@ -123,13 +123,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ChangeSaisonCouranteCommand.cs" />
     <Compile Include="Commands\DeleteAdherentCommand.cs" />
     <Compile Include="Commands\DeleteGroupeCommand.cs" />
+    <Compile Include="Commands\DeleteSaisonCommand.cs" />
     <Compile Include="Commands\SaveAdherentCommand.cs" />
     <Compile Include="Commands\SaveGroupeCommand.cs" />
+    <Compile Include="Commands\SaveSaisonCommand.cs" />
     <Compile Include="Constantes\Enums.cs" />
     <Compile Include="Services\GestionAdherentsServices.cs" />
     <Compile Include="Services\GestionGroupesServices.cs" />
+    <Compile Include="Services\GestionSaisonsServices.cs" />
     <Compile Include="Services\IGestionAdherentsServices.cs" />
     <Compile Include="ModuleGestionAdhesions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -146,17 +150,24 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Services\IGestionGroupesServices.cs" />
+    <Compile Include="Services\IGestionSaisonsServices.cs" />
     <Compile Include="ViewModels\ConsultationAdherentsViewModel.cs" />
     <Compile Include="ViewModels\ConsultationGroupesViewModel.cs" />
+    <Compile Include="ViewModels\ConsultationSaisonsViewModel.cs" />
     <Compile Include="ViewModels\FormulaireAdherentViewModel.cs" />
     <Compile Include="ViewModels\FormulaireGroupeViewModel.cs" />
+    <Compile Include="ViewModels\FormulaireSaisonViewModel.cs" />
     <Compile Include="ViewModels\GestionAdherentsMenuViewModel.cs" />
     <Compile Include="ViewModels\GestionGroupesMenuViewModel.cs" />
+    <Compile Include="ViewModels\GestionSaisonsMenuViewModel.cs" />
     <Compile Include="Views\ConsultationAdherentsView.xaml.cs">
       <DependentUpon>ConsultationAdherentsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConsultationGroupesView.xaml.cs">
       <DependentUpon>ConsultationGroupesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultationSaisonsView.xaml.cs">
+      <DependentUpon>ConsultationSaisonsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormulaireAdherentView.xaml.cs">
       <DependentUpon>FormulaireAdherentView.xaml</DependentUpon>
@@ -164,11 +175,17 @@
     <Compile Include="Views\FormulaireGroupeView.xaml.cs">
       <DependentUpon>FormulaireGroupeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormulaireSaisonView.xaml.cs">
+      <DependentUpon>FormulaireSaisonView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GestionAdherentsMenuView.xaml.cs">
       <DependentUpon>GestionAdherentsMenuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GestionGroupesMenuView.xaml.cs">
       <DependentUpon>GestionGroupesMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GestionSaisonsMenuView.xaml.cs">
+      <DependentUpon>GestionSaisonsMenuView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -203,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ConsultationSaisonsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\FormulaireAdherentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -211,11 +232,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\FormulaireSaisonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\GestionAdherentsMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\GestionGroupesMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GestionSaisonsMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

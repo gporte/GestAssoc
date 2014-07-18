@@ -25,6 +25,7 @@ namespace GestAssoc.Modules.GestionAdhesions
 			// Enregistrement du RibbonTab
 			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionAdherentsMenuView));
 			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionGroupesMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionSaisonsMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationAdherentsView>(
@@ -39,6 +40,13 @@ namespace GestAssoc.Modules.GestionAdhesions
 			);
 			container.RegisterType<object, FormulaireGroupeView>(
 				ViewNames.FormulaireAdherent.ToString()
+			);
+
+			container.RegisterType<object, ConsultationSaisonsView>(
+				ViewNames.ConsultationSaisons.ToString()
+			);
+			container.RegisterType<object, FormulaireSaisonView>(
+				ViewNames.FormulaireSaison.ToString()
 			);
 		}
 	}

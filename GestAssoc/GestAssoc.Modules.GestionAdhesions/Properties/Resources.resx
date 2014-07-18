@@ -123,6 +123,9 @@
   <data name="Confirm_Grp_Suppression" xml:space="preserve">
     <value>Etes-vous sûr de vouloir supprimer ce groupe?</value>
   </data>
+  <data name="Confirm_Sai_Suppression" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer la saison suivante?</value>
+  </data>
   <data name="Err_Adh_AdresseObligatoire" xml:space="preserve">
     <value>Adresse obligatoire.</value>
   </data>
@@ -159,6 +162,12 @@
   <data name="Err_Grp_LibelleObligatoire" xml:space="preserve">
     <value>Nom obligatoire.</value>
   </data>
+  <data name="Err_Sai_AnneeDebutAnneeFin" xml:space="preserve">
+    <value>L'année de fin doit être supérieure à l'année de début.</value>
+  </data>
+  <data name="Err_Sai_Existe" xml:space="preserve">
+    <value>Cette saison existe déjà (année début + année fin).</value>
+  </data>
   <data name="Header_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
@@ -170,6 +179,9 @@
   </data>
   <data name="Header_Grp_List" xml:space="preserve">
     <value>Groupes</value>
+  </data>
+  <data name="Header_Sai_List" xml:space="preserve">
+    <value>Saisons</value>
   </data>
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
@@ -228,6 +240,15 @@
   <data name="Label_NbTotal" xml:space="preserve">
     <value>Nb. total : </value>
   </data>
+  <data name="Label_Sai_AnneeDebut" xml:space="preserve">
+    <value>Année début : </value>
+  </data>
+  <data name="Label_Sai_AnneeFin" xml:space="preserve">
+    <value>Année fin : </value>
+  </data>
+  <data name="Label_Sai_SaisonCourante" xml:space="preserve">
+    <value>Saison courante : </value>
+  </data>
   <data name="Log_Adh_AffichageMenu" xml:space="preserve">
     <value>Affichage du menu GestionAdherents</value>
   </data>
@@ -258,6 +279,21 @@
   <data name="Log_InitialisationModule" xml:space="preserve">
     <value>Initialisation du Module GestionAdhesions.</value>
   </data>
+  <data name="Log_Sai_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionSaisons</value>
+  </data>
+  <data name="Log_Sai_EnregistrementAnnule" xml:space="preserve">
+    <value>Saison non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Log_Sai_EnregistrementEffectue" xml:space="preserve">
+    <value>Saison enregistrée.</value>
+  </data>
+  <data name="Log_Sai_EnregistrementSupprime" xml:space="preserve">
+    <value>Saison supprimée.</value>
+  </data>
+  <data name="Log_Sai_NouvelleSaisonCourante" xml:space="preserve">
+    <value>Nouvelle saison courante :</value>
+  </data>
   <data name="MenuButton_Adh_List" xml:space="preserve">
     <value>Liste des adhérents</value>
   </data>
@@ -270,11 +306,20 @@
   <data name="MenuButton_Grp_New" xml:space="preserve">
     <value>Nouveau groupe</value>
   </data>
+  <data name="MenuButton_Sai_List" xml:space="preserve">
+    <value>Liste des saisons</value>
+  </data>
+  <data name="MenuButton_Sai_New" xml:space="preserve">
+    <value>Nouvelle saison</value>
+  </data>
   <data name="MenuHeader_Adh" xml:space="preserve">
     <value>Gestion des adhérents</value>
   </data>
   <data name="MenuHeader_Grp" xml:space="preserve">
     <value>Gestion des groupes</value>
+  </data>
+  <data name="MenuHeader_Sai" xml:space="preserve">
+    <value>Gestion des saisons</value>
   </data>
   <data name="Titre_Adh_Formulaire" xml:space="preserve">
     <value>Adhérent</value>
@@ -287,6 +332,12 @@
   </data>
   <data name="Titre_Grp_List" xml:space="preserve">
     <value>Groupes</value>
+  </data>
+  <data name="Titre_Sai_Formulaire" xml:space="preserve">
+    <value>Saison</value>
+  </data>
+  <data name="Titre_Sai_List" xml:space="preserve">
+    <value>Saisons</value>
   </data>
   <data name="Tooltip_Adh_Adresse" xml:space="preserve">
     <value>Adresse</value>
@@ -326,6 +377,9 @@
   </data>
   <data name="Tooltip_Enregistrer" xml:space="preserve">
     <value>Enregistrer</value>
+  </data>
+  <data name="Tooltip_Sai_SaisonCourante" xml:space="preserve">
+    <value>Définir comme saison courante</value>
   </data>
   <data name="Tooltip_Supprimer" xml:space="preserve">
     <value>Supprimer</value>

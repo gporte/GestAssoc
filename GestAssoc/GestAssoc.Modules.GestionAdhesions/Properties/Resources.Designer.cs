@@ -79,6 +79,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer la saison suivante?.
+        /// </summary>
+        public static string Confirm_Sai_Suppression {
+            get {
+                return ResourceManager.GetString("Confirm_Sai_Suppression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse obligatoire..
         /// </summary>
         public static string Err_Adh_AdresseObligatoire {
@@ -187,6 +196,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;année de fin doit être supérieure à l&apos;année de début..
+        /// </summary>
+        public static string Err_Sai_AnneeDebutAnneeFin {
+            get {
+                return ResourceManager.GetString("Err_Sai_AnneeDebutAnneeFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cette saison existe déjà (année début + année fin)..
+        /// </summary>
+        public static string Err_Sai_Existe {
+            get {
+                return ResourceManager.GetString("Err_Sai_Existe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Actions.
         /// </summary>
         public static string Header_Actions {
@@ -219,6 +246,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Header_Grp_List {
             get {
                 return ResourceManager.GetString("Header_Grp_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saisons.
+        /// </summary>
+        public static string Header_Sai_List {
+            get {
+                return ResourceManager.GetString("Header_Sai_List", resourceCulture);
             }
         }
         
@@ -394,6 +430,33 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Année début : .
+        /// </summary>
+        public static string Label_Sai_AnneeDebut {
+            get {
+                return ResourceManager.GetString("Label_Sai_AnneeDebut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Année fin : .
+        /// </summary>
+        public static string Label_Sai_AnneeFin {
+            get {
+                return ResourceManager.GetString("Label_Sai_AnneeFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison courante : .
+        /// </summary>
+        public static string Label_Sai_SaisonCourante {
+            get {
+                return ResourceManager.GetString("Label_Sai_SaisonCourante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents.
         /// </summary>
         public static string Log_Adh_AffichageMenu {
@@ -484,6 +547,51 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionSaisons.
+        /// </summary>
+        public static string Log_Sai_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_Sai_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_Sai_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_Sai_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison enregistrée..
+        /// </summary>
+        public static string Log_Sai_EnregistrementEffectue {
+            get {
+                return ResourceManager.GetString("Log_Sai_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison supprimée..
+        /// </summary>
+        public static string Log_Sai_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_Sai_EnregistrementSupprime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvelle saison courante :.
+        /// </summary>
+        public static string Log_Sai_NouvelleSaisonCourante {
+            get {
+                return ResourceManager.GetString("Log_Sai_NouvelleSaisonCourante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Liste des adhérents.
         /// </summary>
         public static string MenuButton_Adh_List {
@@ -520,6 +628,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des saisons.
+        /// </summary>
+        public static string MenuButton_Sai_List {
+            get {
+                return ResourceManager.GetString("MenuButton_Sai_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvelle saison.
+        /// </summary>
+        public static string MenuButton_Sai_New {
+            get {
+                return ResourceManager.GetString("MenuButton_Sai_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Gestion des adhérents.
         /// </summary>
         public static string MenuHeader_Adh {
@@ -534,6 +660,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string MenuHeader_Grp {
             get {
                 return ResourceManager.GetString("MenuHeader_Grp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gestion des saisons.
+        /// </summary>
+        public static string MenuHeader_Sai {
+            get {
+                return ResourceManager.GetString("MenuHeader_Sai", resourceCulture);
             }
         }
         
@@ -570,6 +705,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Titre_Grp_List {
             get {
                 return ResourceManager.GetString("Titre_Grp_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saison.
+        /// </summary>
+        public static string Titre_Sai_Formulaire {
+            get {
+                return ResourceManager.GetString("Titre_Sai_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saisons.
+        /// </summary>
+        public static string Titre_Sai_List {
+            get {
+                return ResourceManager.GetString("Titre_Sai_List", resourceCulture);
             }
         }
         
@@ -687,6 +840,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Tooltip_Enregistrer {
             get {
                 return ResourceManager.GetString("Tooltip_Enregistrer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Définir comme saison courante.
+        /// </summary>
+        public static string Tooltip_Sai_SaisonCourante {
+            get {
+                return ResourceManager.GetString("Tooltip_Sai_SaisonCourante", resourceCulture);
             }
         }
         
