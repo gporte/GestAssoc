@@ -468,4 +468,52 @@
   <data name="Tooltip_Sai_SaisonCourante" xml:space="preserve">
     <value>Set as current season</value>
   </data>
+  <data name="Confirm_Vil_Suppression" xml:space="preserve">
+    <value>Do you really want to delete this city?</value>
+  </data>
+  <data name="Err_Vil_CodePostalObligatoire" xml:space="preserve">
+    <value>ZIP Code required.</value>
+  </data>
+  <data name="Err_Vil_Existe" xml:space="preserve">
+    <value>This city already exists (name + zip code).</value>
+  </data>
+  <data name="Err_Vil_LibelleObligatoire" xml:space="preserve">
+    <value>Name required.</value>
+  </data>
+  <data name="Header_Vil_List" xml:space="preserve">
+    <value>Cities</value>
+  </data>
+  <data name="Label_Vil_CodePostal" xml:space="preserve">
+    <value>ZIP Code: </value>
+  </data>
+  <data name="Label_Vil_Nom" xml:space="preserve">
+    <value>Name: </value>
+  </data>
+  <data name="Log_Vil_AffichageMenu" xml:space="preserve">
+    <value>Loading of GestionVilles menu.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementAnnule" xml:space="preserve">
+    <value>City is invalid. Save cancelled.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementEffectue" xml:space="preserve">
+    <value>City successfully saved.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementSupprime" xml:space="preserve">
+    <value>City deleted.</value>
+  </data>
+  <data name="MenuButton_Vil_List" xml:space="preserve">
+    <value>All cities</value>
+  </data>
+  <data name="MenuButton_Vil_New" xml:space="preserve">
+    <value>Add city</value>
+  </data>
+  <data name="MenuHeader_Vil" xml:space="preserve">
+    <value>Cities management</value>
+  </data>
+  <data name="Titre_Vil_Formulaire" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Titre_Vil_List" xml:space="preserve">
+    <value>Cities</value>
+  </data>
 </root>

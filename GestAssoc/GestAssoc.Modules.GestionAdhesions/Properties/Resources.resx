@@ -129,6 +129,9 @@
   <data name="Confirm_Sai_Suppression" xml:space="preserve">
     <value>Etes-vous sûr de vouloir supprimer la saison suivante?</value>
   </data>
+  <data name="Confirm_Vil_Suppression" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer la ville suivante?</value>
+  </data>
   <data name="Err_Adh_AdresseObligatoire" xml:space="preserve">
     <value>Adresse obligatoire.</value>
   </data>
@@ -180,6 +183,15 @@
   <data name="Err_Sai_Existe" xml:space="preserve">
     <value>Cette saison existe déjà (année début + année fin).</value>
   </data>
+  <data name="Err_Vil_CodePostalObligatoire" xml:space="preserve">
+    <value>Code postal obligatoire.</value>
+  </data>
+  <data name="Err_Vil_Existe" xml:space="preserve">
+    <value>Cette ville existe déjà (nom + code postal).</value>
+  </data>
+  <data name="Err_Vil_LibelleObligatoire" xml:space="preserve">
+    <value>Nom obligatoire.</value>
+  </data>
   <data name="Header_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="Header_Statistiques" xml:space="preserve">
     <value>Stats</value>
+  </data>
+  <data name="Header_Vil_List" xml:space="preserve">
+    <value>Villes</value>
   </data>
   <data name="Label_Adh_Adresse" xml:space="preserve">
     <value>Adresse : </value>
@@ -303,8 +318,14 @@
   <data name="Label_Sai_SaisonCourante" xml:space="preserve">
     <value>Saison courante : </value>
   </data>
+  <data name="Label_Vil_CodePostal" xml:space="preserve">
+    <value>Code postal : </value>
+  </data>
+  <data name="Label_Vil_Nom" xml:space="preserve">
+    <value>Nom : </value>
+  </data>
   <data name="Log_Adh_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionAdherents</value>
+    <value>Affichage du menu GestionAdherents.</value>
   </data>
   <data name="Log_Adh_EnregistrementAnnule" xml:space="preserve">
     <value>Adhérent non valide. Enregistrement annulé.</value>
@@ -319,7 +340,7 @@
     <value>Affichage de la vue </value>
   </data>
   <data name="Log_Grp_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionGroupes</value>
+    <value>Affichage du menu GestionGroupes.</value>
   </data>
   <data name="Log_Grp_EnregistrementAnnule" xml:space="preserve">
     <value>Groupe non valide. Enregistrement annulé.</value>
@@ -334,7 +355,7 @@
     <value>Initialisation du Module GestionAdhesions.</value>
   </data>
   <data name="Log_Ins_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionInscriptions</value>
+    <value>Affichage du menu GestionInscriptions.</value>
   </data>
   <data name="Log_Ins_EnregistrementAnnule" xml:space="preserve">
     <value>Inscription non valide. Enregistrement annulé.</value>
@@ -349,7 +370,7 @@
     <value>Certificat médical remis et cotisation payée. L'inscription est validée.</value>
   </data>
   <data name="Log_Sai_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionSaisons</value>
+    <value>Affichage du menu GestionSaisons.</value>
   </data>
   <data name="Log_Sai_EnregistrementAnnule" xml:space="preserve">
     <value>Saison non valide. Enregistrement annulé.</value>
@@ -362,6 +383,18 @@
   </data>
   <data name="Log_Sai_NouvelleSaisonCourante" xml:space="preserve">
     <value>Nouvelle saison courante : </value>
+  </data>
+  <data name="Log_Vil_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionVilles.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementAnnule" xml:space="preserve">
+    <value>Ville non valide. Enregistrement annulé.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementEffectue" xml:space="preserve">
+    <value>Ville enregistrée.</value>
+  </data>
+  <data name="Log_Vil_EnregistrementSupprime" xml:space="preserve">
+    <value>Ville supprimée.</value>
   </data>
   <data name="MenuButton_Adh_List" xml:space="preserve">
     <value>Liste des adhérents</value>
@@ -387,6 +420,12 @@
   <data name="MenuButton_Sai_New" xml:space="preserve">
     <value>Nouvelle saison</value>
   </data>
+  <data name="MenuButton_Vil_List" xml:space="preserve">
+    <value>Liste des villes</value>
+  </data>
+  <data name="MenuButton_Vil_New" xml:space="preserve">
+    <value>Nouvelle ville</value>
+  </data>
   <data name="MenuHeader_Adh" xml:space="preserve">
     <value>Gestion des adhérents</value>
   </data>
@@ -398,6 +437,9 @@
   </data>
   <data name="MenuHeader_Sai" xml:space="preserve">
     <value>Gestion des saisons</value>
+  </data>
+  <data name="MenuHeader_Vil" xml:space="preserve">
+    <value>Gestion des villes</value>
   </data>
   <data name="Titre_Adh_Formulaire" xml:space="preserve">
     <value>Adhérent</value>
@@ -422,6 +464,12 @@
   </data>
   <data name="Titre_Sai_List" xml:space="preserve">
     <value>Saisons</value>
+  </data>
+  <data name="Titre_Vil_Formulaire" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="Titre_Vil_List" xml:space="preserve">
+    <value>Villes</value>
   </data>
   <data name="Tooltip_Adh_Adresse" xml:space="preserve">
     <value>Adresse</value>

@@ -97,6 +97,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer la ville suivante?.
+        /// </summary>
+        public static string Confirm_Vil_Suppression {
+            get {
+                return ResourceManager.GetString("Confirm_Vil_Suppression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adresse obligatoire..
         /// </summary>
         public static string Err_Adh_AdresseObligatoire {
@@ -250,6 +259,33 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code postal obligatoire..
+        /// </summary>
+        public static string Err_Vil_CodePostalObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Vil_CodePostalObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cette ville existe déjà (nom + code postal)..
+        /// </summary>
+        public static string Err_Vil_Existe {
+            get {
+                return ResourceManager.GetString("Err_Vil_Existe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom obligatoire..
+        /// </summary>
+        public static string Err_Vil_LibelleObligatoire {
+            get {
+                return ResourceManager.GetString("Err_Vil_LibelleObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Actions.
         /// </summary>
         public static string Header_Actions {
@@ -327,6 +363,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Header_Statistiques {
             get {
                 return ResourceManager.GetString("Header_Statistiques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Villes.
+        /// </summary>
+        public static string Header_Vil_List {
+            get {
+                return ResourceManager.GetString("Header_Vil_List", resourceCulture);
             }
         }
         
@@ -619,7 +664,25 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents.
+        ///   Recherche une chaîne localisée semblable à Code postal : .
+        /// </summary>
+        public static string Label_Vil_CodePostal {
+            get {
+                return ResourceManager.GetString("Label_Vil_CodePostal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom : .
+        /// </summary>
+        public static string Label_Vil_Nom {
+            get {
+                return ResourceManager.GetString("Label_Vil_Nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents..
         /// </summary>
         public static string Log_Adh_AffichageMenu {
             get {
@@ -664,7 +727,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionGroupes.
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionGroupes..
         /// </summary>
         public static string Log_Grp_AffichageMenu {
             get {
@@ -709,7 +772,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionInscriptions.
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionInscriptions..
         /// </summary>
         public static string Log_Ins_AffichageMenu {
             get {
@@ -754,7 +817,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionSaisons.
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionSaisons..
         /// </summary>
         public static string Log_Sai_AffichageMenu {
             get {
@@ -795,6 +858,42 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Log_Sai_NouvelleSaisonCourante {
             get {
                 return ResourceManager.GetString("Log_Sai_NouvelleSaisonCourante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionVilles..
+        /// </summary>
+        public static string Log_Vil_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_Vil_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville non valide. Enregistrement annulé..
+        /// </summary>
+        public static string Log_Vil_EnregistrementAnnule {
+            get {
+                return ResourceManager.GetString("Log_Vil_EnregistrementAnnule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville enregistrée..
+        /// </summary>
+        public static string Log_Vil_EnregistrementEffectue {
+            get {
+                return ResourceManager.GetString("Log_Vil_EnregistrementEffectue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville supprimée..
+        /// </summary>
+        public static string Log_Vil_EnregistrementSupprime {
+            get {
+                return ResourceManager.GetString("Log_Vil_EnregistrementSupprime", resourceCulture);
             }
         }
         
@@ -871,6 +970,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des villes.
+        /// </summary>
+        public static string MenuButton_Vil_List {
+            get {
+                return ResourceManager.GetString("MenuButton_Vil_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nouvelle ville.
+        /// </summary>
+        public static string MenuButton_Vil_New {
+            get {
+                return ResourceManager.GetString("MenuButton_Vil_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Gestion des adhérents.
         /// </summary>
         public static string MenuHeader_Adh {
@@ -903,6 +1020,15 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string MenuHeader_Sai {
             get {
                 return ResourceManager.GetString("MenuHeader_Sai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gestion des villes.
+        /// </summary>
+        public static string MenuHeader_Vil {
+            get {
+                return ResourceManager.GetString("MenuHeader_Vil", resourceCulture);
             }
         }
         
@@ -975,6 +1101,24 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Titre_Sai_List {
             get {
                 return ResourceManager.GetString("Titre_Sai_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ville.
+        /// </summary>
+        public static string Titre_Vil_Formulaire {
+            get {
+                return ResourceManager.GetString("Titre_Vil_Formulaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Villes.
+        /// </summary>
+        public static string Titre_Vil_List {
+            get {
+                return ResourceManager.GetString("Titre_Vil_List", resourceCulture);
             }
         }
         

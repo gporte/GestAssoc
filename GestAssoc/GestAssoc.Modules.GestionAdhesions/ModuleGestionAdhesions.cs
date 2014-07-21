@@ -17,16 +17,16 @@ namespace GestAssoc.Modules.GestionAdhesions
 			// trace
 			NotificationHelper.WriteLog(Resources.Log_InitialisationModule);
 
-			this.TabRegion = RibbonTabRegion.Inscriptions;
-
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionAdherentsMenuView));
-			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionGroupesMenuView));
-			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionSaisonsMenuView));
-			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(GestionInscriptionsMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionGroupesMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionAdherentsMenuView));			
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionInscriptionsMenuView));
+
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Referentiel), typeof(GestionSaisonsMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Referentiel), typeof(GestionVillesMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationAdherentsView>(
@@ -55,6 +55,13 @@ namespace GestAssoc.Modules.GestionAdhesions
 			);
 			container.RegisterType<object, FormulaireInscriptionView>(
 				ViewNames.FormulaireInscription.ToString()
+			);
+
+			container.RegisterType<object, ConsultationVillesView>(
+				ViewNames.ConsultationVilles.ToString()
+			);
+			container.RegisterType<object, FormulaireVilleView>(
+				ViewNames.FormulaireVille.ToString()
 			);
 		}
 	}

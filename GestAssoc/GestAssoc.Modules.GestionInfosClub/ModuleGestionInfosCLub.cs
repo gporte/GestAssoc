@@ -21,7 +21,7 @@ namespace GestAssoc.Modules.GestionInfosClub
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 			
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(this.GetRegionName(), typeof(InfosClubMenuView));
+			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Autres), typeof(InfosClubMenuView));
 
 			// Enregistrement des vues
 			container.RegisterType<object, InfosClubView>(ViewNames.ConsultationInfosClub.ToString());

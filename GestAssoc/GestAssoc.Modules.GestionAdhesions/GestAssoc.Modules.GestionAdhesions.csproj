@@ -128,15 +128,18 @@
     <Compile Include="Commands\DeleteGroupeCommand.cs" />
     <Compile Include="Commands\DeleteInscriptionCommand.cs" />
     <Compile Include="Commands\DeleteSaisonCommand.cs" />
+    <Compile Include="Commands\DeleteVilleCommand.cs" />
     <Compile Include="Commands\SaveAdherentCommand.cs" />
     <Compile Include="Commands\SaveGroupeCommand.cs" />
     <Compile Include="Commands\SaveInscriptionCommand.cs" />
     <Compile Include="Commands\SaveSaisonCommand.cs" />
+    <Compile Include="Commands\SaveVilleCommand.cs" />
     <Compile Include="Constantes\Enums.cs" />
     <Compile Include="Services\GestionAdherentsServices.cs" />
     <Compile Include="Services\GestionGroupesServices.cs" />
     <Compile Include="Services\GestionInscriptionServices.cs" />
     <Compile Include="Services\GestionSaisonsServices.cs" />
+    <Compile Include="Services\GestionVillesServices.cs" />
     <Compile Include="Services\IGestionAdherentsServices.cs" />
     <Compile Include="ModuleGestionAdhesions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -155,18 +158,22 @@
     <Compile Include="Services\IGestionGroupesServices.cs" />
     <Compile Include="Services\IGestionInscriptionsServices.cs" />
     <Compile Include="Services\IGestionSaisonsServices.cs" />
+    <Compile Include="Services\IGestionVillesServices.cs" />
     <Compile Include="ViewModels\ConsultationAdherentsViewModel.cs" />
     <Compile Include="ViewModels\ConsultationGroupesViewModel.cs" />
     <Compile Include="ViewModels\ConsultationInscriptionsViewModel.cs" />
     <Compile Include="ViewModels\ConsultationSaisonsViewModel.cs" />
+    <Compile Include="ViewModels\ConsultationVillesViewModel.cs" />
     <Compile Include="ViewModels\FormulaireAdherentViewModel.cs" />
     <Compile Include="ViewModels\FormulaireGroupeViewModel.cs" />
     <Compile Include="ViewModels\FormulaireInscriptionViewModel.cs" />
     <Compile Include="ViewModels\FormulaireSaisonViewModel.cs" />
+    <Compile Include="ViewModels\FormulaireVilleViewModel.cs" />
     <Compile Include="ViewModels\GestionAdherentsMenuViewModel.cs" />
     <Compile Include="ViewModels\GestionGroupesMenuViewModel.cs" />
     <Compile Include="ViewModels\GestionInscriptionsMenuViewModel.cs" />
     <Compile Include="ViewModels\GestionSaisonsMenuViewModel.cs" />
+    <Compile Include="ViewModels\GestionVillesMenuViewModel.cs" />
     <Compile Include="Views\ConsultationAdherentsView.xaml.cs">
       <DependentUpon>ConsultationAdherentsView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +185,9 @@
     </Compile>
     <Compile Include="Views\ConsultationSaisonsView.xaml.cs">
       <DependentUpon>ConsultationSaisonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultationVillesView.xaml.cs">
+      <DependentUpon>ConsultationVillesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormulaireAdherentView.xaml.cs">
       <DependentUpon>FormulaireAdherentView.xaml</DependentUpon>
@@ -191,6 +201,9 @@
     <Compile Include="Views\FormulaireSaisonView.xaml.cs">
       <DependentUpon>FormulaireSaisonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormulaireVilleView.xaml.cs">
+      <DependentUpon>FormulaireVilleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GestionAdherentsMenuView.xaml.cs">
       <DependentUpon>GestionAdherentsMenuView.xaml</DependentUpon>
     </Compile>
@@ -202,6 +215,9 @@
     </Compile>
     <Compile Include="Views\GestionSaisonsMenuView.xaml.cs">
       <DependentUpon>GestionSaisonsMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GestionVillesMenuView.xaml.cs">
+      <DependentUpon>GestionVillesMenuView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -244,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ConsultationVillesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\FormulaireAdherentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -260,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\FormulaireVilleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\GestionAdherentsMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -273,6 +297,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\GestionSaisonsMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GestionVillesMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

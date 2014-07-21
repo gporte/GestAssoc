@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Common.Constantes;
+using System;
 
 namespace GestAssoc.Common.BaseClasses
 {
@@ -11,14 +12,8 @@ namespace GestAssoc.Common.BaseClasses
 	
 	public abstract class ModuleBase
 	{
-		protected RibbonTabRegion TabRegion { get; set; }
-
-		protected ModuleBase() {
-			this.TabRegion = RibbonTabRegion.Autres;
-		}
-
-		protected string GetRegionName() {
-			switch (this.TabRegion) {
+		protected string GetRegionName(RibbonTabRegion tabRegion) {
+			switch (tabRegion) {
 				case RibbonTabRegion.Inscriptions:
 					return RegionNames.RibbonTabInscriptionsRegion;
 
