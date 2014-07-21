@@ -37,10 +37,10 @@ namespace GestAssoc.Modules.GestionAdhesions
 			);
 
 			container.RegisterType<object, ConsultationGroupesView>(
-				ViewNames.ConsultationAdherents.ToString()
+				ViewNames.ConsultationGroupes.ToString()
 			);
 			container.RegisterType<object, FormulaireGroupeView>(
-				ViewNames.FormulaireAdherent.ToString()
+				ViewNames.FormulaireGroupe.ToString()
 			);
 
 			container.RegisterType<object, ConsultationSaisonsView>(
