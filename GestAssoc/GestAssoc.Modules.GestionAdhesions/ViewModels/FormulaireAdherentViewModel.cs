@@ -6,6 +6,8 @@ using GestAssoc.Modules.GestionAdhesions.Commands;
 using GestAssoc.Modules.GestionAdhesions.Constantes;
 using GestAssoc.Modules.GestionAdhesions.Properties;
 using GestAssoc.Modules.GestionAdhesions.Services;
+using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
@@ -20,6 +22,9 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 		private IGestionAdherentsServices _services;
 		public ICommand SaveCmd { get; set; }
 		public ICommand CancelCmd { get; set; }
+
+		public ICommand RaiseModalAddVilleCmd { get; private set; }
+		public InteractionRequest<ModalAddVillViewModel> ModalAddVilleRequest { get; private set; }
 
 		#region Item property
 		private Adherent _item;
@@ -75,7 +80,7 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 				}
 
 				UIServices.SetBusyState();
-				this.Villes = this._services.GetAllVilles();
+				this.LoadVilles();
 				this.Sexes = this._services.GetSexes();
 			}
 			catch (Exception ex) {
@@ -83,11 +88,25 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 			}
 
 			this.SaveCmd = new SaveAdherentCommand();
-			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());			
+			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationAdherents.ToString());
+
+			this.RaiseModalAddVilleCmd = new DelegateCommand(this.OnRaiseModalAddVille);
+			this.ModalAddVilleRequest = new InteractionRequest<ModalAddVillViewModel>();
 
 			// trace
 			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireAdherent);
 		}
 		#endregion
+
+		private void LoadVilles() {
+			this.Villes = this._services.GetAllVilles();
+		}
+
+		private void OnRaiseModalAddVille() {
+			this.ModalAddVilleRequest.Raise(
+				new ModalAddVillViewModel() { Title="Ajout ville"},
+				(vm) => { this.LoadVilles(); }
+			);
+		}
 	}
 }

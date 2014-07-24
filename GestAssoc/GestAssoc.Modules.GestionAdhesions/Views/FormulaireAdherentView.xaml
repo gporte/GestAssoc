@@ -7,11 +7,25 @@
 			 xmlns:p="clr-namespace:GestAssoc.Modules.GestionAdhesions.Properties"
 			 xmlns:cu="clr-namespace:GestAssoc.Common.Utility;assembly=GestAssoc.Common"
 			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+			 xmlns:prism="http://www.codeplex.com/prism"
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:comInt="clr-namespace:GestAssoc.Common.InteractionRequests;assembly=GestAssoc.Common"
+			 xmlns:views="clr-namespace:GestAssoc.Modules.GestionAdhesions.Views"
 			 mc:Ignorable="d" 
 			 d:DesignHeight="500" d:DesignWidth="600">
 	<UserControl.Resources>
 		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />		
 	</UserControl.Resources>
+	
+	<i:Interaction.Triggers>
+		<prism:InteractionRequestTrigger SourceObject="{Binding Path=ModalAddVilleRequest, Mode=OneWay}">
+			<comInt:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+				<comInt:PopupWindowAction.WindowContent>
+					<views:FormulaireVilleView />
+				</comInt:PopupWindowAction.WindowContent>
+			</comInt:PopupWindowAction>
+		</prism:InteractionRequestTrigger>
+	</i:Interaction.Triggers>
 	
 	<DockPanel>
 		<Label DockPanel.Dock="Top" Content="{x:Static p:Resources.Titre_Adh_Formulaire}" HorizontalContentAlignment="Center" 
@@ -31,6 +45,7 @@
 
 		<Grid HorizontalAlignment="Center">
 			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
@@ -84,6 +99,7 @@
 					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Villes}" 
 					  SelectedItem="{Binding Path=Item.Ville}" />
+			<Button Grid.Row="4" Grid.Column="2" Command="{Binding Path=RaiseModalAddVilleCmd}" Width="25" />
 
 			<Label Grid.Row="5" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Adh_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
