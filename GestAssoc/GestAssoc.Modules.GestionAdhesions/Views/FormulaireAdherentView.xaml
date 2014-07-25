@@ -47,7 +47,6 @@
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 
 			<Grid.RowDefinitions>
@@ -95,11 +94,16 @@
 					 ToolTip="{x:Static p:Resources.Tooltip_Adh_Adresse}"/>
 
 			<Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.Label_Adh_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
-			<ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource cmbValue}"
+			<StackPanel Grid.Row="4" Grid.Column="1"  Orientation="Horizontal">
+				<ComboBox Style="{StaticResource cmbValue}"
 					  HorizontalAlignment="Left"
 					  ItemsSource="{Binding Path=Villes}" 
 					  SelectedItem="{Binding Path=Item.Ville}" />
-			<Button Grid.Row="4" Grid.Column="2" Command="{Binding Path=RaiseModalAddVilleCmd}" Width="25" />
+
+				<Button Grid.Row="4" Grid.Column="2" Command="{Binding Path=RaiseModalAddVilleCmd}" Margin="10,0,0,0" Style="{StaticResource btnCmd}">
+					<Image Source="pack://application:,,,/GestAssoc.Common;component/Images/btn_plus.png" />
+				</Button>
+			</StackPanel>			
 
 			<Label Grid.Row="5" Grid.Column="0" Grid.RowSpan="3" Content="{x:Static p:Resources.Label_Adh_Telephones}" Style="{StaticResource ResourceKey=lblNameGrid}"/>
 			<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">

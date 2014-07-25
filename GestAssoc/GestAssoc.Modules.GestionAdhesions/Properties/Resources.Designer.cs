@@ -880,7 +880,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ville enregistrée..
+        ///   Recherche une chaîne localisée semblable à Ville enregistrée : .
         /// </summary>
         public static string Log_Vil_EnregistrementEffectue {
             get {
@@ -889,7 +889,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ville supprimée..
+        ///   Recherche une chaîne localisée semblable à Ville supprimée : .
         /// </summary>
         public static string Log_Vil_EnregistrementSupprime {
             get {

@@ -391,10 +391,10 @@
     <value>Ville non valide. Enregistrement annulé.</value>
   </data>
   <data name="Log_Vil_EnregistrementEffectue" xml:space="preserve">
-    <value>Ville enregistrée.</value>
+    <value>Ville enregistrée : </value>
   </data>
   <data name="Log_Vil_EnregistrementSupprime" xml:space="preserve">
-    <value>Ville supprimée.</value>
+    <value>Ville supprimée : </value>
   </data>
   <data name="MenuButton_Adh_List" xml:space="preserve">
     <value>Liste des adhérents</value>

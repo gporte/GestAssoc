@@ -1,7 +1,10 @@
-﻿using GestAssoc.Model.Models;
+﻿using GestAssoc.Common.Utility;
+using GestAssoc.Model.Models;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using GlblRes = global::GestAssoc.Modules.GestionAdhesions.Properties.Resources;
 
 namespace GestAssoc.Modules.GestionAdhesions.Services
 {
@@ -25,22 +28,42 @@ namespace GestAssoc.Modules.GestionAdhesions.Services
 			return this._context.Villes.Find(idVille);
 		}
 
-		public void SaveVille(Ville itemToSave) {
-			Ville originalItem = null;
+		public bool SaveVille(Ville itemToSave) {
+			try {
+				UIServices.SetBusyState();
+				List<string> errorsList;
+				bool isValid = this.IsValidForSaving(itemToSave, out errorsList);
 
-			if (itemToSave.ID != Guid.Empty) {
-				originalItem = this._context.Villes.Find(itemToSave.ID);
-			}
+				if (!isValid) {
+					NotificationHelper.ShowUserNotification(string.Join(Environment.NewLine, errorsList.ToArray()));
+					errorsList.Insert(0, GlblRes.Log_Vil_EnregistrementAnnule);
+					NotificationHelper.WriteLogs(errorsList);
+				}
+				else {
+					Ville originalItem = null;
 
-			if (originalItem != null) { // item trouvé => update
-				this._context.Entry<Ville>(originalItem).CurrentValues.SetValues(itemToSave);				
+					if (itemToSave.ID != Guid.Empty) {
+						originalItem = this._context.Villes.Find(itemToSave.ID);
+					}
+
+					if (originalItem != null) { // item trouvé => update
+						this._context.Entry<Ville>(originalItem).CurrentValues.SetValues(itemToSave);
+					}
+					else { // item non trouvé => insert
+						itemToSave.ID = Guid.NewGuid();
+						this._context.Villes.Add(itemToSave);
+					}
+
+					this._context.SaveChanges();
+					NotificationHelper.WriteLog(GlblRes.Log_Vil_EnregistrementEffectue + itemToSave.ToString());
+				}
+
+				return isValid;
 			}
-			else { // item non trouvé => insert
-				itemToSave.ID = Guid.NewGuid();
-				this._context.Villes.Add(itemToSave);
+			catch (Exception ex) {
+				NotificationHelper.ShowError(ex);
+				return false;
 			}
-			
-			this._context.SaveChanges();
 		}
 
 		public void DeleteVille(Ville itemToDelete) {
@@ -68,6 +91,27 @@ namespace GestAssoc.Modules.GestionAdhesions.Services
 					this._context = null;
 				}
 			}
+		}
+
+		private bool IsValidForSaving(Ville itemToSave, out List<string> errorsList) {
+			errorsList = new List<string>();
+
+			if (string.IsNullOrWhiteSpace(itemToSave.Libelle)) {
+				errorsList.Add(GlblRes.Err_Vil_LibelleObligatoire);
+			}
+
+			if (string.IsNullOrWhiteSpace(itemToSave.CodePostal)) {
+				errorsList.Add(GlblRes.Err_Vil_CodePostalObligatoire);
+			}
+
+			// on vérifie qu'il n'y a pas déjà un item différent (ID différent) mais avec le même couple code postal+libellé
+			var itemExists = this.GetAllVilles().Count(x => x.ToString() == itemToSave.ToString() && x.ID != itemToSave.ID) > 0;
+
+			if (itemExists) {
+				errorsList.Add(GlblRes.Err_Vil_Existe);
+			}
+
+			return errorsList.Count == 0;
 		}
 	}
 }

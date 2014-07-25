@@ -47,10 +47,7 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 
 		// Actions
 		protected void OKAction() {
-			// TODO ajouter verifications
-			this._services.SaveVille(this.Item);
-			
-			if (this.HostWindow != null) {
+			if (this._services.SaveVille(this.Item) && this.HostWindow != null) {
 				this.HostWindow.Close();
 			}
 		}
