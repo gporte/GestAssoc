@@ -7,7 +7,7 @@ namespace GestAssoc.Modules.GestionInfosClub.Views
 	/// <summary>
 	/// Logique d'interaction pour InfosClubMenuView.xaml
 	/// </summary>
-	public partial class InfosClubMenuView : RibbonGroup, IRegionMemberLifetime
+	public partial class InfosClubMenuView : RibbonTab, IRegionMemberLifetime
 	{
 		public InfosClubMenuView() {
 			InitializeComponent();

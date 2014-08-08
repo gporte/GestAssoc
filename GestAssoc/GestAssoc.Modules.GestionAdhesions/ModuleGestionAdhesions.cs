@@ -1,4 +1,5 @@
 ﻿using GestAssoc.Common.BaseClasses;
+using GestAssoc.Common.Constantes;
 using GestAssoc.Common.Utility;
 using GestAssoc.Modules.GestionAdhesions.Constantes;
 using GestAssoc.Modules.GestionAdhesions.Properties;
@@ -21,12 +22,7 @@ namespace GestAssoc.Modules.GestionAdhesions
 			var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
 
 			// Enregistrement du RibbonTab
-			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionGroupesMenuView));
-			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionAdherentsMenuView));			
-			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Inscriptions), typeof(GestionInscriptionsMenuView));
-
-			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Referentiel), typeof(GestionSaisonsMenuView));
-			regionManager.RegisterViewWithRegion(this.GetRegionName(RibbonTabRegion.Referentiel), typeof(GestionVillesMenuView));
+			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(GestionAdhesionMenuView));
 
 			// Enregistrement des vues 
 			container.RegisterType<object, ConsultationAdherentsView>(

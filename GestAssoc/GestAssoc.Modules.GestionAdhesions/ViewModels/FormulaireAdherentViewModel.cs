@@ -104,7 +104,7 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 
 		private void OnRaiseModalAddVille() {
 			this.ModalAddVilleRequest.Raise(
-				new ModalAddVillViewModel() { Title="Ajout ville"},
+				new ModalAddVillViewModel(),
 				(vm) => { this.LoadVilles(); }
 			);
 		}

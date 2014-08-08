@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Common.InteractionRequests;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
+using GestAssoc.Modules.GestionAdhesions.Properties;
 using GestAssoc.Modules.GestionAdhesions.Services;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
@@ -22,6 +23,8 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 		#endregion
 
 		public ModalAddVillViewModel() {
+			this.Title = Resources.Titre_Vil_Formulaire;
+
 			// enregistrement et initialisation des services
 			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IGestionVillesServices, GestionVillesServices>();
 

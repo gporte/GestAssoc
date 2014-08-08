@@ -2,10 +2,10 @@
 using GestAssoc.Common.Commands;
 using GestAssoc.Common.Utility;
 using GestAssoc.Model.Models;
-using GestAssoc.Modules.GestionAdhesions.Commands;
 using GestAssoc.Modules.GestionAdhesions.Constantes;
 using GestAssoc.Modules.GestionAdhesions.Properties;
 using GestAssoc.Modules.GestionAdhesions.Services;
+using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 using System;
@@ -52,12 +52,21 @@ namespace GestAssoc.Modules.GestionAdhesions.ViewModels
 				}
 			}
 
-			this.SaveCmd = new SaveVilleCommand();
+			this.SaveCmd = new DelegateCommand<Ville>(
+				(vil) => this.ExecuteSave(vil)
+			);
+
 			this.CancelCmd = new ShowViewCommand(ViewNames.ConsultationVilles.ToString());
 
 			// trace
 			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.FormulaireVille.ToString());
 		}
 		#endregion
+
+		private void ExecuteSave(Ville ville) {
+			if (this._services.SaveVille(ville)) {
+				new ShowViewCommand(ViewNames.ConsultationVilles.ToString()).Execute(null);
+			}
+		}
 	}
 }

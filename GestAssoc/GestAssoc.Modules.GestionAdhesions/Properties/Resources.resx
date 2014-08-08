@@ -324,9 +324,6 @@
   <data name="Label_Vil_Nom" xml:space="preserve">
     <value>Nom : </value>
   </data>
-  <data name="Log_Adh_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionAdherents.</value>
-  </data>
   <data name="Log_Adh_EnregistrementAnnule" xml:space="preserve">
     <value>Adhérent non valide. Enregistrement annulé.</value>
   </data>
@@ -336,11 +333,11 @@
   <data name="Log_Adh_EnregistrementSupprime" xml:space="preserve">
     <value>Adhérent supprimé.</value>
   </data>
+  <data name="Log_AffichageMenu" xml:space="preserve">
+    <value>Affichage du menu GestionAdhesions.</value>
+  </data>
   <data name="Log_AffichageVue" xml:space="preserve">
     <value>Affichage de la vue </value>
-  </data>
-  <data name="Log_Grp_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionGroupes.</value>
   </data>
   <data name="Log_Grp_EnregistrementAnnule" xml:space="preserve">
     <value>Groupe non valide. Enregistrement annulé.</value>
@@ -354,9 +351,6 @@
   <data name="Log_InitialisationModule" xml:space="preserve">
     <value>Initialisation du Module GestionAdhesions.</value>
   </data>
-  <data name="Log_Ins_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionInscriptions.</value>
-  </data>
   <data name="Log_Ins_EnregistrementAnnule" xml:space="preserve">
     <value>Inscription non valide. Enregistrement annulé.</value>
   </data>
@@ -369,9 +363,6 @@
   <data name="Log_Ins_StatutValide" xml:space="preserve">
     <value>Certificat médical remis et cotisation payée. L'inscription est validée.</value>
   </data>
-  <data name="Log_Sai_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionSaisons.</value>
-  </data>
   <data name="Log_Sai_EnregistrementAnnule" xml:space="preserve">
     <value>Saison non valide. Enregistrement annulé.</value>
   </data>
@@ -383,9 +374,6 @@
   </data>
   <data name="Log_Sai_NouvelleSaisonCourante" xml:space="preserve">
     <value>Nouvelle saison courante : </value>
-  </data>
-  <data name="Log_Vil_AffichageMenu" xml:space="preserve">
-    <value>Affichage du menu GestionVilles.</value>
   </data>
   <data name="Log_Vil_EnregistrementAnnule" xml:space="preserve">
     <value>Ville non valide. Enregistrement annulé.</value>
@@ -440,6 +428,15 @@
   </data>
   <data name="MenuHeader_Vil" xml:space="preserve">
     <value>Gestion des villes</value>
+  </data>
+  <data name="RibbonGroupHeader_Adhesions" xml:space="preserve">
+    <value>Adhésions</value>
+  </data>
+  <data name="RibbonGroupHeader_Referentiel" xml:space="preserve">
+    <value>Référentiel</value>
+  </data>
+  <data name="RibbonTabHeader" xml:space="preserve">
+    <value>Adhésions</value>
   </data>
   <data name="Titre_Adh_Formulaire" xml:space="preserve">
     <value>Adhérent</value>

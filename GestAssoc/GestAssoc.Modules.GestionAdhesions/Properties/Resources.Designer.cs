@@ -682,15 +682,6 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdherents..
-        /// </summary>
-        public static string Log_Adh_AffichageMenu {
-            get {
-                return ResourceManager.GetString("Log_Adh_AffichageMenu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Adhérent non valide. Enregistrement annulé..
         /// </summary>
         public static string Log_Adh_EnregistrementAnnule {
@@ -718,20 +709,20 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionAdhesions..
+        /// </summary>
+        public static string Log_AffichageMenu {
+            get {
+                return ResourceManager.GetString("Log_AffichageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affichage de la vue .
         /// </summary>
         public static string Log_AffichageVue {
             get {
                 return ResourceManager.GetString("Log_AffichageVue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionGroupes..
-        /// </summary>
-        public static string Log_Grp_AffichageMenu {
-            get {
-                return ResourceManager.GetString("Log_Grp_AffichageMenu", resourceCulture);
             }
         }
         
@@ -772,15 +763,6 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionInscriptions..
-        /// </summary>
-        public static string Log_Ins_AffichageMenu {
-            get {
-                return ResourceManager.GetString("Log_Ins_AffichageMenu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Inscription non valide. Enregistrement annulé..
         /// </summary>
         public static string Log_Ins_EnregistrementAnnule {
@@ -817,15 +799,6 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionSaisons..
-        /// </summary>
-        public static string Log_Sai_AffichageMenu {
-            get {
-                return ResourceManager.GetString("Log_Sai_AffichageMenu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Saison non valide. Enregistrement annulé..
         /// </summary>
         public static string Log_Sai_EnregistrementAnnule {
@@ -858,15 +831,6 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string Log_Sai_NouvelleSaisonCourante {
             get {
                 return ResourceManager.GetString("Log_Sai_NouvelleSaisonCourante", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affichage du menu GestionVilles..
-        /// </summary>
-        public static string Log_Vil_AffichageMenu {
-            get {
-                return ResourceManager.GetString("Log_Vil_AffichageMenu", resourceCulture);
             }
         }
         
@@ -1029,6 +993,33 @@ namespace GestAssoc.Modules.GestionAdhesions.Properties {
         public static string MenuHeader_Vil {
             get {
                 return ResourceManager.GetString("MenuHeader_Vil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhésions.
+        /// </summary>
+        public static string RibbonGroupHeader_Adhesions {
+            get {
+                return ResourceManager.GetString("RibbonGroupHeader_Adhesions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Référentiel.
+        /// </summary>
+        public static string RibbonGroupHeader_Referentiel {
+            get {
+                return ResourceManager.GetString("RibbonGroupHeader_Referentiel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhésions.
+        /// </summary>
+        public static string RibbonTabHeader {
+            get {
+                return ResourceManager.GetString("RibbonTabHeader", resourceCulture);
             }
         }
         

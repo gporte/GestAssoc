@@ -5,16 +5,18 @@ using System.Windows.Controls.Ribbon;
 namespace GestAssoc.Modules.GestionAdhesions.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour GestionVillesMenuView.xaml
+	/// Logique d'interaction pour GestionAdhesionMenuView.xaml
 	/// </summary>
-	public partial class GestionVillesMenuView : RibbonGroup, IRegionMemberLifetime
+	public partial class GestionAdhesionMenuView : RibbonTab, IRegionMemberLifetime
 	{
-		public GestionVillesMenuView() {
+		public GestionAdhesionMenuView()
+		{
 			InitializeComponent();
-			this.DataContext = new GestionVillesMenuViewModel();
+			this.DataContext = new GestionAdhesionMenuViewModel();
 		}
 
-		public bool KeepAlive {
+		public bool KeepAlive
+		{
 			get { return true; }
 		}
 	}
