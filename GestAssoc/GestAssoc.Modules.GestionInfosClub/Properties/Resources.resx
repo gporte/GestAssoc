@@ -195,4 +195,7 @@
   <data name="Err_AdresseObligatoire" xml:space="preserve">
     <value>Adresse obligatoire.</value>
   </data>
+  <data name="Err_CodePostalObligatoire" xml:space="preserve">
+    <value>Code postal obligatoire.</value>
+  </data>
 </root>

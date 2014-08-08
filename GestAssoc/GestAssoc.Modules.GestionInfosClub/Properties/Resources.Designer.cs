@@ -70,6 +70,15 @@ namespace GestAssoc.Modules.GestionInfosClub.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code postal obligatoire..
+        /// </summary>
+        public static string Err_CodePostalObligatoire {
+            get {
+                return ResourceManager.GetString("Err_CodePostalObligatoire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Nom obligatoire..
         /// </summary>
         public static string Err_NomObligatoire {

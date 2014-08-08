@@ -30,7 +30,6 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 
 			var itemToSave = parameter as InfosClub;
 			List<string> errorsList;
-			itemToSave.Ville_ID = itemToSave.Ville.ID;
 
 			try {
 				if (this.IsValidForSaving(itemToSave, out errorsList)) {
@@ -64,8 +63,12 @@ namespace GestAssoc.Modules.GestionInfosClub.Commands
 				errorsList.Add(GlblRes.Err_AdresseObligatoire);
 			}
 
-			if (itemToSave.Ville == null) {
+			if (string.IsNullOrWhiteSpace(itemToSave.Ville)) {
 				errorsList.Add(GlblRes.Err_VilleObligatoire);
+			}
+
+			if (string.IsNullOrWhiteSpace(itemToSave.CodePostal)) {
+				errorsList.Add(GlblRes.Err_CodePostalObligatoire);
 			}
 
 			return errorsList.Count == 0;

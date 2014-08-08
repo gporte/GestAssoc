@@ -51,7 +51,7 @@
 			<Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=Item.Adresse}" />
 
 			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}" />
-			<Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=Item.Ville}" />
+			<Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=Item.LibelleVille}" />
 
 			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource ResourceKey=lblNameGrid}" />
 			<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Item.Telephone}" />

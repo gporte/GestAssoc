@@ -16,11 +16,16 @@ namespace GestAssoc.Model.Models
 		public string SiteWeb { get; set; }
 		public string NumAPS { get; set; }
 		public string NumFederation { get; set; }
-		public Nullable<System.Guid> Ville_ID { get; set; }
-		public virtual Ville Ville { get; set; }
+		public string Ville { get; set; }
+		public string CodePostal { get; set; }
+
 
 		public string Siret {
 			get { return string.Format("{0} - {1}", this.Siren, this.NIC); }
+		}
+
+		public string LibelleVille {
+			get { return string.Format("{0} - {1}", this.CodePostal, this.Ville); }
 		}
 	}
 }

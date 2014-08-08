@@ -51,9 +51,13 @@
 			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Item.Adresse}" Style="{StaticResource tbxValue}" />
 
 			<Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.Label_Ville}" Style="{StaticResource ResourceKey=lblNameGrid}" />
-			<ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource cmbValue}" 
-					  ItemsSource="{Binding Path=Villes}" 
-					  SelectedItem="{Binding Path=Item.Ville}" />
+			<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+				<wpf:MaskedTextBox Mask="00000" HorizontalContentAlignment="Right"
+								   Text="{Binding Path=Item.CodePostal}" 
+								   Style="{StaticResource tbxValueLittle}" />
+				<TextBlock Text=" - " Margin="20,5,20,0" Width="10" />
+				<TextBox Text="{Binding Path=Item.Ville}" CharacterCasing="Upper" Style="{StaticResource tbxValueMedium}" />
+			</StackPanel>
 
 			<Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.Label_Telephone}" Style="{StaticResource ResourceKey=lblNameGrid}" />
 			<wpf:MaskedTextBox Grid.Row="3" Grid.Column="1" 
