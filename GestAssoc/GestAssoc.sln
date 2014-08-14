@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Model", "GestAsso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.GestionAdhesions", "GestAssoc.Modules.GestionAdhesions\GestAssoc.Modules.GestionAdhesions.csproj", "{CED0653C-2353-42AB-A275-7D7C2C286CEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestAssoc.Modules.DataImport", "GestAssoc.Modules.DataImport\GestAssoc.Modules.DataImport.csproj", "{44588671-49CB-4C48-ACCC-7068F609E387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{CED0653C-2353-42AB-A275-7D7C2C286CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CED0653C-2353-42AB-A275-7D7C2C286CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CED0653C-2353-42AB-A275-7D7C2C286CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44588671-49CB-4C48-ACCC-7068F609E387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44588671-49CB-4C48-ACCC-7068F609E387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44588671-49CB-4C48-ACCC-7068F609E387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44588671-49CB-4C48-ACCC-7068F609E387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DA40CED7-D368-41BE-B6B3-33143C5A1BAB} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 		{CED0653C-2353-42AB-A275-7D7C2C286CEA} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
+		{44588671-49CB-4C48-ACCC-7068F609E387} = {513B2289-9BD1-4B82-B0D5-073158B0BE93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.2.1.505.2\lib\NET35

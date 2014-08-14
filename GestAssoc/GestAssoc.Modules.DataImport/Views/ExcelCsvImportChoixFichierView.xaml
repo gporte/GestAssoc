@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="GestAssoc.Modules.DataImport.Views.ExcelCsvImportChoixFichierView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:p="clr-namespace:GestAssoc.Modules.DataImport.Properties"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+	</UserControl.Resources>
+	
+	<DockPanel LastChildFill="True" Margin="5,5,5,5">
+		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
+			   Style="{StaticResource titreUC}"
+			   Content="{x:Static p:Resources.Titre_ExcelCsvChoixFichier}" />
+		
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="300" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Lb_ExcelCsvImport_Fichier}" />
+			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
+			<Button Grid.Row="0" Grid.Column="2" Command="{Binding Path=}" Style="{StaticResource btnCmd}">
+				<Label Content="..." />
+			</Button>
+		</Grid>
+	</DockPanel>
+</UserControl>
