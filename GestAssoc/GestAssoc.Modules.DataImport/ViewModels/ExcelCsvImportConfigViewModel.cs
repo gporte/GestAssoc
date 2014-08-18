@@ -10,23 +10,16 @@ using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Linq;
+using GestAssoc.Common.Commands;
 
 namespace GestAssoc.Modules.DataImport.ViewModels
 {
 	public class ExcelCsvImportConfigViewModel : ViewModelBase
 	{
 		private IExcelCsvImportService _services;
-		
-		#region FilePathProperty
 		private string _filePath;
-		public string FilePath {
-			get { return this._filePath; }
-			set {
-				this.SetProperty(ref this._filePath, value);
-			}
-		}
-		#endregion
-
+		
 		#region ColumnsMapping property
 		private ObservableCollection<ColumnMapping> _columnsMapping;
 		public ObservableCollection<ColumnMapping> ColumnsMapping {
@@ -47,11 +40,33 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 		}
 		#endregion
 
+		#region ColumnNames property
+		private ObservableCollection<string> _columnNames;
+		public ObservableCollection<string> ColumnNames {
+			get { return this._columnNames; }
+			set {
+				this.SetProperty(ref this._columnNames, value);
+			}
+		}
+		#endregion
+
+		#region SelectedSheetName property
+		private string _selectedSheetName;
+		public string SelectedSheetName {
+			get { return this._selectedSheetName; }
+			set {
+				this.SetProperty(ref this._selectedSheetName, value);
+			}
+		}
+		#endregion
+
 		#region Commands
 		public ICommand ReadFileCmd { get; set; }
 		#endregion
 
-		public ExcelCsvImportConfigViewModel() {
+		public ExcelCsvImportConfigViewModel(string filePath) {
+			this._filePath = filePath;
+
 			// enregistrement et initialisation des services
 			ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterType<IExcelCsvImportService, ExcelCsvImportService>();
 			this._services = ServiceLocator
@@ -59,17 +74,25 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 				.Resolve<IExcelCsvImportService>();
 
 			this.ColumnsMapping = new ObservableCollection<ColumnMapping>(this._services.InitColMapping());
+			this.WorkSheetNames = new ObservableCollection<string>(this._services.GetSheetNames(this._filePath));
+			this.SelectedSheetName = this.WorkSheetNames.First();
 
 			this.ReadFileCmd = new DelegateCommand(this.ExecuteReadFileCmd);
 
 			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelCsvConfigImport.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelCsvImportConfig.ToString());
 		}
 
 		private void ExecuteReadFileCmd() {
-			var filePath = @"C:\Users\gp.HARDIS\Downloads\INSCRIPTION 2014.xls";
+			var adh = this._services.ReadAdherents(this._filePath, this.SelectedSheetName, new List<ColumnMapping>(this.ColumnsMapping));
 
-			var adh = this._services.ReadAdherents(filePath, "", new List<ColumnMapping>(this.ColumnsMapping));
+			if (adh != null && adh.Count() > 0) {
+				var cmd = new ShowViewCommandWithParameter(ViewNames.ExcelCsvImportResult.ToString());
+				cmd.Execute(adh);
+			}
+			else {
+				NotificationHelper.ShowUserNotification("Impossible d'importer les données.");
+			}
 		}
 	}
 }

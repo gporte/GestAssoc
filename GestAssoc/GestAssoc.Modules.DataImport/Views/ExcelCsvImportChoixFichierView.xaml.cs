@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.Prism.Regions;
+﻿using GestAssoc.Modules.DataImport.ViewModels;
+using Microsoft.Practices.Prism.Regions;
+using Microsoft.Win32;
 using System.Windows.Controls;
 
 namespace GestAssoc.Modules.DataImport.Views
@@ -10,10 +12,21 @@ namespace GestAssoc.Modules.DataImport.Views
 	{
 		public ExcelCsvImportChoixFichierView() {
 			InitializeComponent();
+			this.DataContext = new ExcelCsvImportChoixFichierViewModel();
 		}
 
 		public bool KeepAlive {
 			get { return true; }
+		}
+
+		private void Button_Click(object sender, System.Windows.RoutedEventArgs e) {
+			var dialog = new OpenFileDialog();
+			dialog.Filter = "Excel (*.xls, *.xlsx)|*.xls;*.xlsx|CSV (*.csv)|*.csv";
+			//dialog.RestoreDirectory();
+
+			if (dialog.ShowDialog().Value) {
+				this.tbxFilePath.Text = dialog.FileName;
+			}
 		}
 	}
 }

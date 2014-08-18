@@ -10,5 +10,6 @@ namespace GestAssoc.Modules.DataImport.Services
 		IEnumerable<Adherent> ReadAdherents(string filePath, string sheetName, List<ColumnMapping> colMapping);
 		IEnumerable<ColumnMapping> InitColMapping();
 		IEnumerable<string> GetSheetNames(string filePath);
+		IEnumerable<string> GetColumnsNames(string filePath, string worksheetName);
 	}
 }

@@ -25,7 +25,9 @@ namespace GestAssoc.Modules.DataImport
 			regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(DataImportMenuView));
 
 			// Enregistrement des vues
-			container.RegisterType<object, ExcelCsvImportConfigView>(ViewNames.ExcelCsvConfigImport.ToString());
+			container.RegisterType<object, ExcelCsvImportChoixFichierView>(ViewNames.ExcelCsvImportChoixFichier.ToString());
+			container.RegisterType<object, ExcelCsvImportConfigView>(ViewNames.ExcelCsvImportConfig.ToString());
+			container.RegisterType<object, ExcelCsvImportResultView>(ViewNames.ExcelCsvImportResult.ToString());
 		}
 	}
 }

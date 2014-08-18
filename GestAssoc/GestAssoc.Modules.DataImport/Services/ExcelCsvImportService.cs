@@ -19,11 +19,11 @@ namespace GestAssoc.Modules.DataImport.Services
 
 			var ws = excel.Worksheet<Adherent>(sheetName);
 
-			return new ObservableCollection<Adherent>(ws.ToList());
+			return new List<Adherent>(ws.ToList());
 		}
 
 		public IEnumerable<ColumnMapping> InitColMapping() {
-			return new ObservableCollection<ColumnMapping> 
+			return new List<ColumnMapping> 
 			{
 				new ColumnMapping(ColumnName.Nom, string.Empty),
 				new ColumnMapping(ColumnName.Prenom, string.Empty),
@@ -44,6 +44,11 @@ namespace GestAssoc.Modules.DataImport.Services
 		public IEnumerable<string> GetSheetNames(string filePath) {
 			var excel = new ExcelQueryFactory(filePath);
 			return excel.GetWorksheetNames();
+		}
+
+		public IEnumerable<string> GetColumnsNames(string filePath, string worksheetName) {
+			var excel = new ExcelQueryFactory(filePath);
+			return excel.GetColumnNames(worksheetName);
 		}
 	}
 }

@@ -7,14 +7,16 @@
 			 d:DesignHeight="300" d:DesignWidth="300">
 	<Grid>
 		<StackPanel Orientation="Vertical">
-		<DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path=ColumnsMapping}" AutoGenerateColumns="False">
-			<DataGrid.Columns>
-				<DataGridTextColumn Header="Donnée" IsReadOnly="True" Binding="{Binding Path=DataName}" />
-				<DataGridTextColumn Header="Colonne" IsReadOnly="False" Binding="{Binding Path=ColumnHeader}" />
-			</DataGrid.Columns>
-		</DataGrid>
+			<ComboBox ItemsSource="{Binding Path=WorkSheetNames}" SelectedItem="{Binding Path=SelectedSheetName}" />
+			
+			<DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path=ColumnsMapping}" AutoGenerateColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Donnée" IsReadOnly="True" Binding="{Binding Path=DataName}" />
+					<DataGridTextColumn Header="Colonne" IsReadOnly="False" Binding="{Binding Path=ColumnHeader}" />
+				</DataGrid.Columns>
+			</DataGrid>
 
-		<Button Command="{Binding Path=ReadFileCmd}">GO</Button>
+			<Button Command="{Binding Path=ReadFileCmd}">GO</Button>
 		</StackPanel>
 	</Grid>
 </UserControl>

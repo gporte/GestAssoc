@@ -24,12 +24,20 @@
 			
 			<Grid.RowDefinitions>
 				<RowDefinition Height="auto" />
+				<RowDefinition />
+				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
 
 			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Lb_ExcelCsvImport_Fichier}" />
-			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
-			<Button Grid.Row="0" Grid.Column="2" Command="{Binding Path=}" Style="{StaticResource btnCmd}">
-				<Label Content="..." />
+			<TextBox Name="tbxFilePath" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
+			<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ResourceKey=btnCmd}" Click="Button_Click">
+				...
+			</Button>
+
+			<Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ResourceKey=btnNavForm}"
+					Command="{Binding Path=GoToConfigCmd}"
+					CommandParameter="{Binding ElementName=tbxFilePath, Path=Text}">
+				Suivant
 			</Button>
 		</Grid>
 	</DockPanel>

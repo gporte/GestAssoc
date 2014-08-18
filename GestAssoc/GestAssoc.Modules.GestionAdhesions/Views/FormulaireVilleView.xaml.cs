@@ -15,7 +15,7 @@ namespace GestAssoc.Modules.GestionAdhesions.Views
 		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext) {
-			var itemId = navigationContext.Parameters["ItemId"] ?? string.Empty;
+			var itemId = navigationContext.Parameters["Param"] ?? string.Empty;
 			var parseItemId = Guid.Empty;
 			Guid.TryParse(itemId.ToString(), out parseItemId);
 

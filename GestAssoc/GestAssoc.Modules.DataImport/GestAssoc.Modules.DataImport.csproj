@@ -117,7 +117,9 @@
     <Compile Include="Services\IExcelCsvImportService.cs" />
     <Compile Include="Util\ColumnMapping.cs" />
     <Compile Include="ViewModels\DataImportMenuViewModel.cs" />
+    <Compile Include="ViewModels\ExcelCsvImportChoixFichierViewModel.cs" />
     <Compile Include="ViewModels\ExcelCsvImportConfigViewModel.cs" />
+    <Compile Include="ViewModels\ExcelCsvImportResultViewModel.cs" />
     <Compile Include="Views\DataImportMenuView.xaml.cs">
       <DependentUpon>DataImportMenuView.xaml</DependentUpon>
     </Compile>
@@ -126,6 +128,9 @@
     </Compile>
     <Compile Include="Views\ExcelCsvImportConfigView.xaml.cs">
       <DependentUpon>ExcelCsvImportConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExcelCsvImportResultView.xaml.cs">
+      <DependentUpon>ExcelCsvImportResultView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -160,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ExcelCsvImportConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExcelCsvImportResultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

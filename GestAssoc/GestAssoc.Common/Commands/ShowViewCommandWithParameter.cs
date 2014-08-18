@@ -24,16 +24,17 @@ namespace GestAssoc.Common.Commands
 			remove { CommandManager.RequerySuggested -= value; }
 		}
 
-		public void Execute(object itemId) {
-			if (itemId != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
+		public void Execute(object param) {
+			if (param != null && !string.IsNullOrWhiteSpace(this.ViewName)) {
 				var regionManager = (RegionManager)ServiceLocator.Current.GetInstance<IRegionManager>();
 
-				var q = new NavigationParameters();
-				q.Add("ItemId", itemId.ToString());
+				var parameters = new NavigationParameters();
+				parameters.Add("Param", param);
 
 				regionManager.RequestNavigate(
 					RegionNames.ContentRegion,
-					new Uri(this.ViewName + q.ToString(), UriKind.Relative)
+					new Uri(this.ViewName, UriKind.Relative),
+					parameters
 				);
 			}
 		}
