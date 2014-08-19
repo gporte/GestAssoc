@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Lb_ExcelCsvImport_Browse" xml:space="preserve">
+    <value>...</value>
+  </data>
   <data name="Lb_ExcelCsvImport_Fichier" xml:space="preserve">
     <value>Fichier : </value>
+  </data>
+  <data name="Lb_ExcelCsvImport_Suivant" xml:space="preserve">
+    <value>Suivant</value>
   </data>
   <data name="Log_AffichageMenu" xml:space="preserve">
     <value>Affichage du menu DataImport.</value>

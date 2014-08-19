@@ -1,4 +1,4 @@
-﻿using GestAssoc.Model.Models;
+﻿using GestAssoc.Modules.DataImport.ImportModel;
 using GestAssoc.Modules.DataImport.ViewModels;
 using Microsoft.Practices.Prism.Regions;
 using System;
@@ -29,7 +29,7 @@ namespace GestAssoc.Modules.DataImport.Views
 		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext) {
-			var adherents = (IEnumerable<Adherent>)navigationContext.Parameters["Param"];
+			var adherents = (IEnumerable<ImportAdherent>)navigationContext.Parameters["Param"];
 
 			if (adherents != null) {
 				this.DataContext = new ExcelCsvImportResultViewModel(adherents);

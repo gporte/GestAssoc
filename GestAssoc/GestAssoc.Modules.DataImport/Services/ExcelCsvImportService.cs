@@ -1,25 +1,24 @@
-﻿using GestAssoc.Model.Models;
-using GestAssoc.Modules.DataImport.Constantes;
+﻿using GestAssoc.Modules.DataImport.Constantes;
+using GestAssoc.Modules.DataImport.ImportModel;
 using GestAssoc.Modules.DataImport.Util;
 using LinqToExcel;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace GestAssoc.Modules.DataImport.Services
 {
 	public class ExcelCsvImportService : IExcelCsvImportService
 	{
-		public IEnumerable<Adherent> ReadAdherents(string filePath, string sheetName, List<ColumnMapping> colMapping) {
+		public IEnumerable<ImportAdherent> ReadAdherents(string filePath, string sheetName, List<ColumnMapping> colMapping) {
 			var excel = new ExcelQueryFactory(filePath);
 
-			excel.AddMapping<Adherent>(x => x.Nom, colMapping.FirstOrDefault(y => y.DataName == ColumnName.Nom).ColumnHeader);
-			excel.AddMapping<Adherent>(x => x.Prenom, colMapping.FirstOrDefault(y => y.DataName == ColumnName.Prenom).ColumnHeader);
-			excel.AddMapping<Adherent>(x => x.DateNaissance, colMapping.FirstOrDefault(y => y.DataName == ColumnName.DateNaissance).ColumnHeader);
+			excel.AddMapping<ImportAdherent>(x => x.Nom, colMapping.FirstOrDefault(y => y.DataName == ColumnName.Nom).ColumnHeader);
+			excel.AddMapping<ImportAdherent>(x => x.Prenom, colMapping.FirstOrDefault(y => y.DataName == ColumnName.Prenom).ColumnHeader);
+			excel.AddMapping<ImportAdherent>(x => x.DateNaissance, colMapping.FirstOrDefault(y => y.DataName == ColumnName.DateNaissance).ColumnHeader);
 
-			var ws = excel.Worksheet<Adherent>(sheetName);
+			var ws = excel.Worksheet<ImportAdherent>(sheetName);
 
-			return new List<Adherent>(ws.ToList());
+			return new List<ImportAdherent>(ws.ToList());
 		}
 
 		public IEnumerable<ColumnMapping> InitColMapping() {

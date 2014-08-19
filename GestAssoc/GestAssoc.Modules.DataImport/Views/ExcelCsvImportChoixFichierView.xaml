@@ -15,11 +15,11 @@
 			   Style="{StaticResource titreUC}"
 			   Content="{x:Static p:Resources.Titre_ExcelCsvChoixFichier}" />
 		
-		<Grid>
+		<Grid HorizontalAlignment="Center" Width="auto">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition />
+				<ColumnDefinition Width="auto" />
 				<ColumnDefinition Width="300" />
-				<ColumnDefinition />
+				<ColumnDefinition Width="auto" />
 			</Grid.ColumnDefinitions>
 			
 			<Grid.RowDefinitions>
@@ -30,14 +30,14 @@
 
 			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Lb_ExcelCsvImport_Fichier}" />
 			<TextBox Name="tbxFilePath" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
-			<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ResourceKey=btnCmd}" Click="Button_Click">
-				...
+			<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ResourceKey=btnCmd}" Click="Button_Click" HorizontalAlignment="Left">
+				<Label Content="{x:Static p:Resources.Lb_ExcelCsvImport_Browse}" />
 			</Button>
 
 			<Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ResourceKey=btnNavForm}"
 					Command="{Binding Path=GoToConfigCmd}"
 					CommandParameter="{Binding ElementName=tbxFilePath, Path=Text}">
-				Suivant
+				<Label Content="{x:Static p:Resources.Lb_ExcelCsvImport_Suivant}" />
 			</Button>
 		</Grid>
 	</DockPanel>

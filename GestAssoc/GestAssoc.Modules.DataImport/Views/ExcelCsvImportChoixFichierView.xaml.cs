@@ -22,7 +22,6 @@ namespace GestAssoc.Modules.DataImport.Views
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e) {
 			var dialog = new OpenFileDialog();
 			dialog.Filter = "Excel (*.xls, *.xlsx)|*.xls;*.xlsx|CSV (*.csv)|*.csv";
-			//dialog.RestoreDirectory();
 
 			if (dialog.ShowDialog().Value) {
 				this.tbxFilePath.Text = dialog.FileName;

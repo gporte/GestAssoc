@@ -40,16 +40,6 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 		}
 		#endregion
 
-		#region ColumnNames property
-		private ObservableCollection<string> _columnNames;
-		public ObservableCollection<string> ColumnNames {
-			get { return this._columnNames; }
-			set {
-				this.SetProperty(ref this._columnNames, value);
-			}
-		}
-		#endregion
-
 		#region SelectedSheetName property
 		private string _selectedSheetName;
 		public string SelectedSheetName {

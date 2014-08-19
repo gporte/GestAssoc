@@ -61,11 +61,29 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à ....
+        /// </summary>
+        public static string Lb_ExcelCsvImport_Browse {
+            get {
+                return ResourceManager.GetString("Lb_ExcelCsvImport_Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Fichier : .
         /// </summary>
         public static string Lb_ExcelCsvImport_Fichier {
             get {
                 return ResourceManager.GetString("Lb_ExcelCsvImport_Fichier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suivant.
+        /// </summary>
+        public static string Lb_ExcelCsvImport_Suivant {
+            get {
+                return ResourceManager.GetString("Lb_ExcelCsvImport_Suivant", resourceCulture);
             }
         }
         
