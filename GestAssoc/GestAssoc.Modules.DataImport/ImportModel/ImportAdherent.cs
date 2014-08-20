@@ -10,5 +10,6 @@ namespace GestAssoc.Modules.DataImport.ImportModel
 		public string Adresse { get; set; }
 		public string Ville { get; set; }
 		public string CodePostal { get; set; }
+		public bool Existe { get; set; }
 	}
 }

@@ -1,4 +1,5 @@
-﻿using GestAssoc.Modules.DataImport.Constantes;
+﻿using GestAssoc.Model.Models;
+using GestAssoc.Modules.DataImport.Constantes;
 using GestAssoc.Modules.DataImport.ImportModel;
 using GestAssoc.Modules.DataImport.Util;
 using LinqToExcel;
@@ -18,7 +19,15 @@ namespace GestAssoc.Modules.DataImport.Services
 
 			var ws = excel.Worksheet<ImportAdherent>(sheetName);
 
-			return new List<ImportAdherent>(ws.ToList());
+			var adhList = ws.ToList();
+			var ctx = new GestAssocContext();
+
+			foreach (var adh in adhList) {
+				adh.Nom = adh.Nom.ToUpperInvariant();
+				adh.Existe = ctx.Adherents.Count(x => x.Nom == adh.Nom && x.Prenom == adh.Prenom) > 0;
+			}
+
+			return new List<ImportAdherent>(adhList);
 		}
 
 		public IEnumerable<ColumnMapping> InitColMapping() {
