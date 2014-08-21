@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="GestAssoc.Modules.DataImport.Views.ExcelCsvImportChoixFichierView"
+﻿<UserControl x:Class="GestAssoc.Modules.DataImport.Views.ExcelImportChoixFichierView"
 			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,7 +13,7 @@
 	<DockPanel LastChildFill="True" Margin="5,5,5,5">
 		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
 			   Style="{StaticResource titreUC}"
-			   Content="{x:Static p:Resources.Titre_ExcelCsvChoixFichier}" />
+			   Content="{x:Static p:Resources.Titre_ExcelChoixFichier}" />
 		
 		<Grid HorizontalAlignment="Center" Width="auto">
 			<Grid.ColumnDefinitions>
@@ -28,16 +28,17 @@
 				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
 
-			<Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.Lb_ExcelCsvImport_Fichier}" />
+			<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource ResourceKey=lblNameGrid}" 
+				   Content="{x:Static p:Resources.Lb_ExcelImport_Fichier}" />
 			<TextBox Name="tbxFilePath" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
 			<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ResourceKey=btnCmd}" Click="Button_Click" HorizontalAlignment="Left">
-				<Label Content="{x:Static p:Resources.Lb_ExcelCsvImport_Browse}" />
+				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Browse}" />
 			</Button>
 
 			<Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ResourceKey=btnNavForm}"
 					Command="{Binding Path=GoToConfigCmd}"
 					CommandParameter="{Binding ElementName=tbxFilePath, Path=Text}">
-				<Label Content="{x:Static p:Resources.Lb_ExcelCsvImport_Suivant}" />
+				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Suivant}" />
 			</Button>
 		</Grid>
 	</DockPanel>

@@ -14,7 +14,7 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 		#endregion
 
 		public DataImportMenuViewModel() {
-			this.ShowImportExcelCsvCommand = new ShowViewCommand(ViewNames.ExcelCsvImportChoixFichier.ToString());
+			this.ShowImportExcelCsvCommand = new ShowViewCommand(ViewNames.ExcelImportChoixFichier.ToString());
 
 			// trace
 			NotificationHelper.WriteLog(Resources.Log_AffichageMenu);

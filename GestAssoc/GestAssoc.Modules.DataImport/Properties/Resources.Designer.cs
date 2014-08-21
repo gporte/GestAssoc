@@ -63,27 +63,54 @@ namespace GestAssoc.Modules.DataImport.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à ....
         /// </summary>
-        public static string Lb_ExcelCsvImport_Browse {
+        public static string Lb_ExcelImport_Browse {
             get {
-                return ResourceManager.GetString("Lb_ExcelCsvImport_Browse", resourceCulture);
+                return ResourceManager.GetString("Lb_ExcelImport_Browse", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Fichier : .
         /// </summary>
-        public static string Lb_ExcelCsvImport_Fichier {
+        public static string Lb_ExcelImport_Fichier {
             get {
-                return ResourceManager.GetString("Lb_ExcelCsvImport_Fichier", resourceCulture);
+                return ResourceManager.GetString("Lb_ExcelImport_Fichier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Associez les colonnes du fichier à la donnée associée..
+        /// </summary>
+        public static string Lb_ExcelImport_InfoChoixColonne {
+            get {
+                return ResourceManager.GetString("Lb_ExcelImport_InfoChoixColonne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Précédent.
+        /// </summary>
+        public static string Lb_ExcelImport_Precedent {
+            get {
+                return ResourceManager.GetString("Lb_ExcelImport_Precedent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Suivant.
         /// </summary>
-        public static string Lb_ExcelCsvImport_Suivant {
+        public static string Lb_ExcelImport_Suivant {
             get {
-                return ResourceManager.GetString("Lb_ExcelCsvImport_Suivant", resourceCulture);
+                return ResourceManager.GetString("Lb_ExcelImport_Suivant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Worksheet : .
+        /// </summary>
+        public static string Lb_ExcelImport_Worksheet {
+            get {
+                return ResourceManager.GetString("Lb_ExcelImport_Worksheet", resourceCulture);
             }
         }
         
@@ -115,7 +142,7 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Excel / CSV.
+        ///   Recherche une chaîne localisée semblable à Excel.
         /// </summary>
         public static string MenuButton_ExcelCsv {
             get {
@@ -133,11 +160,20 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Excel/CSV - Choix du fichier.
+        ///   Recherche une chaîne localisée semblable à Excel - Choix du fichier.
         /// </summary>
-        public static string Titre_ExcelCsvChoixFichier {
+        public static string Titre_ExcelChoixFichier {
             get {
-                return ResourceManager.GetString("Titre_ExcelCsvChoixFichier", resourceCulture);
+                return ResourceManager.GetString("Titre_ExcelChoixFichier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Excel - Configuration.
+        /// </summary>
+        public static string Titre_ExcelConfig {
+            get {
+                return ResourceManager.GetString("Titre_ExcelConfig", resourceCulture);
             }
         }
     }

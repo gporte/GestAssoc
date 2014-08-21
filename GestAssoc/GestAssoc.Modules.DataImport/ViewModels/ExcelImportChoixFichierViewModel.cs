@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace GestAssoc.Modules.DataImport.ViewModels
 {
-	public class ExcelCsvImportChoixFichierViewModel : ViewModelBase
+	public class ExcelImportChoixFichierViewModel : ViewModelBase
 	{
 		#region FilePathProperty
 		private string _filePath;
@@ -24,11 +24,12 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 		public ICommand GoToConfigCmd { get; set; }
 		#endregion
 
-		public ExcelCsvImportChoixFichierViewModel() {
-			this.GoToConfigCmd = new ShowViewCommandWithParameter(ViewNames.ExcelCsvImportConfig.ToString());
+		public ExcelImportChoixFichierViewModel(string filepath) {
+			this.FilePath = filepath;
+			this.GoToConfigCmd = new ShowViewCommandWithParameter(ViewNames.ExcelImportConfig.ToString());
 
 			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelCsvImportChoixFichier.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelImportChoixFichier.ToString());
 		}
 	}
 }

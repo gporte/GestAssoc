@@ -117,14 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Lb_ExcelCsvImport_Browse" xml:space="preserve">
+  <data name="Lb_ExcelImport_Browse" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="Lb_ExcelCsvImport_Fichier" xml:space="preserve">
+  <data name="Lb_ExcelImport_Fichier" xml:space="preserve">
     <value>Fichier : </value>
   </data>
-  <data name="Lb_ExcelCsvImport_Suivant" xml:space="preserve">
+  <data name="Lb_ExcelImport_InfoChoixColonne" xml:space="preserve">
+    <value>Associez les colonnes du fichier à la donnée associée.</value>
+  </data>
+  <data name="Lb_ExcelImport_Precedent" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="Lb_ExcelImport_Suivant" xml:space="preserve">
     <value>Suivant</value>
+  </data>
+  <data name="Lb_ExcelImport_Worksheet" xml:space="preserve">
+    <value>Worksheet : </value>
   </data>
   <data name="Log_AffichageMenu" xml:space="preserve">
     <value>Affichage du menu DataImport.</value>
@@ -136,12 +145,15 @@
     <value>Initialisation du module DataImport.</value>
   </data>
   <data name="MenuButton_ExcelCsv" xml:space="preserve">
-    <value>Excel / CSV</value>
+    <value>Excel</value>
   </data>
   <data name="MenuHeader" xml:space="preserve">
     <value>Import</value>
   </data>
-  <data name="Titre_ExcelCsvChoixFichier" xml:space="preserve">
-    <value>Excel/CSV - Choix du fichier</value>
+  <data name="Titre_ExcelChoixFichier" xml:space="preserve">
+    <value>Excel - Choix du fichier</value>
+  </data>
+  <data name="Titre_ExcelConfig" xml:space="preserve">
+    <value>Excel - Configuration</value>
   </data>
 </root>

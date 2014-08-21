@@ -6,11 +6,11 @@ using System.Windows.Controls;
 namespace GestAssoc.Modules.DataImport.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour ExcelCsvImportConfig.xaml
+	/// Logique d'interaction pour ExcelImportConfig.xaml
 	/// </summary>
-	public partial class ExcelCsvImportConfigView : UserControl, IRegionMemberLifetime, INavigationAware
+	public partial class ExcelImportConfigView : UserControl, IRegionMemberLifetime, INavigationAware
 	{
-		public ExcelCsvImportConfigView() {
+		public ExcelImportConfigView() {
 			InitializeComponent();
 		}
 
@@ -30,7 +30,7 @@ namespace GestAssoc.Modules.DataImport.Views
 			var filePath = navigationContext.Parameters["Param"].ToString();
 
 			if (filePath != null) {
-				this.DataContext = new ExcelCsvImportConfigViewModel(filePath);
+				this.DataContext = new ExcelImportConfigViewModel(filePath);
 			}
 			else {
 				throw new Exception("Fichier non fourni!");

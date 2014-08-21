@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace GestAssoc.Modules.DataImport.ViewModels
 {
-	public class ExcelCsvImportResultViewModel : ViewModelBase
+	public class ExcelImportResultViewModel : ViewModelBase
 	{
 		#region Adherents property
 		private ObservableCollection<ImportAdherent> _adherents;
@@ -20,11 +20,11 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 		}
 		#endregion
 
-		public ExcelCsvImportResultViewModel(IEnumerable<ImportAdherent> adherents) {
+		public ExcelImportResultViewModel(IEnumerable<ImportAdherent> adherents) {
 			this.Adherents = new ObservableCollection<ImportAdherent>(adherents);
 
 			// trace
-			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelCsvImportResult.ToString());
+			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelImportResult.ToString());
 		}
 	}
 }

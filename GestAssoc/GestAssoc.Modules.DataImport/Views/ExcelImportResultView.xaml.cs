@@ -8,11 +8,11 @@ using System.Windows.Controls;
 namespace GestAssoc.Modules.DataImport.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour ExcelCsvImportResultView.xaml
+	/// Logique d'interaction pour ExcelImportResultView.xaml
 	/// </summary>
-	public partial class ExcelCsvImportResultView : UserControl, IRegionMemberLifetime, INavigationAware
+	public partial class ExcelImportResultView : UserControl, IRegionMemberLifetime, INavigationAware
 	{
-		public ExcelCsvImportResultView() {
+		public ExcelImportResultView() {
 			InitializeComponent();
 		}
 
@@ -32,7 +32,7 @@ namespace GestAssoc.Modules.DataImport.Views
 			var adherents = (IEnumerable<ImportAdherent>)navigationContext.Parameters["Param"];
 
 			if (adherents != null) {
-				this.DataContext = new ExcelCsvImportResultViewModel(adherents);
+				this.DataContext = new ExcelImportResultViewModel(adherents);
 			}
 			else {
 				throw new Exception("Param invalide!");
