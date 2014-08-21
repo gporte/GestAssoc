@@ -30,7 +30,7 @@
 
 			<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource ResourceKey=lblNameGrid}" 
 				   Content="{x:Static p:Resources.Lb_ExcelImport_Fichier}" />
-			<TextBox Name="tbxFilePath" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath}" />
+			<TextBox Name="tbxFilePath" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FilePath, Mode=TwoWay}" />
 			<Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ResourceKey=btnCmd}" Click="Button_Click" HorizontalAlignment="Left">
 				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Browse}" />
 			</Button>

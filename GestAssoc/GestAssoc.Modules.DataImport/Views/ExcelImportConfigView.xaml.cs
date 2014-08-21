@@ -1,6 +1,7 @@
 ﻿using GestAssoc.Modules.DataImport.ViewModels;
 using Microsoft.Practices.Prism.Regions;
 using System;
+using System.IO;
 using System.Windows.Controls;
 
 namespace GestAssoc.Modules.DataImport.Views
@@ -29,11 +30,11 @@ namespace GestAssoc.Modules.DataImport.Views
 		public void OnNavigatedTo(NavigationContext navigationContext) {
 			var filePath = navigationContext.Parameters["Param"].ToString();
 
-			if (filePath != null) {
+			if (filePath != null && File.Exists(filePath)) {
 				this.DataContext = new ExcelImportConfigViewModel(filePath);
 			}
 			else {
-				throw new Exception("Fichier non fourni!");
+				throw new FileNotFoundException("Fichier non trouvé!");
 			}
 		}
 	}

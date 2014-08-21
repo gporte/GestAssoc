@@ -24,7 +24,7 @@ namespace GestAssoc.Modules.DataImport.Views
 			dialog.Filter = "Excel (*.xls, *.xlsx)|*.xls;*.xlsx";
 
 			if (dialog.ShowDialog().Value) {
-				this.tbxFilePath.Text = dialog.FileName;
+				(this.DataContext as ExcelImportChoixFichierViewModel).FilePath = dialog.FileName;
 			}
 		}
 

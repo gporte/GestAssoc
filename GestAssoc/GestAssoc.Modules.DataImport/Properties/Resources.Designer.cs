@@ -61,6 +61,15 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fichier non trouvé..
+        /// </summary>
+        public static string Err_FichierNonTrouve {
+            get {
+                return ResourceManager.GetString("Err_FichierNonTrouve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ....
         /// </summary>
         public static string Lb_ExcelImport_Browse {
