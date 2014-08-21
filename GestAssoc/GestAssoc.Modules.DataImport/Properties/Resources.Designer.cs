@@ -115,6 +115,15 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vérifier les données avant importation dans la base..
+        /// </summary>
+        public static string Lb_ExcelImport_VerifDonnees {
+            get {
+                return ResourceManager.GetString("Lb_ExcelImport_VerifDonnees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Worksheet : .
         /// </summary>
         public static string Lb_ExcelImport_Worksheet {
@@ -169,7 +178,7 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Excel - Choix du fichier.
+        ///   Recherche une chaîne localisée semblable à Import Excel - Choix du fichier.
         /// </summary>
         public static string Titre_ExcelChoixFichier {
             get {
@@ -178,11 +187,20 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Excel - Configuration.
+        ///   Recherche une chaîne localisée semblable à Import Excel - Configuration.
         /// </summary>
         public static string Titre_ExcelConfig {
             get {
                 return ResourceManager.GetString("Titre_ExcelConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Import Excel - Validation.
+        /// </summary>
+        public static string Titre_ExcelResult {
+            get {
+                return ResourceManager.GetString("Titre_ExcelResult", resourceCulture);
             }
         }
     }

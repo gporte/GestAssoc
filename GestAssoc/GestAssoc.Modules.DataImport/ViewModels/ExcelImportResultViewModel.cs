@@ -11,17 +11,17 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 	public class ExcelImportResultViewModel : ViewModelBase
 	{
 		#region Adherents property
-		private ObservableCollection<ImportAdherent> _adherents;
-		public ObservableCollection<ImportAdherent> Adherents {
-			get { return this._adherents; }
+		private ObservableCollection<ImportAdherent> _importDatas;
+		public ObservableCollection<ImportAdherent> ImportDatas {
+			get { return this._importDatas; }
 			set {
-				this.SetProperty(ref this._adherents, value);
+				this.SetProperty(ref this._importDatas, value);
 			}
 		}
 		#endregion
 
 		public ExcelImportResultViewModel(IEnumerable<ImportAdherent> adherents) {
-			this.Adherents = new ObservableCollection<ImportAdherent>(adherents);
+			this.ImportDatas = new ObservableCollection<ImportAdherent>(adherents);
 
 			// trace
 			NotificationHelper.WriteLog(Resources.Log_AffichageVue + ViewNames.ExcelImportResult.ToString());

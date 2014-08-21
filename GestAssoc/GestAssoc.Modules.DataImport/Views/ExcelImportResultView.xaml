@@ -3,13 +3,46 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:p="clr-namespace:GestAssoc.Modules.DataImport.Properties"
 			 mc:Ignorable="d" 
-			 d:DesignHeight="300" d:DesignWidth="300">
-	<Grid>
-		<StackPanel Orientation="Vertical">
-			<DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path=Adherents}" AutoGenerateColumns="True" />
+			 d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary Source="pack://application:,,,/GestAssoc.Common;component/Styles/CommonStyles.xaml" />
+	</UserControl.Resources>
+	
+	<DockPanel LastChildFill="True" Margin="5,5,5,5">
+		<Label DockPanel.Dock="Top" HorizontalAlignment="Center" 
+			   Style="{StaticResource titreUC}"
+			   Content="{x:Static p:Resources.Titre_ExcelResult}" />
 
-			<Button>Save</Button>
-		</StackPanel>
-	</Grid>
+		<Grid HorizontalAlignment="Center" Width="auto">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto" />
+				<ColumnDefinition Width="auto" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource ResourceKey=lblNameGrid}" 
+				   Content="{x:Static p:Resources.Lb_ExcelImport_VerifDonnees}" />
+
+			<DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5,5,5,5"
+					  ItemsSource="{Binding Path=ImportDatas}" AutoGenerateColumns="True" />
+
+			<Button Grid.Row="2" Grid.Column="0" Style="{StaticResource ResourceKey=btnNavForm}" HorizontalAlignment="Left"
+					Command="{Binding Path=GoBackCmd}" CommandParameter="{Binding Path=FilePath}">
+				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Precedent}" />
+			</Button>
+
+			<Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ResourceKey=btnNavForm}" HorizontalAlignment="Right"
+					Command="{Binding Path=ReadFileCmd}">
+				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Suivant}" />
+			</Button>
+		</Grid>
+	</DockPanel>
 </UserControl>

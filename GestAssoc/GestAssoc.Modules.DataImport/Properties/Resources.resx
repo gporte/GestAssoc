@@ -135,6 +135,9 @@
   <data name="Lb_ExcelImport_Suivant" xml:space="preserve">
     <value>Suivant</value>
   </data>
+  <data name="Lb_ExcelImport_VerifDonnees" xml:space="preserve">
+    <value>Vérifier les données avant importation dans la base.</value>
+  </data>
   <data name="Lb_ExcelImport_Worksheet" xml:space="preserve">
     <value>Worksheet : </value>
   </data>
@@ -154,9 +157,12 @@
     <value>Import</value>
   </data>
   <data name="Titre_ExcelChoixFichier" xml:space="preserve">
-    <value>Excel - Choix du fichier</value>
+    <value>Import Excel - Choix du fichier</value>
   </data>
   <data name="Titre_ExcelConfig" xml:space="preserve">
-    <value>Excel - Configuration</value>
+    <value>Import Excel - Configuration</value>
+  </data>
+  <data name="Titre_ExcelResult" xml:space="preserve">
+    <value>Import Excel - Validation</value>
   </data>
 </root>
