@@ -29,7 +29,7 @@ namespace GestAssoc.Modules.DataImport.Views
 		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext) {
-			var adherents = (IEnumerable<ImportAdherent>)navigationContext.Parameters["Param"];
+			var adherents = (IEnumerable<ImportLigne>)navigationContext.Parameters["Param"];
 
 			if (adherents != null) {
 				this.DataContext = new ExcelImportResultViewModel(adherents);
