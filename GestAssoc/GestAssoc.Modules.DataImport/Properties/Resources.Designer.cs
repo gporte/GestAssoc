@@ -88,7 +88,7 @@ namespace GestAssoc.Modules.DataImport.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Associez les colonnes du fichier à la donnée associée..
+        ///   Recherche une chaîne localisée semblable à L&apos;application sélectionné la colonne la plus ressemblante pour chaque donnée. Veuillez vérifier et corriger si nécessaire avant de passer à l&apos;étape suivante..
         /// </summary>
         public static string Lb_ExcelImport_InfoChoixColonne {
             get {

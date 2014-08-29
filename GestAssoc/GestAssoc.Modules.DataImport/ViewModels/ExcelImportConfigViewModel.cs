@@ -84,10 +84,10 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 				.Current.GetInstance<IUnityContainer>()
 				.Resolve<IExcelCsvImportService>();
 
-			this.ColumnsMapping = new ObservableCollection<ColumnMapping>(this._services.InitColMapping());
 			this.WorkSheetNames = new ObservableCollection<string>(this._services.GetSheetNames(this.FilePath));
 			this.SelectedSheetName = this.WorkSheetNames.First();
 			this.PopulateColumnList(this.SelectedSheetName);
+			this.ColumnsMapping = new ObservableCollection<ColumnMapping>(this._services.InitColMapping(this.ColumnsList.ToList()));
 
 			this.GoBackCmd = new ShowViewCommandWithParameter(ViewNames.ExcelImportChoixFichier.ToString());
 			this.ReadFileCmd = new DelegateCommand(this.ExecuteReadFileCmd);
@@ -108,6 +108,7 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 
 		private void PopulateColumnList(string selectedWorksheet) {
 			this.ColumnsList = new ObservableCollection<string>(this._services.GetColumnsNames(this.FilePath, this.SelectedSheetName));
+			this.ColumnsMapping = new ObservableCollection<ColumnMapping>(this._services.InitColMapping(this.ColumnsList.ToList()));
 		}
 	}
 }

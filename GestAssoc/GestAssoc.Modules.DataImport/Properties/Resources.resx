@@ -127,7 +127,7 @@
     <value>Fichier : </value>
   </data>
   <data name="Lb_ExcelImport_InfoChoixColonne" xml:space="preserve">
-    <value>Associez les colonnes du fichier à la donnée associée.</value>
+    <value>L'application sélectionné la colonne la plus ressemblante pour chaque donnée. Veuillez vérifier et corriger si nécessaire avant de passer à l'étape suivante.</value>
   </data>
   <data name="Lb_ExcelImport_Precedent" xml:space="preserve">
     <value>Précédent</value>

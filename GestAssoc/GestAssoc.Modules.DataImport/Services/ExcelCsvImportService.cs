@@ -3,6 +3,7 @@ using GestAssoc.Modules.DataImport.Constantes;
 using GestAssoc.Modules.DataImport.ImportModel;
 using GestAssoc.Modules.DataImport.Util;
 using LinqToExcel;
+using MinimumEditDistance;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,29 +52,29 @@ namespace GestAssoc.Modules.DataImport.Services
 			return new List<ImportLigne>(adhList);
 		}
 
-		public IEnumerable<ColumnMapping> InitColMapping() {
+		public IEnumerable<ColumnMapping> InitColMapping(IEnumerable<string> columnsList) {
 			return new List<ColumnMapping> 
 			{
-				new ColumnMapping(ColumnName.Nom, string.Empty),
-				new ColumnMapping(ColumnName.Prenom, string.Empty),
-				new ColumnMapping(ColumnName.DateNaissance, string.Empty),
+				new ColumnMapping(ColumnName.Nom, SearchBestColumnName(columnsList, ColumnName.Nom.ToString())),
+				new ColumnMapping(ColumnName.Prenom, SearchBestColumnName(columnsList, ColumnName.Prenom.ToString())),
+				new ColumnMapping(ColumnName.DateNaissance, SearchBestColumnName(columnsList, ColumnName.DateNaissance.ToString())),
 
-				new ColumnMapping(ColumnName.Adresse, string.Empty),
-				new ColumnMapping(ColumnName.CodePostal, string.Empty),
-				new ColumnMapping(ColumnName.Ville, string.Empty),
+				new ColumnMapping(ColumnName.Adresse, SearchBestColumnName(columnsList, ColumnName.Adresse.ToString())),
+				new ColumnMapping(ColumnName.CodePostal, SearchBestColumnName(columnsList, ColumnName.CodePostal.ToString())),
+				new ColumnMapping(ColumnName.Ville, SearchBestColumnName(columnsList, ColumnName.Ville.ToString())),
 
-				new ColumnMapping(ColumnName.Tel1, string.Empty),
-				new ColumnMapping(ColumnName.Tel2, string.Empty),
-				new ColumnMapping(ColumnName.Tel3, string.Empty),
+				new ColumnMapping(ColumnName.Tel1, SearchBestColumnName(columnsList, ColumnName.Tel1.ToString())),
+				new ColumnMapping(ColumnName.Tel2, SearchBestColumnName(columnsList, ColumnName.Tel2.ToString())),
+				new ColumnMapping(ColumnName.Tel3, SearchBestColumnName(columnsList, ColumnName.Tel3.ToString())),
 
-				new ColumnMapping(ColumnName.Mail1, string.Empty),
-				new ColumnMapping(ColumnName.Mail2, string.Empty),
-				new ColumnMapping(ColumnName.Mail3, string.Empty),
+				new ColumnMapping(ColumnName.Mail1, SearchBestColumnName(columnsList, ColumnName.Mail1.ToString())),
+				new ColumnMapping(ColumnName.Mail2, SearchBestColumnName(columnsList, ColumnName.Mail2.ToString())),
+				new ColumnMapping(ColumnName.Mail3, SearchBestColumnName(columnsList, ColumnName.Mail3.ToString())),
 
-				new ColumnMapping(ColumnName.Groupe, string.Empty),
-				new ColumnMapping(ColumnName.CertificatMedical, string.Empty),
-				new ColumnMapping(ColumnName.Cotisation, string.Empty),
-				new ColumnMapping(ColumnName.CommentaireInscription, string.Empty)
+				new ColumnMapping(ColumnName.Groupe, SearchBestColumnName(columnsList, ColumnName.Groupe.ToString())),
+				new ColumnMapping(ColumnName.CertificatMedical, SearchBestColumnName(columnsList, ColumnName.CertificatMedical.ToString())),
+				new ColumnMapping(ColumnName.Cotisation, SearchBestColumnName(columnsList, ColumnName.Cotisation.ToString())),
+				new ColumnMapping(ColumnName.CommentaireInscription, SearchBestColumnName(columnsList, ColumnName.CommentaireInscription.ToString()))
 			};
 		}
 
@@ -86,6 +87,18 @@ namespace GestAssoc.Modules.DataImport.Services
 		public IEnumerable<string> GetColumnsNames(string filePath, string worksheetName) {
 			var excel = new ExcelQueryFactory(filePath);
 			return excel.GetColumnNames(worksheetName);
+		}
+
+		private static string SearchBestColumnName(IEnumerable<string> columnList, string dataName) {
+			var result = string.Empty;
+
+			foreach (var column in columnList) {
+				if (Levenshtein.CalculateDistance(column, dataName, 1) < Levenshtein.CalculateDistance(result, dataName, 1)) {
+					result = column;
+				}
+			}
+
+			return result;
 		}
 	}
 }

@@ -83,6 +83,9 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
+    <Reference Include="MinimumEditDistance">
+      <HintPath>..\packages\LevenshteinMinimumEditDistance.1.2.0\lib\MinimumEditDistance.dll</HintPath>
+    </Reference>
     <Reference Include="Remotion">
       <HintPath>..\packages\LinqToExcel.1.9.0\lib\Remotion.dll</HintPath>
     </Reference>
