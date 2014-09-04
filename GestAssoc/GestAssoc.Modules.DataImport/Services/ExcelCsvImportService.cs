@@ -41,7 +41,7 @@ namespace GestAssoc.Modules.DataImport.Services
 			var ctx = new GestAssocContext();
 
 			foreach (var adh in adhList) {
-				adh.Nom = adh.Nom.ToUpperInvariant();
+				adh.Nom = (adh.Nom ?? string.Empty).ToUpperInvariant();
 				adh.AdherentExiste = ctx.Adherents.Count(x => x.Nom == adh.Nom && x.Prenom == adh.Prenom) > 0;
 
 				if (adh.AdherentExiste) {
