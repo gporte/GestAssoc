@@ -8,7 +8,8 @@ namespace GestAssoc.Modules.DataImport.Services
 {
 	public interface IExcelCsvImportService
 	{
-		IEnumerable<ImportLigne> ReadAdherents(string filePath, string sheetName, List<ColumnMapping> colMapping);
+		IEnumerable<ImportLigne> ReadImportLignes(string filePath, string sheetName, List<ColumnMapping> colMapping);
+		void InsertImportLignes(IEnumerable<ImportLigne> lignes);
 		IEnumerable<ColumnMapping> InitColMapping(IEnumerable<string> columnsList);
 		IEnumerable<string> GetSheetNames(string filePath);
 		IEnumerable<string> GetColumnsNames(string filePath, string worksheetName);

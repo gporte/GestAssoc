@@ -23,7 +23,7 @@
 
 			<Grid.RowDefinitions>
 				<RowDefinition Height="auto" />
-				<RowDefinition Height="auto" />
+				<RowDefinition />
 				<RowDefinition Height="auto" />
 				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
@@ -40,7 +40,7 @@
 			</Button>
 
 			<Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ResourceKey=btnNavForm}" HorizontalAlignment="Right"
-					Command="{Binding Path=ReadFileCmd}">
+					Command="{Binding Path=InsertDatasCmd}">
 				<TextBlock Text="{x:Static p:Resources.Lb_ExcelImport_Suivant}" />
 			</Button>
 		</Grid>

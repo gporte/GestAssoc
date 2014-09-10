@@ -100,7 +100,7 @@ namespace GestAssoc.Modules.DataImport.ViewModels
 
 		private void ExecuteReadFileCmd() {
 			UIServices.SetBusyState();
-			var adh = this._services.ReadAdherents(this.FilePath, this.SelectedSheetName, new List<ColumnMapping>(this.ColumnsMapping));
+			var adh = this._services.ReadImportLignes(this.FilePath, this.SelectedSheetName, new List<ColumnMapping>(this.ColumnsMapping));
 
 			new ShowViewCommandWithParameter(ViewNames.ExcelImportResult.ToString()).Execute(adh);
 
