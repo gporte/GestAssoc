@@ -45,12 +45,16 @@ namespace GestAssoc.Modules.DataImport.Services
 			foreach (var adh in adhList.Where(x => x.Nom != null)) {
 				adh.Nom = (adh.Nom ?? string.Empty).ToUpperInvariant();
 				adh.Ville = (adh.Ville ?? string.Empty).ToUpperInvariant();
+				adh.Groupe = (adh.Groupe ?? string.Empty).ToUpperInvariant();
 
 				adh.AdherentExiste = ctx.Adherents.Count(x => x.Nom == adh.Nom && x.Prenom == adh.Prenom) > 0;
 
 				if (adh.AdherentExiste) {
 					adh.InscriptionExiste = ctx.Inscriptions.Where(x => x.Groupe.Saison.EstSaisonCourante).Count(x => x.Adherent.Nom == adh.Nom && x.Adherent.Prenom == adh.Prenom) > 0;
 				}
+
+				adh.VilleExiste = ctx.Villes.Count(x => x.Libelle == adh.Ville && x.CodePostal == adh.CodePostal) > 0;
+				adh.GroupeExiste = ctx.Groupes.Count(x => x.Saison.EstSaisonCourante && x.Libelle == adh.Groupe) > 0;
 			}
 
 			return new List<ImportLigne>(adhList);

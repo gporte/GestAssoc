@@ -27,5 +27,7 @@ namespace GestAssoc.Modules.DataImport.ImportModel
 
 		public bool AdherentExiste { get; set; }
 		public bool InscriptionExiste { get; set; }
+		public bool VilleExiste { get; set; }
+		public bool GroupeExiste { get; set; }
 	}
 }
